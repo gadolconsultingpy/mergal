@@ -1,0 +1,1191 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_py_coa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250115\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 14:49+0000\n"
+"PO-Revision-Date: 2025-02-06 11:50-0300\n"
+"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"Language-Team: \n"
+"Language: es_PY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: l10n_py_coa
+#: model:ir.model,name:l10n_py_coa.model_account_chart_template
+msgid "Account Chart Template"
+msgstr "Plantilla de plan de cuentas"
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310107
+msgid "Aguinaldo"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380106
+msgid "Aguinaldos GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21702
+msgid "Aguinaldos a Pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360137
+msgid "Alq. de casilla de correo"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_1141
+msgid "Alquileres Pagados por Adelant"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21204
+msgid "Alquileres a Pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2114201
+msgid "Ande"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210305
+msgid "Anticipo a directores"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210302
+msgid "Anticipo a proveedores"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210304
+msgid "Anticipo al personal"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_112202
+msgid "Anticipo de Imp. a la renta"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11604
+msgid "Anticipo para compra de inmuebles"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210309
+msgid "Anticipos a rendir"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310110
+msgid "Aporte patronal IPS"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_317
+msgid "Aumento de capital a protocolizar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2114204
+msgid "Bancard"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11122
+msgid "Banco GNB  cta. cte. USD"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11123
+msgid "Banco GNB cta. cte. Gs"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11121
+msgid "Bco. Familiar Cta. Cte."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310104
+msgid "Bonificación familiar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_1111002
+msgid "Caja Chica"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_1111004
+msgid "Caja M E"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380121
+msgid "Capacitación GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310204
+msgid "Capacitación al personal"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210101
+msgid "Clientes M.E."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350805
+msgid "Combustibles"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380111
+msgid "Combustibles GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_52202
+msgid "Comisio.de ventas por tarjeta"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21706
+msgid "Comision Sev Publicos a Pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360141
+msgid "Comision Sev. Publico"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360104
+msgid "Comisiones Pagadas por Vta."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380115
+msgid "Comisión vta. de tarjeta GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_52205
+msgid "Control de calidad"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2114202
+msgid "Copaco"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_51111
+msgid "Costo Servicio Digital"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_51106
+msgid "Costo de venta servicios"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_51110
+msgid "Costo honorarios"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_51109
+msgid "Costo internet"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360136
+msgid "Cuotas sociales"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_1151
+msgid "Depositos en garantia"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360134
+msgid "Deprec. mejor.en terreno ajeno"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12713
+msgid "Deprec.Acum.Equip de Comunicac"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12707
+msgid "Deprec.Acum.Equip.Conservación"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12712
+msgid "Deprec.Acum.Equip.de Informat."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12710
+msgid "Deprec.Acum.Herramientas"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12703
+msgid "Deprec.Acum.Instalac.Casa Cent"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12706
+msgid "Deprec.Acum.Maquin y Equipos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12705
+msgid "Deprec.Acum.Maquin.Fabricacion"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12714
+msgid "Deprec.Acum.Mejoras en Terr.Aj"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12709
+msgid "Deprec.Acum.Mueb.y Eq. de Ofic"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12708
+msgid "Deprec.Acum.Muebles y Equipos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12704
+msgid "Deprec.Acum.Rodados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12711
+msgid "Deprec.Acum.Utensilios y Ense."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360133
+msgid "Deprec.equipos de comunicación"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360122
+msgid "Depreciac.Edificios"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360127
+msgid "Depreciac.Equip de Conservac."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360132
+msgid "Depreciac.Equip.de Informatica"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360130
+msgid "Depreciac.Herramientas"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360123
+msgid "Depreciac.Instalac.Casa Cent."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360125
+msgid "Depreciac.Maquin.Fabricación"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360126
+msgid "Depreciac.Maquinarias y Equipo"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360129
+msgid "Depreciac.Muebl.y Equi.de Ofic"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360128
+msgid "Depreciac.Muebles y Equipos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360124
+msgid "Depreciac.Rodados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360131
+msgid "Depreciac.Utensilios y Enseres"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_430
+msgid "Descuento obtenido"
+msgstr "Ganancia por descuento de efectivo"
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_419
+msgid "Descuentos Concedidos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210303
+msgid "Deudores en cta.cte."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210104
+msgid "Deudores varios"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2114153
+msgid "Diesa S.A"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380124
+msgid "Diferencia en cheque GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21405
+msgid "Direcc.Gral.Grand.Contrib."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_22101
+msgid "Documentos a Pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360114
+msgid "Donaciones"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12613
+msgid "Equipos de Comunicación"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12607
+msgid "Equipos de Conservación"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12612
+msgid "Equipos de Informatica"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12615
+msgid "Equipos de Refrigeracion"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2114203
+msgid "Essap"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.tax.group,name:l10n_py_coa.tax_group_exempt
+msgid "Exempt"
+msgstr "Exento"
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350705
+msgid "Expensas del local"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310103
+msgid "Feriados trabajados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380126
+msgid "Fletes GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210306
+msgid "Fondos a rendir"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360108
+msgid "Fotocopias"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380112
+msgid "GND - Diciembre"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_351
+msgid "Ganancia y Perdida Ejerc.Ante"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_352
+msgid "Ganancia y Perdida del Ejerc."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210311
+msgid "Garantia de alquiler"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_52302
+msgid "Gastos Generales Bebidas"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2114585
+msgid "Gastos Pendientes de Reembolso"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_52304
+msgid "Gastos Varios"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380110
+msgid "Gastos bancarios GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310205
+msgid "Gastos de Consumicion"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360119
+msgid "Gastos de Despacho"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360109
+msgid "Gastos de Envios"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360112
+msgid "Gastos de Escribania"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_52306
+msgid "Gastos de Fin de Año"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5320203
+msgid "Gastos de Internet"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350404
+msgid "Gastos de Limpieza"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_52206
+msgid "Gastos de Materiales"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360110
+msgid "Gastos de Movilidad y Viatico"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360121
+msgid "Gastos de Salud"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5320202
+msgid "Gastos de Telefonia Movil"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380105
+msgid "Gastos de eventos GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380102
+msgid "Gastos de movilidad GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_52204
+msgid "Gastos de promoción"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380109
+msgid "Gastos generales GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360142
+msgid "Gastos varios de Administracio"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380103
+msgid "Gastos varios de venta GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310106
+msgid "Gratificación"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12610
+msgid "Herramientas"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21703
+msgid "Honorarios Profes. a Pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310401
+msgid "Honorarios Profesionales"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380122
+msgid "Honorarios profesionales GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310102
+msgid "Horas extras"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21408
+msgid "INR a pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21303
+msgid "IPS Cta. aporte"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21301
+msgid "IPS a Pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_112205
+msgid "IVA Crédito Fiscal (5%)"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21403
+msgid "IVA Débito Fiscal (5%)"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380127
+msgid "IVA GASTO"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_112206
+msgid "IVA pago no aplicado"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210310
+msgid "Importaciones en curso"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5330103
+msgid "Impuesto Inmobiliario"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5330201
+msgid "Impuesto a la Renta"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21402
+msgid "Impuesto a la Renta a pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5370102
+msgid "Impuesto a los actos y docum."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310108
+msgid "Indemización por despido"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_426
+msgid "Ingresos por Descuentos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12603
+msgid "Instalaciones"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21302
+msgid "Interes a Pagar IPS"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360118
+msgid "Intereses"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21202
+#: model:account.account,name:l10n_py_coa.account_22102
+msgid "Intereses a Devengar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_1143
+msgid "Intereses a Vencer IPS"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210307
+msgid "Intereses a vencer"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21409
+msgid "Intereses de Fraccionamiento a pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_424
+msgid "Intereses en cta. de ahorro"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350806
+msgid "Lubricantes"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380120
+msgid "Lubricantes GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12606
+msgid "Maquinarias y Equipos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12605
+msgid "Maquinas de Fabricación"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380119
+msgid "Mater. mant. de rodados GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380117
+msgid "Mater. mant. del local GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350403
+msgid "Mater.Mant. de Edif. e Instal"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350603
+msgid "Mater.Mant.Mueb. y Util de Ofi"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5351003
+msgid "Mater.Mant.de Equip de Comunic"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350503
+msgid "Mater.Mant.de Equip de Inform"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350903
+msgid "Mater.Mant.de Jardineria"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5351102
+msgid "Mater.Mant.de Muebles y Equipo"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350803
+msgid "Mater.Mant.de Rodados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12614
+msgid "Mejoras Realiz. en Terren Ajen"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12608
+msgid "Muebles y Equipos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12609
+msgid "Muebles y Equipos de Oficina"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360117
+msgid "Multas y Recargos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2114155
+msgid "Olmedo Abogados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account.tag,name:l10n_py_coa.account_tag_operating
+msgid "Operating"
+msgstr "Actividades Operativas"
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_22202
+msgid "Otras Contingencias"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5330107
+msgid "Otros Impuestos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210308
+msgid "Otros descuentos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360105
+msgid "Papeleria y Utiles"
+msgstr ""
+
+#. module: l10n_py_coa
+#. odoo-python
+#: code:addons/l10n_py_coa/models/template_generic_coa.py:0
+#: model:account.account.tag,name:l10n_py_coa.account_tag_paraguay
+msgid "Paraguay"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5330102
+msgid "Patente Comercial"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5330106
+msgid "Patente Municipal"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5330105
+msgid "Patente de Rodados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360140
+msgid "Perdida en vta de activo fijo"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310109
+msgid "Preaviso por despido"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310111
+msgid "Prestacion al Personal"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_22201
+msgid "Previsiones p/ Indem. por Desp"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210190
+msgid "Previsión para incobrables"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2115
+msgid "Proveedores M.E."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_11210191
+msgid "Préstamo a accionistas"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360113
+msgid "Publicaciones y Avisos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_52203
+msgid "Publicidad y propaganda"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21704
+msgid "RPS a pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_1111006
+msgid "Recaudaciones a depositar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_425
+msgid "Recupero de Gastos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310303
+msgid "Remun.Pers.Superior Director"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310304
+msgid "Remun.Pers.Superior Gerente"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310302
+msgid "Remun.Pers.Superior Presidente"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360115
+msgid "Representaciones"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_343
+msgid "Reserva Facultativa"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_341
+msgid "Reserva Legal"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_342
+msgid "Reserva de Revaluo"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5340107
+msgid "Responsabilidad Civil"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21407
+msgid "Retencion IDU a pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21404
+msgid "Retencion IVA a Pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_112203
+msgid "Retención de Imp. a la renta"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12604
+msgid "Rodados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2114156
+msgid "Salomoni & Asociados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5340105
+msgid "Seguro de Accidentes Personal"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5340106
+msgid "Seguro de Automoviles"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5340103
+msgid "Seguro de Cristales y Otros"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5340102
+msgid "Seguro de Incendio"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5340104
+msgid "Seguro de Robo y Otros"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380114
+msgid "Seguro de caja GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380123
+msgid "Seguros GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5340108
+msgid "Seguros Pagados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_1142
+msgid "Seguros a Vencer"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350602
+msgid "Serv.Mant. Mueb y Util de Ofic"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350502
+msgid "Serv.Mant. de Equip. de Inform"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350902
+msgid "Serv.Mant. de Jardinaria"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350802
+msgid "Serv.Mant. de Rodados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350804
+msgid "Serv.Mant.Menor de Rodados"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5350402
+msgid "Serv.Mant.de Edif e Instal."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5351002
+msgid "Serv.Mant.de Equip de Comunic"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5351101
+msgid "Serv.Mant.de Muebles y Equipos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380104
+msgid "Serv.mant.de edif e inst. GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360138
+msgid "Servicio de Delivery"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_1144
+msgid "Servicios Basicos Pag x Adel."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5320105
+msgid "Servicios Básicos"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_52207
+msgid "Servicios Digitales"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380128
+msgid "Servicios digitales GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360135
+msgid "Servicios personales"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380125
+msgid "Servicios personales GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_431
+msgid "Sobrante en caja"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21203
+msgid "Sobregiro en Cta. Cte."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21701
+msgid "Sueldos y Jornales a Pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5380107
+msgid "Sueldos y jornales GND"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21205
+msgid "Tarjeta Banco GNB a pagar"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5330104
+msgid "Tasas Especiales"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.tax.group,name:l10n_py_coa.tax_group_10
+msgid "Tax 10%"
+msgstr "IVA 10%"
+
+#. module: l10n_py_coa
+#: model:account.tax.group,name:l10n_py_coa.tax_group_5
+msgid "Tax 5%"
+msgstr "IVA 5%"
+
+#. module: l10n_py_coa
+#: model:account.tax.group,name:l10n_py_coa.tax_group_tax_free
+msgid "Tax Free"
+msgstr "Exonerado"
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2114154
+msgid "Teledifusora Paraguaya S.A"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_2114210
+msgid "Telefonia Celular del Py S.A."
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5360111
+msgid "Timbrado de Cheques"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310203
+msgid "Uniformes"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_12611
+msgid "Utensilios y Enseres"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21502
+msgid "Utilidades a pagar Socio 1"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_21503
+msgid "Utilidades a pagar Socio 2"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_5310105
+msgid "Vacaciones"
+msgstr ""
+
+#. module: l10n_py_coa
+#: model:account.account,name:l10n_py_coa.account_415
+msgid "Ventas Servicios"
+msgstr ""
