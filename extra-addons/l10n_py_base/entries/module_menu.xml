@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <!-- TECNICO -->
+<!--        <menuitem id="menu_res_config_custom"-->
+<!--                  name="Additional Parameters"-->
+<!--                  parent="base.menu_ir_property"-->
+<!--                  action="res_config_custom_action"/>-->
+
+
+    </data>
+</odoo>

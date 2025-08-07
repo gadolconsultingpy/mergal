@@ -1,0 +1,140 @@
+<odoo>
+    <data>
+        <!-- DISTRICT -->
+        <record id="res_district_admin" model="ir.model.access">
+            <field name="name">District Admin</field>
+            <field name="model_id" ref="l10n_py.model_res_district"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="res_district_user" model="ir.model.access">
+            <field name="name">District User</field>
+            <field name="model_id" ref="l10n_py.model_res_district"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- LOCATION -->
+        <record id="res_location_admin" model="ir.model.access">
+            <field name="name">Location Admin</field>
+            <field name="model_id" ref="l10n_py.model_res_location"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="res_location_user" model="ir.model.access">
+            <field name="name">Location User</field>
+            <field name="model_id" ref="l10n_py.model_res_location"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- NEIGHBORHOOD -->
+        <record id="res_neighborhood_admin" model="ir.model.access">
+            <field name="name">Neighborhood Admin</field>
+            <field name="model_id" ref="l10n_py.model_res_neighborhood"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="res_neighborhood_user" model="ir.model.access">
+            <field name="name">Neighborhood User</field>
+            <field name="model_id" ref="l10n_py.model_res_neighborhood"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- TAX PAYER -->
+        <record id="tax_payer_admin" model="ir.model.access">
+            <field name="name">Tax Payer Admin</field>
+            <field name="model_id" ref="l10n_py.model_tax_payer"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="tax_payer_user" model="ir.model.access">
+            <field name="name">Tax Payer User</field>
+            <field name="model_id" ref="l10n_py.model_tax_payer"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- TAX PAYER PROCESS -->
+        <record id="tax_payer_process_admin" model="ir.model.access">
+            <field name="name">Tax Payer Process Admin</field>
+            <field name="model_id" ref="l10n_py.model_tax_payer_process"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="tax_payer_process_user" model="ir.model.access">
+            <field name="name">Tax Payer Process User</field>
+            <field name="model_id" ref="l10n_py.model_tax_payer_process"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+        <!-- RES COMPANY ACTIVITY -->
+        <record id="res_company_activity_admin" model="ir.model.access">
+            <field name="name">Company Activity Admin</field>
+            <field name="model_id" ref="l10n_py.model_res_company_activity"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="res_company_activity_user" model="ir.model.access">
+            <field name="name">Company Activity User</field>
+            <field name="model_id" ref="l10n_py.model_res_company_activity"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- IDENTIFICATION TYPE -->
+        <record id="l10n_latam_identification_type_admin" model="ir.model.access">
+            <field name="name">Latam Identification Type Admin</field>
+            <field name="model_id" ref="l10n_latam_base.model_l10n_latam_identification_type"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="l10n_latam_identification_type_user" model="ir.model.access">
+            <field name="name">Latam Identification Type User</field>
+            <field name="model_id" ref="l10n_latam_base.model_l10n_latam_identification_type"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+
+
+    </data>
+</odoo>

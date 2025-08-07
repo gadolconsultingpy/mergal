@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="res_location_tree_view" model="ir.ui.view">
+            <field name="name">res.location.list</field>
+            <field name="model">res.location</field>
+            <field name="arch" type="xml">
+                <list string="Location">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="district_id" />
+                </list>
+            </field>
+        </record>
+
+        <record id="res_location_form_view" model="ir.ui.view">
+            <field name="name">res.location.form</field>
+            <field name="model">res.location</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Location">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" placeholder="Name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="code" />
+                            <field name="district_id" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="res_location_search_view" model="ir.ui.view">
+            <field name="name">res.location.search</field>
+            <field name="model">res.location</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Location">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="district_id" />
+                    <group expand="1" string="Group By">
+                        <filter string="District" name="group_district_id" context="{'group_by':'district_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+
+    </data>
+</odoo>

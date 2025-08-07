@@ -1,0 +1,191 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_tools
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e-20221226\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-24 01:21+0000\n"
+"PO-Revision-Date: 2023-01-24 01:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: msp_tools
+#: model:ir.model.fields.selection,name:msp_tools.selection__python_interpreter__console_output__both
+msgid "Both"
+msgstr "Ambos"
+
+#. module: msp_tools
+#: model:ir.model.fields.selection,name:msp_tools.selection__python_interpreter__console_output__console
+#: model_terms:ir.ui.view,arch_db:msp_tools.python_interpreter_form
+msgid "Console"
+msgstr "Consola"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter__console_output
+msgid "Console Output"
+msgstr "Salida por Consola"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__create_uid
+#: model:ir.model.fields,field_description:msp_tools.field_model_field_export_xml__create_uid
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__create_date
+#: model:ir.model.fields,field_description:msp_tools.field_model_field_export_xml__create_date
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: msp_tools
+#: model:ir.actions.server,name:msp_tools.database_noexpire_ir_actions_server
+#: model:ir.cron,cron_name:msp_tools.database_noexpire
+msgid "Database No Expire"
+msgstr "Base de Datos sin Vencimiento"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__display_name
+#: model:ir.model.fields,field_description:msp_tools.field_model_field_export_xml__display_name
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter__display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: msp_tools
+#: model_terms:ir.ui.view,arch_db:msp_tools.python_interpreter_form
+msgid "Execute"
+msgstr "Ejecutar"
+
+#. module: msp_tools
+#: model:ir.model,name:msp_tools.model_model_export_xml
+msgid "Export Model data to XML format"
+msgstr "Exportar datos del modelo a formato XML"
+
+#. module: msp_tools
+#: model:ir.model,name:msp_tools.model_model_field_export_xml
+msgid "Export Model field data to XML format"
+msgstr "Exportar datos de campo del modelo a formato XML"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__field_lines
+msgid "Fields"
+msgstr "Campos"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__fileobject
+msgid "File"
+msgstr "Archivo"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__filename
+msgid "Filename"
+msgstr "Nombre de Archivo"
+
+#. module: msp_tools
+#: model_terms:ir.ui.view,arch_db:msp_tools.model_export_xml_form
+msgid "Generate"
+msgstr "Generar"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__id
+#: model:ir.model.fields,field_description:msp_tools.field_model_field_export_xml__id
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter__id
+msgid "ID"
+msgstr ""
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml____last_update
+#: model:ir.model.fields,field_description:msp_tools.field_model_field_export_xml____last_update
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__write_uid
+#: model:ir.model.fields,field_description:msp_tools.field_model_field_export_xml__write_uid
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__write_date
+#: model:ir.model.fields,field_description:msp_tools.field_model_field_export_xml__write_date
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__model_id
+msgid "Model"
+msgstr "Modelo"
+
+#. module: msp_tools
+#: model:ir.actions.act_window,name:msp_tools.model_export_xml_action
+#: model:ir.ui.menu,name:msp_tools.model_export_xml_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_tools.model_export_xml_action
+#: model_terms:ir.ui.view,arch_db:msp_tools.model_export_xml_form
+#: model_terms:ir.ui.view,arch_db:msp_tools.model_export_xml_tree
+msgid "Model Export XML"
+msgstr "XML de exportación de modelo"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_field_export_xml__name
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_export_xml__noupdate
+msgid "No Update"
+msgstr "No Actualizar"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_field_export_xml__parent_id
+msgid "Parent"
+msgstr "Padre"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter__code
+msgid "Python Code"
+msgstr "Código Python"
+
+#. module: msp_tools
+#: model:ir.actions.act_window,name:msp_tools.python_interpreter_action
+#: model:ir.model,name:msp_tools.model_python_interpreter
+#: model:ir.ui.menu,name:msp_tools.python_interpreter_menu_entry
+#: model_terms:ir.ui.view,arch_db:msp_tools.python_interpreter_form
+#: model_terms:ir.ui.view,arch_db:msp_tools.python_interpreter_tree
+msgid "Python Interpreter"
+msgstr "Inteprete Python"
+
+#. module: msp_tools
+#: model_terms:ir.actions.act_window,help:msp_tools.python_interpreter_action
+msgid "Python Interpreter Scripts"
+msgstr "Guiones de intérprete Python"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_python_interpreter__result
+msgid "Result"
+msgstr "Resultado"
+
+#. module: msp_tools
+#: model:ir.model.fields.selection,name:msp_tools.selection__python_interpreter__console_output__screen
+msgid "Screen"
+msgstr "Pantalla"
+
+#. module: msp_tools
+#: model:ir.model.fields,field_description:msp_tools.field_model_field_export_xml__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: msp_tools
+#: model:ir.ui.menu,name:msp_tools.msp_tools_app
+msgid "Tools"
+msgstr "Herramientas"

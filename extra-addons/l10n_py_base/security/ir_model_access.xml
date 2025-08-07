@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <!--RES CONFIG CUSTOM -->
+        <record id="access_res_config_ddp_system" model="ir.model.access">
+            <field name="name">Additional Parameters System</field>
+            <field name="model_id" ref="l10n_py_base.model_res_config_custom"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_res_config_ddp_user" model="ir.model.access">
+            <field name="name">Additional Parameters User</field>
+            <field name="model_id" ref="l10n_py_base.model_res_config_custom"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+
+        <!-- GENERIC MESSAGE BOX -->
+        <record id="generic_message_box_admin" model="ir.model.access">
+            <field name="name">Generic Message Box Admin</field>
+            <field name="model_id" ref="l10n_py_base.model_generic_message_box"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="generic_message_box_user" model="ir.model.access">
+            <field name="name">Generic Message Box User</field>
+            <field name="model_id" ref="l10n_py_base.model_generic_message_box"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+    </data>
+</odoo>

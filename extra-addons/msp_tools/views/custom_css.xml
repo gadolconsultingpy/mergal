@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="my_custom_css_asset" name="my_custom_css assets" inherit_id="web.assets_backend">
+          <xpath expr="." position="inside">
+            <style>
+              .console-menu {
+                    height: 200px;
+                    overflow-y: auto;
+                }
+            </style>
+        </xpath>
+        </template>
+    </data>
+</odoo>

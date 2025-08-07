@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+        <!-- RENAME EXISTING -->
+        <record id="l10n_py.py_id" model="l10n_latam.identification.type">
+            <field name="name">CI</field>
+            <field name="description">CÉDULA DE IDENTIDAD</field>
+            <field name="active">1</field>
+            <field name="country_id" ref="base.py"/>
+            <field name="fiscal_code">12</field>
+            <field name="sequence">12</field>
+        </record>
+
+        <record id="l10n_latam_base.it_vat" model="l10n_latam.identification.type">
+            <field name="name">RUC</field>
+            <field name="description">REGISTRO ÚNICO DE CONTRIBUYENTES</field>
+            <field name="country_id" ref="base.py"/>
+            <field name="fiscal_code">11</field>
+            <field name="sequence">11</field>
+        </record>
+
+        <record id="l10n_latam_base.it_pass" model="l10n_latam.identification.type">
+            <field name="name">PAS</field>
+            <field name="description">PASAPORTE</field>
+            <field name="active">1</field>
+            <field name="country_id" ref="base.py"/>
+            <field name="fiscal_code">13</field>
+            <field name="sequence">13</field>
+        </record>
+
+        <record id="l10n_latam_base.it_fid" model="l10n_latam.identification.type">
+            <field name="name">CE</field>
+            <field name="description">CEDULA EXTRANJERO</field>
+            <field name="active">1</field>
+            <field name="country_id" ref="base.py"/>
+            <field name="fiscal_code">14</field>
+            <field name="sequence">14</field>
+        </record>
+
+        <!-- ADD NEW -->
+        <record id="it_15" model="l10n_latam.identification.type">
+            <field name="name">S/N</field>
+            <field name="description">SIN NOMBRE</field>
+            <field name="active">1</field>
+            <field name="country_id" ref="base.py"/>
+            <field name="fiscal_code">15</field>
+            <field name="sequence">15</field>
+        </record>
+
+        <record id="it_16" model="l10n_latam.identification.type">
+            <field name="name">DIP</field>
+            <field name="description">DIPLOMÁTICO</field>
+            <field name="active">1</field>
+            <field name="country_id" ref="base.py"/>
+            <field name="fiscal_code">16</field>
+            <field name="sequence">16</field>
+        </record>
+
+        <record id="it_17" model="l10n_latam.identification.type">
+            <field name="name">ID.TRIB.</field>
+            <field name="description">IDENTIFICACIÓN TRIBUTARIA</field>
+            <field name="active">1</field>
+            <field name="country_id" ref="base.py"/>
+            <field name="fiscal_code">17</field>
+            <field name="sequence">17</field>
+        </record>
+    </data>
+
+</odoo>

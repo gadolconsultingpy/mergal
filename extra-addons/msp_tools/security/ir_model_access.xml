@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <!--MODEL EXPORT XML-->
+        <record id="access_model_export_xml_system" model="ir.model.access">
+            <field name="name">Model Export XML System</field>
+            <field name="model_id" ref="msp_tools.model_model_export_xml"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!--MODEL FIELD EXPORT XML-->
+        <record id="model_field_export_xml_system" model="ir.model.access">
+            <field name="name">Model field export xml System</field>
+            <field name="model_id" ref="msp_tools.model_model_field_export_xml"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!--ACCESS PYTHON INTERPRETER-->
+        <record id="access_python_interpreter_system" model="ir.model.access">
+            <field name="name">Python Interpreter for System</field>
+            <field name="model_id" ref="msp_tools.model_python_interpreter"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- PYTHON FILENAME -->
+        <record id="access_python_filename_system" model="ir.model.access">
+            <field name="name">Python Interpreter for System</field>
+            <field name="model_id" ref="msp_tools.model_python_filename"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+    </data>
+</odoo>

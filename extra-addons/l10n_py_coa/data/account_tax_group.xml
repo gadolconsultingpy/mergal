@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <!-- Tax template for sale and purchase -->
+        <record id="tax_group_10" model="account.tax.group">
+            <field name="name">Tax 10%</field>
+        </record>
+        <record id="tax_group_5" model="account.tax.group">
+            <field name="name">Tax 5%</field>
+        </record>
+        <record id="tax_group_exempt" model="account.tax.group">
+            <field name="name">Exempt</field>
+        </record>
+        <record id="tax_group_tax_free" model="account.tax.group">
+            <field name="name">Tax Free</field>
+        </record>
+
+    </data>
+</odoo>

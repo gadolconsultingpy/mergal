@@ -1,0 +1,263 @@
+id,name,code,account_type,reconcile,tag_ids
+capital,Capital Integrado,313,equity,False,l10n_py_coa.account_tag_paraguay
+cash_diff_expense,Diferencia de caja (Perdidas),5380108,expense,False,l10n_py_coa.account_tag_paraguay
+cash_diff_income,Diferencia de caja (Ingresos),5380129,income_other,False,l10n_py_coa.account_tag_paraguay
+cost_of_goods_sold,Costo de ventas,51101,expense_direct_cost,False,l10n_py_coa.account_tag_paraguay
+current_assets,Caja,1111001,asset_cash,False,l10n_py_coa.account_tag_paraguay
+dividends,Capital Realizado,316,equity,False,l10n_py_coa.account_tag_paraguay
+expense,Gastos Generales,5360116,expense,False,l10n_py_coa.account_tag_paraguay
+expense_currency_exchange,Diferencia de Cambio,5360120,expense,False,l10n_py_coa.account_tag_paraguay
+expense_finance,Gastos bancarios,5370101,expense,False,l10n_py_coa.account_tag_paraguay
+expense_invest,Impresos y Formularios,5360106,expense,False,l10n_py_coa.account_tag_paraguay
+expense_invest,Equipamientos,5360106,expense,False,l10n_py_coa.account_tag_paraguay
+expense_rd,Gratificación al personal GND,5380113,expense,False,l10n_py_coa.account_tag_paraguay
+expense_rent,Alquiler,536010203,expense,False,l10n_py_coa.account_tag_paraguay
+expense_salary,Sueldos y jornales,5310101,expense,False,l10n_py_coa.account_tag_paraguay
+expense_sales,Costo de ventas - GND,51107,expense_direct_cost,False,l10n_py_coa.account_tag_paraguay
+fixed_assets,Inmuebles,12601,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+income,Ventas Mercaderias,416,income,False,l10n_py_coa.account_tag_paraguay
+income_currency_exchange,Diferencia de Cambio,427,income_other,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_1111002,Caja Chica,1111002,asset_cash,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_1111004,Caja M fE,1111004,asset_cash,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_1111006,Recaudaciones a depositar,1111006,asset_cash,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11121,Bco. Familiar Cta. Cte.,11121,asset_cash,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11122,Banco GNB  cta. cte. USD,11122,asset_cash,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11123,Banco GNB cta. cte. Gs,11123,asset_cash,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210101,Clientes M.E.,11210101,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210104,Deudores varios,11210104,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210190,Previsión para incobrables,11210190,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210191,Préstamo a accionistas,11210191,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210302,Anticipo a proveedores,11210302,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210303,Deudores en cta.cte.,11210303,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210304,Anticipo al personal,11210304,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210305,Anticipo a directores,11210305,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210306,Fondos a rendir,11210306,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210307,Intereses a vencer,11210307,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210308,Otros descuentos,11210308,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210309,Anticipos a rendir,11210309,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210310,Importaciones en curso,11210310,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11210311,Garantia de alquiler,11210311,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_112202,Anticipo de Imp. a la renta,112202,asset_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_112203,Retención de Imp. a la renta,112203,asset_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_112205,IVA Crédito Fiscal (5%),112205,asset_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_112206,IVA pago no aplicado,112206,asset_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_1141,Alquileres Pagados por Adelant,1141,asset_prepayments,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_1142,Seguros a Vencer,1142,asset_prepayments,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_1143,Intereses a Vencer IPS,1143,asset_prepayments,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_1144,Servicios Basicos Pag x Adel.,1144,asset_prepayments,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_1151,Depositos en garantia,1151,asset_prepayments,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_11604,Anticipo para compra de inmuebles,11604,asset_prepayments,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12603,Instalaciones,12603,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12604,Rodados,12604,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12605,Maquinas de Fabricación,12605,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12606,Maquinarias y Equipos,12606,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12607,Equipos de Conservación,12607,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12608,Muebles y Equipos,12608,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12609,Muebles y Equipos de Oficina,12609,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12610,Herramientas,12610,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12611,Utensilios y Enseres,12611,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12612,Equipos de Informatica,12612,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12613,Equipos de Comunicación,12613,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12614,Mejoras Realiz. en Terren Ajen,12614,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12615,Equipos de Refrigeracion,12615,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12703,Deprec.Acum.Instalac.Casa Cent,12703,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12704,Deprec.Acum.Rodados,12704,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12705,Deprec.Acum.Maquin.Fabricacion,12705,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12706,Deprec.Acum.Maquin y Equipos,12706,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12707,Deprec.Acum.Equip.Conservación,12707,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12708,Deprec.Acum.Muebles y Equipos,12708,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12709,Deprec.Acum.Mueb.y Eq. de Ofic,12709,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12710,Deprec.Acum.Herramientas,12710,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12711,Deprec.Acum.Utensilios y Ense.,12711,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12712,Deprec.Acum.Equip.de Informat.,12712,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12713,Deprec.Acum.Equip de Comunicac,12713,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_12714,Deprec.Acum.Mejoras en Terr.Aj,12714,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2114153,Diesa S.A,2114153,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2114154,Teledifusora Paraguaya S.A,2114154,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2114155,Olmedo Abogados,2114155,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2114156,Salomoni & Asociados,2114156,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2114201,Ande,2114201,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2114202,Copaco,2114202,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2114203,Essap,2114203,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2114204,Bancard,2114204,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2114210,Telefonia Celular del Py S.A.,2114210,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2114585,Gastos Pendientes de Reembolso,2114585,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_2115,Proveedores M.E.,2115,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21202,Intereses a Devengar,21202,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21203,Sobregiro en Cta. Cte.,21203,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21204,Alquileres a Pagar,21204,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21205,Tarjeta Banco GNB a pagar,21205,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21301,IPS a Pagar,21301,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21302,Interes a Pagar IPS,21302,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21303,IPS Cta. aporte,21303,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21402,Impuesto a la Renta a pagar,21402,liability_current,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21403,IVA Débito Fiscal (5%),21403,liability_current,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21404,Retencion IVA a Pagar,21404,liability_current,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21405,Direcc.Gral.Grand.Contrib.,21405,liability_current,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21407,Retencion IDU a pagar,21407,liability_current,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21408,INR a pagar,21408,liability_current,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21409,Intereses de Fraccionamiento a pagar,21409,liability_current,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21502,Utilidades a pagar Socio 1,21502,liability_current,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21503,Utilidades a pagar Socio 2,21503,liability_current,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21701,Sueldos y Jornales a Pagar,21701,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21702,Aguinaldos a Pagar,21702,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21703,Honorarios Profes. a Pagar,21703,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21704,RPS a pagar,21704,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_21706,Comision Sev Publicos a Pagar,21706,liability_payable,True,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_22101,Documentos a Pagar,22101,liability_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_22102,Intereses a Devengar,22102,liability_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_22201,Previsiones p/ Indem. por Desp,22201,liability_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_22202,Otras Contingencias,22202,liability_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_317,Aumento de capital a protocolizar,317,liability_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_341,Reserva Legal,341,liability_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_342,Reserva de Revaluo,342,liability_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_343,Reserva Facultativa,343,liability_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_351,Ganancia y Perdida Ejerc.Ante,351,liability_non_current,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_352,Ganancia y Perdida del Ejerc.,352,equity_unaffected,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_415,Ventas Servicios,415,income,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_419,Descuentos Concedidos,419,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_424,Intereses en cta. de ahorro,424,income_other,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_425,Recupero de Gastos,425,income_other,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_426,Ingresos por Descuentos,426,income_other,False,l10n_py_coa.account_tag_paraguay
+cash_discount_gain,Descuento obtenido,430,income,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_431,Sobrante en caja,431,income_other,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_51106,Costo de venta servicios,51106,expense_direct_cost,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_51109,Costo internet,51109,expense_direct_cost,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_51110,Costo honorarios,51110,expense_direct_cost,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_51111,Costo Servicio Digital,51111,expense_direct_cost,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_52202,Comisio.de ventas por tarjeta,52202,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_52203,Publicidad y propaganda,52203,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_52204,Gastos de promoción,52204,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_52205,Control de calidad,52205,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_52206,Gastos de Materiales,52206,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_52207,Servicios Digitales,52207,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_52302,Gastos Generales Bebidas,52302,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_52304,Gastos Varios,52304,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_52306,Gastos de Fin de Año,52306,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310102,Horas extras,5310102,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310103,Feriados trabajados,5310103,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310104,Bonificación familiar,5310104,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310105,Vacaciones,5310105,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310106,Gratificación,5310106,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310107,Aguinaldo,5310107,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310108,Indemización por despido,5310108,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310109,Preaviso por despido,5310109,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310110,Aporte patronal IPS,5310110,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310111,Prestacion al Personal,5310111,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310203,Uniformes,5310203,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310204,Capacitación al personal,5310204,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310205,Gastos de Consumicion,5310205,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310302,Remun.Pers.Superior Presidente,5310302,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310303,Remun.Pers.Superior Director,5310303,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310304,Remun.Pers.Superior Gerente,5310304,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5310401,Honorarios Profesionales,5310401,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5320105,Servicios Básicos,5320105,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5320202,Gastos de Telefonia Movil,5320202,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5320203,Gastos de Internet,5320203,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5330102,Patente Comercial,5330102,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5330103,Impuesto Inmobiliario,5330103,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5330104,Tasas Especiales,5330104,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5330105,Patente de Rodados,5330105,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5330106,Patente Municipal,5330106,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5330107,Otros Impuestos,5330107,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5330201,Impuesto a la Renta,5330201,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5340102,Seguro de Incendio,5340102,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5340103,Seguro de Cristales y Otros,5340103,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5340104,Seguro de Robo y Otros,5340104,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5340105,Seguro de Accidentes Personal,5340105,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5340106,Seguro de Automoviles,5340106,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5340107,Responsabilidad Civil,5340107,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5340108,Seguros Pagados,5340108,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350402,Serv.Mant.de Edif e Instal.,5350402,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350403,Mater.Mant. de Edif. e Instal,5350403,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350404,Gastos de Limpieza,5350404,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350502,Serv.Mant. de Equip. de Inform,5350502,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350503,Mater.Mant.de Equip de Inform,5350503,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350602,Serv.Mant. Mueb y Util de Ofic,5350602,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350603,Mater.Mant.Mueb. y Util de Ofi,5350603,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350705,Expensas del local,5350705,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350802,Serv.Mant. de Rodados,5350802,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350803,Mater.Mant.de Rodados,5350803,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350804,Serv.Mant.Menor de Rodados,5350804,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350805,Combustibles,5350805,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350806,Lubricantes,5350806,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350902,Serv.Mant. de Jardinaria,5350902,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5350903,Mater.Mant.de Jardineria,5350903,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5351002,Serv.Mant.de Equip de Comunic,5351002,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5351003,Mater.Mant.de Equip de Comunic,5351003,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5351101,Serv.Mant.de Muebles y Equipos,5351101,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5351102,Mater.Mant.de Muebles y Equipo,5351102,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360104,Comisiones Pagadas por Vta.,5360104,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360105,Papeleria y Utiles,5360105,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360108,Fotocopias,5360108,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360109,Gastos de Envios,5360109,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360110,Gastos de Movilidad y Viatico,5360110,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360111,Timbrado de Cheques,5360111,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360112,Gastos de Escribania,5360112,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360113,Publicaciones y Avisos,5360113,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360114,Donaciones,5360114,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360115,Representaciones,5360115,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360117,Multas y Recargos,5360117,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360118,Intereses,5360118,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360119,Gastos de Despacho,5360119,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360121,Gastos de Salud,5360121,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360122,Depreciac.Edificios,5360122,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360123,Depreciac.Instalac.Casa Cent.,5360123,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360124,Depreciac.Rodados,5360124,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360125,Depreciac.Maquin.Fabricación,5360125,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360126,Depreciac.Maquinarias y Equipo,5360126,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360127,Depreciac.Equip de Conservac.,5360127,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360128,Depreciac.Muebles y Equipos,5360128,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360129,Depreciac.Muebl.y Equi.de Ofic,5360129,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360130,Depreciac.Herramientas,5360130,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360131,Depreciac.Utensilios y Enseres,5360131,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360132,Depreciac.Equip.de Informatica,5360132,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360133,Deprec.equipos de comunicación,5360133,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360134,Deprec. mejor.en terreno ajeno,5360134,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360135,Servicios personales,5360135,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360136,Cuotas sociales,5360136,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360137,Alq. de casilla de correo,5360137,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360138,Servicio de Delivery,5360138,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360140,Perdida en vta de activo fijo,5360140,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360141,Comision Sev. Publico,5360141,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5360142,Gastos varios de Administracio,5360142,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5370102,Impuesto a los actos y docum.,5370102,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380102,Gastos de movilidad GND,5380102,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380103,Gastos varios de venta GND,5380103,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380104,Serv.mant.de edif e inst. GND,5380104,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380105,Gastos de eventos GND,5380105,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380106,Aguinaldos GND,5380106,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380107,Sueldos y jornales GND,5380107,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380109,Gastos generales GND,5380109,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380110,Gastos bancarios GND,5380110,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380111,Combustibles GND,5380111,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380112,GND - Diciembre,5380112,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380114,Seguro de caja GND,5380114,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380115,Comisión vta. de tarjeta GND,5380115,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380117,Mater. mant. del local GND,5380117,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380119,Mater. mant. de rodados GND,5380119,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380120,Lubricantes GND,5380120,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380121,Capacitación GND,5380121,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380122,Honorarios profesionales GND,5380122,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380123,Seguros GND,5380123,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380124,Diferencia en cheque GND,5380124,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380125,Servicios personales GND,5380125,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380126,Fletes GND,5380126,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380127,IVA GASTO,5380127,expense,False,l10n_py_coa.account_tag_paraguay
+l10n_py_coa.account_5380128,Servicios digitales GND,5380128,expense,False,l10n_py_coa.account_tag_paraguay
+non_current_assets,Edificios,12602,asset_fixed,False,l10n_py_coa.account_tag_paraguay
+non_current_liabilities,Deprec.Acum.Inmuebles,12702,expense_depreciation,False,l10n_py_coa.account_tag_paraguay
+other_income,Otros ingresos,428,income_other,False,l10n_py_coa.account_tag_paraguay
+payable,Provedores Local,2116,liability_payable,True,l10n_py_coa.account_tag_paraguay
+pos_receivable,Cuentas por Cobrar (PoS),11210103,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+prepayments,Anticipo de Clientes,21501,liability_current,False,l10n_py_coa.account_tag_paraguay
+receivable,Clientes M.L.,11210102,asset_receivable,True,l10n_py_coa.account_tag_paraguay
+stock_in,Mercaderias Recibidas,1135,asset_current,True,l10n_py_coa.account_tag_paraguay
+stock_out,Mercaderías Entregadas,1136,asset_current,True,l10n_py_coa.account_tag_paraguay
+stock_valuation,Mercaderias,1133,asset_current,False,l10n_py_coa.account_tag_paraguay
+tax_paid,IVA a pagar,21406,liability_current,False,l10n_py_coa.account_tag_paraguay
+tax_payable,IVA Crédito Fiscal (10%),112201,asset_non_current,False,l10n_py_coa.account_tag_paraguay
+tax_receivable,IVA Débito Fiscal (10%),21401,liability_current,False,l10n_py_coa.account_tag_paraguay
+tax_received,Retención de IVA,112204,asset_non_current,False,l10n_py_coa.account_tag_paraguay
+to_receive_pay,Documentos a Pagar,21201,liability_payable,True,l10n_py_coa.account_tag_paraguay
+to_receive_rec,Mercaderias a Recibir,1134,asset_current,True,l10n_py_coa.account_tag_paraguay

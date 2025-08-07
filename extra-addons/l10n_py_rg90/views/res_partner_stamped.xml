@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_partner_stamped_form_view" model="ir.ui.view">
+            <field name="name">res.partner.stamped.form</field>
+            <field name="model">res.partner.stamped</field>
+            <field name="arch" type="xml">
+                <form string="Partner Stamped">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Stamped Number"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="from_date"/>
+                                <field name="to_date"/>
+                                <field name="from_number"/>
+                                <field name="to_number"/>
+                            </group>
+                            <group>
+                                <field name="partner_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="res_partner_stamped_list_view" model="ir.ui.view">
+            <field name="name">res.partner.stamped.list</field>
+            <field name="model">res.partner.stamped</field>
+            <field name="arch" type="xml">
+                <list string="Partner Stamped">
+                    <field name="partner_id"/>
+                    <field name="name"/>
+                    <field name="from_date"/>
+                    <field name="to_date"/>
+                    <field name="from_number"/>
+                    <field name="to_number"/>
+                </list>
+            </field>
+        </record>
+
+    </data>
+</odoo>

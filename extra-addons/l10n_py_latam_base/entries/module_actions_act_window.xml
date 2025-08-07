@@ -1,0 +1,7 @@
+<odoo>
+    <record id="l10n_latam_base.action_l10n_latam_identification_type" model="ir.actions.act_window">
+        <field name="name">Identification Type</field>
+        <field name="res_model">l10n_latam.identification.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

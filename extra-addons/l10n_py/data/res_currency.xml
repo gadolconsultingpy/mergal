@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="base.USD" model="res.currency">
+            <field name="currency_unit_label">US Dollar</field>
+        </record>
+    </data>
+</odoo>

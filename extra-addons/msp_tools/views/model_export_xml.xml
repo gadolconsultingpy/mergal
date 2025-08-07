@@ -1,0 +1,51 @@
+<odoo>
+    <record id="model_export_xml_list" model="ir.ui.view">
+        <field name="name">model_export_xml</field>
+        <field name="model">model.export.xml</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list string="Model Export XML">
+                <field name="model_id"/>
+                <field name="noupdate"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="model_export_xml_form" model="ir.ui.view">
+        <field eval="True" name="active"/>
+        <field eval="[(6, 0, [])]" name="groups_id"/>
+        <field name="mode">primary</field>
+        <field name="name">Model Export XML</field>
+        <field name="model">model.export.xml</field>
+        <field name="priority">16</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                </header>
+                <sheet string="Model Export XML">
+                    <group>
+                        <group>
+                            <field name="model_id"/>
+                            <field name="filename"
+                                   readonly="1"
+                                   force_save="1"/>
+                            <field name="field_lines">
+                                <list>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                </list>
+                            </field>
+                            <field name="noupdate"/>
+                            <button name="action_generate" string="Generate" type="object" class="oe_highlight"/>
+                        </group>
+                        <group>
+                            <field name="fileobject" filename="filename" widget="binary"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

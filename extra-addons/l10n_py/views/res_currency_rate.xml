@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_currency_rate_list" model="ir.ui.view">
+        <field name="name">res.currency.rate.tree</field>
+        <field name="model">res.currency.rate</field>
+        <field name="inherit_id" ref="base.view_currency_rate_tree"/>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="replace">
+                <list string="Currency Rates">
+                    <field name="currency_id"/>
+                    <field name="name"/>
+                    <field name="fiscal_currency_rate"/>
+                    <field name="rate" digits="[12,12]" optional="hide"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </list>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_currency_rate_form" model="ir.ui.view">
+        <field name="name">res.currency.rate.form</field>
+        <field name="model">res.currency.rate</field>
+        <field name="inherit_id" ref="base.view_currency_rate_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="fiscal_currency_rate"/>
+            </xpath>
+            <xpath expr="//field[@name='rate']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

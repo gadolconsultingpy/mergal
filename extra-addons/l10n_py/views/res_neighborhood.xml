@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="res_neighborhood_tree_view" model="ir.ui.view">
+            <field name="name">res.neighborhood.list</field>
+            <field name="model">res.neighborhood</field>
+            <field name="arch" type="xml">
+                <list string="Location">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="location_id" />
+                </list>
+            </field>
+        </record>
+
+        <record id="res_neighborhood_form_view" model="ir.ui.view">
+            <field name="name">res.neighborhood.form</field>
+            <field name="model">res.neighborhood</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Location">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" placeholder="Name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="code" />
+                            <field name="location_id" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="res_neighborhood_search_view" model="ir.ui.view">
+            <field name="name">res.neighborhood.search</field>
+            <field name="model">res.neighborhood</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Location">
+                    <field name="name" />
+                    <field name="code" />
+                    <field name="location_id" />
+                    <group expand="1" string="Group By">
+                        <filter string="District" name="group_location_id" context="{'group_by':'location_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

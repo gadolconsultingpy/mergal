@@ -1,0 +1,1624 @@
+<odoo>
+    <data >
+        <record id='l10n_py.district_1' model='res.district' >
+            <field name='code'>1</field>
+            <field name='name'>ASUNCION (DISTRITO)</field>
+            <field name='state_id' ref='l10n_py.state_py_01'/>
+        </record>
+
+        <record id='l10n_py.district_2' model='res.district' >
+            <field name='code'>2</field>
+            <field name='name'>CONCEPCION (MUNICIPIO)</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_3' model='res.district' >
+            <field name='code'>3</field>
+            <field name='name'>SAN LAZARO</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_4' model='res.district' >
+            <field name='code'>4</field>
+            <field name='name'>SAN CARLOS</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_5' model='res.district' >
+            <field name='code'>5</field>
+            <field name='name'>BELEN</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_6' model='res.district' >
+            <field name='code'>6</field>
+            <field name='name'>LORETO</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_7' model='res.district' >
+            <field name='code'>7</field>
+            <field name='name'>HORQUETA</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_8' model='res.district' >
+            <field name='code'>8</field>
+            <field name='name'>SAN SALVADOR</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_9' model='res.district' >
+            <field name='code'>9</field>
+            <field name='name'>YBY YA'U</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_267' model='res.district' >
+            <field name='code'>267</field>
+            <field name='name'>SAN CARLOS DEL APA</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_270' model='res.district' >
+            <field name='code'>270</field>
+            <field name='name'>SARGENTO JOSE FELIX LOPEZ</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_280' model='res.district' >
+            <field name='code'>280</field>
+            <field name='name'>PASO BARRETO (MUNICIPIO)</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_281' model='res.district' >
+            <field name='code'>281</field>
+            <field name='name'>SAN ALFREDO (MUNICIPIO)</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_282' model='res.district' >
+            <field name='code'>282</field>
+            <field name='name'>AZOTE¿Y (MUNICIPIO)</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_286' model='res.district' >
+            <field name='code'>286</field>
+            <field name='name'>ARROYITO</field>
+            <field name='state_id' ref='l10n_py.state_py_02'/>
+        </record>
+
+        <record id='l10n_py.district_10' model='res.district' >
+            <field name='code'>10</field>
+            <field name='name'>SAN PEDRO DE YCUAMANDYYU</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_11' model='res.district' >
+            <field name='code'>11</field>
+            <field name='name'>ANTEQUERA</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_12' model='res.district' >
+            <field name='code'>12</field>
+            <field name='name'>GRAL. E.AQUINO</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_13' model='res.district' >
+            <field name='code'>13</field>
+            <field name='name'>ITACURUBI DEL ROSARIO</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_14' model='res.district' >
+            <field name='code'>14</field>
+            <field name='name'>SAN ESTANISLAO (SANTANI)</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_15' model='res.district' >
+            <field name='code'>15</field>
+            <field name='name'>LIMA</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_16' model='res.district' >
+            <field name='code'>16</field>
+            <field name='name'>NUEVA GERMANIA</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_17' model='res.district' >
+            <field name='code'>17</field>
+            <field name='name'>TACUATI</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_18' model='res.district' >
+            <field name='code'>18</field>
+            <field name='name'>UNION</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_19' model='res.district' >
+            <field name='code'>19</field>
+            <field name='name'>25 DE diciembre</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_20' model='res.district' >
+            <field name='code'>20</field>
+            <field name='name'>VILLA DEL ROSARIO</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_21' model='res.district' >
+            <field name='code'>21</field>
+            <field name='name'>YATAITY DEL NORTE</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_22' model='res.district' >
+            <field name='code'>22</field>
+            <field name='name'>ISIDORO RESQUIN</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_23' model='res.district' >
+            <field name='code'>23</field>
+            <field name='name'>CHORE</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_24' model='res.district' >
+            <field name='code'>24</field>
+            <field name='name'>SAN PABLO</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_25' model='res.district' >
+            <field name='code'>25</field>
+            <field name='name'>SAN JOSE DEL ROSARIO</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_220' model='res.district' >
+            <field name='code'>220</field>
+            <field name='name'>GUAYAIBI</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_226' model='res.district' >
+            <field name='code'>226</field>
+            <field name='name'>CAPIIBARY</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_245' model='res.district' >
+            <field name='code'>245</field>
+            <field name='name'>YRYBUCUA</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_263' model='res.district' >
+            <field name='code'>263</field>
+            <field name='name'>SANTA ROSA DEL AGUARAY</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_268' model='res.district' >
+            <field name='code'>268</field>
+            <field name='name'>LIBERACIÓN</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_285' model='res.district' >
+            <field name='code'>285</field>
+            <field name='name'>SAN VICENTE PANCHOLO</field>
+            <field name='state_id' ref='l10n_py.state_py_03'/>
+        </record>
+
+        <record id='l10n_py.district_26' model='res.district' >
+            <field name='code'>26</field>
+            <field name='name'>CAACUPE</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_27' model='res.district' >
+            <field name='code'>27</field>
+            <field name='name'>ALTOS</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_28' model='res.district' >
+            <field name='code'>28</field>
+            <field name='name'>ARROYOS Y ESTEROS</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_29' model='res.district' >
+            <field name='code'>29</field>
+            <field name='name'>ATYRA</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_30' model='res.district' >
+            <field name='code'>30</field>
+            <field name='name'>CARAGUATAY</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_31' model='res.district' >
+            <field name='code'>31</field>
+            <field name='name'>EMBOSCADA</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_32' model='res.district' >
+            <field name='code'>32</field>
+            <field name='name'>EUSEBIO AYALA</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_33' model='res.district' >
+            <field name='code'>33</field>
+            <field name='name'>ISLA PUCU</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_34' model='res.district' >
+            <field name='code'>34</field>
+            <field name='name'>ITACURUBI DE LA CORDILLERA</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_35' model='res.district' >
+            <field name='code'>35</field>
+            <field name='name'>JUAN DE MENA</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_36' model='res.district' >
+            <field name='code'>36</field>
+            <field name='name'>NUEVA COLOMBIA</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_37' model='res.district' >
+            <field name='code'>37</field>
+            <field name='name'>PIRIBEBUY</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_38' model='res.district' >
+            <field name='code'>38</field>
+            <field name='name'>1RO.DE MARZO</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_39' model='res.district' >
+            <field name='code'>39</field>
+            <field name='name'>SAN BERNARDINO</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_40' model='res.district' >
+            <field name='code'>40</field>
+            <field name='name'>SANTA ELENA</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_41' model='res.district' >
+            <field name='code'>41</field>
+            <field name='name'>TOBATI</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_42' model='res.district' >
+            <field name='code'>42</field>
+            <field name='name'>VALENZUELA</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_43' model='res.district' >
+            <field name='code'>43</field>
+            <field name='name'>LOMA GRANDE</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_44' model='res.district' >
+            <field name='code'>44</field>
+            <field name='name'>SAN JOSE OBRERO</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_214' model='res.district' >
+            <field name='code'>214</field>
+            <field name='name'>MBOCAYATY DEL YHAGUY</field>
+            <field name='state_id' ref='l10n_py.state_py_04'/>
+        </record>
+
+        <record id='l10n_py.district_45' model='res.district' >
+            <field name='code'>45</field>
+            <field name='name'>VILLARRICA</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_46' model='res.district' >
+            <field name='code'>46</field>
+            <field name='name'>SAN SALVADOR</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_47' model='res.district' >
+            <field name='code'>47</field>
+            <field name='name'>BORJA</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_48' model='res.district' >
+            <field name='code'>48</field>
+            <field name='name'>INDEPENDENCIA (R.D.MELGAREJO)</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_49' model='res.district' >
+            <field name='code'>49</field>
+            <field name='name'>GRAL.EUGENIO A. GARAY</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_50' model='res.district' >
+            <field name='code'>50</field>
+            <field name='name'>CNEL. MARTINEZ</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_51' model='res.district' >
+            <field name='code'>51</field>
+            <field name='name'>JOSE FASSARDI</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_52' model='res.district' >
+            <field name='code'>52</field>
+            <field name='name'>FELIX PEREZ CARDOZO</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_53' model='res.district' >
+            <field name='code'>53</field>
+            <field name='name'>MAURICIO JOSE TROCHE</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_54' model='res.district' >
+            <field name='code'>54</field>
+            <field name='name'>ITAPE</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_55' model='res.district' >
+            <field name='code'>55</field>
+            <field name='name'>ITURBE</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_56' model='res.district' >
+            <field name='code'>56</field>
+            <field name='name'>MBOCAYATY</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_57' model='res.district' >
+            <field name='code'>57</field>
+            <field name='name'>NATALICIO TALAVERA</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_58' model='res.district' >
+            <field name='code'>58</field>
+            <field name='name'>ÑUMI</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_59' model='res.district' >
+            <field name='code'>59</field>
+            <field name='name'>YATAITY</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_60' model='res.district' >
+            <field name='code'>60</field>
+            <field name='name'>DR. BOTREL</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_225' model='res.district' >
+            <field name='code'>225</field>
+            <field name='name'>PASO YOBAY</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_246' model='res.district' >
+            <field name='code'>246</field>
+            <field name='name'>SIN EQUIVALENCIA</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_265' model='res.district' >
+            <field name='code'>265</field>
+            <field name='name'>TEBICUARY</field>
+            <field name='state_id' ref='l10n_py.state_py_05'/>
+        </record>
+
+        <record id='l10n_py.district_61' model='res.district' >
+            <field name='code'>61</field>
+            <field name='name'>CNEL. OVIEDO</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_62' model='res.district' >
+            <field name='code'>62</field>
+            <field name='name'>CAAGUAZU</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_63' model='res.district' >
+            <field name='code'>63</field>
+            <field name='name'>CARAYAO</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_64' model='res.district' >
+            <field name='code'>64</field>
+            <field name='name'>CECILIO BAEZ</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_65' model='res.district' >
+            <field name='code'>65</field>
+            <field name='name'>NUEVA LONDRES</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_66' model='res.district' >
+            <field name='code'>66</field>
+            <field name='name'>SAN JOAQUIN</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_67' model='res.district' >
+            <field name='code'>67</field>
+            <field name='name'>SAN JOSE DE LOS ARROYOS</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_68' model='res.district' >
+            <field name='code'>68</field>
+            <field name='name'>YHU</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_69' model='res.district' >
+            <field name='code'>69</field>
+            <field name='name'>JUAN MANUEL FRUTOS</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_70' model='res.district' >
+            <field name='code'>70</field>
+            <field name='name'>REPATRIACION</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_71' model='res.district' >
+            <field name='code'>71</field>
+            <field name='name'>SANTA ROSA DEL MBUTUY</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_72' model='res.district' >
+            <field name='code'>72</field>
+            <field name='name'>J. EULOGIO ESTIGARRIBIA</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_73' model='res.district' >
+            <field name='code'>73</field>
+            <field name='name'>JOSE D. OCAMPOS</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_74' model='res.district' >
+            <field name='code'>74</field>
+            <field name='name'>R.I.3 CORRALES</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_75' model='res.district' >
+            <field name='code'>75</field>
+            <field name='name'>RAUL A. OVIEDO</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_76' model='res.district' >
+            <field name='code'>76</field>
+            <field name='name'>MCAL.F.SOLANO LOPEZ</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_227' model='res.district' >
+            <field name='code'>227</field>
+            <field name='name'>3 DE febrero</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_228' model='res.district' >
+            <field name='code'>228</field>
+            <field name='name'>SIMON BOLIVAR</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_229' model='res.district' >
+            <field name='code'>229</field>
+            <field name='name'>LA PASTORA</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_237' model='res.district' >
+            <field name='code'>237</field>
+            <field name='name'>VAQUERIA</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_244' model='res.district' >
+            <field name='code'>244</field>
+            <field name='name'>ESCULIES</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_275' model='res.district' >
+            <field name='code'>275</field>
+            <field name='name'>TEMBIAPORA</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_276' model='res.district' >
+            <field name='code'>276</field>
+            <field name='name'>NUEVA TOLEDO</field>
+            <field name='state_id' ref='l10n_py.state_py_06'/>
+        </record>
+
+        <record id='l10n_py.district_77' model='res.district' >
+            <field name='code'>77</field>
+            <field name='name'>CAAZAPA</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_78' model='res.district' >
+            <field name='code'>78</field>
+            <field name='name'>BUENA VISTA</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_79' model='res.district' >
+            <field name='code'>79</field>
+            <field name='name'>GRAL. H. MORINIGO</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_80' model='res.district' >
+            <field name='code'>80</field>
+            <field name='name'>MACIEL</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_81' model='res.district' >
+            <field name='code'>81</field>
+            <field name='name'>MOISES BERTONI</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_82' model='res.district' >
+            <field name='code'>82</field>
+            <field name='name'>SAN JUAN NEPOMUCENO</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_83' model='res.district' >
+            <field name='code'>83</field>
+            <field name='name'>ABAI</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_84' model='res.district' >
+            <field name='code'>84</field>
+            <field name='name'>TAVAI</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_85' model='res.district' >
+            <field name='code'>85</field>
+            <field name='name'>YEGROS</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_86' model='res.district' >
+            <field name='code'>86</field>
+            <field name='name'>YUTY</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_272' model='res.district' >
+            <field name='code'>272</field>
+            <field name='name'>3 DE mayo</field>
+            <field name='state_id' ref='l10n_py.state_py_07'/>
+        </record>
+
+        <record id='l10n_py.district_87' model='res.district' >
+            <field name='code'>87</field>
+            <field name='name'>ENCARNACION</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_88' model='res.district' >
+            <field name='code'>88</field>
+            <field name='name'>BELLA VISTA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_89' model='res.district' >
+            <field name='code'>89</field>
+            <field name='name'>CAMBYRETA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_90' model='res.district' >
+            <field name='code'>90</field>
+            <field name='name'>CAPITAN MEZA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_91' model='res.district' >
+            <field name='code'>91</field>
+            <field name='name'>CARMEN DEL PARANA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_92' model='res.district' >
+            <field name='code'>92</field>
+            <field name='name'>CAPITAN MIRANDA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_93' model='res.district' >
+            <field name='code'>93</field>
+            <field name='name'>CORONEL BOGADO</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_94' model='res.district' >
+            <field name='code'>94</field>
+            <field name='name'>FRAM</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_95' model='res.district' >
+            <field name='code'>95</field>
+            <field name='name'>GRAL. ARTIGAS</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_96' model='res.district' >
+            <field name='code'>96</field>
+            <field name='name'>GRAL. DELGADO</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_97' model='res.district' >
+            <field name='code'>97</field>
+            <field name='name'>HOHENAU</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_98' model='res.district' >
+            <field name='code'>98</field>
+            <field name='name'>JESUS</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_99' model='res.district' >
+            <field name='code'>99</field>
+            <field name='name'>OBLIGADO</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_100' model='res.district' >
+            <field name='code'>100</field>
+            <field name='name'>SAN COSME Y DAMIAN</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_101' model='res.district' >
+            <field name='code'>101</field>
+            <field name='name'>SAN PEDRO DEL PARANA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_102' model='res.district' >
+            <field name='code'>102</field>
+            <field name='name'>NUEVA ALBORADA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_103' model='res.district' >
+            <field name='code'>103</field>
+            <field name='name'>TRINIDAD</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_104' model='res.district' >
+            <field name='code'>104</field>
+            <field name='name'>NATALIO</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_105' model='res.district' >
+            <field name='code'>105</field>
+            <field name='name'>JOSE LEANDRO OVIEDO</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_106' model='res.district' >
+            <field name='code'>106</field>
+            <field name='name'>SAN RAFAEL DEL PARANA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_107' model='res.district' >
+            <field name='code'>107</field>
+            <field name='name'>CARLOS A. LOPEZ</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_108' model='res.district' >
+            <field name='code'>108</field>
+            <field name='name'>JULIO D. OTAÑO</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_109' model='res.district' >
+            <field name='code'>109</field>
+            <field name='name'>EDELIRA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_110' model='res.district' >
+            <field name='code'>110</field>
+            <field name='name'>SAN JUAN DEL PARANA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_111' model='res.district' >
+            <field name='code'>111</field>
+            <field name='name'>LA PAZ</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_112' model='res.district' >
+            <field name='code'>112</field>
+            <field name='name'>TOMAS R. PEREIRA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_113' model='res.district' >
+            <field name='code'>113</field>
+            <field name='name'>YATYTAY</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_114' model='res.district' >
+            <field name='code'>114</field>
+            <field name='name'>HERIBERTA S.DE IGLESIAS</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_221' model='res.district' >
+            <field name='code'>221</field>
+            <field name='name'>PIRAPO</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_232' model='res.district' >
+            <field name='code'>232</field>
+            <field name='name'>ITAPUA POTY</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_243' model='res.district' >
+            <field name='code'>243</field>
+            <field name='name'>FEDERICO CHAVEZ</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_262' model='res.district' >
+            <field name='code'>262</field>
+            <field name='name'>ALTO VERA</field>
+            <field name='state_id' ref='l10n_py.state_py_08'/>
+        </record>
+
+        <record id='l10n_py.district_115' model='res.district' >
+            <field name='code'>115</field>
+            <field name='name'>SAN JUAN BAUTISTA</field>
+            <field name='state_id' ref='l10n_py.state_py_09'/>
+        </record>
+
+        <record id='l10n_py.district_116' model='res.district' >
+            <field name='code'>116</field>
+            <field name='name'>AYOLAS</field>
+            <field name='state_id' ref='l10n_py.state_py_09'/>
+        </record>
+
+        <record id='l10n_py.district_117' model='res.district' >
+            <field name='code'>117</field>
+            <field name='name'>SAN IGNACIO</field>
+            <field name='state_id' ref='l10n_py.state_py_09'/>
+        </record>
+
+        <record id='l10n_py.district_118' model='res.district' >
+            <field name='code'>118</field>
+            <field name='name'>SAN MIGUEL</field>
+            <field name='state_id' ref='l10n_py.state_py_09'/>
+        </record>
+
+        <record id='l10n_py.district_119' model='res.district' >
+            <field name='code'>119</field>
+            <field name='name'>SAN PATRICIO</field>
+            <field name='state_id' ref='l10n_py.state_py_09'/>
+        </record>
+
+        <record id='l10n_py.district_120' model='res.district' >
+            <field name='code'>120</field>
+            <field name='name'>SANTIAGO</field>
+            <field name='state_id' ref='l10n_py.state_py_09'/>
+        </record>
+
+        <record id='l10n_py.district_121' model='res.district' >
+            <field name='code'>121</field>
+            <field name='name'>SANTA MARIA</field>
+            <field name='state_id' ref='l10n_py.state_py_09'/>
+        </record>
+
+        <record id='l10n_py.district_122' model='res.district' >
+            <field name='code'>122</field>
+            <field name='name'>SANTA ROSA</field>
+            <field name='state_id' ref='l10n_py.state_py_09'/>
+        </record>
+
+        <record id='l10n_py.district_123' model='res.district' >
+            <field name='code'>123</field>
+            <field name='name'>VILLA FLORIDA</field>
+            <field name='state_id' ref='l10n_py.state_py_09'/>
+        </record>
+
+        <record id='l10n_py.district_124' model='res.district' >
+            <field name='code'>124</field>
+            <field name='name'>YABEBYRY</field>
+            <field name='state_id' ref='l10n_py.state_py_09'/>
+        </record>
+
+        <record id='l10n_py.district_125' model='res.district' >
+            <field name='code'>125</field>
+            <field name='name'>PARAGUARI</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_126' model='res.district' >
+            <field name='code'>126</field>
+            <field name='name'>ACAHAY</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_127' model='res.district' >
+            <field name='code'>127</field>
+            <field name='name'>CAAPUCU</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_128' model='res.district' >
+            <field name='code'>128</field>
+            <field name='name'>CABALLERO</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_129' model='res.district' >
+            <field name='code'>129</field>
+            <field name='name'>CARAPEGUA</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_130' model='res.district' >
+            <field name='code'>130</field>
+            <field name='name'>LA COLMENA</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_131' model='res.district' >
+            <field name='code'>131</field>
+            <field name='name'>ESCOBAR</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_132' model='res.district' >
+            <field name='code'>132</field>
+            <field name='name'>MBUYAPEY</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_133' model='res.district' >
+            <field name='code'>133</field>
+            <field name='name'>PIRAYU</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_134' model='res.district' >
+            <field name='code'>134</field>
+            <field name='name'>QUIINDY</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_135' model='res.district' >
+            <field name='code'>135</field>
+            <field name='name'>ROQUE GONZALEZ</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_136' model='res.district' >
+            <field name='code'>136</field>
+            <field name='name'>SAPUCAI</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_137' model='res.district' >
+            <field name='code'>137</field>
+            <field name='name'>YBYCUI</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_138' model='res.district' >
+            <field name='code'>138</field>
+            <field name='name'>QUYQUYHO</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_139' model='res.district' >
+            <field name='code'>139</field>
+            <field name='name'>YBYTYMI</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_140' model='res.district' >
+            <field name='code'>140</field>
+            <field name='name'>TEBICUARY MI</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_141' model='res.district' >
+            <field name='code'>141</field>
+            <field name='name'>YAGUARON</field>
+            <field name='state_id' ref='l10n_py.state_py_10'/>
+        </record>
+
+        <record id='l10n_py.district_142' model='res.district' >
+            <field name='code'>142</field>
+            <field name='name'>HERNANDARIAS</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_143' model='res.district' >
+            <field name='code'>143</field>
+            <field name='name'>DOMINGO MARTINEZ DE IRALA</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_144' model='res.district' >
+            <field name='code'>144</field>
+            <field name='name'>ÑACUNDAY</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_145' model='res.district' >
+            <field name='code'>145</field>
+            <field name='name'>CIUDAD DEL ESTE</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_146' model='res.district' >
+            <field name='code'>146</field>
+            <field name='name'>JUAN LEON MALLORQUIN</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_147' model='res.district' >
+            <field name='code'>147</field>
+            <field name='name'>ITAKYRY</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_148' model='res.district' >
+            <field name='code'>148</field>
+            <field name='name'>JUAN E.O'LEARY</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_149' model='res.district' >
+            <field name='code'>149</field>
+            <field name='name'>PRESIDENTE FRANCO</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_150' model='res.district' >
+            <field name='code'>150</field>
+            <field name='name'>YGUAZU</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_151' model='res.district' >
+            <field name='code'>151</field>
+            <field name='name'>SAN CRISTOBAL</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_209' model='res.district' >
+            <field name='code'>209</field>
+            <field name='name'>SANTA RITA</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_210' model='res.district' >
+            <field name='code'>210</field>
+            <field name='name'>MINGA GUAZU</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_211' model='res.district' >
+            <field name='code'>211</field>
+            <field name='name'>LOS CEDRALES</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_212' model='res.district' >
+            <field name='code'>212</field>
+            <field name='name'>SAN ALBERTO</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_213' model='res.district' >
+            <field name='code'>213</field>
+            <field name='name'>MINGA PORA</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_215' model='res.district' >
+            <field name='code'>215</field>
+            <field name='name'>NARANJAL</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_216' model='res.district' >
+            <field name='code'>216</field>
+            <field name='name'>SANTA ROSA DEL MONDAY</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_217' model='res.district' >
+            <field name='code'>217</field>
+            <field name='name'>IRUÑA</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_219' model='res.district' >
+            <field name='code'>219</field>
+            <field name='name'>MBARACAYU</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_239' model='res.district' >
+            <field name='code'>239</field>
+            <field name='name'>SANTA FE DEL PARANA</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_240' model='res.district' >
+            <field name='code'>240</field>
+            <field name='name'>NUEVA ESPERANZA</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_269' model='res.district' >
+            <field name='code'>269</field>
+            <field name='name'>TAVAPY</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_273' model='res.district' >
+            <field name='code'>273</field>
+            <field name='name'>DR. RAUL PEÑA</field>
+            <field name='state_id' ref='l10n_py.state_py_11'/>
+        </record>
+
+        <record id='l10n_py.district_152' model='res.district' >
+            <field name='code'>152</field>
+            <field name='name'>AREGUA</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_153' model='res.district' >
+            <field name='code'>153</field>
+            <field name='name'>CAPIATA</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_154' model='res.district' >
+            <field name='code'>154</field>
+            <field name='name'>FERNANDO DE LA MORA</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_155' model='res.district' >
+            <field name='code'>155</field>
+            <field name='name'>GUARAMBARE</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_156' model='res.district' >
+            <field name='code'>156</field>
+            <field name='name'>ITA</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_157' model='res.district' >
+            <field name='code'>157</field>
+            <field name='name'>ITAUGUA</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_158' model='res.district' >
+            <field name='code'>158</field>
+            <field name='name'>LIMPIO</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_159' model='res.district' >
+            <field name='code'>159</field>
+            <field name='name'>LUQUE</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_160' model='res.district' >
+            <field name='code'>160</field>
+            <field name='name'>MARIANO ROQUE ALONSO</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_161' model='res.district' >
+            <field name='code'>161</field>
+            <field name='name'>ÑEMBY</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_162' model='res.district' >
+            <field name='code'>162</field>
+            <field name='name'>NUEVA ITALIA</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_163' model='res.district' >
+            <field name='code'>163</field>
+            <field name='name'>SAN ANTONIO</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_164' model='res.district' >
+            <field name='code'>164</field>
+            <field name='name'>SAN LORENZO</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_165' model='res.district' >
+            <field name='code'>165</field>
+            <field name='name'>VILLA ELISA</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_166' model='res.district' >
+            <field name='code'>166</field>
+            <field name='name'>VILLETA</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_167' model='res.district' >
+            <field name='code'>167</field>
+            <field name='name'>YPACARAI</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_168' model='res.district' >
+            <field name='code'>168</field>
+            <field name='name'>YPANE</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_169' model='res.district' >
+            <field name='code'>169</field>
+            <field name='name'>LAMBARE</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_170' model='res.district' >
+            <field name='code'>170</field>
+            <field name='name'>J.AUGUSTO SALDIVAR</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_277' model='res.district' >
+            <field name='code'>277</field>
+            <field name='name'>LOMA PYTA</field>
+            <field name='state_id' ref='l10n_py.state_py_12'/>
+        </record>
+
+        <record id='l10n_py.district_171' model='res.district' >
+            <field name='code'>171</field>
+            <field name='name'>PILAR</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_172' model='res.district' >
+            <field name='code'>172</field>
+            <field name='name'>ALBERDI</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_173' model='res.district' >
+            <field name='code'>173</field>
+            <field name='name'>CERRITO</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_174' model='res.district' >
+            <field name='code'>174</field>
+            <field name='name'>DESMOCHADOS</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_175' model='res.district' >
+            <field name='code'>175</field>
+            <field name='name'>GUAZU CUA</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_176' model='res.district' >
+            <field name='code'>176</field>
+            <field name='name'>HUMAITA</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_177' model='res.district' >
+            <field name='code'>177</field>
+            <field name='name'>ISLA UMBU</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_178' model='res.district' >
+            <field name='code'>178</field>
+            <field name='name'>LAURELES</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_179' model='res.district' >
+            <field name='code'>179</field>
+            <field name='name'>PASO DE PATRIA</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_180' model='res.district' >
+            <field name='code'>180</field>
+            <field name='name'>MAYOR J.D.MARTINEZ</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_181' model='res.district' >
+            <field name='code'>181</field>
+            <field name='name'>SAN JUAN DE ÑEEMBUCU</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_182' model='res.district' >
+            <field name='code'>182</field>
+            <field name='name'>TACUARAS</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_183' model='res.district' >
+            <field name='code'>183</field>
+            <field name='name'>VILLA OLIVA</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_184' model='res.district' >
+            <field name='code'>184</field>
+            <field name='name'>VILLALBIN</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_203' model='res.district' >
+            <field name='code'>203</field>
+            <field name='name'>GRAL.JOSE EDUVIGIS DIAZ</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_205' model='res.district' >
+            <field name='code'>205</field>
+            <field name='name'>VILLA FRANCA</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_185' model='res.district' >
+            <field name='code'>185</field>
+            <field name='name'>PEDRO JUAN CABALLERO</field>
+            <field name='state_id' ref='l10n_py.state_py_14'/>
+        </record>
+
+        <record id='l10n_py.district_186' model='res.district' >
+            <field name='code'>186</field>
+            <field name='name'>BELLA VISTA</field>
+            <field name='state_id' ref='l10n_py.state_py_14'/>
+        </record>
+
+        <record id='l10n_py.district_187' model='res.district' >
+            <field name='code'>187</field>
+            <field name='name'>CAPITAN BADO</field>
+            <field name='state_id' ref='l10n_py.state_py_14'/>
+        </record>
+
+        <record id='l10n_py.district_278' model='res.district' >
+            <field name='code'>278</field>
+            <field name='name'>KARAPAI</field>
+            <field name='state_id' ref='l10n_py.state_py_14'/>
+        </record>
+
+        <record id='l10n_py.district_279' model='res.district' >
+            <field name='code'>279</field>
+            <field name='name'>ZANJA PYTA</field>
+            <field name='state_id' ref='l10n_py.state_py_14'/>
+        </record>
+
+        <record id='l10n_py.district_188' model='res.district' >
+            <field name='code'>188</field>
+            <field name='name'>VILLA HAYES</field>
+            <field name='state_id' ref='l10n_py.state_py_15'/>
+        </record>
+
+        <record id='l10n_py.district_189' model='res.district' >
+            <field name='code'>189</field>
+            <field name='name'>BENJAMIN ACEVAL(MONTE SOCIEDAD</field>
+            <field name='state_id' ref='l10n_py.state_py_15'/>
+        </record>
+
+        <record id='l10n_py.district_190' model='res.district' >
+            <field name='code'>190</field>
+            <field name='name'>PTO.PINAZCO</field>
+            <field name='state_id' ref='l10n_py.state_py_15'/>
+        </record>
+
+        <record id='l10n_py.district_191' model='res.district' >
+            <field name='code'>191</field>
+            <field name='name'>NANAWA</field>
+            <field name='state_id' ref='l10n_py.state_py_15'/>
+        </record>
+
+        <record id='l10n_py.district_206' model='res.district' >
+            <field name='code'>206</field>
+            <field name='name'>POZO COLORADO</field>
+            <field name='state_id' ref='l10n_py.state_py_15'/>
+        </record>
+
+        <record id='l10n_py.district_242' model='res.district' >
+            <field name='code'>242</field>
+            <field name='name'>JOSE FALCON</field>
+            <field name='state_id' ref='l10n_py.state_py_15'/>
+        </record>
+
+        <record id='l10n_py.district_261' model='res.district' >
+            <field name='code'>261</field>
+            <field name='name'>TTE. 1RO. IRALA FERNANDEZ</field>
+            <field name='state_id' ref='l10n_py.state_py_15'/>
+        </record>
+
+        <record id='l10n_py.district_264' model='res.district' >
+            <field name='code'>264</field>
+            <field name='name'>TENIENTE ESTEBAN MARTINEZ</field>
+            <field name='state_id' ref='l10n_py.state_py_15'/>
+        </record>
+
+        <record id='l10n_py.district_192' model='res.district' >
+            <field name='code'>192</field>
+            <field name='name'>MCAL.ESTIGARRIBIA</field>
+            <field name='state_id' ref='l10n_py.state_py_16'/>
+        </record>
+
+        <record id='l10n_py.district_193' model='res.district' >
+            <field name='code'>193</field>
+            <field name='name'>BOQUERON</field>
+            <field name='state_id' ref='l10n_py.state_py_16'/>
+        </record>
+
+        <record id='l10n_py.district_194' model='res.district' >
+            <field name='code'>194</field>
+            <field name='name'>PEDRO P.PEÑA</field>
+            <field name='state_id' ref='l10n_py.state_py_16'/>
+        </record>
+
+        <record id='l10n_py.district_234' model='res.district' >
+            <field name='code'>234</field>
+            <field name='name'>GRAL. EUGENIO A. GARAY</field>
+            <field name='state_id' ref='l10n_py.state_py_16'/>
+        </record>
+
+        <record id='l10n_py.district_259' model='res.district' >
+            <field name='code'>259</field>
+            <field name='name'>FILADELFIA</field>
+            <field name='state_id' ref='l10n_py.state_py_16'/>
+        </record>
+
+        <record id='l10n_py.district_260' model='res.district' >
+            <field name='code'>260</field>
+            <field name='name'>LOMA PLATA</field>
+            <field name='state_id' ref='l10n_py.state_py_16'/>
+        </record>
+
+        <record id='l10n_py.district_195' model='res.district' >
+            <field name='code'>195</field>
+            <field name='name'>FUERTE OLIMPO</field>
+            <field name='state_id' ref='l10n_py.state_py_17'/>
+        </record>
+
+        <record id='l10n_py.district_196' model='res.district' >
+            <field name='code'>196</field>
+            <field name='name'>BAHIA NEGRA</field>
+            <field name='state_id' ref='l10n_py.state_py_17'/>
+        </record>
+
+        <record id='l10n_py.district_218' model='res.district' >
+            <field name='code'>218</field>
+            <field name='name'>PUERTO CASADO</field>
+            <field name='state_id' ref='l10n_py.state_py_17'/>
+        </record>
+
+        <record id='l10n_py.district_223' model='res.district' >
+            <field name='code'>223</field>
+            <field name='name'>PUERTO GUARANI</field>
+            <field name='state_id' ref='l10n_py.state_py_17'/>
+        </record>
+
+        <record id='l10n_py.district_233' model='res.district' >
+            <field name='code'>233</field>
+            <field name='name'>MAYOR PABLO LAGERENZA</field>
+            <field name='state_id' ref='l10n_py.state_py_17'/>
+        </record>
+
+        <record id='l10n_py.district_266' model='res.district' >
+            <field name='code'>266</field>
+            <field name='name'>CARMELO PERALTA</field>
+            <field name='state_id' ref='l10n_py.state_py_17'/>
+        </record>
+
+        <record id='l10n_py.district_197' model='res.district' >
+            <field name='code'>197</field>
+            <field name='name'>SAN ISIDRO DEL CURUGUATY</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_198' model='res.district' >
+            <field name='code'>198</field>
+            <field name='name'>VILLA YGATIMI</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_199' model='res.district' >
+            <field name='code'>199</field>
+            <field name='name'>YPEJHU</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_200' model='res.district' >
+            <field name='code'>200</field>
+            <field name='name'>CORPUS CHRISTI</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_201' model='res.district' >
+            <field name='code'>201</field>
+            <field name='name'>ITANARA</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_202' model='res.district' >
+            <field name='code'>202</field>
+            <field name='name'>FRANCISCO CABALLERO ALVAREZ</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_207' model='res.district' >
+            <field name='code'>207</field>
+            <field name='name'>SALTO DEL GUAIRA</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_235' model='res.district' >
+            <field name='code'>235</field>
+            <field name='name'>LA PALOMA</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_236' model='res.district' >
+            <field name='code'>236</field>
+            <field name='name'>KATUETE</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_238' model='res.district' >
+            <field name='code'>238</field>
+            <field name='name'>NUEVA ESPERANZA</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_241' model='res.district' >
+            <field name='code'>241</field>
+            <field name='name'>YASY KAÑY</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_271' model='res.district' >
+            <field name='code'>271</field>
+            <field name='name'>YBYRAROBANA</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_274' model='res.district' >
+            <field name='code'>274</field>
+            <field name='name'>YBY PYTA</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_283' model='res.district' >
+            <field name='code'>283</field>
+            <field name='name'>MARACANA</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_284' model='res.district' >
+            <field name='code'>284</field>
+            <field name='name'>PUERTO ADELA</field>
+            <field name='state_id' ref='l10n_py.state_py_18'/>
+        </record>
+
+        <record id='l10n_py.district_230' model='res.district' >
+            <field name='code'>230</field>
+            <field name='name'>VILLA FRANCA</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+        <record id='l10n_py.district_231' model='res.district' >
+            <field name='code'>231</field>
+            <field name='name'>VILLALBIN</field>
+            <field name='state_id' ref='l10n_py.state_py_13'/>
+        </record>
+
+    </data>
+</odoo>

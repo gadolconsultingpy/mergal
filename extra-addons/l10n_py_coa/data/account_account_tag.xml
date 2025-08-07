@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_tag_operating" model="account.account.tag">
+            <field name="name">Operating</field>
+            <field name="applicability">accounts</field>
+        </record>
+        <record id="account_tag_paraguay" model="account.account.tag">
+            <field name="name">Paraguay</field>
+            <field name="applicability">accounts</field>
+        </record>
+    </data>
+</odoo>

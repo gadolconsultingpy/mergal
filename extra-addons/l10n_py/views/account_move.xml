@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_move_form" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="py_page" string="Paraguay">
+                        <group name="group_paraguay">
+                            <group name="group_left">
+                                <field name="payment_type"
+                                       readonly="state != 'draft' "/>
+                                <field name="sequence_id"
+                                       domain="[('binding_model_id','=','account.move')]"
+                                       readonly="state != 'draft' "
+                                />
+
+                            </group>
+                            <group name="group_right">
+                                <field name="inverse_rate" invisible="is_local_currency"/>
+                                <field name="currency_rate" digits="[12,12]" invisible="is_local_currency"/>
+                                <field name="invoice_currency_rate" digits="[12,12]"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/list/field[@name='amount_currency']" position="after">
+                    <field name="currency_rate" optional="hide"/>
+                    <field name="inverse_rate" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
