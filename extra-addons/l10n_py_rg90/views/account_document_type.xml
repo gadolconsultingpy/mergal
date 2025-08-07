@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_document_type_list_view" model="ir.ui.view">
+            <field name="name">account_document_type.list</field>
+            <field name="model">account.document.type</field>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list string="Account Document Type" sample="1" multi_edit="1" editable="bottom">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="purchases" widget="boolean_toggle" optional="hide"/>
+                    <field name="sales" widget="boolean_toggle" optional="hide"/>
+                    <field name="income" widget="boolean_toggle" optional="hide"/>
+                    <field name="expenses" widget="boolean_toggle" optional="hide"/>
+                    <field name="tax_report" widget="boolean_toggle" optional="hide"/>
+                    <field name="stamped_control" widget="boolean_toggle" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+
+        <record id="account_document_type_form_view" model="ir.ui.view">
+            <field name="name">account_document_type.form</field>
+            <field name="model">account.document.type</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Account Document Type">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                                <field name="purchases" widget="boolean_toggle"/>
+                                <field name="sales" widget="boolean_toggle"/>
+                                <field name="income" widget="boolean_toggle"/>
+                                <field name="expenses" widget="boolean_toggle"/>
+                            </group>
+                            <group>
+                                <field name="tax_report" widget="boolean_toggle"/>
+                                <field name="stamped_control" widget="boolean_toggle"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

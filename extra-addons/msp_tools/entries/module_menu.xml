@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <menuitem id="msp_tools_app"
+              name="Tools"
+              parent="base.menu_administration"> <!-- en el menú técnico-->
+
+        <menuitem id="model_export_xml_menu_entry"
+                  name="Model Export XML"
+                  action="model_export_xml_action"/>
+
+        <menuitem id="python_interpreter_menu_entry"
+                  name="Python Interpreter"
+                  action="python_interpreter_action"/>
+    </menuitem>
+
+
+</odoo>

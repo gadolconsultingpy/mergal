@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="py_page" string="Paraguay">
+                    <group>
+                        <group name="group_left">
+                            <field name="nature"/>
+                            <field name="tax_payer_type"/>
+                            <field name="business_partner_type"/>
+                        </group>
+                        <group name="group_right">
+
+                        </group>
+
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="fantasy_name" invisible="company_type != 'company' "/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">view_res_partner_filter</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="street_name"/>
+                <field name="state_id"/>
+                <field name="district_id"/>
+                <field name="location_id"/>
+                <field name="neighborhood_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='group_country']" position="after">
+                <filter name="group_state" string="State" context="{'group_by': 'state_id'}"/>
+                <filter name="group_district" string="District" context="{'group_by': 'district_id'}"/>
+                <filter name="group_location" string="State Location" context="{'group_by': 'location_id'}"/>
+                <filter name="group_neighborhood" string="Neighborhood" context="{'group_by': 'neighborhood_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

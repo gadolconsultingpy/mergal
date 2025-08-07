@@ -1,0 +1,101 @@
+<odoo>
+    <data noupdate="1">
+        <!-- SALES -->
+        <record id="py_sale_tax_10" model="account.tax">
+            <field name="name">IVA 10%</field>
+            <field name="description">IVA 10%</field>
+            <field name="tax_group_id" ref="l10n_py.tax_group_10"/>
+            <field name="type_tax_use">sale</field>
+            <field name="amount">10</field>
+            <field name="price_include">1</field>
+            <field name="include_base_amount">1</field>
+            <field name="country_id" ref="base.py"/>
+            <field name="invoice_repartition_line_ids"
+                   eval="[(5,0,0),(0,0,{'repartition_type':'base'}), (0,0,{'repartition_type':'tax','factor_percent':100,'account_id':ref('account.1_tax_received')}),]"/>
+            <field name="refund_repartition_line_ids"
+                   eval="[(5,0,0),(0,0,{'repartition_type':'base'}), (0,0,{'repartition_type':'tax','factor_percent':100,'account_id':ref('account.1_tax_received')}),]"/>
+        </record>
+
+        <record id="py_sale_tax_5" model="account.tax">
+            <field name="name">IVA 5%</field>
+            <field name="description">IVA 5%</field>
+            <field name="tax_group_id" ref="l10n_py.tax_group_5"/>
+            <field name="type_tax_use">sale</field>
+            <field name="amount">5</field>
+            <field name="price_include">1</field>
+            <field name="include_base_amount">1</field>
+            <field name="country_id" ref="base.py"/>
+            <field name="invoice_repartition_line_ids"
+                   eval="[(5,0,0),(0,0,{'repartition_type':'base'}), (0,0,{'repartition_type':'tax','factor_percent':100,'account_id':ref('account.1_tax_received')}),]"/>
+            <field name="refund_repartition_line_ids"
+                   eval="[(5,0,0),(0,0,{'repartition_type':'base'}), (0,0,{'repartition_type':'tax','factor_percent':100,'account_id':ref('account.1_tax_received')}),]"/>
+        </record>
+
+        <record id="py_sale_tax_exempt" model="account.tax">
+            <field name="name">Exento</field>
+            <field name="description">Exento</field>
+            <field name="amount">0</field>
+            <field name="price_include">1</field>
+            <field name="include_base_amount">1</field>
+            <field name="type_tax_use">sale</field>
+            <field name="tax_group_id" ref="tax_group_exempt"/>
+            <field name="country_id" ref="base.py"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account.1_tax_received'),
+            }),
+        ]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account.1_tax_received'),
+            }),
+        ]"/>
+        </record>
+
+        <record id="py_sale_tax_free" model="account.tax">
+            <field name="name">Exonerado</field>
+            <field name="description">Exonerado</field>
+            <field name="amount">0</field>
+            <field name="price_include">1</field>
+            <field name="include_base_amount">1</field>
+            <field name="type_tax_use">sale</field>
+            <field name="country_id" ref="base.py"/>
+            <field name="tax_group_id" ref="tax_group_tax_free"/>
+            <field name="invoice_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account.1_tax_received'),
+            }),
+        ]"/>
+            <field name="refund_repartition_line_ids" eval="[(5, 0, 0),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'base',
+            }),
+            (0,0, {
+                'factor_percent': 100,
+                'repartition_type': 'tax',
+                'account_id': ref('account.1_tax_received'),
+            }),
+        ]"/>
+        </record>
+
+    </data>
+</odoo>

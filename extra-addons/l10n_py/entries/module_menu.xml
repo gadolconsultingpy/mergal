@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_py_localization_app"
+                  name="Paraguay"
+                  sequence="400"
+                  web_icon="l10n_py,static/description/icon.png">
+
+            <!-- Contactos -->
+            <menuitem id="meny_py_contacts"
+                      name="Contacts"
+                      sequence="10">
+
+                <menuitem id="menu_res_partner_address"
+                          name="Partner Address"
+                          action="res_partner_address_action"
+                          sequence="10"/>
+
+                <menuitem id="menu_district"
+                          name="District"
+                          sequence="30"
+                          action="res_district_action"/>
+
+                <menuitem id="menu_location"
+                          name="Location"
+                          sequence="40"
+                          action="res_location_action"/>
+
+                <menuitem id="menu_neighborhood"
+                          name="Neighborhood"
+                          sequence="50"
+                          action="res_neighborhood_action"/>
+
+                <menuitem id="menu_tax_payer"
+                          name="Tax Payer"
+                          sequence="60"
+                          action="tax_payer_action"/>
+
+
+            </menuitem>
+            <!-- Paraguay -->
+            <menuitem id="menu_l10n_py"
+                      name="Paraguay"
+                      sequence="20">
+
+                <menuitem id="menu_res_company_activity"
+                          name="Company Activity"
+                          sequence="20"
+                          action="res_company_activity_action"/>
+                <!-- Processes -->
+                <menuitem id="menu_py_process"
+                          name="Processes"
+                          sequence="900">
+
+                    <menuitem id="menu_tax_payer_process"
+                              name="Tax Payer Process"
+                              groups="base.group_no_one"
+                              sequence="20"
+                              action="tax_payer_process_action"/>
+                </menuitem>
+            </menuitem>
+
+
+            <!-- Transactions -->
+            <menuitem id="menu_py_transactions"
+                      name="Transactions"
+                      sequence="40">
+
+            </menuitem>
+
+            <!-- Configuration -->
+            <menuitem id="menu_py_configuration"
+                      name="Configuration"
+                      sequence="90">
+
+            </menuitem>
+
+        </menuitem>
+
+        <menuitem id="account_paraguay"
+                  name="Paraguay"
+                  parent="account.menu_finance_configuration">
+
+
+        </menuitem>
+
+    </data>
+</odoo>

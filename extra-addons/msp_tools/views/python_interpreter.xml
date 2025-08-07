@@ -1,0 +1,84 @@
+<odoo>
+    <record id="python_interpreter_list" model="ir.ui.view">
+        <field name="name">Python Interpreter list</field>
+        <field name="model">python.interpreter</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list string="Python Interpreter">
+                <field name="favorite" widget="priority"/>
+                <field name="name"/>
+                <field name="code" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="python_interpreter_kanban" model="ir.ui.view">
+        <field name="name">Python Interpreter Kanban</field>
+        <field name="model">python.interpreter</field>
+        <field name="type">kanban</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name" invisible="1"/>
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="oe_kanban_global_click" style="width:400px; ">
+                            <div>
+                                <field name="favorite" widget="priority"/>
+                                <strong><field name="name" style="margin-left:10px"/></strong>
+                            </div>
+                            <div>
+                                <field name="code_preview" widget="ace" options="{'mode':'python'}"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="python_interpreter_form" model="ir.ui.view">
+        <field name="name">Python Intrepreter Form</field>
+        <field name="model">python.interpreter</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Python Interpreter">
+                <header>
+                    <button name="execute" string="Execute" type="object" class="btn-primary"/>
+                    <button name="load_and_execute" string="Load &amp; Execute" type="object" class="btn-primary"/>
+                    <button name="refresh_filename" type="object" string="Refresh Filename"/>
+                </header>
+                <sheet>
+                    <label for="name"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="filename"/>
+                        </group>
+                        <group>
+                            <field name="hide_code" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+                    <group invisible="hide_code">
+                        <field name="code" widget="ace" options="{'mode':'python'}"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="console_output"/>
+                        </group>
+                    </group>
+                    <div>
+                        <field name="result" string="Console" widget="ace" options="{'mode':'python'}" nolabel="1"
+                               readonly="1"/>
+                    </div>
+                </sheet>
+
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

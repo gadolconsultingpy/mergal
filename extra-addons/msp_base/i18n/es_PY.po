@@ -1,0 +1,110 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20240312\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-04 22:49+0000\n"
+"PO-Revision-Date: 2024-04-04 18:52-0400\n"
+"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"Language-Team: \n"
+"Language: es_PY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: msp_base
+#. odoo-python
+#: code:addons/msp_base/models/res_config_custom.py:0
+#: model:ir.actions.act_window,name:msp_base.res_config_custom_action
+#: model:ir.model,name:msp_base.model_res_config_custom
+#: model:ir.ui.menu,name:msp_base.menu_res_config_custom
+#: model_terms:ir.actions.act_window,help:msp_base.res_config_custom_action
+#: model_terms:ir.ui.view,arch_db:msp_base.l10n_py_res_config_custom_form
+#: model_terms:ir.ui.view,arch_db:msp_base.l10n_py_res_config_custom_tree
+#, python-format
+msgid "Additional Parameters"
+msgstr "Parámetros Adicionales"
+
+#. module: msp_base
+#: model_terms:ir.ui.view,arch_db:msp_base.generic_message_box_form_view
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: msp_base
+#: model:ir.model.fields,field_description:msp_base.field_res_config_custom__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: msp_base
+#. odoo-python
+#: code:addons/msp_base/models/res_config_custom.py:0
+#, python-format
+msgid "Company Custom Config Not Found"
+msgstr "Parámetros Adicionales Faltante"
+
+#. module: msp_base
+#: model:ir.model.fields,field_description:msp_base.field_generic_message_box__create_uid
+#: model:ir.model.fields,field_description:msp_base.field_res_config_custom__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: msp_base
+#: model:ir.model.fields,field_description:msp_base.field_generic_message_box__create_date
+#: model:ir.model.fields,field_description:msp_base.field_res_config_custom__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: msp_base
+#: model:ir.model.fields,field_description:msp_base.field_generic_message_box__display_name
+#: model:ir.model.fields,field_description:msp_base.field_res_config_custom__display_name
+msgid "Display Name"
+msgstr "Nombre Mostrado"
+
+#. module: msp_base
+#: model:ir.model,name:msp_base.model_generic_message_box
+msgid "Generic Message Box"
+msgstr "Cuadro de Mensaje Genérico"
+
+#. module: msp_base
+#: model:ir.model.fields,field_description:msp_base.field_generic_message_box__id
+#: model:ir.model.fields,field_description:msp_base.field_res_config_custom__id
+msgid "ID"
+msgstr "ID"
+
+#. module: msp_base
+#: model:ir.model.fields,field_description:msp_base.field_generic_message_box__write_uid
+#: model:ir.model.fields,field_description:msp_base.field_res_config_custom__write_uid
+msgid "Last Updated by"
+msgstr "Modificado por"
+
+#. module: msp_base
+#: model:ir.model.fields,field_description:msp_base.field_generic_message_box__write_date
+#: model:ir.model.fields,field_description:msp_base.field_res_config_custom__write_date
+msgid "Last Updated on"
+msgstr "Modificado el"
+
+#. module: msp_base
+#: model:ir.model.fields,field_description:msp_base.field_generic_message_box__message_text
+#: model_terms:ir.ui.view,arch_db:msp_base.generic_message_box_form_view
+msgid "Message"
+msgstr "Cuadro de Mensaje Genérico"
+
+#. module: msp_base
+#: model:ir.model.fields,field_description:msp_base.field_res_config_custom__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: msp_base
+#: model:ir.model.constraint,message:msp_base.constraint_res_config_custom_unique_per_company
+msgid "This setting must be unique by Company"
+msgstr "Este parámetro debe ser único por Compañía"
+
+#. module: msp_base
+#: model:ir.model.fields,field_description:msp_base.field_generic_message_box__title
+msgid "Title"
+msgstr "Título"

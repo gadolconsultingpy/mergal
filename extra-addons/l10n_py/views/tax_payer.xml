@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="tax_payer_tree_view" model="ir.ui.view">
+            <field name="name">tax.payer.list</field>
+            <field name="model">tax.payer</field>
+            <field name="arch" type="xml">
+                <list string="Tax Payer" sample="1">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="digit" />
+                    <field name="legacy_code" />
+                    <field name="status" />
+                </list>
+            </field>
+        </record>
+
+        <record id="tax_payer_form_view" model="ir.ui.view">
+            <field name="name">tax.payer.form</field>
+            <field name="model">tax.payer</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Tax Payer">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" placeholder="Name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="code" />
+                                <field name="legacy_code" />
+                                <field name="status" />
+                                <field name="digit" />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="tax_payer_pivot_view" model="ir.ui.view">
+            <field name="name">tax.payer.pivot</field>
+            <field name="model">tax.payer</field>
+            <field name="type">pivot</field>
+            <field name="arch" type="xml">
+                <pivot string="Tax Payer" sample="1">
+                    <field name="status" type="row" />
+                    <field name="digit" type="col" />
+                </pivot>
+            </field>
+        </record>
+
+        <record id="tax_payer_graph_view" model="ir.ui.view">
+            <field name="name">tax.payer.graph</field>
+            <field name="model">tax.payer</field>
+            <field name="type">graph</field>
+            <field name="arch" type="xml">
+                <graph string="Tax Payer" sample="1">
+                    <field name="status" />
+                    <field name="digit" />
+                </graph>
+            </field>
+        </record>
+
+        <record id="tax_payer_search_view" model="ir.ui.view">
+            <field name="name">tax.payer.search</field>
+            <field name="model">tax.payer</field>
+            <field name="arch" type="xml">
+                <search string="Tax Payer">
+                    <field name="code" />
+                    <field name="name" />
+                    <field name="legacy_code" />
+                    <field name="status" />
+                    <group expand="1" string="Group By">
+                        <filter string="Status" name="group_status" context="{'group_by':'status'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

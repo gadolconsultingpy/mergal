@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <!-- DISTRICT -->
+        <record id="res_district_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[District]]></field>
+            <field name="name">District</field>
+            <field name="res_model">res.district</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- LOCATION -->
+        <record id="res_location_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Location]]></field>
+            <field name="name">Location</field>
+            <field name="res_model">res.location</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- NEIGHBORHOOD -->
+        <record id="res_neighborhood_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Neighborhood]]></field>
+            <field name="name">Neighborhood</field>
+            <field name="res_model">res.neighborhood</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- PARTNER ADDRESS -->
+        <record id="res_partner_address_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Partner Address]]></field>
+            <field name="name">Partner Address</field>
+            <field name="res_model">res.partner</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="res_partner_address_view_tree"/>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- RES COMPANY ACTIVITY -->
+        <record id="res_company_activity_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Company Activity]]></field>
+            <field name="name">Company Activity</field>
+            <field name="res_model">res.company.activity</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- TAX PAYER -->
+        <record id="tax_payer_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Tax Payer]]></field>
+            <field name="name">Tax Payer</field>
+            <field name="res_model">tax.payer</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form,pivot,graph</field>
+        </record>
+        <!-- TAX PAYER PROCESS -->
+        <record id="tax_payer_process_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Tax Payer Process]]></field>
+            <field name="name">Tax Payer Process</field>
+            <field name="res_model">tax.payer.process</field>
+            <field name="target">new</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+        </record>
+    </data>
+</odoo>

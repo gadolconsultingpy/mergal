@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_company_form" model="ir.ui.view">
+            <field name="name">res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="py_page" string="Paraguay">
+                        <group>
+                            <field name="tax_payer_type"/>
+                            <field name="company_activity_ids"
+                                   options="{'no_create':True, 'no_create_edit':True, 'no_open':True}"
+                                   widget="many2many_tags"/>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//div[hasclass('o_address_format')]/field[@name='city']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//div[hasclass('o_address_format')]/field[@name='state_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//div[hasclass('o_address_format')]/field[@name='zip']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//div[hasclass('o_address_format')]" position="after">
+                    <field name="country_id" invisible="1"/>
+                    <field name="state_id" domain="[('country_id','=',country_id)]" string="Department"/>
+                    <field name="district_id" placeholder="District"
+                           domain="[('state_id','=',state_id)]"/>
+                    <field name="location_id" placeholder="City or Location"
+                           domain="[('district_id','=',district_id)]"/>
+                    <field name="neighborhood_id" placeholder="Neighborhood"
+                           domain="[('location_id','=',location_id)]"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

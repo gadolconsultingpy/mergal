@@ -1,0 +1,269 @@
+<odoo>
+    <data noupdate="1">
+        <record id='account_document_type_1' model='account.document.type'>
+            <field name='code'>101</field>
+            <field name='name'>Autofactura</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_2' model='account.document.type'>
+            <field name='code'>102</field>
+            <field name='name'>Boleta de Transporte Público de Pasajeros</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='True'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_3' model='account.document.type'>
+            <field name='code'>103</field>
+            <field name='name'>Boleta de Venta</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='True'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_4' model='account.document.type'>
+            <field name='code'>104</field>
+            <field name='name'>Boleta ReSimple</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_5' model='account.document.type'>
+            <field name='code'>105</field>
+            <field name='name'>Boletos de Loterías, Juegos de Azar</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='True'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_6' model='account.document.type'>
+            <field name='code'>106</field>
+            <field name='name'>Boleto o ticket de transporte aéreo</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='True'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_7' model='account.document.type'>
+            <field name='code'>107</field>
+            <field name='name'>Despacho de importación</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_8' model='account.document.type'>
+            <field name='code'>108</field>
+            <field name='name'>Entrada a espectáculos públicos</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='True'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_9' model='account.document.type'>
+            <field name='code'>109</field>
+            <field name='name'>Factura</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='True'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_10' model='account.document.type'>
+            <field name='code'>110</field>
+            <field name='name'>Nota de crédito</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='True'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_11' model='account.document.type'>
+            <field name='code'>111</field>
+            <field name='name'>Nota de débito</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='True'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_12' model='account.document.type'>
+            <field name='code'>112</field>
+            <field name='name'>Ticket máquina registradora</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='True'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_13' model='account.document.type'>
+            <field name='code'>201</field>
+            <field name='name'>Comprobante de egresos por compras a crédito</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='True'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_14' model='account.document.type'>
+            <field name='code'>202</field>
+            <field name='name'>Comprobante del exterior legalizado</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='True'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_15' model='account.document.type'>
+            <field name='code'>203</field>
+            <field name='name'>Comprobante de ingreso por ventas a crédito</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='True'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_16' model='account.document.type'>
+            <field name='code'>204</field>
+            <field name='name'>Comprobante de ingresos entidades públicas, religiosas o de beneficio público</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='True'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_17' model='account.document.type'>
+            <field name='code'>205</field>
+            <field name='name'>Extracto de cuenta – Billeteraje electrónico</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='True'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_18' model='account.document.type'>
+            <field name='code'>206</field>
+            <field name='name'>Extracto de cuenta de IPS</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='True'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_19' model='account.document.type'>
+            <field name='code'>207</field>
+            <field name='name'>Extracto de cuenta TC/TD</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='True'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_20' model='account.document.type'>
+            <field name='code'>208</field>
+            <field name='name'>Liquidación de salario</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='True'/>
+            <field name='expenses' eval='True'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_21' model='account.document.type'>
+            <field name='code'>209</field>
+            <field name='name'>Otros comprobantes de egresos</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='True'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_22' model='account.document.type'>
+            <field name='code'>210</field>
+            <field name='name'>Otros comprobantes de ingresos</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='True'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_23' model='account.document.type'>
+            <field name='code'>211</field>
+            <field name='name'>Transferencias o giros bancarios/Boleta de depósito</field>
+            <field name='purchases' eval='False'/>
+            <field name='sales' eval='False'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='True'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+        <record id='account_document_type_fe' model='account.document.type'>
+            <field name='code'>FE</field>
+            <field name='name'>Factura Electrónica</field>
+            <field name='purchases' eval='True'/>
+            <field name='sales' eval='True'/>
+            <field name='income' eval='False'/>
+            <field name='expenses' eval='False'/>
+            <field name='tax_report' eval='False'/>
+            <field name='stamped_control' eval='False'/>
+        </record>
+
+
+    </data>
+</odoo>

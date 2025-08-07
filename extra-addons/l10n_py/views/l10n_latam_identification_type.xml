@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="l10n_latam_identification_type_tree_inherit" model="ir.ui.view">
+            <field name="name">l10n_latam.identification.type.list</field>
+            <field name="model">l10n_latam.identification.type</field>
+            <field name="inherit_id" ref="l10n_latam_base.view_l10n_latam_identification_type_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="sequence" widget="handle" />
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="code" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="l10n_latam_identification_type_form" model="ir.ui.view">
+            <field name="name">l10n_latam.identification.type.form</field>
+            <field name="model">l10n_latam.identification.type</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="group_left">
+                                <field name="code" />
+                                <field name="country_id" />
+                                <field name="description" />
+                                <field name="sequence" />
+                                <field name="is_vat" />
+                            </group>
+                            <group name="group_right">
+
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

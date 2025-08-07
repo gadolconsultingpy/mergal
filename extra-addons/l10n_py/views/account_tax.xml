@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="view_tax_tree" model="ir.ui.view">
+            <field name="name">account.tax.list</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type_tax_use']" position="after">
+                    <field name="taxable_percent" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_tax_form" model="ir.ui.view">
+            <field name="name">account.tax.form</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="py_page" string="Paraguay">
+                        <group>
+                            <group name="group_left">
+                                <label for="taxable_percent" />
+                                <div>
+                                    <field name="taxable_percent" class="oe_inline" />
+                                    <span class="o_form_label oe_inline" invisible="amount_type == 'fixed'">%</span>
+                                </div>
+                            </group>
+                            <group name="group_right">
+
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

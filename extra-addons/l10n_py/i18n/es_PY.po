@@ -1,0 +1,783 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_py
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250115\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-06 16:52+0000\n"
+"PO-Revision-Date: 2025-03-06 16:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_tax_form
+msgid ""
+"<span class=\"o_form_label oe_inline\" invisible=\"amount_type == "
+"'fixed'\">%</span>"
+msgstr ""
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_company_activity_form_view
+msgid "Activity Description"
+msgstr "Descripción de la Actividad"
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__res_partner__business_partner_type__b
+msgid "Business"
+msgstr "Empresa"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__business_partner_type
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__business_partner_type
+msgid "Business Partner Type"
+msgstr "Tipo de Contacto Empresa"
+
+#. module: l10n_py
+#: model:l10n_latam.identification.type,name:l10n_py.py_id
+msgid "CI"
+msgstr ""
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_process_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_py
+#: model:l10n_latam.identification.type,name:l10n_py.py_residence_card
+msgid "Carnet de Residencia"
+msgstr ""
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.py_address_view_partner_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_company_form
+msgid "City or Location"
+msgstr "Ciudad o Localidad"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__location_name
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__location_name
+msgid "City or Location Name"
+msgstr "Nombre Ciudad o Localidad"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_l10n_latam_identification_type__code
+#: model:ir.model.fields,field_description:l10n_py.field_res_company_activity__code
+#: model:ir.model.fields,field_description:l10n_py.field_res_district__code
+#: model:ir.model.fields,field_description:l10n_py.field_res_location__code
+#: model:ir.model.fields,field_description:l10n_py.field_res_neighborhood__code
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__code
+msgid "Code"
+msgstr "Código"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_country__iso_code
+msgid "Code ISO 3166 "
+msgstr "Código ISO 3166"
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: l10n_py
+#: model:ir.actions.act_window,name:l10n_py.res_company_activity_action
+#: model:ir.ui.menu,name:l10n_py.menu_res_company_activity
+#: model_terms:ir.actions.act_window,help:l10n_py.res_company_activity_action
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_company_activity_form_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_company_activity_list_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_company_activity_search_view
+msgid "Company Activity"
+msgstr "Actividad de la Compañía"
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_res_company_activity
+#: model:ir.model.fields,field_description:l10n_py.field_res_company__company_activity_ids
+msgid "Company Economic Activity"
+msgstr "Actividad Económica de la Compañía"
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: l10n_py
+#: model:ir.ui.menu,name:l10n_py.menu_py_configuration
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__res_partner__business_partner_type__c
+msgid "Consumer"
+msgstr "Consumidor"
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: l10n_py
+#: model:ir.ui.menu,name:l10n_py.meny_py_contacts
+msgid "Contacts"
+msgstr "Contactos"
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__account_move__payment_type__1
+msgid "Contado"
+msgstr ""
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__res_partner__nature__1
+msgid "Contributor"
+msgstr "Contribuyente"
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_res_country
+#: model_terms:ir.ui.view,arch_db:l10n_py.py_address_view_partner_form
+msgid "Country"
+msgstr "País"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company_activity__create_uid
+#: model:ir.model.fields,field_description:l10n_py.field_res_district__create_uid
+#: model:ir.model.fields,field_description:l10n_py.field_res_location__create_uid
+#: model:ir.model.fields,field_description:l10n_py.field_res_neighborhood__create_uid
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__create_uid
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer_process__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company_activity__create_date
+#: model:ir.model.fields,field_description:l10n_py.field_res_district__create_date
+#: model:ir.model.fields,field_description:l10n_py.field_res_location__create_date
+#: model:ir.model.fields,field_description:l10n_py.field_res_neighborhood__create_date
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__create_date
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer_process__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__account_move__payment_type__2
+msgid "Crédito"
+msgstr ""
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_res_currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_account_bank_statement_line__currency_rate
+#: model:ir.model.fields,field_description:l10n_py.field_account_move__currency_rate
+#: model:ir.model.fields,field_description:l10n_py.field_account_move_line__inverse_rate
+msgid "Currency Rate"
+msgstr "TC Moneda"
+
+#. module: l10n_py
+#: model:l10n_latam.identification.type,description:l10n_py.py_id
+msgid "CÉDULA DE IDENTIDAD"
+msgstr ""
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.py_address_view_partner_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_company_form
+msgid "Department"
+msgstr "Departamento"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__digit
+msgid "Digit"
+msgstr "Dígito"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__dispatch_point
+msgid "Dispatch Point"
+msgstr "Punto de Emisión"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company_activity__display_name
+#: model:ir.model.fields,field_description:l10n_py.field_res_district__display_name
+#: model:ir.model.fields,field_description:l10n_py.field_res_location__display_name
+#: model:ir.model.fields,field_description:l10n_py.field_res_neighborhood__display_name
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__display_name
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer_process__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: l10n_py
+#: model:ir.actions.act_window,name:l10n_py.res_district_action
+#: model:ir.model,name:l10n_py.model_res_district
+#: model:ir.model.fields,field_description:l10n_py.field_res_company__district_id
+#: model:ir.model.fields,field_description:l10n_py.field_res_location__district_id
+#: model:ir.ui.menu,name:l10n_py.menu_district
+#: model_terms:ir.actions.act_window,help:l10n_py.res_district_action
+#: model_terms:ir.ui.view,arch_db:l10n_py.py_address_view_partner_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_district_form_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_district_search_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_district_tree_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_location_search_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_neighborhood_search_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_company_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_res_partner_filter
+msgid "District"
+msgstr "Distrito"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__district_name
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__district_name
+msgid "District Name"
+msgstr "Nombre Distrito"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__street_number2
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__street_number2
+msgid "Door"
+msgstr "Nro. Puerta"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company__street_number2
+msgid "Door Number"
+msgstr "Nro. Puerta"
+
+#. module: l10n_py
+#. odoo-python
+#: code:addons/l10n_py/models/account_move.py:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__establishment
+msgid "Establishment"
+msgstr "Establecimiento"
+
+#. module: l10n_py
+#: model:account.tax.group,name:l10n_py.tax_group_exempt
+msgid "Exempt"
+msgstr "Exento"
+
+#. module: l10n_py
+#: model:account.tax,name:l10n_py.py_sale_tax_exempt
+#: model_terms:account.tax,description:l10n_py.py_purchase_tax_exempt
+#: model_terms:account.tax,description:l10n_py.py_sale_tax_exempt
+msgid "Exento"
+msgstr ""
+
+#. module: l10n_py
+#: model:account.tax,name:l10n_py.py_purchase_tax_exempt
+msgid "Exento C"
+msgstr ""
+
+#. module: l10n_py
+#: model:account.tax,name:l10n_py.py_sale_tax_free
+#: model_terms:account.tax,description:l10n_py.py_purchase_tax_free
+#: model_terms:account.tax,description:l10n_py.py_sale_tax_free
+msgid "Exonerado"
+msgstr ""
+
+#. module: l10n_py
+#: model:account.tax,name:l10n_py.py_purchase_tax_free
+msgid "Exonerado C"
+msgstr ""
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__fantasy_name
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__fantasy_name
+msgid "Fantasy Name"
+msgstr "Nombre Fantasía"
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__res_partner__business_partner_type__f
+msgid "Foreign"
+msgstr "Extranjero"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__from_date
+msgid "From Date"
+msgstr "Fecha Desde"
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__res_partner__business_partner_type__g
+msgid "Government"
+msgstr "Gobierno"
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_district_search_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_location_search_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_neighborhood_search_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__street_number
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__street_number
+msgid "House"
+msgstr "Nro. Casa"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company__street_number
+msgid "House Number"
+msgstr "Nro. Casa"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company_activity__id
+#: model:ir.model.fields,field_description:l10n_py.field_res_district__id
+#: model:ir.model.fields,field_description:l10n_py.field_res_location__id
+#: model:ir.model.fields,field_description:l10n_py.field_res_neighborhood__id
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__id
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer_process__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_py
+#: model:account.tax,name:l10n_py.py_sale_tax_10
+#: model_terms:account.tax,description:l10n_py.py_purchase_tax_10
+#: model_terms:account.tax,description:l10n_py.py_sale_tax_10
+msgid "IVA 10%"
+msgstr ""
+
+#. module: l10n_py
+#: model:account.tax,name:l10n_py.py_purchase_tax_10
+msgid "IVA 10% C"
+msgstr ""
+
+#. module: l10n_py
+#: model:account.tax,name:l10n_py.py_sale_tax_5
+#: model_terms:account.tax,description:l10n_py.py_purchase_tax_5
+#: model_terms:account.tax,description:l10n_py.py_sale_tax_5
+msgid "IVA 5%"
+msgstr ""
+
+#. module: l10n_py
+#: model:account.tax,name:l10n_py.py_purchase_tax_5
+msgid "IVA 5% C"
+msgstr ""
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_l10n_latam_identification_type
+msgid "Identification Types"
+msgstr "Tipos de Identificación"
+
+#. module: l10n_py
+#: model:l10n_latam.identification.type,name:l10n_py.py_unnamed
+msgid "Innominado"
+msgstr ""
+
+#. module: l10n_py
+#: model:ir.model.fields,help:l10n_py.field_res_country__iso_code
+msgid "International Standard Organization ISO 3166-3 "
+msgstr "Organización Estándar Internacional ISO 3166-3"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_account_bank_statement_line__inverse_rate
+#: model:ir.model.fields,field_description:l10n_py.field_account_move__inverse_rate
+msgid "Inverse Rate"
+msgstr "Tipo de Cambio"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_account_bank_statement_line__sequence_id
+#: model:ir.model.fields,field_description:l10n_py.field_account_move__sequence_id
+msgid "Invoice Sequence"
+msgstr "Secuencia Facturas"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_account_bank_statement_line__is_local_currency
+#: model:ir.model.fields,field_description:l10n_py.field_account_move__is_local_currency
+msgid "Is Local Currency"
+msgstr "Es Moneda Local"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__res_partner__tax_payer_type__2
+msgid "Juridic"
+msgstr "Jurídica"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company_activity__write_uid
+#: model:ir.model.fields,field_description:l10n_py.field_res_district__write_uid
+#: model:ir.model.fields,field_description:l10n_py.field_res_location__write_uid
+#: model:ir.model.fields,field_description:l10n_py.field_res_neighborhood__write_uid
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__write_uid
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer_process__write_uid
+msgid "Last Updated by"
+msgstr "Modificado por"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company_activity__write_date
+#: model:ir.model.fields,field_description:l10n_py.field_res_district__write_date
+#: model:ir.model.fields,field_description:l10n_py.field_res_location__write_date
+#: model:ir.model.fields,field_description:l10n_py.field_res_neighborhood__write_date
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__write_date
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer_process__write_date
+msgid "Last Updated on"
+msgstr "Modificado el"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__legacy_code
+msgid "Legacy Code"
+msgstr "Código Antiguo"
+
+#. module: l10n_py
+#: model:ir.actions.act_window,name:l10n_py.res_location_action
+#: model:ir.model,name:l10n_py.model_res_location
+#: model:ir.model.fields,field_description:l10n_py.field_res_company__location_id
+#: model:ir.model.fields,field_description:l10n_py.field_res_neighborhood__location_id
+#: model:ir.ui.menu,name:l10n_py.menu_location
+#: model_terms:ir.actions.act_window,help:l10n_py.res_location_action
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_location_form_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_location_search_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_location_tree_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_neighborhood_form_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_neighborhood_search_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_neighborhood_tree_view
+msgid "Location"
+msgstr "Localidad"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__binding_model_id
+msgid "Model"
+msgstr "Modelo"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company_activity__name
+#: model:ir.model.fields,field_description:l10n_py.field_res_district__name
+#: model:ir.model.fields,field_description:l10n_py.field_res_location__name
+#: model:ir.model.fields,field_description:l10n_py.field_res_neighborhood__name
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__name
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_district_form_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_location_form_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_neighborhood_form_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_form_view
+msgid "Name"
+msgstr "Nombre"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__nature
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__nature
+msgid "Nature"
+msgstr "Naturaleza"
+
+#. module: l10n_py
+#: model:ir.actions.act_window,name:l10n_py.res_neighborhood_action
+#: model:ir.model,name:l10n_py.model_res_neighborhood
+#: model:ir.model.fields,field_description:l10n_py.field_res_company__neighborhood_id
+#: model:ir.ui.menu,name:l10n_py.menu_neighborhood
+#: model_terms:ir.actions.act_window,help:l10n_py.res_neighborhood_action
+#: model_terms:ir.ui.view,arch_db:l10n_py.py_address_view_partner_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_company_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_res_partner_filter
+msgid "Neighborhood"
+msgstr "Barrio"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__neighborhood_name
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__neighborhood_name
+msgid "Neighborhood Name"
+msgstr "Nombre Barrio"
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__res_partner__nature__2
+msgid "Not Contributor"
+msgstr "No Contribuyente"
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.py_address_view_partner_form
+msgid "Number"
+msgstr "Número"
+
+#. module: l10n_py
+#. odoo-python
+#: code:addons/l10n_py/models/ir_sequence.py:0
+msgid ""
+"Number not available\n"
+"Stamped number : %s\n"
+"%s - %s\n"
+"%s - %s"
+msgstr ""
+"Número no Disponible\n"
+"Timbrado Número : %s\n"
+"%s - %s\n"
+"%s - %s"
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_partner_address_view_tree
+msgid "Old Street"
+msgstr "Calle Anterior"
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_partner_address_view_tree
+msgid "Old Street 2"
+msgstr "Calle 2 Anterior"
+
+#. module: l10n_py
+#: model:l10n_latam.identification.type,name:l10n_py.spy_other
+msgid "Otro"
+msgstr ""
+
+#. module: l10n_py
+#: model:ir.ui.menu,name:l10n_py.account_paraguay
+#: model:ir.ui.menu,name:l10n_py.menu_l10n_py
+#: model:ir.ui.menu,name:l10n_py.menu_py_localization_app
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.sequence_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_company_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_move_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_partner_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_tax_form
+msgid "Paraguay"
+msgstr ""
+
+#. module: l10n_py
+#: model:ir.actions.act_window,name:l10n_py.res_partner_address_action
+#: model:ir.ui.menu,name:l10n_py.menu_res_partner_address
+#: model_terms:ir.actions.act_window,help:l10n_py.res_partner_address_action
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_partner_address_view_tree
+msgid "Partner Address"
+msgstr "Dirección de Contacto"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_account_bank_statement_line__payment_type
+#: model:ir.model.fields,field_description:l10n_py.field_account_move__payment_type
+msgid "Payment Type"
+msgstr "Tipo de Pago"
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__res_company__tax_payer_type__1
+msgid "Persona Física"
+msgstr ""
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__res_company__tax_payer_type__2
+msgid "Persona Jurídica"
+msgstr ""
+
+#. module: l10n_py
+#: model:ir.model.fields.selection,name:l10n_py.selection__res_partner__tax_payer_type__1
+msgid "Physic"
+msgstr "Física"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_stock_picking__sequence_id
+msgid "Picking Sequence"
+msgstr "Secuencia Transferencias"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_currency__plural_name
+msgid "Plural Name"
+msgstr "Nombre Plural"
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_process_form
+msgid "Process"
+msgstr "Procesar"
+
+#. module: l10n_py
+#: model:ir.ui.menu,name:l10n_py.menu_py_process
+msgid "Processes"
+msgstr "Procesos"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__district_id
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__district_id
+msgid "Py District"
+msgstr "Distrito (PY)"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__location_id
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__location_id
+msgid "Py Location"
+msgstr "Ciudad (PY)"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__neighborhood_id
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__neighborhood_id
+msgid "Py Neighborhood"
+msgstr "Barrio (PY)"
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_ir_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__from_number
+msgid "Stamped From Number"
+msgstr "Timbrado Número Desde"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__stamped_number
+msgid "Stamped Number"
+msgstr "Timbrado"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__stamped_required
+msgid "Stamped Required"
+msgstr "Timbrado Requerido"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__to_number
+msgid "Stamped To Number"
+msgstr "Timbrado Número Hasta"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_district__state_id
+#: model_terms:ir.ui.view,arch_db:l10n_py.py_address_view_partner_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_district_search_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_res_partner_filter
+msgid "State"
+msgstr "Estado"
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.view_res_partner_filter
+msgid "State Location"
+msgstr "Ciudad"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_tax_payer__status
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_search_view
+msgid "Status"
+msgstr "Estado"
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.py_address_view_partner_form
+msgid "Street 2..."
+msgstr "Calle 2..."
+
+#. module: l10n_py
+#. odoo-python
+#: code:addons/l10n_py/models/res_partner.py:0
+msgid "Street Field is Mandatory"
+msgstr "Campo Calle es Obligatorio"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company__street_name
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__street_name
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__street_name
+msgid "Street Name"
+msgstr "Nombre de Calle"
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.py_address_view_partner_form
+msgid "Street..."
+msgstr "Calle..."
+
+#. module: l10n_py
+#: model:l10n_latam.identification.type,description:l10n_py.py_diplomatic_card
+msgid "Tarjeta Diplomática de exoneración fiscal"
+msgstr ""
+
+#. module: l10n_py
+#: model:l10n_latam.identification.type,name:l10n_py.py_diplomatic_card
+msgid "Tarjeta diplomática"
+msgstr ""
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_account_tax
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: l10n_py
+#: model:account.tax.group,name:l10n_py.tax_group_10
+msgid "Tax 10%"
+msgstr "Iva 10%"
+
+#. module: l10n_py
+#: model:account.tax.group,name:l10n_py.tax_group_5
+msgid "Tax 5%"
+msgstr "Iva 5%"
+
+#. module: l10n_py
+#: model:account.tax.group,name:l10n_py.tax_group_tax_free
+msgid "Tax Free"
+msgstr "Exonerado"
+
+#. module: l10n_py
+#: model:ir.actions.act_window,name:l10n_py.tax_payer_action
+#: model:ir.model,name:l10n_py.model_tax_payer
+#: model:ir.ui.menu,name:l10n_py.menu_tax_payer
+#: model_terms:ir.actions.act_window,help:l10n_py.tax_payer_action
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_form_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_graph_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_pivot_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_search_view
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_tree_view
+msgid "Tax Payer"
+msgstr "Contribuyente"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_config_settings__tax_payer_file_input
+msgid "Tax Payer File Input"
+msgstr "Archivo Entrada Contribuyente"
+
+#. module: l10n_py
+#: model:ir.actions.act_window,name:l10n_py.tax_payer_process_action
+#: model:ir.model,name:l10n_py.model_tax_payer_process
+#: model:ir.ui.menu,name:l10n_py.menu_tax_payer_process
+#: model_terms:ir.actions.act_window,help:l10n_py.tax_payer_process_action
+#: model_terms:ir.ui.view,arch_db:l10n_py.tax_payer_process_form
+msgid "Tax Payer Process"
+msgstr "Procesar Padrón RUC"
+
+#. module: l10n_py
+#: model_terms:ir.ui.view,arch_db:l10n_py.res_config_settings_view_form
+msgid "Tax Payer Record File to Import"
+msgstr "Archivo de padrón a importar"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_res_company__tax_payer_type
+#: model:ir.model.fields,field_description:l10n_py.field_res_partner__tax_payer_type
+#: model:ir.model.fields,field_description:l10n_py.field_res_users__tax_payer_type
+msgid "Tax Payer Type"
+msgstr "Tipo Contribuyente"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_account_tax__taxable_percent
+msgid "Taxable Percent"
+msgstr "Porcentaje Deducible"
+
+#. module: l10n_py
+#: model:ir.model.constraint,message:l10n_py.constraint_tax_payer_unique_code
+msgid "The Code must be Unique"
+msgstr "El Código debe ser Único"
+
+#. module: l10n_py
+#. odoo-python
+#: code:addons/l10n_py/models/res_partner.py:0
+msgid "This Field on Partner Address is Mandatory"
+msgstr "Este Campo en la Dirección del Contacto es Obligatorio"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__to_date
+msgid "To Date"
+msgstr "Fecha Hasta"
+
+#. module: l10n_py
+#: model:ir.ui.menu,name:l10n_py.menu_py_transactions
+msgid "Transactions"
+msgstr "Transacciones"
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_stock_picking
+msgid "Transfer"
+msgstr "Trasladar"

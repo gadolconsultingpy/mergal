@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <!-- RES CUSTOM CONFIG -->
+        <record id="res_config_custom_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{'form_view_ref': 'l10n_py_base.res_config_custom_form'}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Additional Parameters]]></field>
+            <field name="name">Additional Parameters</field>
+            <field name="limit">80</field>
+            <field name="res_model">res.config.custom</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="l10n_py_base.res_config_custom_list"/>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+
+    </data>
+</odoo>

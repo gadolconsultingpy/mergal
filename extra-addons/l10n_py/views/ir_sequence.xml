@@ -1,0 +1,36 @@
+<odoo>
+    <data>
+        <record id="sequence_view" model="ir.ui.view">
+            <field name="name">ir.sequence.form</field>
+            <field name="model">ir.sequence</field>
+            <field name="inherit_id" ref="base.sequence_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="py_page" string="Paraguay">
+                        <group>
+                            <group>
+                                <field name="binding_model_id"/>
+                            </group>
+                            <group></group>
+                        </group>
+                        <group invisible="not stamped_required">
+                            <group>
+                                <field name="stamped_required" invisible="1"/>
+                                <field name="stamped_number" required="stamped_required"/>
+                                <field name="from_number" required="stamped_required"/>
+                                <field name="to_number" required="stamped_required"/>
+                                <field name="from_date" required="stamped_required"/>
+                                <field name="to_date" required="stamped_required"/>
+                            </group>
+                            <group>
+                                <field name="establishment" required="stamped_required == True"/>
+                                <field name="dispatch_point" required="stamped_required == True"/>
+                                <field name="journal_id"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

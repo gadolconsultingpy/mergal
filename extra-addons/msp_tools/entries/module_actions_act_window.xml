@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <!-- MODEL EXPORT XML -->
+        <record id="model_export_xml_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Model Export XML]]></field>
+            <field name="name">Model Export XML</field>
+            <field name="res_model">model.export.xml</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- PYTHON INTERPRETER -->
+        <record id="python_interpreter_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Python Interpreter Scripts]]></field>
+            <field name="name">Python Interpreter</field>
+            <field name="res_model">python.interpreter</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+
+    </data>
+</odoo>

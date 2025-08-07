@@ -1,0 +1,105 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_py_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250115\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-06 16:54+0000\n"
+"PO-Revision-Date: 2025-03-06 16:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_py_base
+#. odoo-python
+#: code:addons/l10n_py_base/models/res_config_custom.py:0
+#: model:ir.actions.act_window,name:l10n_py_base.res_config_custom_action
+#: model:ir.model,name:l10n_py_base.model_res_config_custom
+#: model_terms:ir.actions.act_window,help:l10n_py_base.res_config_custom_action
+#: model_terms:ir.ui.view,arch_db:l10n_py_base.res_config_custom_form
+#: model_terms:ir.ui.view,arch_db:l10n_py_base.res_config_custom_list
+msgid "Additional Parameters"
+msgstr "Parámetros Adicionales"
+
+#. module: l10n_py_base
+#: model_terms:ir.ui.view,arch_db:l10n_py_base.generic_message_box_form_view
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: l10n_py_base
+#: model:ir.model.fields,field_description:l10n_py_base.field_res_config_custom__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: l10n_py_base
+#. odoo-python
+#: code:addons/l10n_py_base/models/res_config_custom.py:0
+msgid "Company Custom Config Not Found"
+msgstr "Parámetros Adicionales Faltante"
+
+#. module: l10n_py_base
+#: model:ir.model.fields,field_description:l10n_py_base.field_generic_message_box__create_uid
+#: model:ir.model.fields,field_description:l10n_py_base.field_res_config_custom__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_py_base
+#: model:ir.model.fields,field_description:l10n_py_base.field_generic_message_box__create_date
+#: model:ir.model.fields,field_description:l10n_py_base.field_res_config_custom__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_py_base
+#: model:ir.model.fields,field_description:l10n_py_base.field_generic_message_box__display_name
+#: model:ir.model.fields,field_description:l10n_py_base.field_res_config_custom__display_name
+msgid "Display Name"
+msgstr "Nombre Mostrado"
+
+#. module: l10n_py_base
+#: model:ir.model,name:l10n_py_base.model_generic_message_box
+msgid "Generic Message Box"
+msgstr "Cuadro de Mensaje Genérico"
+
+#. module: l10n_py_base
+#: model:ir.model.fields,field_description:l10n_py_base.field_generic_message_box__id
+#: model:ir.model.fields,field_description:l10n_py_base.field_res_config_custom__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_py_base
+#: model:ir.model.fields,field_description:l10n_py_base.field_generic_message_box__write_uid
+#: model:ir.model.fields,field_description:l10n_py_base.field_res_config_custom__write_uid
+msgid "Last Updated by"
+msgstr "Modificado por"
+
+#. module: l10n_py_base
+#: model:ir.model.fields,field_description:l10n_py_base.field_generic_message_box__write_date
+#: model:ir.model.fields,field_description:l10n_py_base.field_res_config_custom__write_date
+msgid "Last Updated on"
+msgstr "Modificado el"
+
+#. module: l10n_py_base
+#: model:ir.model.fields,field_description:l10n_py_base.field_generic_message_box__message_text
+#: model_terms:ir.ui.view,arch_db:l10n_py_base.generic_message_box_form_view
+msgid "Message"
+msgstr "Cuadro de Mensaje Genérico"
+
+#. module: l10n_py_base
+#: model:ir.model.fields,field_description:l10n_py_base.field_res_config_custom__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: l10n_py_base
+#: model:ir.model.constraint,message:l10n_py_base.constraint_res_config_custom_unique_per_company
+msgid "This setting must be unique by Company"
+msgstr "Este parámetro debe ser único por Compañía"
+
+#. module: l10n_py_base
+#: model:ir.model.fields,field_description:l10n_py_base.field_generic_message_box__title
+msgid "Title"
+msgstr "Título"

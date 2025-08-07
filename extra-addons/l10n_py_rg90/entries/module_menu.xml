@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <menuitem id="menuitem_account_document_type"
+              name="Account Document Type"
+              action="action_account_document_typè"
+              parent="l10n_py.account_paraguay"/>
+
+    <menuitem id="menuitem_res_patner_stamped"
+              name="Partner Stamped"
+              action="action_res_partner_stamped"
+              parent="l10n_py.account_paraguay"/>
+
+    <menuitem
+            id="menu_account_py_reports"
+            name="Paraguay"
+            parent="account.menu_finance_reports">
+
+        <!--        <menuitem-->
+        <!--                id="set_resolucion90_archivo_menuitem"-->
+        <!--                name="Record 90/2021"-->
+        <!--                action="action_set_resolucion90_archivo"/>-->
+
+    </menuitem>
+
+</odoo>
