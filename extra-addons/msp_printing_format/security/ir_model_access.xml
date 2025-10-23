@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Access Rights for Res Printing Format -->
+        <record id="access_res_printing_format_user" model="ir.model.access">
+            <field name="name">res.printing.format user</field>
+            <field name="model_id" ref="model_res_printing_format"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+        <record id="access_res_printing_format_label" model="ir.model.access">
+            <field name="name">res.printing.format label</field>
+            <field name="model_id" ref="model_res_printing_format_label"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+        <record id="access_ir_actions_report_printing_format" model="ir.model.access">
+            <field name="name">ir.actions.report.printing.format</field>
+            <field name="model_id" ref="model_ir_actions_report_printing_format"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+        <!-- Access Rights for Res Signature -->
+        <record id="access_res_signature_user" model="ir.model.access">
+            <field name="name">res.signature user</field>
+            <field name="model_id" ref="model_res_signature"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="access_res_signature_system" model="ir.model.access">
+            <field name="name">res.signature system</field>
+            <field name="model_id" ref="model_res_signature"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+
+    </data>
+</odoo>

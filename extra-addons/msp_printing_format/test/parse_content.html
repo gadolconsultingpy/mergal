@@ -1,0 +1,40 @@
+<table border="1" width="100%" style="font-size:12px; ">
+    <tr>
+        <td style="vertical-align:top; text-align:center; padding:5px; ">
+            <img width="150px" src="image_data_uri(record.qr_image)" alt="Invoice QR">
+        </td>
+        <td>
+            <div>
+                <span>Consulta la validez de este documento electrónico con el número de CDC impreso abajo en:</span>
+                <div>
+                    <div>
+                        <span>https://ekuatia.set.gov.py/consultas/</span>
+                    </div>
+                    <div>
+                        <span>
+                            <strong>CDC: {{ record.control_code_graph }}</strong>
+                        </span>
+                    </div>
+                    <div>
+                        <span>ESTE DOCUMENTO ES UNA REPRESENTACIÓN GRÁFICA DE UN DOCUMENTO ELECTRÓNICO (XML)</span>
+                        <div>
+                            <div>
+                                <span>Su documento electrónico presenta algún error podrá solicitar la modificación
+                                    dentro de las 72 horas siguentes de la emisión de este comprobante.
+                                </span>
+                                <div>
+                                    <div>
+                                        <span>LAS DEVOLUCIONES DE MERCADERIAS SERAN ACEPTADAS UNICAMENTE PRESENTANDO LA
+                                            FACTURA.
+                                            GRACIAS POR SU COMPRENSION.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>

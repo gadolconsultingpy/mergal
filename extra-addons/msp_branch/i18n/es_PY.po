@@ -1,0 +1,120 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_branch
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250428\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-26 14:24+0000\n"
+"PO-Revision-Date: 2025-05-26 11:25-0300\n"
+"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"Language-Team: \n"
+"Language: es_PY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Bookmarks: -1,7,-1,-1,-1,-1,-1,-1,-1,-1\n"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_partner__branch_id
+#: model:ir.model.fields,field_description:msp_branch.field_res_users__branch_id
+#: model_terms:ir.ui.view,arch_db:msp_branch.res_branch_form
+#: model_terms:ir.ui.view,arch_db:msp_branch.res_branch_tree
+msgid "Branch"
+msgstr "Establecimiento"
+
+#. module: msp_branch
+#: model:ir.model.constraint,message:msp_branch.constraint_res_branch_unique_branch
+msgid "Branch Code Must Be Unique per Company"
+msgstr "Código de Establecimiento Debe Ser Único por Compañía"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__code
+msgid "Code"
+msgstr "Código"
+
+#. module: msp_branch
+#: model:ir.model,name:msp_branch.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__company_partner_id
+msgid "Company Partner"
+msgstr "Contacto Compañía"
+
+#. module: msp_branch
+#: model:ir.model,name:msp_branch.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__display_name
+msgid "Display Name"
+msgstr "Nombre Mostrado"
+
+#. module: msp_branch
+#: model:ir.actions.act_window,name:msp_branch.res_branch_action
+#: model:ir.model,name:msp_branch.model_res_branch
+#: model:ir.ui.menu,name:msp_branch.res_branch_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_branch.res_branch_action
+msgid "Establishment"
+msgstr "Sucursal"
+
+#. module: msp_branch
+#: model_terms:ir.ui.view,arch_db:msp_branch.view_users_form
+msgid "Extra Fields"
+msgstr "Campos Extra"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__id
+msgid "ID"
+msgstr "ID"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__write_uid
+msgid "Last Updated by"
+msgstr "Modificado por"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__write_date
+msgid "Last Updated on"
+msgstr "Modificado el"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__partner_id
+msgid "Related Address"
+msgstr "Dirección Relacionada"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__company_id
+msgid "Related Company"
+msgstr "Compañía Relacionada"
+
+#. module: msp_branch
+#: model:ir.model.fields,field_description:msp_branch.field_res_branch__sequence
+msgid "Sequence"
+msgstr "Secuencia"

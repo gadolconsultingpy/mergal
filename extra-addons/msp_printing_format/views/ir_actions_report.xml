@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="act_report_xml_view" model="ir.ui.view">
+            <field name="name">ir.actions.report.form</field>
+            <field name="model">ir.actions.report</field>
+            <field name="inherit_id" ref="base.act_report_xml_view"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='paperformat_id']" position="after">
+                    <field name="printing_format_id"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Printing Formats">
+                        <field name="printing_format_ids">
+                            <list string="Printing Formats" editable="bottom">
+                                <field name="company_id"/>
+                                <field name="printing_format_id"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

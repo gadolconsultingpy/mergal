@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_res_signature_form" model="ir.ui.view">
+            <field name="name">res.signature.form</field>
+            <field name="model">res.signature</field>
+            <field name="arch" type="xml">
+                <form string="Signature">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Title"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="user_id"/>
+                            </group>
+                            <group>
+                                <field name="signature" widget="image"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_res_signature_tree" model="ir.ui.view">
+            <field name="name">res.signature.list</field>
+            <field name="model">res.signature</field>
+            <field name="arch" type="xml">
+                <list string="Signature">
+                    <field name="user_id"/>
+                </list>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="uom_uom_menu"
+                  name="Unit of Measure"
+                  parent="stock.product_uom_menu"
+                  action="uom.product_uom_form_action"/>
+
+    </data>
+</odoo>

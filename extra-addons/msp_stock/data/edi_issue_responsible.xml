@@ -1,0 +1,29 @@
+<odoo>
+    <data noupdate='1' >
+        <record id='edi_issue_responsible_1_169be0a6' model='edi.issue.responsible' >
+            <field name='code'>1</field>
+            <field name='name'>Emisor de la factura</field>
+        </record>
+
+        <record id='edi_issue_responsible_2_c6237dd5' model='edi.issue.responsible' >
+            <field name='code'>2</field>
+            <field name='name'>Poseedor de la factura y bienes</field>
+        </record>
+
+        <record id='edi_issue_responsible_3_c7ca3777' model='edi.issue.responsible' >
+            <field name='code'>3</field>
+            <field name='name'>Empresa transportista</field>
+        </record>
+
+        <record id='edi_issue_responsible_4_ddb54fc6' model='edi.issue.responsible' >
+            <field name='code'>4</field>
+            <field name='name'>Despachante de Aduanas</field>
+        </record>
+
+        <record id='edi_issue_responsible_5_85c6ce23' model='edi.issue.responsible' >
+            <field name='code'>5</field>
+            <field name='name'>Agente de transporte o intermediario</field>
+        </record>
+
+    </data>
+</odoo>

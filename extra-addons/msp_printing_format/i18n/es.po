@@ -1,0 +1,173 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_printing_format
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20240104\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-10 03:22+0000\n"
+"PO-Revision-Date: 2025-03-10 00:24-0300\n"
+"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format__company_id
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__company_id
+#: model:ir.model.fields.selection,name:msp_printing_format.selection__res_printing_format__lang_option__company
+msgid "Company"
+msgstr "Compañía"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format__create_uid
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__create_uid
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format_label__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format__create_date
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__create_date
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format_label__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format__display_name
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__display_name
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format_label__display_name
+msgid "Display Name"
+msgstr "Nombre Mostrado"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__footer
+#: model_terms:ir.ui.view,arch_db:msp_printing_format.view_res_printing_format_form
+msgid "Footer"
+msgstr "Pie de Página"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__header
+#: model_terms:ir.ui.view,arch_db:msp_printing_format.view_res_printing_format_form
+msgid "Header"
+msgstr "Encabezado"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format__id
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__id
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format_label__id
+msgid "ID"
+msgstr "ID"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__label_ids
+#: model_terms:ir.ui.view,arch_db:msp_printing_format.view_res_printing_format_form
+msgid "Labels"
+msgstr "Etiquetas"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__lang
+msgid "Language"
+msgstr "Idioma"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__lang_option
+msgid "Language Option"
+msgstr "Opción de Idioma"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format____last_update
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format____last_update
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format_label____last_update
+msgid "Last Modified on"
+msgstr "Modificado el"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format__write_uid
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__write_uid
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format_label__write_uid
+msgid "Last Updated by"
+msgstr "Modificado por"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format__write_date
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__write_date
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format_label__write_date
+msgid "Last Updated on"
+msgstr "Modificado el"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__model_id
+msgid "Model"
+msgstr "Modelo"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format__name
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__name
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format_label__name
+#: model_terms:ir.ui.view,arch_db:msp_printing_format.view_res_printing_format_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format__parent_id
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format_label__parent_id
+msgid "Parent"
+msgstr "Registro Padre"
+
+#. module: msp_printing_format
+#: model:ir.model.fields.selection,name:msp_printing_format.selection__res_printing_format__lang_option__partner
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: msp_printing_format
+#: model:ir.actions.act_window,name:msp_printing_format.action_res_printing_format
+#: model:ir.model,name:msp_printing_format.model_ir_actions_report_printing_format
+#: model:ir.model,name:msp_printing_format.model_res_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report__printing_format_id
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report_printing_format__printing_format_id
+#: model:ir.ui.menu,name:msp_printing_format.menu_res_printing_format
+#: model_terms:ir.actions.act_window,help:msp_printing_format.action_res_printing_format
+msgid "Printing Format"
+msgstr "Formato de Impresión"
+
+#. module: msp_printing_format
+#: model:ir.model,name:msp_printing_format.model_res_printing_format_label
+msgid "Printing Format Label"
+msgstr "Etiqueta Formato de Impresión"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_ir_actions_report__printing_format_ids
+#: model_terms:ir.ui.view,arch_db:msp_printing_format.act_report_xml_view
+msgid "Printing Formats"
+msgstr "Formatos de Impresión"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__footer_raw
+msgid "Raw Footer"
+msgstr "Código de Pie"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format__header_raw
+msgid "Raw Header"
+msgstr "Código de Encabezado"
+
+#. module: msp_printing_format
+#: model:ir.model,name:msp_printing_format.model_ir_actions_report
+msgid "Report Action"
+msgstr "Acción de informe"
+
+#. module: msp_printing_format
+#: model:ir.model.fields.selection,name:msp_printing_format.selection__res_printing_format__lang_option__specific
+msgid "Specific"
+msgstr "Específico"
+
+#. module: msp_printing_format
+#: model:ir.model.fields,field_description:msp_printing_format.field_res_printing_format_label__translation
+msgid "Translation"
+msgstr "Traducción"
