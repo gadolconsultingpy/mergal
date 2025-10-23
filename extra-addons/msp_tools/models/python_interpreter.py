@@ -101,6 +101,12 @@ class PythonInterpreter(models.Model):
                 if ff.endswith(".py"):
                     self.env['python.filename'].create({'name': ff})
 
+    def copy(self, default=None):
+        record = super(PythonInterpreter, self).copy(default=default)
+        for rec in record:
+            rec.name = "%s %s" % (rec.name, _("(copy)"))
+        return record
+
 
 class PythonInterpreterFilename(models.Model):
     _name = 'python.filename'
