@@ -1,0 +1,1381 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_sifen
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250520\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-22 11:35+0000\n"
+"PO-Revision-Date: 2025-08-22 08:38-0300\n"
+"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"Language-Team: \n"
+"Language: es_PY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+#. module: msp_sifen
+#: model:mail.template,body_html:msp_sifen.edi_mail_template
+msgid ""
+"<p style=\"margin:0px 0 12px 0;box-sizing:border-box;\">\n"
+"<strong style=\"box-sizing:border-box;font-weight:500;\">Hola {{ object.partner_id.name }}</strong>\n"
+"</p>\n"
+"<p style=\"margin:0px 0 12px 0;box-sizing:border-box;\">\n"
+"Adjuntamos el PDF de su Comprobante Electrónico {{ object.name }} de fecha {{ object.invoice_date.strftime('%d/%m/%Y') }}</p>\n"
+"<p style=\"margin:0px 0 12px 0;box-sizing:border-box;\">\n"
+"Le recordamos que para cualquier cambio de mercadería debe hacer referencia o presentar la misma.\n"
+"</p>\n"
+"<p style=\"margin:0px 0 12px 0;box-sizing:border-box;\">\n"
+"Lo esperamos pronto,\n"
+"</p>\n"
+"            "
+msgstr ""
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_move_form_account_inherit
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_picking_form
+msgid "<span class=\"o_stat_text\">Batch</span>"
+msgstr "<span class=\"o_stat_text\">Lote</span>"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.account_move_invalid_form
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_document_cancel_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_document_invalid_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.res_partner_form_inherit
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_move_form_account_inherit
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_picking_form
+msgid "<span class=\"o_stat_text\">Events</span>"
+msgstr "<span class=\"o_stat_text\">Eventos</span>"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "<strong>Approved</strong>"
+msgstr "<strong>Aprobado</strong>"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "<strong>Finished</strong>"
+msgstr "<strong>Finalizado</strong>"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "<strong>Open</strong>"
+msgstr "<strong>Abierto</strong>"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "<strong>Pending</strong>"
+msgstr "<strong>Pendiente</strong>"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "<strong>Prepared</strong>"
+msgstr "<strong>Preparado</strong>"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "<strong>Queue</strong>"
+msgstr "<strong>En Cola</strong>"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "<strong>Rejected</strong>"
+msgstr "<strong>Rechazado</strong>"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "<strong>Sent</strong>"
+msgstr "<strong>Enviado</strong>"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__message_needaction
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_res_config_custom
+msgid "Additional Parameters"
+msgstr "Parámetros Adicionales"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/account_move_invalid.py:0
+msgid "A Document Invalidation with this name already exists."
+msgstr "Ya existe una Inutilización de Documento con este nombre."
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_test_form
+msgid "Apply Test"
+msgstr "Aplicar Test"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__approved_qty
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move__sifen_state__approved
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move_invalid__sifen_state__approved
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_document_cancel__sifen_state__approved
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_document_invalid__sifen_state__approved
+#: model:ir.model.fields.selection,name:msp_sifen.selection__stock_picking__sifen_state__approved
+msgid "Approved"
+msgstr "Aprobado"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__message_attachment_count
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__message_attachment_count
+msgid "Attachment Count"
+msgstr "Cantidad Adjuntos"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.res_config_custom_form
+msgid "Backups Procedures"
+msgstr "Copia de Seguridad de Procedimientos"
+
+#. module: msp_sifen
+#: model:edi.dashboard,name:msp_sifen.edi_dashboard_batch
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_dashboard__edi_type__batch
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_dashboard__stat_type__batch
+msgid "Batch"
+msgstr "Lote"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+msgid "Batch Number"
+msgstr "Número de Lote"
+
+#. module: msp_sifen
+#: model:ir.ui.menu,name:msp_sifen.menu_edi_batch_and_event
+msgid "Batch and Event"
+msgstr "Lote y Evento"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__branch_id
+msgid "Branch"
+msgstr "Sucursal"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/edi_dashboard.py:0
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_dashboard__edi_type__cancel
+msgid "Cancellation"
+msgstr "Cancelación"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/account_move.py:0
+msgid "Cancellation Reason"
+msgstr "Motivo de Cancelación"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move__sifen_state__cancel
+#: model:ir.model.fields.selection,name:msp_sifen.selection__stock_picking__sifen_state__cancel
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/account_move_invalid.py:0
+msgid "Cannot change state to Draft, the SIFEN state is Approved."
+msgstr "No se puede cambiar el estado a Borrador, el estado de SIFEN es Aprobado."
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_account_move_list
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_list_view
+msgid "Code"
+msgstr "Código"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_tag__color
+msgid "Color"
+msgstr ""
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__comment
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__company_id
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__company_id
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__company_id
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: msp_sifen
+#: model:mail.template,subject:msp_sifen.edi_mail_template
+msgid "Comprobante Electrónico {{ object.name }}"
+msgstr ""
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.stock_picking_form_inherit
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_move_form
+msgid "Consult"
+msgstr "Consultar"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_event__type__de_consult
+msgid "Consult DE"
+msgstr "Consulta DE"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_event__type__de_batch_consult
+msgid "Consult DE Batch"
+msgstr "Consulta Lote DE"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_account_invoice_filter
+msgid "Correo no Enviado"
+msgstr ""
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.account_move_invalid_form
+msgid "Create EDI Document Invalid"
+msgstr "Crear Inutilización de Documento"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__create_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__create_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__create_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__create_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_tag__create_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_template__create_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__create_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__create_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__create_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__create_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_tag__create_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_template__create_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/edi_dashboard.py:0
+#: model:edi.dashboard,name:msp_sifen.edi_dashboard_credit_note
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__move_type__out_refund
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_dashboard__edi_type__refund
+msgid "Credit Note"
+msgstr "Nota de Crédito"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_event__type__de_cancel
+msgid "DE Cancellation"
+msgstr "Cancelación DE"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_event__type__de_invalid
+msgid "DE Invalidate"
+msgstr "Inutilización DE"
+
+#. module: msp_sifen
+#: model:ir.actions.act_window,name:msp_sifen.action_edi_dashboard
+#: model:ir.model,name:msp_sifen.model_edi_dashboard
+#: model:ir.ui.menu,name:msp_sifen.edi_dashboard
+#: model_terms:ir.actions.act_window,help:msp_sifen.action_edi_dashboard
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_form
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_list
+msgid "Dashboard"
+msgstr "Tablero"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_picking_internal_search
+msgid "Date Done"
+msgstr "Fecha Efectiva"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_res_config_custom__test_email
+#: model:ir.model.fields.selection,name:msp_sifen.selection__res_config_custom__edi_missing_email__default
+msgid "Default Email"
+msgstr "Email por Defecto"
+
+#. module: msp_sifen
+#: model:edi.dashboard,name:msp_sifen.edi_dashboard_delivery_note
+msgid "Delivery Note"
+msgstr "Nota de Remisión"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__res_config_custom__edi_send_mode__disable
+msgid "Disable"
+msgstr "Deshabilitar"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__dispatch_point
+msgid "Dispatch Point"
+msgstr "Punto de Despacho"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__display_name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__display_name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__display_name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__display_name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_tag__display_name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_template__display_name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__res_config_custom__edi_missing_email__skip
+msgid "Do not send"
+msgstr "No enviar"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_edi_document_cancel
+msgid "Document Cancellation"
+msgstr "Cancelación de Documentos"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_stock_picking__invoice_date
+msgid "Document Date"
+msgstr "Fecha Documento"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/account_move_invalid.py:0
+#: model:ir.model,name:msp_sifen.model_edi_document_invalid
+msgid "Document Invalidation"
+msgstr "Inutilización de Documentos"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_dashboard__stat_type__edi
+msgid "EDI"
+msgstr ""
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/account_move.py:0
+#: code:addons/msp_sifen/models/edi_dashboard.py:0
+#: code:addons/msp_sifen/models/stock_picking.py:0
+#: model:ir.actions.act_window,name:msp_sifen.action_edi_batch
+#: model:ir.model,name:msp_sifen.model_edi_batch
+#: model:ir.ui.menu,name:msp_sifen.menu_edi_batch
+#: model_terms:ir.actions.act_window,help:msp_sifen.action_edi_batch
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_list_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_search
+msgid "EDI Batch"
+msgstr "Lote EDI"
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.cron_edi_batch_check_for_prepare_ir_actions_server
+msgid "EDI Batch Check For Prepare"
+msgstr "EDI Lote Verificar para Preparar"
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.cron_edi_batch_consult_ir_actions_server
+msgid "EDI Batch Consult"
+msgstr "EDI Lote Consulta"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_account_bank_statement_line__edi_batch_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move__edi_batch_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_res_partner__edi_batch_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_res_users__edi_batch_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_stock_picking__edi_batch_qty
+msgid "EDI Batch Qty"
+msgstr "Cant. Lotes EDI"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_picking_internal_search
+msgid "EDI Date"
+msgstr "Fecha EDI"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_res_config_custom__edi_delayed_send_days
+msgid "EDI Delayed Send Days"
+msgstr "EDI Dias de Retraso de Envio"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_account_bank_statement_line__edi_document_sent
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move__edi_document_sent
+msgid "EDI Document Sent"
+msgstr "EDI Documento Enviado"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/edi_dashboard.py:0
+#: model:ir.actions.act_window,name:msp_sifen.action_edi_event
+#: model:ir.model,name:msp_sifen.model_edi_event
+#: model:ir.ui.menu,name:msp_sifen.menu_edi_event
+#: model_terms:ir.actions.act_window,help:msp_sifen.action_edi_event
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_list_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_search
+msgid "EDI Event"
+msgstr "Evento EDI"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__edi_event_qty
+msgid "EDI Event Qty"
+msgstr "Cant. Eventos EDI"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/account_move.py:0
+#: code:addons/msp_sifen/models/account_move_invalid.py:0
+#: code:addons/msp_sifen/models/edi_batch.py:0
+#: code:addons/msp_sifen/models/edi_document_cancel.py:0
+#: code:addons/msp_sifen/models/edi_document_invalid.py:0
+#: code:addons/msp_sifen/models/res_partner.py:0
+#: code:addons/msp_sifen/models/stock_picking.py:0
+msgid "EDI Events"
+msgstr "Eventos EDI"
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.cron_edi_event_pending_process_ir_actions_server
+msgid "EDI Events Pending Process"
+msgstr "EDI Procesar Eventos Pendientes"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_account_bank_statement_line__edi_event_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move__edi_event_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move_invalid__edi_event_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_document_cancel__edi_event_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_document_invalid__edi_event_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_res_partner__edi_event_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_res_users__edi_event_qty
+#: model:ir.model.fields,field_description:msp_sifen.field_stock_picking__edi_event_qty
+msgid "EDI Events Qty"
+msgstr "Cant. Eventos EDI"
+
+#. module: msp_sifen
+#: model:ir.actions.act_window,name:msp_sifen.action_edi_procedure
+#: model:ir.model,name:msp_sifen.model_edi_procedure
+#: model:ir.ui.menu,name:msp_sifen.menu_edi_procedure
+#: model_terms:ir.actions.act_window,help:msp_sifen.action_edi_procedure
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_procedure_form
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_procedure_list
+msgid "EDI Procedure"
+msgstr "Procedimiento EDI"
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.cron_queue_pending_edi_document_cancel_ir_actions_server
+msgid "EDI Queue Pending EDI Document Cancellations"
+msgstr "EDI Encolar Cancelación de Documentos"
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.cron_queue_pending_edi_document_invalid_ir_actions_server
+msgid "EDI Queue Pending EDI Document Invalidations"
+msgstr "EDI Encolar Inutilización de Documentos"
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.cron_queue_pending_invoices_ir_actions_server
+msgid "EDI Queue Pending Invoices"
+msgstr "EDI Encolar Facturas Pendientes"
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.cron_queue_pending_stock_picking_ir_actions_server
+msgid "EDI Queue Pending Stock Picking"
+msgstr "EDI Encolar Transferencias Pendientes"
+
+#. module: msp_sifen
+#: model:ir.actions.act_window,name:msp_sifen.action_scheduled_actions
+#: model:ir.ui.menu,name:msp_sifen.menu_edi_scheduled_actions
+#: model_terms:ir.actions.act_window,help:msp_sifen.action_scheduled_actions
+msgid "EDI Scheduled Actions"
+msgstr "EDI Acciones Planificadas"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_edi_tag
+#: model:ir.ui.menu,name:msp_sifen.menu_edi_tag
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_tag_form
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_tag_list
+msgid "EDI Tag"
+msgstr "Etiqueta EDI"
+
+#. module: msp_sifen
+#: model:ir.actions.act_window,name:msp_sifen.action_edi_template
+#: model:ir.model,name:msp_sifen.model_edi_template
+#: model:ir.ui.menu,name:msp_sifen.menu_edi_template
+#: model_terms:ir.actions.act_window,help:msp_sifen.action_edi_template
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_template_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_template_list_view
+msgid "EDI Template"
+msgstr "Plantilla EDI"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_edi_test
+#: model:ir.ui.menu,name:msp_sifen.menu_edi_test
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_test_form
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_test_list
+msgid "EDI Test"
+msgstr "Test EDI"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_service_log__edi_event_id
+msgid "Edi Event"
+msgstr "EDI Evento"
+
+#. module: msp_sifen
+#: model:mail.template,name:msp_sifen.edi_mail_template
+msgid "Electronic Document"
+msgstr "Documento Electrónico"
+
+#. module: msp_sifen
+#: model:ir.actions.act_window,name:msp_sifen.action_edi_stock_picking
+#: model_terms:ir.actions.act_window,help:msp_sifen.action_edi_stock_picking
+msgid "Electronic Documents"
+msgstr "Documentos Electrónicos"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+msgid "Error"
+msgstr ""
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/service_log.py:0
+msgid "Error executing Python code: %s"
+msgstr "Error ejecutando código Python: %s"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__establishment
+#: model:ir.ui.menu,name:msp_sifen.menu_msp_res_branch
+msgid "Establishment"
+msgstr "Establecimiento"
+
+#. module: msp_sifen
+#: model:edi.dashboard,name:msp_sifen.edi_dashboard_event
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_dashboard__edi_type__event
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_dashboard__stat_type__event
+msgid "Event"
+msgstr "Evento"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/edi_event.py:0
+msgid "Event Origin"
+msgstr "Origen del Evento"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__type
+msgid "Event Type"
+msgstr "Tipo de Evento"
+
+#. module: msp_sifen
+#: model:edi.dashboard,name:msp_sifen.edi_dashboard_cancellation
+msgid "Event: Cancellation"
+msgstr "Evento: Cancelación"
+
+#. module: msp_sifen
+#: model:edi.dashboard,name:msp_sifen.edi_dashboard_invalidate
+msgid "Event: Invalidate"
+msgstr "Evento: Inutilización"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__edi_event_ids
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+msgid "Events"
+msgstr "Eventos"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_procedure_form
+msgid "Execute"
+msgstr "Ejecutar"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_list_view
+msgid "Exp."
+msgstr "Venc."
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__expired
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__expired_qty
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__sifen_state__expire
+msgid "Expired"
+msgstr "Vencido"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "Expired :"
+msgstr "Vencido :"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_form_view
+msgid "Finish"
+msgstr "Finalizar"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__finished_qty
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__sifen_state__finish
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_event__state__finished
+msgid "Finished"
+msgstr "Finalizado"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "Finished :"
+msgstr "Finalizado :"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__message_follower_ids
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__message_partner_ids
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__from_date
+msgid "From Date"
+msgstr "Desde Fecha"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_search
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__has_message
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__has_message
+msgid "Has Message"
+msgstr "Tiene Mensaje"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__headers
+msgid "Headers"
+msgstr "Cabecera"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__html_color
+msgid "Html Color"
+msgstr "Color HTML"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__id
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__id
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__id
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__id
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_tag__id
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_template__id
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__id
+msgid "ID"
+msgstr "ID"
+
+#. module: msp_sifen
+#: model:ir.model.fields,help:msp_sifen.field_edi_batch__message_needaction
+#: model:ir.model.fields,help:msp_sifen.field_edi_event__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcada, hay nuevos mensajes que requieren su atención."
+
+#. module: msp_sifen
+#: model:ir.model.fields,help:msp_sifen.field_edi_batch__message_has_error
+#: model:ir.model.fields,help:msp_sifen.field_edi_batch__message_has_sms_error
+#: model:ir.model.fields,help:msp_sifen.field_edi_event__message_has_error
+#: model:ir.model.fields,help:msp_sifen.field_edi_event__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcada, algunos mensajes tienen error de envío."
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move__sifen_state__queue
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__sifen_state__queue
+#: model:ir.model.fields.selection,name:msp_sifen.selection__stock_picking__sifen_state__queue
+msgid "In Queue"
+msgstr "En Cola"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_account_move_invalid
+msgid "Invalid Invoices"
+msgstr "Facturas Inutilizadas"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move__sifen_state__invalid
+#: model:ir.model.fields.selection,name:msp_sifen.selection__stock_picking__sifen_state__invalid
+msgid "Invalidated"
+msgstr "Inutilizado"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/edi_dashboard.py:0
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_dashboard__edi_type__invalid
+msgid "Invalidation"
+msgstr "Inutilización"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/edi_dashboard.py:0
+#: model:edi.dashboard,name:msp_sifen.edi_dashboard_invoices
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__move_type__out_invoice
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_dashboard__edi_type__invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_res_config_custom__invoice_batch_delay
+msgid "Invoice Batch Delay in Minutes"
+msgstr "Retraso Lote Facturas en Minutos"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_res_config_custom__invoice_batch_limit
+msgid "Invoice Batch Limit"
+msgstr "Limite Lote Facturas"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_account_move_cancel
+msgid "Invoice Cancellation"
+msgstr "Cancelación de Documentos"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__invoice_ids
+msgid "Invoice Ids"
+msgstr "Ids Facturas"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__message_is_follower
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__message_is_follower
+msgid "Is Follower"
+msgstr "Es Seguidor"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__last_process_error
+msgid "Last Process Error"
+msgstr "Último Error del Proceso"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__write_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__write_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__write_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__write_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_tag__write_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_template__write_uid
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__write_uid
+msgid "Last Updated by"
+msgstr "Modificado por"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__write_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__write_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__write_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__write_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_tag__write_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_template__write_date
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__write_date
+msgid "Last Updated on"
+msgstr "Modificado el"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__lines_qty
+msgid "Lines Qty"
+msgstr "Cant. Lineas"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__log_ids
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_form_view
+msgid "Logs"
+msgstr "Registros"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+msgid "Mark as Prepared"
+msgstr "Marcar como Preparado"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__message_has_error
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de envío de mensaje"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__message_ids
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__method
+msgid "Method"
+msgstr "Método"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/edi_batch.py:0
+#: code:addons/msp_sifen/models/edi_event.py:0
+msgid "Missing Sequence: %s"
+msgstr "Secuencia Faltante: %s"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__edi_type
+msgid "Model"
+msgstr "Modelo"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__move_type
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_account_invoice_filter
+msgid "Move Type"
+msgstr "Tipo de Movimiento"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_tag__name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_template__name
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__name
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_search
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_procedure_form
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_procedure_search_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_template_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_template_search_view
+msgid "Name"
+msgstr "Nombre"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__message_needaction_counter
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Acciones"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__message_has_error_counter
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de Errores"
+
+#. module: msp_sifen
+#: model:ir.model.fields,help:msp_sifen.field_edi_batch__message_needaction_counter
+#: model:ir.model.fields,help:msp_sifen.field_edi_event__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: msp_sifen
+#: model:ir.model.fields,help:msp_sifen.field_edi_batch__message_has_error_counter
+#: model:ir.model.fields,help:msp_sifen.field_edi_event__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__open_qty
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__state__open
+msgid "Open"
+msgstr "Abierto"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_form_view
+msgid "Open Origin"
+msgstr "Abrir Origen"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__pending_qty
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move__sifen_state__pending
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move_invalid__sifen_state__pending
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__sifen_state__pending
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_document_cancel__sifen_state__pending
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_document_invalid__sifen_state__pending
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_event__state__pending
+#: model:ir.model.fields.selection,name:msp_sifen.selection__stock_picking__sifen_state__pending
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__picking_ids
+msgid "Picking Ids"
+msgstr "Ids Transferencias"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__prepared_qty
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__state__prepared
+msgid "Prepared"
+msgstr "Preparado"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__procedure_id
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__procedure
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_procedure_search_view
+msgid "Procedure"
+msgstr "Procedimiento"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/edi_procedure.py:0
+msgid "Procedure Not Found: %s"
+msgstr "Procedimiento No Encontrado: %s"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_list_view
+msgid "Process"
+msgstr "Procesar"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_product_product
+msgid "Product Variant"
+msgstr "Variante del producto"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__res_config_custom__edi_send_mode__production
+msgid "Production"
+msgstr "Producción"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__queue_qty
+msgid "Queue"
+msgstr "En Cola"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "Queue :"
+msgstr "En cola :"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__rating_ids
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__rating_ids
+msgid "Ratings"
+msgstr "Calificaciones"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__received_qty
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__sifen_state__received
+msgid "Received"
+msgstr "Recibido"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "Received :"
+msgstr "Recibido :"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__rejected_qty
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move__sifen_state__rejected
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move_invalid__sifen_state__rejected
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__sifen_state__rejected
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_document_cancel__sifen_state__rejected
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_document_invalid__sifen_state__rejected
+#: model:ir.model.fields.selection,name:msp_sifen.selection__stock_picking__sifen_state__rejected
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "Rejected :"
+msgstr "Rechazado :"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__request_content
+msgid "Request Content"
+msgstr "Contenido de Solicitud"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__request_filename
+msgid "Request Filename"
+msgstr "Archivo de Solicitud"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__res_id
+msgid "Res. Id"
+msgstr "Id Rec."
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__res_model
+msgid "Res. Model"
+msgstr "Modelo Rec."
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__res_name
+msgid "Res. Name"
+msgstr "Nombre Rec."
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_search
+msgid "Resource Id"
+msgstr "Id Recurso"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_search
+msgid "Resource Model"
+msgstr "Modelo del Recurso"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_search
+msgid "Resource Name"
+msgstr "Nombre del Recurso"
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.account_move_reset_to_draft
+msgid "Reset to Draft"
+msgstr "Restablecer a Borrador"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.service_log_form
+msgid "Run Python"
+msgstr "Ejecutar Python"
+
+#. module: msp_sifen
+#: model:ir.ui.menu,name:msp_sifen.menu_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.account_move_invalid_form
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_account_move_list
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_list_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_document_invalid_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.res_config_custom_form
+#: model_terms:ir.ui.view,arch_db:msp_sifen.stock_picking_form_inherit
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_move_form
+msgid "SIFEN"
+msgstr ""
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_account_bank_statement_line__sifen_authorization
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move__sifen_authorization
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move_invalid__sifen_authorization
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_document_cancel__sifen_authorization
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_document_invalid__sifen_authorization
+#: model:ir.model.fields,field_description:msp_sifen.field_stock_picking__sifen_authorization
+msgid "SIFEN Authorization"
+msgstr "Autorización SIFEN"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__sifen_batch_nr
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_search
+msgid "SIFEN Batch Nr."
+msgstr "Nro. Lote SIFEN"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_account_bank_statement_line__sifen_send_mode
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move__sifen_send_mode
+#: model:ir.model.fields,field_description:msp_sifen.field_stock_picking__sifen_send_mode
+msgid "SIFEN Send Mode"
+msgstr "Modo Envio SIFEN"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_account_bank_statement_line__sifen_state
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move__sifen_state
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move_invalid__sifen_state
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__sifen_state
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_document_cancel__sifen_state
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_document_invalid__sifen_state
+#: model:ir.model.fields,field_description:msp_sifen.field_stock_picking__sifen_state
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_search
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_account_invoice_filter
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_picking_internal_search
+msgid "SIFEN State"
+msgstr "Estado SIFEN"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_account_bank_statement_line__sifen_state_code
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move__sifen_state_code
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move_invalid__sifen_state_code
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__sifen_state_code
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_document_cancel__sifen_state_code
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_document_invalid__sifen_state_code
+#: model:ir.model.fields,field_description:msp_sifen.field_stock_picking__sifen_state_code
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_search
+msgid "SIFEN State Code"
+msgstr "Código Estado SIFEN"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_account_bank_statement_line__sifen_state_message
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move__sifen_state_message
+#: model:ir.model.fields,field_description:msp_sifen.field_account_move_invalid__sifen_state_message
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__sifen_state_message
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_document_cancel__sifen_state_message
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_document_invalid__sifen_state_message
+#: model:ir.model.fields,field_description:msp_sifen.field_stock_picking__sifen_state_message
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_search
+msgid "SIFEN State Message"
+msgstr "Mensaje Estado SIFEN"
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.account_move_send_as_batch
+msgid "SIFEN: Enviar en Lote"
+msgstr ""
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.account_move_send_edi_document
+msgid "SIFEN: Enviar por Correo"
+msgstr ""
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.edi_event_mark_as_finished
+msgid "SIFEN: Marcar como Finalizado"
+msgstr ""
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.account_move_mark_as_pending
+#: model:ir.actions.server,name:msp_sifen.stock_picking_mark_as_pending
+msgid "SIFEN: Marcar como Pendiente"
+msgstr ""
+
+#. module: msp_sifen
+#: model:ir.actions.server,name:msp_sifen.account_move_recalculate_control_code
+#: model:ir.actions.server,name:msp_sifen.stock_picking_recalculate_control_code
+msgid "SIFEN: Regenerar CDC"
+msgstr ""
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__message_has_sms_error
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error en el envío del SMS"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__soap_method
+msgid "SOAP Method"
+msgstr "Método SOAP"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__security_code_1
+msgid "Security Code 1"
+msgstr "Código de Seguridad 1"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__security_code_2
+msgid "Security Code 2"
+msgstr "Código de Seguridad 2"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+#: model_terms:ir.ui.view,arch_db:msp_sifen.stock_picking_form_inherit
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_move_form
+msgid "Send"
+msgstr "Enviar"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.stock_picking_form_inherit
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_move_form
+msgid "Send Batch"
+msgstr "Enviar a Lote"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_event__type__de
+msgid "Send DE"
+msgstr "Enviar DE"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_event__type__de_batch
+msgid "Send DE in Batch"
+msgstr "Enviar DE en Lote"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_move_form
+msgid "Send EDI"
+msgstr "Enviar EDI"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_res_config_custom__edi_send_mode
+msgid "Send Environment"
+msgstr "Ambiente de Envio"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_res_config_custom__edi_only_send_to_partner
+msgid "Send If Partner has Mail"
+msgstr "Enviar si el contacto no tiene correo"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_res_config_custom__invoice_batch
+msgid "Send Invoice in Batch"
+msgstr "Enviar Factura en Lote"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__sent_qty
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__sifen_state__sent
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__state__sent
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_event__state__sent
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.view_edi_dashboard_kanban
+msgid "Sent :"
+msgstr "Enviado :"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move__sifen_state__sent
+#: model:ir.model.fields.selection,name:msp_sifen.selection__stock_picking__sifen_state__sent
+msgid "Sent in Batch"
+msgstr "Enviado en Lote"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__sent_sifen_qty
+msgid "Sent to Sifen"
+msgstr "Enviar a SIFEN"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_template__sequence
+msgid "Seq"
+msgstr "Sec"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__sequence
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: msp_sifen
+#: model:ir.ui.menu,name:msp_sifen.menu_ir_sequence
+msgid "Sequences"
+msgstr "Secuencias"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_service_log
+msgid "Service Log"
+msgstr "Registro del Servicio"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/edi_document_invalid.py:0
+msgid "Setting for Process Missing"
+msgstr "Falta Configuración para Procesar"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/account_move.py:0
+#: code:addons/msp_sifen/models/edi_document_cancel.py:0
+msgid "Setting for Send Invoice Missing"
+msgstr "Configuración para Enviar Factura Faltante"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/stock_picking.py:0
+msgid "Setting for Send Picking Missing"
+msgstr "Configuración para Enviar Remisión Faltante"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move__sifen_state__skip
+#: model:ir.model.fields.selection,name:msp_sifen.selection__account_move_invalid__sifen_state__skip
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__sifen_state__skip
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_document_cancel__sifen_state__skip
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_document_invalid__sifen_state__skip
+#: model:ir.model.fields.selection,name:msp_sifen.selection__stock_picking__sifen_state__skip
+msgid "Skip"
+msgstr "Omitir"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_test__stamped_number
+msgid "Stamped Number"
+msgstr "Número de Timbrado"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__state
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__state
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_search
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_event_search
+msgid "State"
+msgstr "Estado"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_dashboard__stat_type
+msgid "Statistic Type"
+msgstr "Tipo de Estadística"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_batch__move_type__stock_picking
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_dashboard__edi_type__picking
+msgid "Stock Picking"
+msgstr "Transferencia"
+
+#. module: msp_sifen
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_batch_form_view
+msgid "Stock Pickings"
+msgstr "Transferencias"
+
+#. module: msp_sifen
+#: model:ir.actions.act_window,name:msp_sifen.action_edi_tag
+#: model_terms:ir.actions.act_window,help:msp_sifen.action_edi_tag
+msgid "Tag"
+msgstr "Etiqueta"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_procedure__tag_ids
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_template__template
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_template_search_view
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__res_config_custom__edi_missing_email__template
+msgid "Template Email"
+msgstr "Email de la Plantilla"
+
+#. module: msp_sifen
+#: model:ir.actions.act_window,name:msp_sifen.action_edi_test
+#: model_terms:ir.actions.act_window,help:msp_sifen.action_edi_test
+#: model_terms:ir.ui.view,arch_db:msp_sifen.edi_template_form_view
+msgid "Test"
+msgstr "Prueba"
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__res_config_custom__edi_send_mode__test
+msgid "Test (Default Email)"
+msgstr "Prueba (Email por Defecto)"
+
+#. module: msp_sifen
+#: model:ir.model,name:msp_sifen.model_stock_picking
+msgid "Transfer"
+msgstr "Trasladar"
+
+#. module: msp_sifen
+#. odoo-python
+#: code:addons/msp_sifen/models/edi_dashboard.py:0
+msgid "Transference"
+msgstr "Transferencia"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__url
+msgid "URL"
+msgstr ""
+
+#. module: msp_sifen
+#: model:ir.model.fields.selection,name:msp_sifen.selection__edi_event__type__vat_consult
+#: model_terms:ir.ui.view,arch_db:msp_sifen.res_partner_form_inherit
+msgid "VAT Consult"
+msgstr "Consultar RUC"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_batch__website_message_ids
+#: model:ir.model.fields,field_description:msp_sifen.field_edi_event__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes Sitio web"
+
+#. module: msp_sifen
+#: model:ir.model.fields,help:msp_sifen.field_edi_batch__website_message_ids
+#: model:ir.model.fields,help:msp_sifen.field_edi_event__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: msp_sifen
+#: model:ir.model.fields,field_description:msp_sifen.field_res_config_custom__edi_missing_email
+msgid "When Missing Email"
+msgstr "Cuando no hay Email"

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="edi_document_cancel_tree" model="ir.ui.view">
+            <field name="name">edi.document.cancel.list</field>
+            <field name="model">edi.document.cancel</field>
+            <field name="inherit_id" ref="l10n_py_edi.edi_document_cancel_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="sifen_state" widget="badge" decoration-muted="sifen_state == 'skip' " decoration-primary="sifen_state == 'pending' "
+                           decoration-success="sifen_state == 'approved' " decoration-danger="sifen_state == 'rejected' "/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="edi_document_cancel_view" model="ir.ui.view">
+            <field name="name">edi.document.cancel.form</field>
+            <field name="model">edi.document.cancel</field>
+            <field name="inherit_id" ref="l10n_py_edi.edi_document_cancel_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" name="open_edi_events" icon="fa-files-o" type="object">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="edi_event_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                            </span>
+                            <span class="o_stat_text">Events</span>
+                        </div>
+                    </button>
+                </xpath>
+                <xpath expr="//group[@name='right_group']" position="inside">
+                    <field name="sifen_state" widget="badge"
+                           readonly="state != 'draft' "
+                           decoration-muted="sifen_state == 'skip' "
+                           decoration-primary="sifen_state == 'pending' " decoration-success="sifen_state == 'approved' "
+                           decoration-danger="sifen_state == 'rejected' "/>
+                    <field name="sifen_state_code" readonly="1" force_save="1"/>
+                    <field name="sifen_state_message" readonly="1" force_save="1"/>
+                    <field name="sifen_authorization" readonly="1" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

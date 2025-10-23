@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="edi_document_nomination_tree" model="ir.ui.view">
+            <field name="name">edi.document.nomination.tree</field>
+            <field name="model">edi.document.nomination</field>
+            <field name="inherit_id" ref="l10n_py_edi.edi_document_nomination_tree"/>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="sifen_state"
+                           widget="badge"
+                           decoration-muted="sifen_state == 'skip' "
+                           decoration-primary="sifen_state == 'pending' "
+                           decoration-success="sifen_state == 'approved' "
+                           decoration-danger="sifen_state == 'rejected' "/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="edi_document_nomination_form" model="ir.ui.view">
+            <field name="name">edi.document.nomination.form</field>
+            <field name="model">edi.document.nomination</field>
+            <field name="inherit_id" ref="l10n_py_edi.edi_document_nomination_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button" name="open_edi_events" icon="fa-files-o" type="object">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="edi_event_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                            </span>
+                            <span class="o_stat_text">Events</span>
+                        </div>
+                    </button>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="sifen_page" string="SIFEN">
+                        <group>
+                            <group>
+                                <field name="sifen_state"/>
+                                <field name="sifen_state_code" readonly="1" force_save="1"/>
+                                <field name="sifen_state_message" readonly="1" force_save="1"/>
+                                <field name="sifen_authorization" readonly="1" force_save="1"/>
+                            </group>
+                            <group>
+
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

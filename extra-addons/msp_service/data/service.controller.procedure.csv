@@ -1,0 +1,410 @@
+"id","name","route","procedure"
+"msp_service.de_ws_sync_recibe_procedure","Facturas","/de/ws/sync/recibe","
+
+def check_request(self, json_data):
+  invoice_data = json_data.get(""invoice"", {})
+  invoice_header = invoice_data.get(""header"", {})
+  sec_code = invoice_header.get(""security_code"")
+  
+  inv = self.env['account.move'].search([('security_code','=',sec_code)],limit=1)
+  if inv:
+    return {'error':{'code':'10013', 'message':'Security Code (%s) Used in Invoice (%s)' %(sec_code, inv.name)}}
+  return True
+  
+
+def process_post(self, json_data):
+  invoice_data = json_data.get(""invoice"", {})
+  invoice_header = invoice_data.get(""header"", {})
+  invoice_detail = invoice_data.get(""detail"", [])
+  invoice_document = invoice_data.get(""document"", [])
+  invoice_payment = invoice_data.get(""payment"", [])
+  post = invoice_header.get('post',1)
+
+  number = invoice_header.get(""number"")
+
+  if invoice_header.get('document_type') == 1:
+    invoice = self.env['account.move'].search([('name','=',number),('move_type','=','out_invoice')])
+  if invoice_header.get('document_type') == 5:
+    invoice = self.env['account.move'].search([('name','=',number),('move_type','=','out_refund')])
+  if invoice:
+    response = {""error"":{""code"":""10000"", ""message"":""Invoice Already Exists: id %s"" %(invoice.id)}}
+    return response
+
+  hvals = {}
+  hvals['company_id'] = self.env.company.id
+  
+  ##### PARTNER
+  partner = self.env['res.partner'].search([('vat','=',invoice_header.get(""partner_vat"")),('parent_id','=',False)],limit=1,order=""id"")
+  if not partner:
+    response = {""error"":{""code"":""10001"", ""message"":""Partner Not Found: %s"" %(invoice_header.get(""partner_vat""))}}
+    return response
+  hvals['partner_id'] = partner.id
+  
+  ##### CURRENCY
+  currency = self.env['res.currency'].search([('name','=',invoice_header.get(""currency_code""))],limit=1,order=""id"")
+  if not currency:
+    response = {""error"":{""code"":""10002"", ""message"":""Currency Not Found: %s"" %(invoice_header.get(""currency_code""))}}
+    return response
+  hvals['currency_id'] = currency.id
+  hvals['currency_rate'] = invoice_header.get(""exchange_rate"")
+
+  ##### BRANCH
+  branch = self.env['res.branch'].search([('code','=',invoice_header.get(""branch_code""))],limit=1,order=""id"")
+  if not branch:
+    response = {""error"":{""code"":""10003"", ""message"":""Branch Not Found: %s"" %(invoice_header.get(""branch_code""))}}
+    return response
+  hvals['branch_id'] = branch.id
+
+  ##### PAYMENT TERM
+  payment_term = self.env['account.payment.term'].search([('code','=',invoice_header.get(""payment_term""))])
+  if not payment_term:
+    response = {""error"":{""code"":""10008"", ""message"":""Payment Term Not Found: %s"" %(invoice_header.get(""payment_term""))}}
+    return response
+  hvals['invoice_payment_term_id'] = payment_term.id
+  
+  ### PAYMENT FORMS
+  if payment_term.credit_type == ""0"":
+    payment_form_lines = [(5,0,0)]
+    for pay in invoice_payment:
+      pvals = {}
+      pvals['payment_form_id'] = self.env['account.payment.form'].search([('code','=',pay.get('type'))]).id
+      pvals['payment_currency_id'] = self.env['res.currency'].search([('name','=',pay.get(""currency_code""))],limit=1,order=""id"").id
+      pvals['payment_amount'] = pay.get('amount')
+      if hvals['currency_id'] != pvals['payment_currency_id']:
+        pvals['payment_currency_rate'] = pay.get('exchange_rate')
+        pvals['amount'] = pvals['payment_amount'] * pvals['exchange_rate']
+      else:
+        pvals['payment_currency_rate'] = 1.0
+        pvals['amount'] = pay.get('amount')
+      payment_form_lines.append((0,0,pvals))
+    hvals['payment_form_ids'] = payment_form_lines
+
+  ##### EMISSION TYPE
+  emission_type = invoice_header.get(""emission_type"")
+  hvals['issue_type'] = str(emission_type)
+
+  ##### SECURITY CODE
+  hvals['security_code'] = invoice_header.get(""security_code"")
+
+  ##### SEQUENCE
+  hvals['name'] = invoice_header.get(""number"")
+  if invoice_header.get('document_type') == 1:
+    move_type = ""out_invoice""
+  if invoice_header.get('document_type') == 5:
+    move_type = ""out_refund""
+  hvals['move_type'] = move_type
+  number_prefix = invoice_header.get(""number_prefix"")
+  dp = branch.get_prefix_dispatch_point(prefix=number_prefix, move_type=move_type)
+  if not dp:
+    response = {""error"":{""code"":""10004"", ""message"":""Sequence Prefix Not Found: %s"" %(number_prefix)}}
+    return response
+  hvals['sequence_id'] = dp.sequence_id.id
+  hvals['journal_id'] = dp.journal_id.id
+
+  if move_type == 'out_refund':
+    credit_reason = invoice_header.get('credit_reason')
+    hvals['issue_reason_id'] = self.env['edi.issue.reason'].search([('code','=',credit_reason)]).id
+    hvals['reverted_invoice_ids'] = [(5,0,0)]
+    for doc in invoice_document:
+      cvals = {}
+      _logger.info([doc.get('credit_type'), type(doc.get('credit_type'))])
+      if doc.get('credit_type') == 1:
+        _logger.info(""credit_type_1"")
+        cvals['reversion_document_type'] = str(doc.get(""credit_type""))
+        cvals['reverted_cdc'] = doc.get(""cdc"")
+      if doc.get('credit_type') == 2:
+        _logger.info(""credit_type_2"")
+        cvals['reversion_document_type'] = str(doc.get(""credit_type""))
+        cvals['reverted_stamped_number'] = doc.get(""stamped_number"")
+        cvals['reverted_invoice_establishment'] = doc.get(""establishment"")
+        cvals['reverted_invoice_dispatch_point'] = doc.get(""dispatch_point"")
+        cvals['reverted_invoice_number'] = doc.get(""document_number"")
+        cvals['reverted_invoice_date'] = doc.get(""invoice_date"")
+        cvals['reverted_invoice_type_id'] = self.env['edi.document.type'].search([('code','=',doc.get('document_type'))]).id
+      hvals['reverted_invoice_ids'].append((0,0,cvals))
+    
+  hvals['invoice_date'] = invoice_header.get(""invoice_date"")
+
+  hvals['invoice_line_ids'] = []
+  for item in invoice_detail:
+    code = item.get('product_code')
+    if not code:
+      response = {""error"":{""code"":""10005"", ""message"":""Product Code Missing""}}
+      return response
+    product = self.env['product.product'].search([('default_code','=',code)])
+    if not product:
+      response = {""error"":{""code"":""10006"", ""message"":""Product Not Found: %s"" %(item.get('product_code'))}}
+      return response
+    ivals = {}
+    ivals['product_id'] = product.id
+    ivals['account_id'] = product.categ_id.property_account_income_categ_id.id
+    ivals['name'] = product.name
+    ivals['quantity'] = item.get(""quantity"")
+    ivals['price_unit'] = item.get(""price_unit"")
+    hvals['invoice_line_ids'].append((0,0,ivals))
+
+  _logger.info(""INVOICE VALS: %s"" %(hvals) )
+  _logger.info(""Creating Invoice"")
+  try:
+    invoice = self.env['account.move'].create(hvals)
+  except BaseException as errstr:
+    response = {""error"":{""code"":""10010"", ""message"":""Error creating Invoice: %s"" %(errstr) }}
+    return response
+  _logger.info(""Checking Total"")
+  if invoice:
+    if invoice.amount_total != invoice_header.get('total'):
+        response = {""error"":{""code"":""10007"", ""message"":""Invoice Total are different %s <> %s "" %(invoice.amount_total, invoice_header.get(""total"")) }}
+        invoice.write({'name':False})
+        invoice.unlink()
+        return response
+  _logger.info(""Checking CDC"")
+  if invoice:
+    calc_cdc = invoice.get_code_of_control()
+    cdc = invoice_header.get('cdc')
+    if cdc != calc_cdc:
+      response = {""error"":{""code"":""10012"", ""message"":""CDC calculated (%s) does not match with CDC received (%s)"" %(calc_cdc, cdc) }}
+      invoice.write({'name':False})
+      invoice.unlink()
+      return response
+  _logger.info(""Posting Invoice"")
+  if invoice:
+    try:
+      invoice.action_post()
+    except BaseException as errstr:
+      response = {""error"":{""code"":""10009"", ""message"":""Cannot Confirm Invoice: %s"" %(errstr)}}
+      # invoice.write({'name':False})
+      # invoice.unlink()
+      return response
+  response = {""invoice_id"":invoice.id, ""cdc"":invoice.control_code}
+  return response
+
+json_data = request.get_json_data()
+
+check_res = check_request(self, json_data)
+if not isinstance(check_res,bool):
+  response = check_res
+else:
+  if request.httprequest.method == ""POST"":
+    response = process_post(self, json_data)
+              "
+"msp_service.db_ws_sync_product","Productos","/db/ws/sync/product","response = {}
+response[""product""] = []
+
+request_json = request.get_json_data()
+product_list = request_json.get(""product"",[])
+
+def check_request(self, param, idx):
+  code = param.get('code', False)
+  if not code:
+    return {'error':{'code':""10000"", 'message':'Missing Field Code: Element %s' %(idx) }}
+  return True
+
+def process_get(self, param):
+  code = param.get('code')
+  prod = self.env['product.product'].search([('default_code', '=', code)], limit=1)
+  if prod:
+    return {'code':code, 'name':prod.name, 'state':'exists'}
+  return {'error':{'code':""10001"", 'message':'Product does not exists: %s' %(code)}}
+
+for idx, prod in enumerate(product_list,start=1):
+  check_res = check_request(self, prod, idx)
+  if not isinstance(check_res, bool):
+    response[""product""].append(check_res)
+    
+  if request.httprequest.method == ""GET"":
+    prod_res = process_get(self, prod)
+    response[""product""].append(prod_res)
+  elif request.httprequest.method == ""POST"":
+      code = prod.get('code')
+      check_prod = self.env['product.product'].search([('default_code', '=', code)], limit=1)
+      if check_prod:
+        prod_res = process_get(self, prod)
+        response[""product""].append(prod_res)
+      else:
+        pvals = {}
+        pvals['name'] = prod.get('name')
+        pvals['default_code'] = prod.get('code')
+        pvals['barcode'] = prod.get('barcode')
+        pvals['uom_id'] = self.env['uom.uom'].search([('symbol', '=', prod.get('unit_code'))]).id
+        pvals['uom_po_id'] = self.env['uom.uom'].search([('symbol', '=', prod.get('unit_code'))]).id
+        product = self.env['product.product'].create(pvals)
+        response[""product""].append({'code':code, 'name':product.name, 'state':'new'})"
+"msp_service.db_ws_sync_partner","Contactos","/db/ws/sync/partner","json_data = request.get_json_data()
+partner_list = json_data.get(""partner"", [])
+
+def process_get(self, param):
+    vat = param.get(""vat"")
+    _logger.info(param)
+    partner = self.env['res.partner'].search( [('vat','=', vat)] )
+    if partner:
+        vals = {}
+        vals['code'] = partner.ref
+        vals['vat'] = partner.vat
+        vals['name'] = partner.name
+        vals['status'] = ""exists""
+        return vals
+    return {'error': {'code':'1', ""message"":""Partner Not Found: %s "" %(vat)}}
+
+def process_post(self, param):
+    pvals = {}
+    pvals['name'] = param.get('name')
+    pvals['vat'] = param.get('vat')
+    pvals['tax_payer_type'] = str(param.get('tax_payer_type'))
+    if param.get('id_type',False):
+      id_type = self.env['l10n_latam.identification.type'].search([('code','=',param.get('id_type'))])
+      if id_type:
+        pvals['l10n_latam_identification_type_id'] = id_type.id
+    pvals['ref'] = param.get('code', """")
+    pvals['phone'] = param.get('phone', """")
+    pvals['mobile'] = param.get('mobile', """")
+    pvals['email'] = param.get('email', """")
+    pvals['street_name'] = param.get('address_street')
+    pvals['street_number'] = param.get('address_number')
+    try:
+      partner = self.env['res.partner'].create(pvals)
+      if partner:
+        vals = {}
+        vals['vat'] = partner.vat
+        vals['code'] = partner.ref
+        vals['name'] = partner.name
+        vals['status'] = ""new""
+        return vals
+      else:
+        vals = {}
+        vals[""error""] = {'code':'2', ""message"":""Partner Creation Error: %s"" %(partner)}
+        return vals
+    except BaseException as errstr:
+      vals = {}
+      vals[""error""] = {'code':'3', ""vat"":param.get(""vat""), ""message"":""Partner Creation Error: %s"" %(errstr)}
+      return vals
+
+def check_request(self, request, param):
+    response = {}
+    # required fields
+    rfields = ['vat']
+    if request.httprequest.method == ""POST"":
+        rfields.append('name')
+    for rf in rfields:
+        if not param.get(rf, False):
+            response[""error""] = {""code"": ""1"", ""message"": ""Missing Required Field: %s"" % (rf)}
+            return response
+    id_type = param.get(""id_type"", False)
+    if not id_type:
+      check_vat = self.env['res.partner'].check_vat_py(param.get('vat'))
+      if not check_vat:
+        response[""error""] = {""code"": ""3"", ""message"": ""Error in VAT Number Format: %s"" % (param.get(""vat""))}
+        return response
+    return True
+
+response = {}
+response['partner'] = []
+for param in partner_list:
+    check = check_request(self, request, param)
+    _logger.info([""CHECK"", param.get(""vat""), check])
+    if isinstance(check, bool) and check:
+        if request.httprequest.method == ""GET"":
+          res = process_get(self, param)
+          response['partner'].append(res)
+          _logger.info([""RESPONSE"", response])
+        elif request.httprequest.method == ""POST"":
+            vat = param.get(""vat"")
+            partner = self.env['res.partner'].search([('vat', '=', vat)])
+            if partner:
+                res = process_get(self, param)
+                response['partner'].append(res)
+            else:
+                res = process_post(self, param)
+                response['partner'].append(res)
+    else:
+      response['partner'].append(check)
+"
+"__export__.service_controller_procedure_4_4dea4a96","Plazos de Pago","/db/ws/sync/term","response = {}
+error = False
+
+json_data = request.get_json_data()
+param = json_data.get(""payment_term"", {})
+
+##### GET, POST ##### 
+def process_get(self, param):
+  response = {}
+  code = param.get('code','')
+  payment_term = self.env['account.payment.term'].search([('code', '=', code)])
+  if payment_term:
+    vals = {}
+    vals['code'] = payment_term.code
+    vals['name'] = payment_term.name
+    vals['status'] = ""exists""
+    response[""payment_term""] = vals
+    return response
+  else:
+    response[""error""] = {""code"": ""2"", ""message"": ""Payment Term does not exists: %s"" %(code)}
+    return response
+
+def process_post(self, param):
+  response = {}
+  pvals = {}
+  pvals['code'] = param.get('code')
+  pvals['name'] = param.get('name')
+  pvals['credit_type'] = param.get('credit_type')
+  pvals['note'] = param.get('name')
+  ##### check on post
+  if pvals['credit_type'] == ""0"":
+    pvals['require_payment_form'] = True
+  elif pvals['credit_type'] == ""1"":
+    pvals['require_payment_form'] = False
+    pm_lines = param.get(""lines"")
+    if len(pm_lines) > 1:
+      response[""error""] = {""code"": ""4"", ""message"": ""Credit Type 1 does not allow more than 1 lines""}
+      return response
+    pvals['line_ids'] = [(5,0,0)]
+    line = pm_lines[0]
+    plvals = {}
+    plvals['value'] = line.get('type','balance')
+    plvals['value_amount'] = line.get('value',0)
+    plvals['months'] = line.get('months',0)
+    plvals['days'] = line.get('days',0)
+    pvals['line_ids'].append((0,0,plvals))
+  elif pvals['credit_type'] == ""2"":
+    pvals['require_payment_form'] = False
+    pm_lines = param.get(""lines"")
+    pvals['line_ids'] = [(5,0,0)]
+    for line in pm_lines:
+      plvals = {}
+      plvals['value'] = line.get('type','balance')
+      plvals['value_amount'] = line.get('value',0)
+      plvals['months'] = line.get('months',0)
+      plvals['days'] = line.get('days',0)
+      pvals['line_ids'].append((0,0,plvals))
+
+  payment_term = self.env['account.payment.term'].create(pvals)
+  vals = {}
+  vals['code'] = payment_term.code
+  vals['name'] = payment_term.name
+  vals['status'] = ""new""
+  response[""payment_term""] = vals
+  return response
+
+def check_request(self, request, param):
+  #required fields
+  rfields = ['code']
+  if request.httprequest.method == ""POST"":
+    rfields.append('name')
+  for rf in rfields:
+    if not param.get(rf, False):
+      response = {}
+      response[""error""] = {""code"": ""1"", ""message"": ""Missing Required Field: %s"" %(rf)}
+      return response
+  return True
+
+#####
+response = check_request(self, request, param)
+_logger.info(""INSTANCE: %s"" %([isinstance(response, bool), response]) )
+if isinstance(response, bool) and response:
+  if request.httprequest.method == ""GET"":
+    response = process_get(self, param)
+  elif request.httprequest.method == ""POST"":
+    payment_term = self.env['account.payment.term'].search([('code', '=', param.get(""code""))])
+    if payment_term:
+      response = process_get(self, param)
+    else:
+      response = process_post(self, param)"

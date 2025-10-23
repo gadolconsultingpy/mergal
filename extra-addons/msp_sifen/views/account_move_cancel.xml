@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_move_invalid_tree" model="ir.ui.view">
+        <field name="name">account.move.cancel.tree</field>
+        <field name="model">account.move.cancel</field>
+        <field name="inherit_id" ref="l10n_py_edi.account_move_cancel_tree"/>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="sifen_state" widget="badge"
+                       decoration-muted="sifen_state == 'skip' "
+                       decoration-primary="sifen_state == 'pending' "
+                       decoration-success="sifen_state == 'approved' "
+                       decoration-danger="sifen_state == 'rejected' "/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_move_cancel_form" model="ir.ui.view">
+        <field name="name">account.move.cancel.form</field>
+        <field name="model">account.move.cancel</field>
+        <field name="inherit_id" ref="l10n_py_edi.account_move_cancel_form"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="sifen_page" string="SIFEN">
+                    <group>
+                        <group>
+                            <field name="sifen_state"/>
+                            <field name="sifen_state_code"/>
+                            <field name="sifen_state_message"/>
+                            <field name="sifen_authorization"/>
+                        </group>
+                        <group>
+
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//page[@name='other_info']/group/group[1]" position="inside">
+                <field name="sifen_state"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" name="open_edi_events" icon="fa-files-o" type="object">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="edi_event_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                        </span>
+                        <span class="o_stat_text">Events</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button name="create_edi_document_cancel" string="Create EDI Document Cancel" type="object" class="btn-primary"/>
+            </xpath>
+        </field>
+
+    </record>
+</odoo>

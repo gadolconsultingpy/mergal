@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <record id='edi_dashboard_invoices' model='edi.dashboard'>
+            <field name='name'>Invoice</field>
+            <field name='edi_type'>invoice</field>
+            <field name='stat_type'>edi</field>
+            <field name='sequence'>10</field>
+            <field name='html_color'>#e9f0fc</field>
+        </record>
+
+        <record id='edi_dashboard_credit_note' model='edi.dashboard'>
+            <field name='name'>Credit Note</field>
+            <field name='edi_type'>refund</field>
+            <field name='stat_type'>edi</field>
+            <field name='sequence'>20</field>
+            <field name='html_color'>#e9f0fc</field>
+        </record>
+
+        <record id='edi_dashboard_delivery_note' model='edi.dashboard'>
+            <field name='name'>Delivery Note</field>
+            <field name='edi_type'>picking</field>
+            <field name='stat_type'>edi</field>
+            <field name='sequence'>30</field>
+            <field name='html_color'>#e9f0fc</field>
+        </record>
+
+        <record id='edi_dashboard_cancellation' model='edi.dashboard'>
+            <field name='name'>Event: Cancellation</field>
+            <field name='edi_type'>cancel</field>
+            <field name='stat_type'>edi</field>
+            <field name='sequence'>40</field>
+            <field name='html_color'>#e8fcfa</field>
+        </record>
+
+        <record id='edi_dashboard_invalidate' model='edi.dashboard'>
+            <field name='name'>Event: Invalidate</field>
+            <field name='edi_type'>invalid</field>
+            <field name='stat_type'>edi</field>
+            <field name='sequence'>50</field>
+            <field name='html_color'>#e8fcfa</field>
+        </record>
+
+        <record id='edi_dashboard_batch' model='edi.dashboard'>
+            <field name='name'>Batch</field>
+            <field name='edi_type'>batch</field>
+            <field name='stat_type'>batch</field>
+            <field name='sequence'>60</field>
+            <field name='html_color'>#fef6e6</field>
+
+        </record>
+
+        <record id='edi_dashboard_event' model='edi.dashboard'>
+            <field name='name'>Event</field>
+            <field name='edi_type'>event</field>
+            <field name='stat_type'>event</field>
+            <field name='sequence'>70</field>
+            <field name='html_color'>#fef6e6</field>
+        </record>
+    </data>
+</odoo>

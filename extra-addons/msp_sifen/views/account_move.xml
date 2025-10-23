@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_move_form" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="l10n_py_edi.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="sifen_page" string="SIFEN"
+                          invisible="move_type not in ('out_invoice', 'out_refund') or sifen_environment == 'X' ">
+                        <group>
+                            <group string="SIFEN">
+                                <field name="sifen_state"/>
+                                <field name="sifen_authorization"/>
+                                <field name="sifen_state_code"/>
+                                <field name="sifen_state_message"/>
+                            </group>
+                            <group>
+                                <field name="edi_document_sent"/>
+                                <field name="sifen_send_mode" invisible="1"/>
+                                <div colspan="2" invisible="state != 'posted'">
+                                    <button name="sifen_procedure" type="object" string="Send"
+                                            context="{'edi_procedure':'sifen.account.move.prepare'}"
+                                            groups="l10n_py_edi.group_l10n_py_edi_manager"
+                                            invisible="sifen_send_mode != 'de' or sifen_state != 'pending' "
+                                            class="btn-primary mr-2"/>
+                                    <button name="sifen_procedure" type="object" string="Send Batch"
+                                            context="{'edi_procedure':'sifen.account.move.batch.prepare'}"
+                                            groups="l10n_py_edi.group_l10n_py_edi_manager"
+                                            invisible="sifen_send_mode != 'batch' or sifen_state != 'pending' "
+                                            class="btn-primary mr-2"/>
+                                    <button name="sifen_procedure" type="object" string="Consult"
+                                            context="{'edi_procedure':'sifen.account.move.consult'}"
+                                            groups="l10n_py_edi.group_l10n_py_edi_user"
+                                            invisible="sifen_state != 'sent' "
+                                            class="btn-primary mr-2"/>
+                                    <!--
+                                    <button name="button_edi_cancel" type="object" string="Cancel"
+                                            class="btn-secondary mr-2"/>
+                                    -->
+                                </div>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <button name="send_edi_document" type="object" string="Send EDI"
+                            invisible="edi_document_sent == True or sifen_state != 'approved' "
+                            class="btn-primary"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_move_form_account_inherit" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div[@name='button_box']" position="inside">
+                    <button class="oe_stat_button"
+                            name="open_edi_events"
+                            icon="fa-files-o"
+                            type="object"
+                            invisible="edi_event_qty == 0 ">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="edi_event_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                            </span>
+                            <span class="o_stat_text">Events</span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button"
+                            name="open_edi_batch"
+                            icon="fa-files-o"
+                            type="object"
+                            invisible="edi_batch_qty == 0">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="edi_batch_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                            </span>
+                            <span class="o_stat_text">Batch</span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button"
+                            name="open_cancellation_events"
+                            icon="fa-files-o"
+                            type="object"
+                            invisible="cancellation_event_qty == 0">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="cancellation_event_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                            </span>
+                            <span class="o_stat_text">Cancellation</span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button"
+                            name="open_nomination_events"
+                            icon="fa-files-o"
+                            type="object"
+                            invisible="nomination_event_qty == 0">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="nomination_event_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                            </span>
+                            <span class="o_stat_text">Nomination</span>
+                        </div>
+                    </button>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_invoice_tree" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='status_in_payment']" position="after">
+                    <field name="sifen_state" optional="hide"/>
+                    <field name="sifen_state_code" optional="hide"/>
+                    <field name="sifen_state_message" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="edi_account_move_list" model="ir.ui.view">
+            <field name="name">account.move.list</field>
+            <field name="model">account.move</field>
+            <field name="priority">100</field>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list string="Electronic Documents" sample="1">
+                    <field name="invoice_date" string="Date"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="invoice_date_due" widget="remaining_days" string="Exp."/>
+                    <field name="move_type" string="Type"/>
+                    <field name="amount_total"/>
+                    <field name="currency_id" optional="hide"/>
+                    <field name="state"
+                           decoration-success="state == 'posted' "
+                           widget="badge"
+                           optional="hide"/>
+                    <field name="sifen_state"
+                           decoration-primary="sifen_state == 'pending' "
+                           decoration-warning="sifen_state == 'rejected' "
+                           decoration-success="sifen_state == 'approved' "
+                           string="SIFEN"
+                           widget="badge"/>
+                    <field name="sifen_state_code" optional="hide" string="Code"/>
+                    <field name="sifen_state_message" optional="hide"/>
+                    <field name="sifen_authorization" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_account_invoice_filter" model="ir.ui.view">
+            <field name="name">account.move.search</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='activities_upcoming_all']" position="after">
+                    <filter name='pending_send_edi' string="Correo no Enviado" domain="[('edi_document_sent','=',False)]"/>
+                </xpath>
+                <xpath expr="//filter[@name='group_by_sequence_prefix']" position="after">
+                    <filter name="group_by_sifen_state" string="SIFEN State" context="{'group_by':'sifen_state'}"/>
+                    <filter name="group_by_move_type" string="Move Type" context="{'group_by':'move_type'}"/>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

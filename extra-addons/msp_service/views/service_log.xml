@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="service_log_list" model="ir.ui.view">
+            <field name="name">service.log.list</field>
+            <field name="model">service.log</field>
+            <field name="arch" type="xml">
+                <list string="Service Log" multi_edit="1" sample="1">
+                    <field name="id" optional="hide"/>
+                    <field name="datetime"/>
+                    <field name="tag" widget="badge"/>
+                    <field name="type"
+                           decoration-danger="type == 'outbound' "
+                           decoration-success="type == 'inbound' "
+                           widget="badge"/>
+                    <field name="method"/>
+                    <field name="path" optional="show"/>
+                    <field name="request" optional="hide"/>
+                    <field name="short_response" optional="hide"/>
+                    <field name="status_code" optional="show"/>
+                    <field name="reason" optional="hide"/>
+                    <field name="res_model" optional="show"/>
+                    <field name="res_name" optional="show"/>
+                    <field name="res_id" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="service_log_form" model="ir.ui.view">
+            <field name="name">service.log.form</field>
+            <field name="model">service.log</field>
+            <field name="arch" type="xml">
+                <form string="Service Log">
+                    <header>
+                        <button name="process_response" type="object" string="Process Response" class="btn-primary"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="type"/>
+                                <field name="method"/>
+                                <field name="path"/>
+                                <field name="headers"/>
+                                <field name="tag" widget="badge"/>
+                                <field name="status_code"/>
+                                <field name="reason"/>
+                            </group>
+                            <group>
+                                <field name="datetime"/>
+                                <field name="res_model"/>
+                                <field name="res_id"/>
+                                <field name="res_name"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="request_page" string="Request">
+                                <field name="request" nolabel="1" widget="ace"/>
+                            </page>
+                            <page name="response_page" string="Response">
+                                <group>
+                                    <group>
+                                        <field name="status_code"/>
+                                        <field name="reason"/>
+                                    </group>
+                                </group>
+                                <field name="response" nolabel="1" widget="ace"/>
+                            </page>
+                            <page name="response_keys" string="Response Keys">
+                                <field name="response_ids" nolabel="1">
+                                    <list>
+                                        <field name="key"/>
+                                        <field name="value"/>
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="key"/>
+                                                <field name="value"/>
+                                            </group>
+                                            <group></group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="servile_log_search" model="ir.ui.view">
+            <field name="name">service.log.search</field>
+            <field name="model">service.log</field>
+            <field name="arch" type="xml">
+                <search string="Service Log">
+                    <field name="display_name"/>
+                    <field name="res_id"/>
+                    <field name="res_name"/>
+                    <field name="res_model"/>
+                    <field name="request"/>
+                    <field name="response"/>
+                    <group>
+                        <filter name="group_type" string="Type" context="{'group_by':'type'}"/>
+                        <filter name="group_tag" string="Tag" context="{'group_by':'tag'}"/>
+                        <filter name="group_method" string="Method" context="{'group_by':'method'}"/>
+                        <filter name="group_date" string="Date" context="{'group_by':'datetime'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

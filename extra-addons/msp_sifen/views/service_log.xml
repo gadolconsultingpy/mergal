@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="service_log_form" model="ir.ui.view">
+            <field name="name">service_log.form</field>
+            <field name="model">service.log</field>
+            <field name="inherit_id" ref="msp_service.service_log_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='res_name']" position="after">
+                    <field name="edi_event_id"/>
+                </xpath>
+                <xpath expr="//header" position="inside">
+                    <button name="run_python" type="object" string="Run Python" class="btn-primary"/>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

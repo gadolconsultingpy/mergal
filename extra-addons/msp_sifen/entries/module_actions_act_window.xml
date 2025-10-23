@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <!-- EDI PROCEDURE  -->
+        <record id="action_edi_procedure" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[EDI Procedure]]></field>
+            <field name="name">EDI Procedure</field>
+            <field name="res_model">edi.procedure</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI EVENT  -->
+        <record id="action_edi_event" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[EDI Event]]></field>
+            <field name="name">EDI Event</field>
+            <field name="res_model">edi.event</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI BATCH -->
+        <record id="action_edi_batch" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[EDI Batch]]></field>
+            <field name="name">EDI Batch</field>
+            <field name="res_model">edi.batch</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI TEMPLATE -->
+        <record id="action_edi_template" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[EDI Template]]></field>
+            <field name="name">EDI Template</field>
+            <field name="res_model">edi.template</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- SCHEDULED ACTIONS FOR EDI  -->
+        <record id="action_scheduled_actions" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field name="domain"
+                   eval="str([('active','in',[True,False]),
+                   ('id','in', (
+                    ref('msp_sifen.cron_queue_pending_invoices'),
+                    ref('msp_sifen.cron_queue_pending_stock_picking'),
+                    ref('msp_sifen.cron_edi_batch_check_for_prepare'),
+                    ref('msp_sifen.cron_edi_batch_consult'),
+                    ref('msp_sifen.cron_edi_event_pending_process'),
+                    ref('msp_sifen.cron_queue_pending_edi_document_cancel'),
+                    ref('msp_sifen.cron_queue_pending_edi_document_invalid')
+                    ))])"/>
+            <field name="groups_id" eval="[(6, 0, [])]"/>
+            <field name="help"><![CDATA[EDI Scheduled Actions]]></field>
+            <field name="name">EDI Scheduled Actions</field>
+            <field name="res_model">ir.cron</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI DASHBOARD  -->
+        <record id="action_edi_dashboard" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Dashboard]]></field>
+            <field name="name">Dashboard</field>
+            <field name="res_model">edi.dashboard</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+        <!-- EDI TAG  -->
+        <record id="action_edi_tag" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Tag]]></field>
+            <field name="name">Tag</field>
+            <field name="res_model">edi.tag</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI TEST -->
+        <record id="action_edi_test" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Test]]></field>
+            <field name="name">Test</field>
+            <field name="res_model">edi.test</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- ACCOUNT MOVE (EDI FIELDS)  -->
+        <record id="l10n_py_edi.action_edi_account_move" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{'default_move_type': 'out_invoice'}</field>
+            <field name="domain">[('move_type', 'in', ['out_invoice', 'out_refund']),
+                                  ('sifen_state', '!=', 'skip'),
+                                  ('state', '=', 'posted')]</field>
+            <field name="groups_id" eval="[(6, 0, [])]"/>
+            <field name="help"><![CDATA[Electronic Documents]]></field>
+            <field name="name">Electronic Documents</field>
+            <field name="res_model">account.move</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="msp_sifen.edi_account_move_list"></field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,pivot,graph,form</field>
+        </record>
+
+        <!-- STOCK PICKING (EDI FIELDS)  -->
+        <record id="l10n_py_edi.action_edi_stock_picking" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field name="domain">[('journal_id.invoice_type_id.code', '=', '7'),
+                                  ('sifen_state', '!=', 'skip'),
+                                  ('sequence_id', '!=', False),
+                                  ('state', '=', 'done')]</field>
+            <field name="groups_id" eval="[(6, 0, [])]"/>
+            <field name="help"><![CDATA[Electronic Documents]]></field>
+            <field name="name">Electronic Documents</field>
+            <field name="res_model">stock.picking</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="msp_sifen.edi_stock_picking_list"></field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+    </data>
+</odoo>

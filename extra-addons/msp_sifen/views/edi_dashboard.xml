@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista Tree -->
+    <record id="view_edi_dashboard_list" model="ir.ui.view">
+        <field name="name">edi.dashboard.list</field>
+        <field name="model">edi.dashboard</field>
+        <field name="arch" type="xml">
+            <list string="Dashboard">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="pending_qty"/>
+                <field name="queue_qty"/>
+                <field name="approved_qty"/>
+                <field name="rejected_qty"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista Form -->
+    <record id="view_edi_dashboard_form" model="ir.ui.view">
+        <field name="name">edi.dashboard.form</field>
+        <field name="model">edi.dashboard</field>
+        <field name="groups_id" eval="[(4,ref('l10n_py_edi.group_l10n_py_edi_manager'))]"/>
+        <field name="arch" type="xml">
+            <form string="Dashboard">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" readonly="1" force_save="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="edi_type" readonly="1" force_save="1"/>
+                            <field name="stat_type" readonly="1" force_save="1"/>
+                        </group>
+                        <group>
+                            <field name="pending_qty"/>
+                            <field name="queue_qty"/>
+                            <field name="approved_qty"/>
+                            <field name="rejected_qty"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Kanban -->
+    <record id="view_edi_dashboard_kanban" model="ir.ui.view">
+        <field name="name">edi.dashboard.kanban</field>
+        <field name="model">edi.dashboard</field>
+        <field name="arch" type="xml">
+            <kanban string="Dashboard">
+                <field name="name"/>
+                <field name="pending_qty"/>
+                <field name="queue_qty"/>
+                <field name="approved_qty"/>
+                <field name="rejected_qty"/>
+                <field name="stat_type"/>
+                <field name="edi_type"/>
+                <field name="html_color"/>
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="oe_kanban_card"
+                             t-att-style="'background-color:' + record.html_color.raw_value + '; height:180px;' ">
+                            <div>
+                                <strong>
+                                    <a type="object" name="open_statistic_table">
+                                        <h1><center><field name="name"/></center></h1>
+                                    </a>
+                                </strong>
+                            </div>
+                            <!-- EDI -->
+                            <div class="oe_row d-flex" t-att-style="'text-align:center;' " t-if="record.stat_type.raw_value == 'edi' ">
+                                <div t-att-style="'text-align:center; width:95px;' ">
+                                    <h5><div t-att-style="'color:#714B67;'"><strong>Pending</strong></div></h5>
+                                    <h2><div t-att-style="'color:#714B67;'"><field name="pending_qty"/></div></h2>
+                                </div>
+                                <div t-att-style="'text-align:center; width:95px;' ">
+                                    <h5><div t-att-style="'color:#017E84;'"><strong>Queue</strong></div></h5>
+                                    <h2><div t-att-style="'color:#017E84;'"><field name="queue_qty"/></div></h2>
+                                </div>
+                                <div t-att-style="'text-align:center; width:95px;' ">
+                                    <h5><div t-att-style="'color:#21B799;'"><strong>Approved</strong></div></h5>
+                                    <h2><div t-att-style="'color:#21B799;'"><field name="approved_qty"/></div></h2>
+                                </div>
+
+                                <div t-att-style="'text-align:center; width:95px;' ">
+                                    <h5><div t-att-style="'color:#E46E78;'"><strong>Rejected</strong></div></h5>
+                                    <h2><div t-att-style="'color:#E46E78;'"><field name="rejected_qty"/></div></h2>
+                                </div>
+                            </div>
+                            <!-- Batch -->
+                            <div t-att-style="'text-align:center; width:100%;'"
+                                 t-if="record.stat_type.raw_value == 'batch' ">
+                                <div style="display:block; width:100%; text-align:center;">
+                                    <div t-att-style="'text-align:center; width:95px; display:inline-block;' ">
+                                        <h5><div t-att-style="'color:#714B67;'"><strong>Open</strong></div></h5>
+                                        <h2><div t-att-style="'color:#714B67;'"><field name="open_qty"/></div></h2>
+                                    </div>
+                                    <div t-att-style="'text-align:center; width:95px; display:inline-block;' ">
+                                        <h5><div t-att-style="'color:#017E84;'"><strong>Prepared</strong></div></h5>
+                                        <h2><div t-att-style="'color:#017E84;'"><field name="prepared_qty"/></div></h2>
+                                    </div>
+                                    <div t-att-style="'text-align:center; width:95px; display:inline-block;' ">
+                                        <h5><div t-att-style="'color:#21B799;'"><strong>Sent</strong></div></h5>
+                                        <h2><div t-att-style="'color:#21B799;'"><field name="sent_qty"/></div></h2>
+                                    </div>
+                                </div>
+
+                                <div style="display:block; width:100%; text-align:center;" t-if="record.stat_type.raw_value == 'batch' ">
+                                    <div t-att-style="'text-align:center; width:95px; display:inline-block; white-space:nowrap;' ">Queue :<field
+                                            name="queue_qty"/></div>
+                                    <div t-att-style="'text-align:center; width:95px; display:inline-block; white-space:nowrap;' ">Sent : <field
+                                            name="sent_sifen_qty"/></div>
+                                    <div t-att-style="'text-align:center; width:95px; display:inline-block; white-space:nowrap;' ">Received : <field
+                                            name="received_qty"/></div>
+                                </div>
+                                <div style="display:block; width:100%; text-align:center;" t-if="record.stat_type.raw_value == 'batch' ">
+                                    <div t-att-style="'text-align:center; width:95px; display:inline-block; white-space:nowrap;' ">Finished : <field
+                                            name="finished_qty"/></div>
+                                    <div t-att-style="'text-align:center; width:95px; display:inline-block; white-space:nowrap;' ">Expired : <field
+                                            name="expired_qty"/></div>
+                                    <div t-att-style="'text-align:center; width:95px; display:inline-block; white-space:nowrap;' ">Rejected : <field
+                                            name="rejected_qty"/></div>
+                                </div>
+
+
+                            </div>
+                            <!--
+                            <div>Pending: <field name="pending_qty"/></div>
+                            -->
+
+                            <!-- Event -->
+                            <div class="oe_row d-flex" t-att-style="'text-align:center;'" t-if="record.stat_type.raw_value == 'event' ">
+                                <div t-att-style="'text-align:center; width:95px;' ">
+                                    <h5><div t-att-style="'color:#714B67;'"><strong>Pending</strong></div></h5>
+                                    <h2><div t-att-style="'color:#714B67;'"><field name="pending_qty"/></div></h2>
+                                </div>
+                                <div t-att-style="'text-align:center; width:95px;' ">
+                                    <h5><div t-att-style="'color:#017E84;'"><strong>Sent</strong></div></h5>
+                                    <h2><div t-att-style="'color:#017E84;'"><field name="sent_qty"/></div></h2>
+                                </div>
+                                <div t-att-style="'text-align:center; width:95px;' ">
+                                    <h5><div t-att-style="'color:#21B799;'"><strong>Finished</strong></div></h5>
+                                    <h2><div t-att-style="'color:#21B799;'"><field name="finished_qty"/></div></h2>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>

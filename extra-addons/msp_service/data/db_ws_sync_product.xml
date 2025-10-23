@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record id="db_ws_sync_product" model="service.controller.procedure">
+            <field name="name">Productos</field>
+            <field name="route">/db/ws/sync/product</field>
+            <field name="procedure">response = {}
+response = {}
+response["product_id"] = []
+response["new_product"] = []
+
+request_json = request.get_json_data()
+product_list = request_json.get("product",[])
+
+for prod in product_list:
+  code = prod.get('code', False)
+  if code:
+      check_product = self.env['product.product'].search([('default_code', '=', code)], limit=1)
+      if not check_product:
+        if request.httprequest.method == "POST":
+          pvals = {}
+          pvals['name'] = prod.get('name')
+          pvals['default_code'] = prod.get('code')
+          pvals['barcode'] = prod.get('barcode')
+          pvals['uom_id'] = self.env['uom.uom'].search([('symbol', '=', prod.get('unit_code'))]).id
+          product = self.env['product.product'].create(pvals)
+          response["new_product"].append({'code':code, 'id':product.id})
+        elif request.httprequest.method == "GET":
+          response["product_id"].append({'code':code, 'id':""})
+      else:
+        response["product_id"].append({'code':code, 'id':check_product.id})
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,630 @@
+"id","sequence","name","template"
+"__export__.edi_template_13_9330f225","0","Envelope_rEnvioLote","<?xml version=""1.0"" encoding=""UTF-8""?>
+<env:Envelope xmlns:env=""http://www.w3.org/2003/05/soap-envelope"">
+  <env:Header/>
+  <env:Body>
+    <rEnvioLote xmlns=""http://ekuatia.set.gov.py/sifen/xsd"">
+      <dId>{{ envelope_sequence }}</dId>
+      <xDE>{{ batch_content | safe }}</xDE>
+    </rEnvioLote>
+  </env:Body>
+</env:Envelope>
+"
+"__export__.edi_template_14_6a815a34","0","Envelope_rEnviConsLoteDe","<?xml version=""1.0"" encoding=""UTF-8""?>
+<env:Envelope xmlns:env=""http://www.w3.org/2003/05/soap-envelope"">
+  <env:Header/>
+  <env:Body>
+    <rEnviConsLoteDe xmlns=""http://ekuatia.set.gov.py/sifen/xsd"">
+        <dId>{{ batch_consult_sequence }}</dId>
+        <dProtConsLote>{{ batch_number }}</dProtConsLote>
+    </rEnviConsLoteDe>
+  </env:Body>
+</env:Envelope>"
+"__export__.edi_template_15_a8c67579","0","Envelope_rEnviConsDeRequest","<?xml version=""1.0"" encoding=""UTF-8""?>
+<env:Envelope xmlns:env=""http://www.w3.org/2003/05/soap-envelope"">
+  <env:Header></env:Header>
+  <env:Body>
+    <rEnviConsDeRequest xmlns=""http://ekuatia.set.gov.py/sifen/xsd"">
+        <dId>{{ consult_sequence }}</dId>
+        <dCDC>{{ cdc }}</dCDC>
+    </rEnviConsDeRequest>
+  </env:Body>
+</env:Envelope>
+"
+"__export__.edi_template_12_2c3a4543","0","rLoteDE","<rLoteDE>
+  {% for rde in documents %}
+  {{ rde | safe }}
+  {% endfor %}
+</rLoteDE>
+"
+"__export__.edi_template_1_6f281e0d","0","Envelope","<?xml version=""1.0"" encoding=""UTF-8""?>
+<env:Envelope xmlns:env=""http://www.w3.org/2003/05/soap-envelope"">
+  <env:Header/>
+  <env:Body>
+    {{ envelope_content }}
+  </env:Body>
+</env:Envelope>"
+"__export__.edi_template_10_48862c30","0","Envelope_rEnviDe","<?xml version=""1.0"" encoding=""UTF-8""?>
+<env:Envelope xmlns:env=""http://www.w3.org/2003/05/soap-envelope"">
+  <env:Header/>
+  <env:Body>
+    <rEnviDe xmlns=""http://ekuatia.set.gov.py/sifen/xsd"">
+      <dId>{{ envelope_sequence }}</dId>
+      <xDE>{{ envelope_content }}</xDE>
+      </rEnviDe>
+    </env:Body>
+</env:Envelope>"
+"__export__.edi_template_2_28e5c587","1","rEnviEventoDe","<rEnviEventoDe>
+  <dId>{{ envelope_sequence }}</dId>
+    <dEvReg>
+      <gGroupGesEve xmlns=""http://ekuatia.set.gov.py/sifen/xsd"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xsi:schemaLocation=""http://ekuatia.set.gov.py/sifen/xsd siRecepEvento_v150.xsd"">
+        {{ event_content | safe }}
+      </gGroupGesEve>
+    </dEvReg>
+</rEnviEventoDe>
+"
+"__export__.edi_template_3_257cfeea","2","rGesEve_cancel","<rGesEve xmlns=""http://ekuatia.set.gov.py/sifen/xsd"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xsi:schemaLocation=""http://ekuatia.set.gov.py/sifen/xsd siRecepEvento_v150.xsd"">
+  <rEve Id=""{{ event_id }}"">
+    <dFecFirma>{{ signature_datetime }}</dFecFirma>
+    <dVerFor>150</dVerFor>
+    <gGroupTiEvt>
+      <rGeVeCan>
+        <Id>{{ record.control_code }}</Id>
+        <mOtEve>{{ cancel_reason }}</mOtEve>
+      </rGeVeCan>
+    </gGroupTiEvt>
+  </rEve>
+</rGesEve>
+"
+"__export__.edi_template_5_968b4816","3","Envelope_rEnviEventoDe","<?xml version=""1.0"" encoding=""UTF-8""?>
+<env:Envelope xmlns:env=""http://www.w3.org/2003/05/soap-envelope"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://ekuatia.set.gov.py/sifen/xsd"" xsi:schemaLocation=""http://ekuatia.set.gov.py/sifen/xsd https://ekuatia.set.gov.py/sifen/xsd/WS_SiRecepEvento_v150.xsd"">
+  <env:Header/>
+  <env:Body>
+    <rEnviEventoDe>
+      <dId>{{ envelope_sequence }}</dId>
+        <dEvReg>
+          <gGroupGesEve xmlns=""http://ekuatia.set.gov.py/sifen/xsd"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xsi:schemaLocation=""http://ekuatia.set.gov.py/sifen/xsd siRecepEvento_v150.xsd"">
+            {{ event_content | safe }}
+          </gGroupGesEve>
+        </dEvReg>
+    </rEnviEventoDe>
+  </env:Body>
+</env:Envelope>"
+"__export__.edi_template_6_8b776fa8","4","rGesEve_invalid","<rGesEve xmlns=""http://ekuatia.set.gov.py/sifen/xsd"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xsi:schemaLocation=""http://ekuatia.set.gov.py/sifen/xsd siRecepEvento_v150.xsd"">
+  <rEve Id=""{{ event_id }}"">
+    <dFecFirma>{{ signature_datetime }}</dFecFirma>
+    <dVerFor>150</dVerFor>
+    <gGroupTiEvt>
+      <rGeVeInu>
+        <dNumTim>{{ record.stamped_number }}</dNumTim>
+        <dEst>{{ record.establishment }}</dEst>
+        <dPunExp>{{ record.dispatch_point }}</dPunExp>
+        <dNumIn>{{ ""%07d""|format(record.from_number) }}</dNumIn>
+        <dNumFin>{{ ""%07d""|format(record.to_number) }}</dNumFin>
+        <iTiDE>{{ record.journal_id.invoice_type_id.code }}</iTiDE>
+        <mOtEve>{{ record.reason }}</mOtEve>
+      </rGeVeInu>
+    </gGroupTiEvt>
+  </rEve>
+</rGesEve>
+"
+"__export__.edi_template_7_fa87dd6b","5","Envelope_rEnviConsRUC","<?xml version=""1.0"" encoding=""UTF-8""?>
+<soap:Envelope xmlns:soap=""http://www.w3.org/2003/05/soap-envelope"" xmlns:xsd=""http://ekuatia.set.gov.py/sifen/xsd"">
+  <soap:Header/>
+  <soap:Body>
+    <xsd:rEnviConsRUC xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://ekuatia.set.gov.py/sifen/xsd"" xsi:schemaLocation=""http://ekuatia.set.gov.py/sifen/xsd/ siConsRUC_v150.xsd"">
+      <dId>{{ sequence_id }}</dId>
+      <dRUCCons>{{ vat }}</dRUCCons>
+    </xsd:rEnviConsRUC>
+  </soap:Body>
+</soap:Envelope>"
+"__export__.edi_template_8_eb3f5ebc","6","rDE","<rDE xmlns=""http://ekuatia.set.gov.py/sifen/xsd"" xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xsi:schemaLocation=""https://ekuatia.set.gov.py/sifen/xsd siRecepDE_v150.xsd"">
+  <dVerFor>150</dVerFor>
+  <DE Id=""{{ move.control_code }}"">
+    <dDVId>{{ move.control_code[-1] }}</dDVId>
+    <dFecFirma>{{ signature_datetime }}</dFecFirma>
+    <dSisFact>1</dSisFact>
+    {# -- B -- #}
+    <gOpeDE>
+        <iTipEmi>{{ move.issue_type }}</iTipEmi>
+        <dDesTipEmi>{% if move.issue_type == '2' %}Contingencia{% else %}Normal{% endif %}</dDesTipEmi>
+        <dCodSeg>{{ move.security_code }}</dCodSeg>
+        <dInfoEmi>1</dInfoEmi>
+        <dInfoFisc>Información de interés del Fisco respecto al DE</dInfoFisc>
+    </gOpeDE>
+    {# -- C -- #}
+    <gTimb>
+      {# -- C002 -- #}
+      {% set C002_invoice_type = move.journal_id.invoice_type_id.code %}
+      <iTiDE>{{ C002_invoice_type }}</iTiDE>
+      <dDesTiDE>{{ move.journal_id.invoice_type_id.name[:40] }}</dDesTiDE>
+      <dNumTim>{{ move.sequence_id.stamped_number }}</dNumTim>
+      <dEst>{{ move.sequence_id.establishment }}</dEst>
+      <dPunExp>{{ move.sequence_id.dispatch_point }}</dPunExp>
+      <dNumDoc>{{ move.document_number }}</dNumDoc>
+      {% if move.document_serial %}
+      <dSerieNum>{{ move.document_serial }}</dSerieNum>
+      {% endif %}
+      <dFeIniT>{{ move.sequence_id.from_date.strftime('%Y-%m-%d') }}</dFeIniT>
+    </gTimb>
+    {# -- D -- #}
+    <gDatGralOpe>
+      <dFeEmiDE>{{ move_invoice_date }}</dFeEmiDE>
+      <!-- D1 -->
+      <!-- D010 -->
+      {% if C002_invoice_type != '7' %}
+      <gOpeCom>
+        {% if C002_invoice_type in ['1', '4'] %}
+        <iTipTra>{{ move.transaction_type_id.code }}</iTipTra>
+        <dDesTipTra>{{ move.transaction_type_id.name }}</dDesTipTra>
+        {% endif %}
+        <iTImp>{{ move.tax_type_id.code }}</iTImp>
+        <dDesTImp>{{ move.tax_type_id.name }}</dDesTImp>
+        <cMoneOpe>{{ move.currency_id.name }}</cMoneOpe>
+        <dDesMoneOpe>{{ move.currency_id.currency_unit_label }}</dDesMoneOpe>
+        {% if not move.is_local_currency %}
+        <dCondTiCam>{{ move.currency_rate_condition }}</dCondTiCam>
+        {% if move.currency_rate_condition == '1' %}
+        <dTiCam>{{ move.currency_rate }}</dTiCam>
+        {% endif %}
+        {% endif %}
+      </gOpeCom>
+      {% endif %}
+      <!-- D2 -->
+      <gEmis>
+        {% set company_vat = move.company_id.vat if move.company_id.vat else '0-0' %}
+        <dRucEm>{{ company_vat.split('-')[0] }}</dRucEm>
+        <dDVEmi>{{ company_vat.split('-')[1] }}</dDVEmi>
+        <iTipCont>{{ move.company_id.tax_payer_type }}</iTipCont>
+        <cTipReg>{{ move.company_id.partner_id.property_account_position_id.code }}</cTipReg>
+        {% if move.company_id.sifen_environment == '1' %}
+        <dNomEmi>{{ move.company_id.partner_id.name }}</dNomEmi>
+        {% else %}
+        <dNomEmi>DE generado en ambiente de prueba - sin valor comercial ni fiscal</dNomEmi>
+        {% endif %}
+        <dDirEmi>{{ move.company_id.partner_id.street }}</dDirEmi>
+        <dNumCas>{{ move.company_id.partner_id.street_number }}</dNumCas>
+        <cDepEmi>{{ move.company_id.partner_id.state_id.code }}</cDepEmi>
+        <dDesDepEmi>{{ move.company_id.partner_id.state_id.name[:16] }}</dDesDepEmi>
+        <cDisEmi>{{ move.company_id.partner_id.district_id.code }}</cDisEmi>
+        <dDesDisEmi>{{ move.company_id.partner_id.district_id.name }}</dDesDisEmi>
+        <cCiuEmi>{{ move.company_id.partner_id.location_id.code }}</cCiuEmi>
+        <dDesCiuEmi>{{ move.company_id.partner_id.location_id.name[:30] }}</dDesCiuEmi>
+        <dTelEmi>{{ move.company_id.partner_id.phone[:15] }}</dTelEmi>
+        {% if move.company_id.partner_id.email %}
+        <dEmailE>{{ move.company_id.partner_id.email[:80] }}</dEmailE>
+        {% endif %}
+        <!-- D2.1 -->
+        {% for company_activity in move.company_id.company_activity_ids %}
+        <gActEco>
+          <cActEco>{{ company_activity.code }}</cActEco>
+          <dDesActEco>{{ company_activity.name }}</dDesActEco>
+        </gActEco>
+        {% endfor %}
+      </gEmis>
+      <!-- D3 -->
+      <gDatRec>
+        {% set D201_nature = move.partner_id.parent_id.nature or move.partner_id.nature %}
+        {% set partner = move.partner_id.parent_id or move.partner_id %}
+        <iNatRec>{{ D201_nature }}</iNatRec>
+        <!-- D202 -->
+        {% set D202_business_type = move.business_type() %}
+        <iTiOpe>{{ D202_business_type }}</iTiOpe>
+        <cPaisRec>{{ partner.country_id.iso_code }}</cPaisRec>
+        <dDesPaisRe>{{ partner.country_id.name }}</dDesPaisRe>
+        {% set partner_vat = partner.vat if partner.vat else '0-0' %}
+        {% if D201_nature == '1' %}
+        <iTiContRec>{{ partner.tax_payer_type }}</iTiContRec>
+        <dRucRec>{{ partner_vat.split('-')[0] }}</dRucRec>
+        <dDVRec>{{ partner_vat.split('-')[1] }}</dDVRec>
+        {% endif %}
+        {% if D201_nature == '2' and D202_business_type != '4' %}
+        <iTipIDRec>{{ partner.l10n_latam_identification_type_id.edi_code }}</iTipIDRec>
+        <dDTipIDRec>{{ partner.l10n_latam_identification_type_id.edi_name }}</dDTipIDRec>
+        {% if partner.l10n_latam_identification_type_id.edi_code == '5' %}
+        <dNumIDRec>0</dNumIDRec>
+        {% else %}
+        <dNumIDRec>{{ partner.vat }}</dNumIDRec>
+        {% endif %}
+        {% endif %}
+        <dNomRec>{{ partner.get_escaped_name()[:255] }}</dNomRec>
+        {% if C002_invoice_type == '7' or D202_business_type == '4' %}
+        <!-- {% if partner.street_name %}-->
+        <dDirRec>{{ partner.street_name }}</dDirRec>
+        <dNumCasRec>{{ partner.street_number }}</dNumCasRec>
+        <!-- {% endif %} -->
+        {% if partner.street_name and D202_business_type != '4' %}
+        <cDepRec>{{ partner.state_id.code }}</cDepRec>
+        <dDesDepRec>{{ partner.state_id.name }}</dDesDepRec>
+        <cDisRec>{{ partner.district_id.code }}</cDisRec>
+        <dDesDisRec>{{ partner.district_id.name }}</dDesDisRec>
+        <cCiuRec>{{ partner.location_id.code }}</cCiuRec>
+        <dDesCiuRec>{{ partner.location_id.name }}</dDesCiuRec>
+        {% endif %}
+        {% endif %}
+      </gDatRec>
+    </gDatGralOpe>
+    <!-- E -->
+
+    {% set ns = namespace(dBaseGrav10 = 0, dBaseGrav5 = 0, dIVA10 = 0, dIVA5 = 0, tax5_subtotal = 0, tax10_subtotal = 0, exe_subtotal = 0, exo_subtotal = 0) %}
+    
+    <gDtipDE>
+      <!-- E1 -->
+      {% if C002_invoice_type == '1' %}
+      <gCamFE>
+        <iIndPres>{{ move.presence_id.code }}</iIndPres>
+        <dDesIndPres>{{ move.presence_id.name }}</dDesIndPres>
+      </gCamFE>
+      {% endif %}
+      <!-- E5 -->
+      {% if C002_invoice_type in ['5', '6'] %}
+      <gCamNCDE>
+        <iMotEmi>{{ move.issue_reason_id.code }}</iMotEmi>
+        <dDesMotEmi>{{ move.issue_reason_id.name }}</dDesMotEmi>
+      </gCamNCDE>
+      {% endif %}
+      <!-- E6 --> <!-- NOTA DE REMISION ELECTRONICA -->
+      {% if C002_invoice_type == '7' %}
+      <gCamNRE>
+        <iMotEmiNR>{{ move.issue_reason_id.code }}</iMotEmiNR>
+        <dDesMotEmiNR>{{ move.issue_reason_id.name }}</dDesMotEmiNR>
+        <iRespEmiNR>{{ move.issue_responsible_id.code }}</iRespEmiNR>
+        <dDesRespEmiNR>{{ move.issue_responsible_id.name }}</dDesRespEmiNR>
+        <dKmR>10</dKmR>
+        <dFecEm>{{ move.scheduled_invoice_date }}</dFecEm>
+      </gCamNRE>
+      {% endif %}
+      <!-- E7 -->
+      {% if C002_invoice_type in ['1', '4'] %}
+      <gCamCond>
+        <iCondOpe>{{ move.payment_type }}</iCondOpe>
+        {% if move.payment_type == '1' %}
+        <dDCondOpe>Contado</dDCondOpe>
+        {% else %}
+        <dDCondOpe>Crédito</dDCondOpe>
+        {% endif %}
+        {% if move.payment_type == '1' %}
+        <!-- E7.1 -->
+        {% for payment in move.payment_form_ids %}
+        <gPaConEIni>
+          {% set E606_iTiPago = payment.payment_form_id.code %}
+          <iTiPago>{{ payment.payment_form_id.edi_type_id.code }}</iTiPago>
+          <dDesTiPag>{{ payment.payment_form_id.edi_type_id.name }}</dDesTiPag>
+          <dMonTiPag>{{ '%.0f' % payment.payment_amount }}</dMonTiPag>
+          <cMoneTiPag>{{ payment.payment_currency_id.name }}</cMoneTiPag>
+          <dDMoneTiPag>{{ payment.payment_currency_id.currency_unit_label }}</dDMoneTiPag>
+          {% if payment.move_id.company_id.currency_id.id != payment.payment_currency_id.id %}
+          <dTiCamTiPag>{{ payment.company_currency_rate }}</dTiCamTiPag>
+          {% endif %}
+          <!-- E7.1.1 -->
+          {% if payment.payment_form_id.code in ['3', '4'] %}
+          <gPagTarCD>
+            <iDenTarj>{{ payment.issuer_id.code }}</iDenTarj>
+            <dDesDenTarj>{{ payment.issuer_id.name[:20] }}</dDesDenTarj>
+            <iForProPa>{{ payment.payment_form_id.process_form_id.code }}</iForProPa>
+          </gPagTarCD>
+          {% endif %}
+          <!-- E7.1.2 -->
+          {% if payment.payment_form_id.code == '2' %}
+          <gPagCheq>
+            <dNumCheq>{{ payment.number }}</dNumCheq>
+            <dBcoEmi>{{ payment.bank_id.name[:20] }}</dBcoEmi>
+          </gPagCheq>
+          {% endif %}
+        </gPaConEIni>
+        {% endfor %}
+        {% endif %}
+        {% if move.payment_type == '2' %}
+          <!-- E7.2 -->
+          <gPagCred>
+            <iCondCred>{{ move.invoice_payment_term_id.credit_type }}</iCondCred>
+            <dDCondCred>{{ 'Cuota' if move.invoice_payment_term_id.credit_type == '2' else 'Plazo' }}</dDCondCred>
+            {% if move.invoice_payment_term_id.credit_type == '1' %}
+            <dPlazoCre>{{ move.invoice_payment_term_id.name[:15] }}</dPlazoCre>
+            {% endif %}
+            {% if move.invoice_payment_term_id.credit_type == '2' %}
+            <dCuotas>{{ move.installment_ids|length }}</dCuotas>
+            {% endif %}
+            {% if move.payment_form_ids|length %}
+            <dMonEnt>{{ move.payment_form_ids[0].amount }}</dMonEnt>
+            {% endif %}
+            {% if move.invoice_payment_term_id.credit_type == '2' %}
+            {% if move.installment_ids|length %}
+            <!-- E7.2.1 -->
+            {% for installment in move.installment_ids %}
+            <gCuotas>
+              <cMoneCuo>{{ installment.currency_id.name }}</cMoneCuo>
+              <dDMoneCuo>{{ installment.currency_id.currency_unit_label }}</dDMoneCuo>
+              <dMonCuota>{{ installment.amount|float|int }}</dMonCuota>
+              <dVencCuo>{{ installment.date_due.strftime('%Y-%m-%d') }}</dVencCuo>
+            </gCuotas>
+            {% endfor %}
+            {% endif %}
+            {% endif %}
+          </gPagCred>
+        {% endif %}
+      </gCamCond>
+      {% endif %}
+      {% if C002_invoice_type == '7' %}
+        {% set row_ids = move.move_line_ids_without_package %}
+      {% else %}
+        {% set row_ids = move.invoice_line_ids %}
+      {% endif %}
+      
+      {% for item in row_ids %}
+      {% if C002_invoice_type == '7' %}
+        {% set item_tax_id = 0 %}
+      {% else %}
+        {% set item_tax_id = item.tax_ids[0] %}
+      {% endif %}
+      <!-- E8 -->
+      <gCamItem>
+          {% if item.product_id.default_code %}
+          <dCodInt>{{ item.product_id.default_code }}</dCodInt>
+          {% else %}
+          <dCodInt>{{ '%020d' % item.product_id.id }}</dCodInt>
+          {% endif %}
+          <dDesProSer>{{ item.product_id.name }}</dDesProSer>
+          <cUniMed>{{ item.product_id.uom_id.code }}</cUniMed>
+          <dDesUniMed>{{ item.product_id.uom_id.symbol }}</dDesUniMed>
+          {% if C002_invoice_type == '7' %}
+            <dCantProSer>{{ '%.4f' % item.qty_done }}</dCantProSer>
+            <dInfItem>{{ item.get_edi_line_inf() }}</dInfItem>
+          {% else %}
+            <dCantProSer>{{ '%.4f' % item.quantity }}</dCantProSer>
+          {% endif %}
+          
+          {% if C002_invoice_type != '7' %}
+            <!-- E8.1 -->
+            <gValorItem>
+              <dPUniProSer>{{ '%.8f' % item.price_unit_with_tax }}</dPUniProSer>
+              {% set E725_exists = False %}
+              {% if not move.is_local_currency %}
+              {% if move.currency_rate_condition == '2' %}
+              <dTiCamIt>{{ '%.4f' % move.currency_rate }}</dTiCamIt>
+              {% set E725_exists = True %}
+              {% endif %}
+              {% endif %}
+              <dTotBruOpeItem>{{ '%.8f' %(item.price_total_with_tax) }}</dTotBruOpeItem>
+              <gValorRestaItem>
+              <dDescItem>{{ '%.2f' % item.unit_discount_amount }}</dDescItem>
+                {% if item.discount_amount > 0 %}
+              <dPorcDesIt>{{ '%.2f' % (item.unit_discount_amount * 100 / item.price_unit_with_tax) }}</dPorcDesIt>
+                {% endif %}
+                <dTotOpeItem>{{ '%.8f' % (item.price_subtotal_with_tax) }}</dTotOpeItem>
+                {% if E725_exists %}
+                <dTotOpeGs>{{ '%.8f' % move.local_amount(item.price_total) }}</dTotOpeGs>
+                {% endif %}
+              </gValorRestaItem>
+            </gValorItem>
+            <!-- E8.2 -->
+            {% if C002_invoice_type not in ['3', '4', '7'] %}
+              {% if item_tax_id %}
+                {% if item_tax_id.tax_application_type_id.code in ['1','3','4','5'] %}
+                <gCamIVA>
+                  <iAfecIVA>{{ item_tax_id.tax_application_type_id.code }}</iAfecIVA>
+                  <dDesAfecIVA>{{ item_tax_id.tax_application_type_id.name }}</dDesAfecIVA>
+                  <dPropIVA>{{ '%.0f' % item_tax_id.taxable_percent }}</dPropIVA>
+                  <dTasaIVA>{{ item_tax_id.amount|float|int }}</dTasaIVA>
+                  {% if item_tax_id.amount|float|int == 5 %}
+                  <dBasGravIVA>{{ '%.8f' % item.taxable_subtotal }}</dBasGravIVA>
+                  <dLiqIVAItem>{{ '%.8f' % item.tax_total }}</dLiqIVAItem>
+                  <dBasExe>0</dBasExe>
+                  {% set ns.dIVA5 = ns.dIVA5 + item.tax_total %}
+                  {% set ns.dBaseGrav5 = ns.dBaseGrav5 + item.taxable_subtotal|float %}
+                  {% elif item_tax_id.amount|float|int == 10 %}
+                  <dBasGravIVA>{{ '%.8f' % item.taxable_subtotal }}</dBasGravIVA>
+                  <dLiqIVAItem>{{ '%.8f' % item.tax_total }}</dLiqIVAItem>
+                  <dBasExe>0</dBasExe>
+                  {% set ns.dIVA10 = ns.dIVA10 + item.tax_total %}
+                  {% set ns.dBaseGrav10 = ns.dBaseGrav10 + item.taxable_subtotal %}
+                  {% elif item_tax_id.amount|float|int == 0 %}
+                  <dBasGravIVA>0.00000000</dBasGravIVA>
+                  <dLiqIVAItem>0.00000000</dLiqIVAItem>
+                  <dBasExe>0</dBasExe>
+                  {% endif %}
+                  {% if item_tax_id.tax_application_type_id.code == '4' %}
+                  <dBasExe>{{ '%.8f' % item.taxable_subtotal }}</dBasExe>
+                  {% endif %}
+                </gCamIVA>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+      </gCamItem>
+      {% if item_tax_id %}
+        {% if item_tax_id.tax_application_type_id.code == '1' %}
+          {% if item_tax_id.amount == 5 %}
+            {% set ns.tax5_subtotal = ns.tax5_subtotal + item.price_total %}
+          {% elif item_tax_id.amount == 10 %}
+            {% set ns.tax10_subtotal = ns.tax10_subtotal + item.price_total %}
+          {% endif %}
+        {% elif item_tax_id.tax_application_type_id.code == '2' %}
+          {% set ns.exo_subtotal = ns.exo_subtotal + item.price_subtotal %}
+        {% elif item_tax_id.tax_application_type_id.code == '3' %}
+          {% set ns.exe_subtotal = ns.exe_subtotal + item.price_subtotal %}
+        {% endif %}
+      {% endif %}
+      {% endfor %}
+      {% if C002_invoice_type == '7' %}
+      <gTransp>
+        <iTipTrans>1</iTipTrans>
+        <dDesTipTrans>Propio</dDesTipTrans>
+        <iModTrans>1</iModTrans>
+        <dDesModTrans>Terrestre</dDesModTrans>
+        <iRespFlete>1</iRespFlete>
+        <dIniTras>{{ move.date_done.strftime('%Y-%m-%d') }}</dIniTras>
+        <dFinTras>{{ move.date_done.strftime('%Y-%m-%d') }}</dFinTras>
+        {% set ns_partners = namespace(from_partner = 0, to_partner = 0) %}
+        {% set ns_partners.from_partner = move.picking_type_id.warehouse_id.partner_id %}
+        {% set ns_partners.to_partner = move.partner_id %}
+        <gCamSal>
+          <dDirLocSal>{{ ns_partners.from_partner.street_name }}</dDirLocSal>
+          <dNumCasSal>{{ ns_partners.from_partner.street_number }}</dNumCasSal>
+          <cDepSal>{{ ns_partners.from_partner.state_id.code }}</cDepSal>
+          <dDesDepSal>{{ ns_partners.from_partner.state_id.name[:16] }}</dDesDepSal>
+          <cCiuSal>{{ ns_partners.from_partner.location_id.code }}</cCiuSal>
+          <dDesCiuSal>{{ ns_partners.from_partner.location_id.name }}</dDesCiuSal>
+        </gCamSal>
+        <gCamEnt>
+          <dDirLocEnt>{{ ns_partners.to_partner.street_name }}</dDirLocEnt>
+          <dNumCasEnt>{{ ns_partners.to_partner.street_number }}</dNumCasEnt>
+          <cDepEnt>{{ ns_partners.to_partner.state_id.code }}</cDepEnt>
+          <dDesDepEnt>{{ ns_partners.to_partner.state_id.name[:16] }}</dDesDepEnt>
+          <cCiuEnt>{{ ns_partners.to_partner.location_id.code }}</cCiuEnt>
+          <dDesCiuEnt>{{ ns_partners.to_partner.location_id.name }}</dDesCiuEnt>
+        </gCamEnt>
+        <gVehTras>
+          <dTiVehTras>Terrestre</dTiVehTras>
+          <dMarVeh>{{ move.vehicle_id.model_id.brand_id.name}}</dMarVeh>
+          <dTipIdenVeh>2</dTipIdenVeh>
+          <dNroMatVeh>{{ move.vehicle_id.license_plate }}</dNroMatVeh>
+        </gVehTras>
+        <gCamTrans>
+          {% if move.vehicle_id.driver_id.parent_id %}
+            <!-- CON TRANSPORTISTA -->
+            <iNatTrans>{{ move.vehicle_id.driver_id.parent_id.nature }}</iNatTrans>
+            <dNomTrans>{{ move.vehicle_id.driver_id.parent_id.name }}</dNomTrans>
+            <!-- Contribuyente -->
+            {% if move.vehicle_id.driver_id.parent_id.nature == '1' %}
+              <dRucTrans>{{ move.vehicle_id.driver_id.parent_id.vat.split(""-"")[0] }}</dRucTrans>
+              <dDVTrans>{{ move.vehicle_id.driver_id.parent_id.vat.split(""-"")[1] }}</dDVTrans>
+              <dNumIDChof>{{ move.vehicle_id.driver_id.vat }}</dNumIDChof>
+              <dNomChof>{{ move.vehicle_id.driver_id.name }}</dNomChof>
+              <dDomFisc>{{ move.vehicle_id.driver_id.parent_id.street_name }}</dDomFisc>
+              <dDirChof>{{ move.vehicle_id.driver_id.street_name }}</dDirChof>
+            {% endif %}
+          {% else %}
+            <!-- SIN TRANSPORTISTA -->
+            <iNatTrans>{{ move.vehicle_id.driver_id.nature }}</iNatTrans>
+            <dNomTrans>{{ move.vehicle_id.driver_id.name }}</dNomTrans>
+            <!-- Contribuyente -->
+            {% if move.vehicle_id.driver_id.nature == '1' %}
+              <dRucTrans>{{ move.vehicle_id.driver_id.vat.split(""-"")[0] }}</dRucTrans>
+              <dDVTrans>{{ move.vehicle_id.driver_id.vat.split(""-"")[1] }}</dDVTrans>
+            {% endif %}
+            <!-- No Contribuyente -->
+            {% if move.vehicle_id.driver_id.nature == '2' %}
+              <iTipIDTrans>{{ move.vehicle_id.driver_id.l10n_latam_identification_type_id.edi_code }}</iTipIDTrans>
+              <dDTipIDTrans>{{ move.vehicle_id.driver_id.l10n_latam_identification_type_id.edi_name }}</dDTipIDTrans>
+              <dNumIDTrans>{{ move.vehicle_id.driver_id.vat }}</dNumIDTrans>
+              <dNumIDChof>{{ move.vehicle_id.driver_id.vat }}</dNumIDChof>
+              <dNomChof>{{ move.vehicle_id.driver_id.name }}</dNomChof>
+              <dDomFisc>{{ move.vehicle_id.driver_id.street_name }}</dDomFisc>
+              <dDirChof>{{ move.vehicle_id.driver_id.street_name }}</dDirChof>
+            {% endif %}
+          {% endif %}
+        </gCamTrans>
+      </gTransp>
+      {% endif %}
+    </gDtipDE>
+    <!-- F -->
+    {% if C002_invoice_type != '7' %}
+    <gTotSub>
+      <dSubExe>{{ '%.8f' % ns.exe_subtotal }}</dSubExe>
+      <dSub5>{{ '%.8f' % ns.tax5_subtotal }}</dSub5>
+      <dSub10>{{ '%.8f' % ns.tax10_subtotal }}</dSub10>
+      <dTotOpe>{{ '%.8f' % move.amount_total }}</dTotOpe>
+      <dTotDesc>{{ '%.8f' % move.discount_total }}</dTotDesc>
+      <dTotDescGlotem>0.00000000</dTotDescGlotem>
+      <dTotAntItem>0</dTotAntItem>
+      <dTotAnt>0</dTotAnt>
+      <dPorcDescTotal>0.00000000</dPorcDescTotal>
+      <dDescTotal>{{ '%.8f' % move.discount_total }}</dDescTotal>
+      <dAnticipo>0</dAnticipo>
+      <dRedon>0.0000</dRedon>
+      <dTotGralOpe>{{ '%.8f' % move.amount_total }}</dTotGralOpe>
+      <dIVA5>{{ '%.8f' % ns.dIVA5 }}</dIVA5>
+      <dIVA10>{{ '%.8f' % ns.dIVA10 }}</dIVA10>
+      <dTotIVA>{{ '%.8f' % (ns.dIVA5 + ns.dIVA10) }}</dTotIVA>
+      <dBaseGrav5>{{ '%.8f' % ns.dBaseGrav5 }}</dBaseGrav5>
+      <dBaseGrav10>{{ '%.8f' % ns.dBaseGrav10 }}</dBaseGrav10>
+      <dTBasGraIVA>{{ '%.8f' % (ns.dBaseGrav5 + ns.dBaseGrav10) }}</dTBasGraIVA>
+      {% if not move.is_local_currency %}
+        <dTotalGs>{{ '%.8f' % move.local_amount(move.amount_total) }}</dTotalGs>
+      {% endif %}
+    </gTotSub>
+    {% endif %}
+    <!-- H -->
+    
+    {% if move.reverted_invoice_ids|length > 0 %}
+    <!-- NOTA DE CREDITO CON DOCUMENTO DE OTROS SISTEMAS -->
+      {% if C002_invoice_type in ['5','6'] %}
+        {% for rev_doc in move.reverted_invoice_ids %}
+          <gCamDEAsoc>
+            <iTipDocAso>{{ rev_doc.reversion_document_type }}</iTipDocAso>
+            {% if rev_doc.reversion_document_type == '1' %}
+              <dDesTipDocAso>Electrónico</dDesTipDocAso>
+              <dCdCDERef>{{ rev_doc.reverted_cdc }}</dCdCDERef>
+            {% endif %}
+            {% if rev_doc.reversion_document_type == '2' %}
+              <dDesTipDocAso>Impreso</dDesTipDocAso>
+              <dNTimDI>{{ rev_doc.reverted_stamped_number }}</dNTimDI>
+              <dEstDocAso>{{ rev_doc.reverted_invoice_establishment }}</dEstDocAso>
+              <dPExpDocAso>{{ rev_doc.reverted_invoice_dispatch_point }}</dPExpDocAso>
+              <dNumDocAso>{{ rev_doc.reverted_invoice_number }}</dNumDocAso>
+            {% if rev_doc.reverted_invoice_type_id.code == '5' %}
+              <iTipoDocAso>2</iTipoDocAso>
+              <dDTipoDocAso>Nota de crédito</dDTipoDocAso>
+            {% else %}
+              <iTipoDocAso>1</iTipoDocAso>
+              <dDTipoDocAso>Factura</dDTipoDocAso>
+            {% endif %}
+            <dFecEmiDI>{{ rev_doc.reverted_invoice_date.strftime('%Y-%m-%d') }}</dFecEmiDI>
+            {% endif %}
+            {% if E606_iTiPago == '10' %}
+            <dNumComRet></dNumComRet>
+            <dNumResCF></dNumResCF>
+            <iTipCons></iTipCons>
+            <dDesTipCons></dDesTipCons>
+            <dNumCons></dNumCons>
+            <dNumControl></dNumControl>
+            {% endif %}
+          </gCamDEAsoc>
+        {% endfor %}
+      {% endif %}
+    {% else %}
+      <!-- NOTA DE CREDITO CON DOCUMENTO ODOO -->
+      {% if C002_invoice_type in ['5','6'] %}
+      <gCamDEAsoc>
+        {% set related = move.reversed_entry_id %}
+        {% if related.control_code %}
+          <iTipDocAso>1</iTipDocAso>
+          <dDesTipDocAso>Electrónico</dDesTipDocAso>
+          <dCdCDERef>{{ related.control_code }}</dCdCDERef>
+        {% else %}
+          <iTipDocAso>2</iTipDocAso>
+          <dDesTipDocAso>Impreso</dDesTipDocAso>
+          {% if related.sequence_id.stamped_number %}
+            <dNTimDI>{{ related.stamped_number }}</dNTimDI>
+          {% else %}
+            <dNTimDI>{{ related.timbrado_id.name }}</dNTimDI>
+          {% endif %}
+          <dEstDocAso>{{ related.name.split('-')[0] }}</dEstDocAso>
+          <dPExpDocAso>{{ related.name.split('-')[1] }}</dPExpDocAso>
+          <dNumDocAso>{{ related.name.split('-')[2] }}</dNumDocAso>
+        {% if related.move_type == 'out_refund' %}
+          <iTipoDocAso>2</iTipoDocAso>
+          <dDTipoDocAso>Nota de crédito</dDTipoDocAso>
+        {% else %}
+          <iTipoDocAso>1</iTipoDocAso>
+          <dDTipoDocAso>Factura</dDTipoDocAso>
+        {% endif %}
+        <dFecEmiDI>{{ related.invoice_date.strftime('%Y-%m-%d') }}</dFecEmiDI>
+        {% endif %}
+        {% if E606_iTiPago == '10' %}
+        <dNumComRet></dNumComRet>
+        <dNumResCF></dNumResCF>
+        <iTipCons></iTipCons>
+        <dDesTipCons></dDesTipCons>
+        <dNumCons></dNumCons>
+        <dNumControl></dNumControl>
+        {% endif %}
+      </gCamDEAsoc>
+      {% endif %}
+    {% endif %}
+    
+    
+  </DE>
+</rDE>"
+"__export__.edi_template_9_d894aab5","7","gCamFuFD","<gCamFuFD><dCarQR>{{ qr_link }}</dCarQR></gCamFuFD>"

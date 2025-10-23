@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="edi_procedure_list" model="ir.ui.view">
+            <field name="name">edi.procedure.list</field>
+            <field name="model">edi.procedure</field>
+            <field name="arch" type="xml">
+                <list string="EDI Procedure" sample="1">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="comment"/>
+                    <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="edi_procedure_form" model="ir.ui.view">
+            <field name="name">edi.procedure.form</field>
+            <field name="model">edi.procedure</field>
+            <field name="arch" type="xml">
+                <form string="EDI Procedure">
+                    <header>
+                        <button name="execute" type="object" string="Execute" class="btn-primary"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="comment"/>
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field':'color'}"/>
+                            <field name="company_id"/>
+                        </group>
+                        <field name="procedure" widget="ace" options="{'mode':'python'}" nolabel="1"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="edi_procedure_search_view" model="ir.ui.view">
+            <field name="name">edi.procedure.search</field>
+            <field name="model">edi.procedure</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="name" string="Name"/>
+                    <field name="procedure" string="Procedure"/>
+                </search>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
