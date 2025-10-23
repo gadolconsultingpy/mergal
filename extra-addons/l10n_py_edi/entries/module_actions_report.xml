@@ -1,0 +1,24 @@
+<odoo>
+    <record id="account_eticket_report_action" model="ir.actions.report">
+        <field name="name">Electronic Ticket</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">l10n_py_edi.account_eticket</field>
+        <field name="report_file">l10n_py_edi.account_eticket_report</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="paperformat_id" ref="l10n_py_edi.paperformat_eticket"/>
+        <field name="print_report_name">'invoice_%s' % (object.name.replace("-", "_"))</field>
+    </record>
+
+    <record id="account_einvoice_action" model="ir.actions.report">
+        <field name="name">Electronic Invoice</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">l10n_py_edi.account_einvoice</field>
+        <field name="report_file">l10n_py_edi.account_einvoice</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="paperformat_id" ref="l10n_py_edi.paperformat_einvoice"/>
+        <field name="print_report_name">'invoice_%s' % (object.name.replace("-", "_"))</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,79 @@
+<odoo>
+    <data noupdate='1' >
+        <record id='l10n_py_edi.issue_reason_picking_1' model='edi.issue.reason.picking' >
+            <field name='code'>1</field>
+            <field name='name'>Traslado por ventas</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_2' model='edi.issue.reason.picking' >
+            <field name='code'>2</field>
+            <field name='name'>Traslado por consignación</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_3' model='edi.issue.reason.picking' >
+            <field name='code'>3</field>
+            <field name='name'>Exportación</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_4' model='edi.issue.reason.picking' >
+            <field name='code'>4</field>
+            <field name='name'>Traslado por compra</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_5' model='edi.issue.reason.picking' >
+            <field name='code'>5</field>
+            <field name='name'>Importación</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_6' model='edi.issue.reason.picking' >
+            <field name='code'>6</field>
+            <field name='name'>Traslado por devolución</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_7' model='edi.issue.reason.picking' >
+            <field name='code'>7</field>
+            <field name='name'>Traslado entre locales de la empresa</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_8' model='edi.issue.reason.picking' >
+            <field name='code'>8</field>
+            <field name='name'>Traslado de bienes por transformación</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_9' model='edi.issue.reason.picking' >
+            <field name='code'>9</field>
+            <field name='name'>Traslado de bienes por; reparación</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_10' model='edi.issue.reason.picking' >
+            <field name='code'>10</field>
+            <field name='name'>Traslado por emisor móvil</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_11' model='edi.issue.reason.picking' >
+            <field name='code'>11</field>
+            <field name='name'>Exhibición o demostración</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_12' model='edi.issue.reason.picking' >
+            <field name='code'>12</field>
+            <field name='name'>Participación en ferias</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_13' model='edi.issue.reason.picking' >
+            <field name='code'>13</field>
+            <field name='name'>Traslado de encomienda</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_14' model='edi.issue.reason.picking' >
+            <field name='code'>14</field>
+            <field name='name'>Decomiso</field>
+        </record>
+
+        <record id='l10n_py_edi.issue_reason_picking_99' model='edi.issue.reason.picking' >
+            <field name='code'>99</field>
+            <field name='name'>Otro</field>
+        </record>
+
+    </data>
+</odoo>

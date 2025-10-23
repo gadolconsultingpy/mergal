@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_move_cancel_wizard_form_view" model="ir.ui.view">
+            <field name="name">account_move_cancel_wizard.form</field>
+            <field name="model">account.move.cancel.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Invoice Cancellation Wizard">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="invoice_id" force_save="1" readonly="1"/>
+                                <field name="reason"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="process" type="object" string="Process" class="btn-primary"/>
+                        <button special="cancel" type="object" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

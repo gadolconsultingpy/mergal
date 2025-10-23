@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id='l10n_py_edi.edi_reversion_document_type_1' model='edi.reversion.document.type'>
+            <field name='code'>1</field>
+            <field name='name'>Electrónico</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_reversion_document_type_2' model='edi.reversion.document.type'>
+            <field name='code'>2</field>
+            <field name='name'>Impreso</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_reversion_document_type_3' model='edi.reversion.document.type'>
+            <field name='code'>3</field>
+            <field name='name'>Constancia Electrónica</field>
+        </record>
+
+    </data>
+</odoo>

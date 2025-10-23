@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="account_move_cancel_tree" model="ir.ui.view">
+            <field name="name">account.move.cancel.list</field>
+            <field name="model">account.move.cancel</field>
+            <field name="arch" type="xml">
+                <list string="Invoice Cancellation" sample="1">
+                    <field name="name"/>
+                    <field name="edi_document_date"/>
+                    <field name="edi_document_type"/>
+                    <field name="invoice_id"/>
+                    <field name="picking_id"/>
+                    <field name="reason"/>
+                    <field name="state" widget="badge" decoration-primary="state == 'draft' " decoration-info="state == 'confirm' "
+                           decoration-success="state == 'sent' "/>
+                </list>
+            </field>
+        </record>
+
+        <record id="account_move_cancel_form" model="ir.ui.view">
+            <field name="name">account.move.cancel.form</field>
+            <field name="model">account.move.cancel</field>
+            <field name="arch" type="xml">
+                <form string="Invalid Invoices">
+                    <header>
+                        <field name="state" widget="statusbar" clickable="0"/>
+                        <button name="action_confirm" type="object"
+                                string="Confirm" class="btn-primary" invisible="state != 'draft' "/>
+                        <button name="send" type="object" string="Send"
+                                class="btn-primary" invisible="state != 'draft' "/>
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box">
+                        </div>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Name" force_save="1" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="edi_document_date"/>
+                                <field name="edi_document_type" domain="[('code','in',['1','7','5'])]"/>
+                                <field name="edi_document_type_code" invisible="1"/>
+                                <field name="invoice_id" domain="[('move_type','in',['out_invoice','out_refund']),('state','=','posted')]"
+                                       invisible="edi_document_type_code not in ['1', '5']"/>
+
+                                <field name="picking_id" domain="[('picking_type_id.code','=','outgoing'),('state','=','done')]"
+                                       invisible="edi_document_type_code != '7'"/>
+
+                                <field name="reason"/>
+                            </group>
+                            <group>
+                                <field name="company_id" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="other_info" string="Other Information">
+                                <group>
+                                    <group>
+
+                                    </group>
+                                    <group>
+
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter reload_on_attachment="True"/>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

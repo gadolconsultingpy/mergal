@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <!-- SALES -->
+        <record id="l10n_py.py_sale_tax_10" model="account.tax">
+            <field name="code">V10</field>
+            <field name="tax_application_type_id" ref="l10n_py_edi.account_tax_application_type_1"/>
+            <field name="tax_type_id" ref="l10n_py_edi.account_tax_type_1"/>
+        </record>
+
+        <record id="l10n_py.py_sale_tax_5" model="account.tax">
+            <field name="code">V05</field>
+            <field name="tax_application_type_id" ref="l10n_py_edi.account_tax_application_type_1"/>
+            <field name="tax_type_id" ref="l10n_py_edi.account_tax_type_1"/>
+        </record>
+
+        <record id="l10n_py.py_sale_tax_free" model="account.tax">
+            <field name="code">VEXO</field>
+            <field name="tax_application_type_id" ref="l10n_py_edi.account_tax_application_type_2"/>
+            <field name="tax_type_id" ref="l10n_py_edi.account_tax_type_4"/>
+        </record>
+
+        <record id="l10n_py.py_sale_tax_exempt" model="account.tax">
+            <field name="code">VEXE</field>
+            <field name="tax_application_type_id" ref="l10n_py_edi.account_tax_application_type_3"/>
+            <field name="tax_type_id" ref="l10n_py_edi.account_tax_type_4"/>
+        </record>
+
+        <!-- PURCHASE -->
+        <record id="l10n_py.py_purchase_tax_10" model="account.tax">
+            <field name="code">C10</field>
+            <field name="tax_application_type_id" ref="l10n_py_edi.account_tax_application_type_1"/>
+            <field name="tax_type_id" ref="l10n_py_edi.account_tax_type_1"/>
+        </record>
+
+        <record id="l10n_py.py_purchase_tax_5" model="account.tax">
+            <field name="code">C05</field>
+            <field name="tax_application_type_id" ref="l10n_py_edi.account_tax_application_type_1"/>
+            <field name="tax_type_id" ref="l10n_py_edi.account_tax_type_1"/>
+        </record>
+
+        <record id="l10n_py.py_purchase_tax_free" model="account.tax">
+            <field name="code">CEXO</field>
+            <field name="tax_application_type_id" ref="l10n_py_edi.account_tax_application_type_2"/>
+            <field name="tax_type_id" ref="l10n_py_edi.account_tax_type_4"/>
+        </record>
+
+        <record id="l10n_py.py_purchase_tax_exempt" model="account.tax">
+            <field name="code">CEXE</field>
+            <field name="tax_application_type_id" ref="l10n_py_edi.account_tax_application_type_3"/>
+            <field name="tax_type_id" ref="l10n_py_edi.account_tax_type_1"/>
+        </record>
+
+    </data>
+</odoo>

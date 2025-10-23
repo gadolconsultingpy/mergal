@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="view_tree_account_edi_document" model="ir.ui.view">
+            <field name="name">account.edi.document.list</field>
+            <field name="model">account.edi.document</field>
+            <field name="inherit_id" ref="account_edi.view_tree_account_edi_document" />
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="replace">
+                    <list>
+                        <field name="move_id" />
+                        <field name="name" />
+                        <field name="edi_format_id" />
+                        <field name="state" widget="badge" decoration-muted="state == 'to_send' " decoration-success="state == 'sent' " decoration-warning="state == 'to_cancel' " decoration-danger="state == 'cancelled' " />
+                    </list>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_form_account_edi_document" model="ir.ui.view">
+            <field name="name">account.edi.document.form</field>
+            <field name="model">account.edi.document</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="state" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="move_id" />
+                                <field name="attachment_id" />
+                                <field name="error" />
+                                <field name="blocking_level" />
+                            </group>
+                            <group>
+                                <field name="edi_format_id" />
+                                <field name="edi_format_name" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="edi_content" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

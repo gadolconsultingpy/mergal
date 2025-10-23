@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="edi_transport_type_1" model="edi.transport.type">
+            <field name="code">1</field>
+            <field name="name">Propio</field>
+        </record>
+
+        <record id="edi_transport_type_2" model="edi.transport.type">
+            <field name="code">2</field>
+            <field name="name">Tercero</field>
+        </record>
+
+        <record id="edi_transport_mode_1" model="edi.transport.mode">
+            <field name="code">1</field>
+            <field name="name">Terrestre</field>
+        </record>
+
+        <record id="edi_transport_mode_2" model="edi.transport.mode">
+            <field name="code">2</field>
+            <field name="name">Fluvial</field>
+        </record>
+
+        <record id="edi_transport_mode_3" model="edi.transport.mode">
+            <field name="code">3</field>
+            <field name="name">Aéreo</field>
+        </record>
+
+        <record id="edi_transport_mode_4" model="edi.transport.mode">
+            <field name="code">4</field>
+            <field name="name">Multimodal</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,70 @@
+<odoo>
+    <data noupdate='1' >
+        <record id='l10n_py_edi.edi_transaction_type_1' model='edi.transaction.type' >
+            <field name='code'>1</field>
+            <field name='name'>Venta de mercadería</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_2' model='edi.transaction.type' >
+            <field name='code'>2</field>
+            <field name='name'>Prestación de servicios</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_3' model='edi.transaction.type' >
+            <field name='code'>3</field>
+            <field name='name'>Mixto</field>
+            <field name='note'>Mixto (Venta de mercadería y servicios)</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_4' model='edi.transaction.type' >
+            <field name='code'>4</field>
+            <field name='name'>Venta de activo fijo</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_5' model='edi.transaction.type' >
+            <field name='code'>5</field>
+            <field name='name'>Venta de divisas</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_6' model='edi.transaction.type' >
+            <field name='code'>6</field>
+            <field name='name'>Compra de divisas</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_7' model='edi.transaction.type' >
+            <field name='code'>7</field>
+            <field name='name'>Promoción o entrega de muestras</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_8' model='edi.transaction.type' >
+            <field name='code'>8</field>
+            <field name='name'>Donación</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_9' model='edi.transaction.type' >
+            <field name='code'>9</field>
+            <field name='name'>Anticipo</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_10' model='edi.transaction.type' >
+            <field name='code'>10</field>
+            <field name='name'>Compra de productos</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_11' model='edi.transaction.type' >
+            <field name='code'>11</field>
+            <field name='name'>Compra de servicios</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_12' model='edi.transaction.type' >
+            <field name='code'>12</field>
+            <field name='name'>Venta de crédito fiscal</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_transaction_type_13' model='edi.transaction.type' >
+            <field name='code'>13</field>
+            <field name='name'>Muestras médicas (Art. 3 RG 24/2014)</field>
+        </record>
+
+    </data>
+</odoo>

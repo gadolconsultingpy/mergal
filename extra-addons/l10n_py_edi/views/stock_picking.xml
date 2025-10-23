@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="py_page" string="Paraguay">
+                    <group>
+                        <group>
+                            <field name="sequence_id" domain="[('binding_model_id.model','=','stock.picking')]"/>
+                            <field name="journal_id"/>
+                            <field name="issue_type"/>
+                            <field name="issue_reason_id"/>
+                            <field name="issue_responsible_id"/>
+                            <field name="edi_document_datetime" readonly="0"/>
+
+                            <field name="scheduled_invoice_date" readonly="0"/>
+
+                            <field name="transaction_type_id"/>
+                        </group>
+                        <group>
+                            <field name="document_serial" readonly="1"/>
+                            <field name="document_number" readonly="1"/>
+                            <field name="presence_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="security_code"/>
+                            <field name="control_code"/>
+                            <field name="control_code_graph" readonly="1" force_save="1"/>
+                            <field name="qr_image" widget="image" style="width:100px; height:100px"/>
+                            <button name="generate_codes" type="object"
+                                    invisible="not security_code"
+                                    string="Generate Codes" class="btn-primary"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="issue_reason_id"/>
+                <field name="travel_distance" style="width:70px;"/>
+                <field name="vehicle_id"/>
+                <field name="driver_id"/>
+            </xpath>
+            <xpath expr="//field[@name='use_create_lots']" position="after">
+                <field name="contact_address"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="edi_stock_picking_list" model="ir.ui.view">
+        <field name="name">stock.picking.list.edi</field>
+        <field name="model">stock.picking</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list string="Electronic Documents" sample="1">
+                <field name="edi_document_datetime" string="Date"/>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="location_id" optional="hide"/>
+                <field name="location_dest_id" optional="hide"/>
+                <field name="sequence_id" optional="hide"/>
+                <field name="vehicle_id"/>
+                <field name="driver_id"/>
+                <field name="state"
+                       decoration-success="state == 'done' "
+                       widget="badge"
+                       optional="hide"/>
+            </list>
+        </field>
+    </record>
+</odoo>
