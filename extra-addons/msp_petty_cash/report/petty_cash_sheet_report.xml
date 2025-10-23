@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="msp_petty_cash.petty_cash_sheet_report">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.basic_layout">
+                <div class="header">
+                    <style>
+                        .header_text_left {text-align:left; white-space: nowrap; }
+                        .header_text_right {text-align:right; white-space: nowrap; }
+                    </style>
+
+                    <table width="100%">
+                        <tr>
+                            <td style="text-align:center; padding-left:5px; padding-right:5px; width:150px; height:150px;">
+                                <!-- img t-if="o.company_id.logo" width="120px" t-att-src="image_data_uri(o.company_id.logo)"/ -->
+                            </td>
+                            <td style="text-align:center; font-size:16px">
+                                <span><h3><strong>PETTY CASH REPORT</strong></h3></span>
+                                <h6><span t-esc="o.company_id.name.upper()"/></h6>
+                            </td>
+                            <td style="width:150px; ">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="page">
+                    <table style="font-size:12px;" width="100%">
+                        <tr>
+                            <td class="header_text_left">
+                                <table width="100%">
+                                    <tr>
+                                        <td class="header_text_left">
+                                            <strong>Petty Cash Type: </strong><span style="white-space: nowrap;" t-field="o.petty_cash_type"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="header_text_left">
+                                            <strong>Petty Cash: </strong><span t-esc='"%s" %(o.name)'/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="header_text_right">
+                                            <strong>Date: </strong><span
+                                                t-esc="o.date.strftime('%d/%m/%Y')"/>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </td>
+                            <td class="header_text_right">
+                                <table width="100%">
+                                    <tr>
+                                        <td class="header_text_right">
+                                            <span><strong>Responsible: </strong><span style="white-space: nowrap;"
+                                                                                      t-field="o.owner_partner_id.name"/></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="header_text_right">
+                                            <strong>Expenses Contact: </strong>
+                                            <span style="white-space: nowrap;" t-field="o.expense_partner_id"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="header_text_right">
+                                            <strong>Currency: </strong>
+                                            <span t-field="o.currency_id"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" style="margin-top:32px;">
+                        <tr>
+                            <td style="font-size:14px; text-align:center; ">
+                                <h4><strong>Expenses Detail</strong></h4>
+                            </td>
+                        </tr>
+                    </table>
+                    <style>
+                        .header {font-size:13px; border:1px solid black; text-align:center}
+                        .total {font-size:13px; font-weight:bold; }
+                        .amount {text-align:right; padding-right:2px; padding-left:2px; }
+                        .total_line {border-top:1px solid black; }
+                        .date {text-align:center;}
+                        .total_close_line {border-bottom:2px solid black; }
+                    </style>
+                    <table width="100%" cellpadding="6" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <td class="header">Date</td>
+                                <td class="header">Fiscal Name</td>
+                                <!-- Numero de factura                 -->
+                                <td class="header">Invoice</td>
+                                <td class="header">Description</td>
+                                <td class="header">Amount</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.line_ids" t-as="e">
+                                <tr>
+                                    <td style="font-size:13px; text-align:center">
+                                        <t t-if="e.account_move_id">
+                                            <span t-esc="e.account_move_id.invoice_date.strftime('%d/%m/%Y')"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-esc="e.date.strftime('%d/%m/%Y')"/>
+                                        </t>
+                                    </td>
+                                    <td style="font-size:13px; padding-left:10px; ">
+                                        <t t-if="e.account_move_id">
+                                            <span t-field="e.account_move_id.partner_id.name"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-field="e.name"/>
+                                        </t>
+                                    </td>
+                                    <!-- Numero de factura                                -->
+                                    <td style="font-size:10px; text-align:right ">
+                                        <t t-if="e.concept_id.require_invoice">
+                                            <span t-field="e.account_move_id.ref"/>
+                                        </t>
+                                        <t t-else="">
+                                            <span>sin factura</span>
+                                        </t>
+                                    </td>
+                                    <td style="font-size:13px; padding-left:13px; ">
+                                        <span t-field="e.name"/>
+                                    </td>
+                                    <td style="font-size:13px; text-align:right">
+                                        <span t-esc="report.format_value(e.price_total, o.currency_id.id)"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr>
+                                <td class="total_line" colspan="5"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table width="100%" style="margin-top:32px; font-size:13px;  ">
+                        <tr>
+                            <td style="font-size:14px; text-align:center; " colspan="4">
+                                <h4><strong>Overview</strong></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header">Date</td>
+                            <td class="header">Concept</td>
+                            <td class="header">Description</td>
+                            <td class="header">Amount</td>
+                        </tr>
+
+                        <tr>
+                            <td class="date">
+                                <t t-if="o.advance_payment_id">
+                                    <t t-esc="o.advance_payment_id.date.strftime('%d/%m/%Y')"/>
+                                </t>
+                            </td>
+                            <td>
+                                Advance Payment (+)
+                            </td>
+                            <td>
+                                <t t-esc="o.advance_payment_id.memo"/>
+                            </td>
+                            <td class="total amount" style="padding-top:16px;">
+                                <span t-esc="report.format_value(o.advance_payment_amount, o.currency_id.id)"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="date">
+                                <t t-esc="o.date.strftime('%d/%m/%Y')"/>
+                            </td>
+                            <td>
+                                Expenses Total (-)
+                            </td>
+                            <td class="date">
+                                <t t-esc="o.comment"/>
+                            </td>
+                            <td class="total amount ">
+                                <span t-esc="report.format_value(o.amount_total, o.currency_id.id)"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="date">
+                                <t t-if="o.return_payment_id">
+                                    <t t-esc="o.return_payment_id.date.strftime('%d/%m/%Y')"/>
+                                </t>
+                            </td>
+                            <td>
+                                Return Amount (-)
+                            </td>
+                            <td>
+                                <t t-esc="o.return_payment_id.ref"/>
+                            </td>
+                            <td class="total amount">
+                                <span t-esc="report.format_value(o.return_payment_amount, o.currency_id.id)"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="date">
+                                <t t-if="o.refund_payment_id">
+                                    <t t-esc="o.refund_payment_id.date.strftime('%d/%m/%Y')"/>
+                                </t>
+                            </td>
+                            <td>
+                                Refund Amount (+)
+                            </td>
+                            <td>
+                                <t t-esc="o.refund_payment_id.ref"/>
+                            </td>
+                            <td class="total amount">
+                                <span t-esc="report.format_value(o.refund_payment_amount,o.currency_id.id)"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="total_line total_close_line"></td>
+                            <td class="total_line total_close_line"></td>
+                            <td class="total amount total_line total_close_line">
+                                Sheet Balance
+                                <t t-if="o.sheet_balance &lt; 0">(request return)</t>
+                                <t t-if="o.sheet_balance &gt; 0">(make refund)</t>
+                            </td>
+                            <td class="total amount total_line total_close_line">
+                                <span t-esc="report.format_value(o.sheet_balance, o.currency_id.id)"/>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <hr/>
+                    <style>
+                        .sign_text {text-align:left; white-space: nowrap; height:30px; padding-left:5px; padding-right:5px;
+                        vertical-align:text-bottom; background-color:#f2f2f2;}
+                        .sign_space {height:30px; width:200px; border-bottom:1px solid black; vertical-align:text-bottom; border-left:1px solid
+                        black;}
+                        .sign_space_day {height:30px; width:75px; border-bottom:1px solid black; vertical-align:text-bottom; border-left:1px solid
+                        black; }
+                        .sign_space_year {height:30px; width:100px; border-bottom:1px solid black; vertical-align:text-bottom; border-left:1px
+                        solid black; }
+                    </style>
+                    <table style="border:1px solid black; border-collapse:collapse ">
+                        <tr>
+                            <td class="sign_text">Reposition Check Nr.:</td>
+                            <td class="sign_space" colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td class="sign_text">Date:</td>
+                            <td class="sign_space_day"></td>
+                            <td class="sign_space_day"></td>
+                            <td class="sign_space_year"></td>
+                        </tr>
+                        <tr>
+                            <td class="sign_text">Bank:</td>
+                            <td class="sign_space" colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td class="sign_text " style="height:50px; ">O.K. Management:</td>
+                            <td class="sign_space " style="height:50px; " colspan="3"></td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

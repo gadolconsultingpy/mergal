@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_payment_list" model="ir.ui.view">
+            <field name="name">account.payment.list</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="payment_type" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_payment_form" model="ir.ui.view">
+            <field name="name">account.payment.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='general_page']" position="inside">
+                    <group invisible="payment_origin != 'petty-cash'" name="petty_cash_group" string="Petty Cash">
+                        <field name="petty_cash_id"/>
+                        <field name="petty_cash_sheet_id"/>
+                        <field name="petty_cash_destination_account_id"
+                               options="{'no_create':True, 'no_create_edit':True, 'no_open':True}"
+                               groups="base.group_no_one"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

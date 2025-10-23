@@ -1,0 +1,1464 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_petty_cash
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250115\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-02 23:28+0000\n"
+"PO-Revision-Date: 2025-02-02 20:29-0300\n"
+"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"Language-Team: \n"
+"Language: es_PY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: msp_petty_cash
+#: model:ir.actions.report,print_report_name:msp_petty_cash.petty_cash_sheet_report_action
+msgid "'PettyCash_%s' %(object.name)"
+msgstr "'CajaChica_%s' %(object.name)"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "(make refund)"
+msgstr "(crear reembolso)"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "(request return)"
+msgstr "(solicitar devolución)"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "<span class=\"o_stat_text\">Account Moves</span>"
+msgstr "<span class=\"o_stat_text\">Asientos</span>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "<span class=\"o_stat_text\">Invoices</span>"
+msgstr "<span class=\"o_stat_text\">Facturas</span>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+msgid "<span class=\"o_stat_text\">Payments</span>"
+msgstr "<span class=\"o_stat_text\">Pagos</span>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+msgid "<span class=\"o_stat_text\">Sheets</span>"
+msgstr "<span class=\"o_stat_text\">Planillas</span>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid ""
+"<span invisible=\"sheet_balance &lt; 0\"> (request return)</span>\n"
+"                                        <span invisible=\"sheet_balance &gt; 0\"> (make refund)</span>"
+msgstr ""
+"<span invisible=\"sheet_balance &lt; 0\"> (solicitar devolución)</span>\n"
+"                                        <span invisible=\"sheet_balance &gt; 0\"> (realizar reembolso)</span>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_kanban
+msgid "<span>Create Sheet</span>"
+msgstr "<span>Crear Planilla</span>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "<span>sin factura</span>"
+msgstr ""
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "<strong>Currency: </strong>"
+msgstr "<strong>Moneda: </strong>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "<strong>Date: </strong>"
+msgstr "<strong>Fecha: </strong>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "<strong>Expenses Contact: </strong>"
+msgstr "<strong>Contacto de Gastos: </strong>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "<strong>Expenses Detail</strong>"
+msgstr "<strong>Detalle de Gastos</strong>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "<strong>Overview</strong>"
+msgstr "<strong>Resumen</strong>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "<strong>PETTY CASH REPORT</strong>"
+msgstr "<strong>REPORTE DE CAJA CHICA</strong>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "<strong>Petty Cash Type: </strong>"
+msgstr "<strong>Tipo de Caja Chica: </strong>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "<strong>Petty Cash: </strong>"
+msgstr "<strong>Caja Chica: </strong>"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "<strong>Responsible: </strong>"
+msgstr "<strong>Responsable: </strong>"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__account_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__account_id
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__account_move_ids
+msgid "Account Moves"
+msgstr "Asientos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__account_moves_qty
+msgid "Account Moves Qty."
+msgstr "Cant. Asientos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__message_needaction
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__activity_ids
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__activity_exception_decoration
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de Actividad  de Excepción"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__activity_state
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__activity_type_icon
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícono de tipo de actividad"
+
+#. module: msp_petty_cash
+#: model:ir.model,name:msp_petty_cash.model_res_config_custom
+msgid "Additional Parameters"
+msgstr "Parámetros Adicionales"
+
+#. module: msp_petty_cash
+#: model:ir.ui.menu,name:msp_petty_cash.session_administration_group
+msgid "Administration"
+msgstr "Administración"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_create_payment__origin__advance
+msgid "Advance"
+msgstr "Anticipo"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__advance_payment_id
+msgid "Advance Payment"
+msgstr "Anticipo"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Advance Payment (+)"
+msgstr "Anticipo (+)"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "Advance Payment Missing"
+msgstr "Pago de Anticipo Faltante"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__amount
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__amount
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Amount"
+msgstr "Monto"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__amount_to_pay
+msgid "Amount to Pay"
+msgstr "Monto a Pagar"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__analytic_account_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__analytic_account_id
+msgid "Analytic Account"
+msgstr "Cuenta Analítica"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_create_invoice_form
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Append Invoice"
+msgstr "Agregar Factura"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__add_type
+msgid "Append Type"
+msgstr "Tipo de Agregar"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__message_attachment_count
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nº de archivos adjuntos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__balance_amount
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_list
+msgid "Balance"
+msgstr "Saldo"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Bank:"
+msgstr "Banco:"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_create_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_create_invoice_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__card_number
+msgid "Card Number"
+msgstr "Número Tarjeta"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__comment
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__company_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__company_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__company_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__company_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__company_id
+msgid "Company"
+msgstr "Companía"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__concept_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__concept_id
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: msp_petty_cash
+#: model:ir.ui.menu,name:msp_petty_cash.configuration_group
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet__state__confirm
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__sheet_against_advance
+msgid "Control Sheet against Advance"
+msgstr "Controlar Planilla contra Anticipo"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+msgid "Create Advance"
+msgstr "Crear Anticipo"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_create_invoice_form
+msgid "Create Invoice"
+msgstr "Crear Factura"
+
+#. module: msp_petty_cash
+#: model:ir.model,name:msp_petty_cash.model_petty_cash_sheet_create_invoice
+msgid "Create Invoice from Petty Cash"
+msgstr "Crear Factura desde Caja Chica"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+msgid "Create Opening"
+msgstr "Crear Apertura"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_definition.py:0
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_create_payment_form
+msgid "Create Payment"
+msgstr "Crear Pago"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+msgid "Create Refund"
+msgstr "Crear Reembolso"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+msgid "Create Replenishment"
+msgstr "Crear Reposición"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+msgid "Create Return"
+msgstr "Crear Devolución"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_definition.py:0
+msgid "Create Return Payment"
+msgstr "Crear Pago Devolución"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_kanban
+msgid "Create Sheet"
+msgstr "Crear Planilla"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__create_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__create_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__create_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__create_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__create_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__create_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__create_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__create_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__create_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__create_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__create_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__create_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__currency_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__currency_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__currency_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__currency_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__currency_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__date
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "Date"
+msgstr "Fecha"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Date:"
+msgstr "Fecha:"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__deductible_amount
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__deductible_amount
+msgid "Deductible Amount"
+msgstr "Monto Deducible"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__name
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Description"
+msgstr "Descripción"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Detail"
+msgstr "Detalle"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__display_name
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__display_name
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__display_name
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__display_name
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__display_name
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__display_name
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet__state__draft
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "Error Creating Account Move"
+msgstr "Error Creando Asiento"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet_create_invoice__add_type__existing
+msgid "Existing"
+msgstr "Existente"
+
+#. module: msp_petty_cash
+#: model:ir.model,name:msp_petty_cash.model_petty_cash_sheet_line
+msgid "Expense Detail"
+msgstr "Detalle Gastos"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "Expenses"
+msgstr "Gastos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__expenses_amount
+msgid "Expenses Amount"
+msgstr "Monto Gastos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_definition__type__card
+msgid "Expenses Card"
+msgstr "Tarjeta Gastos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__expense_partner_id
+msgid "Expenses Contact"
+msgstr "Contacto de Gastos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__line_ids
+msgid "Expenses Detail"
+msgstr "Detalle Gastos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__partner_id
+msgid "Expenses Partner"
+msgstr "Contacto de Gastos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_definition__type__reposition
+msgid "Expenses Reposition"
+msgstr "Reposición Gastos"
+
+#. module: msp_petty_cash
+#: model:ir.model,name:msp_petty_cash.model_petty_cash_sheet
+msgid "Expenses Sheet"
+msgstr "Planilla de Gastos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__sheet_ids
+msgid "Expenses Sheets"
+msgstr "Planillas de Gastos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__amount_total
+msgid "Expenses Total"
+msgstr "Total Gastos"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Expenses Total (-)"
+msgstr "Total Gastos (-)"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Fiscal Name"
+msgstr "Razón Social"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_definition__type__fixed
+msgid "Fixed Fund"
+msgstr "Fondo Fijo"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__fixed_fund_open
+msgid "Fixed Fund Open"
+msgstr "Fondo Fijo Abierto"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__fixed_fund_open_manual
+msgid "Fixed Fund Open Manually"
+msgstr "Fondo Fijo Abierto Manualmente"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__has_sheet_to_replenish
+msgid "Fixed Fund Reposition"
+msgstr "Reposición Fondo Fijo"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__sheet_balance
+msgid ""
+"Fixed Fund: The Balance is the amount to be replenished, Reposition: The Balance is the amount to be "
+"returned or refunded"
+msgstr ""
+"Fondo Fijo: El Saldo es el monto a reponer, Reposición: El Saldo es el monto que se devuelve o reembolsa"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__message_follower_ids
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__message_partner_ids
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_definition__activity_type_icon
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome ej. fa-tasks"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__has_message
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__has_message
+msgid "Has Message"
+msgstr "Tiene Mensaje"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__has_sheet_to_refund
+msgid "Has Sheets to Refund"
+msgstr "Tiene Planillas para Reembolso"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__has_sheet_to_return
+msgid "Has Sheets to Return"
+msgstr "Tiene Planillas para Devolución"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__activity_exception_icon
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_definition__activity_exception_icon
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_definition__message_needaction
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_definition__message_has_error
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_create_payment__payment_type__inbound
+msgid "Inbound"
+msgstr "Entrante"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_account_move_line__internal_note
+msgid "Internal Note"
+msgstr "Nota Interna"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/wizard/petty_cash_sheet_create_invoice.py:0
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__invoice_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__account_move_id
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__account_move_amount
+msgid "Invoice Amount"
+msgstr "Monto Factura"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__invoice_balance
+msgid "Invoice Balance"
+msgstr "Saldo Factura"
+
+#. module: msp_petty_cash
+#: model:ir.model,name:msp_petty_cash.model_petty_cash_sheet_create_invoice_tax
+msgid "Invoice Tax from Petty Cash"
+msgstr "Impuestos de Caja Chica"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__invoice_total
+msgid "Invoice Total"
+msgstr "Total Factura"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__move_type
+msgid "Invoice Type"
+msgstr "Tipo de Factura"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "Invoice not Confirmed: %s"
+msgstr "Factura no Confirmada: %s"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__invoice_ids
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__invoices_qty
+msgid "Invoices Qty."
+msgstr "Cant. Facturas"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__message_is_follower
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: msp_petty_cash
+#: model:ir.model,name:msp_petty_cash.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: msp_petty_cash
+#: model:ir.model,name:msp_petty_cash.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__write_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__write_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__write_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__write_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__write_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__write_uid
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__write_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__write_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__write_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__write_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__write_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__write_date
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: msp_petty_cash
+#: model:ir.ui.menu,name:msp_petty_cash.main_data_group
+msgid "Main Data"
+msgstr "Datos Principales"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__message_has_error
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__message_ids
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "Missing Account: Line %s"
+msgstr "Falta Cuenta Contable: Fila %s"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__my_activity_date_deadline
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi Limite de Actividades"
+
+#. module: msp_petty_cash
+#: model:ir.actions.act_window,name:msp_petty_cash.petty_cash_definition_user_action
+#: model:ir.ui.menu,name:msp_petty_cash.petty_cash_definition_user_menuitem
+#: model_terms:ir.actions.act_window,help:msp_petty_cash.petty_cash_definition_user_action
+msgid "My Petty Cash"
+msgstr "Mi Caja Chica"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "My Sheets"
+msgstr "Mis Planillas"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__name
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__name
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__name
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet_create_invoice__add_type__new
+msgid "New"
+msgstr "Nuevo"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__activity_calendar_event_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Siguiente Evento "
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__activity_date_deadline
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__activity_summary
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__activity_type_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_res_config_custom__not_deductible_account_id
+msgid "Not Deductible Account"
+msgstr "Monto No Deducible"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "Not Paid"
+msgstr "No Pagado"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Number"
+msgstr "Número"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__message_needaction_counter
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__message_has_error_counter
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero de errores"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_definition__message_needaction_counter
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_definition__message_has_error_counter
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "O.K. Management:"
+msgstr "VoBo Gerencia:"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_create_payment__origin__opening
+msgid "Opening"
+msgstr "Apertura"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__opening_date
+msgid "Opening Date"
+msgstr "Fecha Apertura"
+
+#. module: msp_petty_cash
+#: model:ir.ui.menu,name:msp_petty_cash.operations_group
+msgid "Operations"
+msgstr "Operaciones"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__origin
+msgid "Origin"
+msgstr "Origen"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Other Info"
+msgstr "Otra Información"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_create_payment__payment_type__outbound
+msgid "Outbound"
+msgstr "Saliente"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__owner_id
+msgid "Owner"
+msgstr "Propietario"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__owner_partner_id
+msgid "Owner Partner"
+msgstr "Contacto Propietario"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet__payment_state__paid
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__parent_id
+msgid "Parent"
+msgstr "Origen"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_definition__owner_partner_id
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__owner_partner_id
+msgid "Partner-related data of the user"
+msgstr "Datos de contacto del usuario."
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__advance_payment_amount
+msgid "Payment Amount"
+msgstr "Monto del Pago"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__payment_method_line_id
+msgid "Payment Method"
+msgstr "Método de Pago"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_account_payment__payment_origin
+msgid "Payment Origin"
+msgstr "Origen del Pago"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__payment_state
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "Payment State"
+msgstr "Estado Pago"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__payment_type
+msgid "Payment Type"
+msgstr "Tipo de Pago"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_definition.py:0
+#: model:ir.model,name:msp_petty_cash.model_account_payment
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__payment_ids
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__payments_amount
+msgid "Payments Amount"
+msgstr "Monto Pagos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__payments_qty
+msgid "Payments Qty."
+msgstr "Cant. Pagos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_account_payment__petty_cash_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__petty_cash_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__petty_cash_id
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__account_payment__payment_origin__petty-cash
+#: model:ir.ui.menu,name:msp_petty_cash.petty_cash_app
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.view_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.view_move_form
+msgid "Petty Cash"
+msgstr "Caja Chica"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__account_id
+msgid "Petty Cash Account"
+msgstr "Cuenta Caja Chica"
+
+#. module: msp_petty_cash
+#: model:ir.actions.act_window,name:msp_petty_cash.petty_cash_concept_action
+#: model:ir.model,name:msp_petty_cash.model_petty_cash_concept
+#: model:ir.ui.menu,name:msp_petty_cash.petty_cash_concept_meny_entry
+#: model_terms:ir.actions.act_window,help:msp_petty_cash.petty_cash_concept_action
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_concept_form
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_concept_list
+msgid "Petty Cash Concept"
+msgstr "Concepto Caja Chica"
+
+#. module: msp_petty_cash
+#: model:ir.model,name:msp_petty_cash.model_petty_cash_create_payment
+msgid "Petty Cash Create Payment"
+msgstr "Crear Pago de Caja Chica"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_definition.py:0
+#: model:ir.actions.act_window,name:msp_petty_cash.petty_cash_definition_manager_action
+#: model:ir.model,name:msp_petty_cash.model_petty_cash_definition
+#: model:ir.ui.menu,name:msp_petty_cash.petty_cash_definition_manager_menuitem
+#: model_terms:ir.actions.act_window,help:msp_petty_cash.petty_cash_definition_manager_action
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_list
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "Petty Cash Definition"
+msgstr "Definición Caja Chica"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_account_payment__petty_cash_destination_account_id
+msgid "Petty Cash Destination Account"
+msgstr "Cuenta Destino Caja Chica"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__petty_cash_journal_id
+msgid "Petty Cash Journal"
+msgstr "Diario Fondo Fijo"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/wizard/petty_cash_create_payment.py:0
+msgid "Petty Cash Payment"
+msgstr "Pago Caja Chica"
+
+#. module: msp_petty_cash
+#: model:ir.actions.report,name:msp_petty_cash.petty_cash_sheet_report_action
+msgid "Petty Cash Report"
+msgstr "Reporte de Gastos"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_definition.py:0
+#: model:ir.actions.act_window,name:msp_petty_cash.petty_cash_sheet_action
+#: model:ir.model.fields,field_description:msp_petty_cash.field_account_bank_statement_line__petty_cash_sheet_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_account_move__petty_cash_sheet_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_account_payment__petty_cash_sheet_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__petty_cash_sheet_id
+#: model:ir.ui.menu,name:msp_petty_cash.petty_cash_sheet_menuitem
+#: model_terms:ir.actions.act_window,help:msp_petty_cash.petty_cash_sheet_action
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_list
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_pivot
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "Petty Cash Sheet"
+msgstr "Planilla Caja Chica"
+
+#. module: msp_petty_cash
+#: model:ir.model,name:msp_petty_cash.model_report_msp_petty_cash_petty_cash_sheet_report
+msgid "Petty Cash Sheet Report"
+msgstr "Reporte Planilla Caja Chica"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__petty_cash_type
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__petty_cash_type
+msgid "Petty Cash Type"
+msgstr "Tipo Caja Chica"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__price_subtotal
+msgid "Price Subtotal"
+msgstr "Subtotal"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__price_tax
+msgid "Price Tax"
+msgstr "Impuesto"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__price_total
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__price_total
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Price Total"
+msgstr "Total Precios"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__price_unit
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__price_unit
+msgid "Price Unit"
+msgstr "Precio Unitario"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__progress
+msgid "Progress"
+msgstr "Progreso"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet_create_invoice_tax__type_tax_use__purchase
+msgid "Purchase"
+msgstr "Compra"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet_create_invoice_tax__move_type__in_refund
+msgid "Purchase Credit Note"
+msgstr "Nota de Crédito Compra"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet_create_invoice_tax__move_type__in_invoice
+msgid "Purchase Invoice"
+msgstr "Factura Compras"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__journal_id
+msgid "Purchase Journal"
+msgstr "Diario"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__quantity
+msgid "Qty."
+msgstr "Cant."
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__rating_ids
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__rating_ids
+msgid "Ratings"
+msgstr "Calificaciones"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__ref
+msgid "Ref"
+msgstr "Ref"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_create_payment__origin__refund
+msgid "Refund"
+msgstr "Reembolso"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__refund_payment_amount
+msgid "Refund Amount"
+msgstr "Monto de Reembolso"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Refund Amount (+)"
+msgstr "Monto Reembolso (+)"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__refund_payment_id
+msgid "Refund Payment"
+msgstr "Pago de Reembolso"
+
+#. module: msp_petty_cash
+#: model:ir.ui.menu,name:msp_petty_cash.treasury_reports_group
+msgid "Reports"
+msgstr "Reportes"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_create_payment__origin__reposition
+msgid "Reposition"
+msgstr "Reposición"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Reposition Amount"
+msgstr "Monto Reposición"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Reposition Check Nr.:"
+msgstr "Cheque Reposición Nro.:"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_concept__require_invoice
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__require_invoice
+msgid "Require Invoice"
+msgstr "Requiere Factura"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__owner_partner_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__activity_user_id
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_create_payment__origin__return
+msgid "Return"
+msgstr "Devolución"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__return_payment_amount
+msgid "Return Amount"
+msgstr "Monto de Devolución"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Return Amount (-)"
+msgstr "Monto Devolución (-)"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__return_payment_id
+msgid "Return Payment"
+msgstr "Pago Devolución"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Revert to Draft"
+msgstr "Cambiar a Borrador"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet_create_invoice_tax__type_tax_use__sale
+msgid "Sale"
+msgstr "Venta"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet_create_invoice_tax__move_type__out_refund
+msgid "Sale Credit Note"
+msgstr "Nota de Crédito Venta"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet_create_invoice_tax__move_type__out_invoice
+msgid "Sale Invoice"
+msgstr "Factura de Venta"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "Sequence Not Found"
+msgstr "No Se Encuentra Secuencia"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__sheet_balance
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_create_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_report
+msgid "Sheet Balance"
+msgstr "Saldo Planilla"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_line__sheet_id
+msgid "Sheet Id"
+msgstr "Id Planilla"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__sheet_against_advance
+msgid "Sheet against Advance"
+msgstr "Planilla contra Anticipo"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_definition.py:0
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_form
+msgid "Sheets"
+msgstr "Planillas"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__sheets_qty
+msgid "Sheets Qty."
+msgstr "Cant. Planillas"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__sheet_ids
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_create_payment_form
+msgid "Sheets to Pay"
+msgstr "Planillas a Pagar"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_kanban
+msgid "Sheets:"
+msgstr "Planillas:"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__state
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "State"
+msgstr "Estado"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_definition__activity_state
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_create_invoice_form
+msgid "SubTotal"
+msgstr "SubTotal"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__partner_id
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__tax_id
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice_tax__type_tax_use
+msgid "Tax Type"
+msgstr "Tipo de Impuesto"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__tax_lines
+msgid "Taxes"
+msgstr "Impuestos"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "The Advance Has Already Reconciled"
+msgstr "El Anticipo Ya Fue Conciliado"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "The Invoice Is Not Posted"
+msgstr "La Factura No Está Confirmada"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "The Line Does Not Require an Invoice: %s - %s"
+msgstr "La Linea No Requiere una Factura: %s - %s"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "The Line Require an Invoice: %s - %s"
+msgstr "La Linea Requiere una Factura: %s - %s"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "The Petty Cash Does Not Have Enough Fund for this Sheet"
+msgstr "La Caja Chijca No Cuenta con Fondos Suficientes para Esta Planilla"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "The Petty Cash Has No Detail"
+msgstr "La Caja Chica No Tiene Detalle"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "This Action Will Delete Related Account Moves. Are You Sure?"
+msgstr "Esta Acción Eliminará Los Asientos Relacionados. ¿Está Seguro?"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_create_invoice_form
+msgid "Total"
+msgstr "Total"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_create_payment__amount
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet_create_invoice__amount
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_list
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_list
+msgid "Total Amount"
+msgstr "Monto Total"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_list
+msgid "Total Balance"
+msgstr "Total Saldo"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_list
+msgid "Total Expenses"
+msgstr "Total Gastos"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_definition_list
+msgid "Total Payments"
+msgstr "Total Pagos"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_create_invoice_form
+msgid "Total Tax"
+msgstr "Impuesto Total"
+
+#. module: msp_petty_cash
+#: model:ir.module.category,name:msp_petty_cash.treasury_app_module_category
+#: model:ir.module.category,name:msp_petty_cash.treasury_module_category
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.res_config_custom_form
+msgid "Treasury"
+msgstr "Tesorería"
+
+#. module: msp_petty_cash
+#: model:res.groups,comment:msp_petty_cash.group_treasury_manager
+#: model:res.groups,name:msp_petty_cash.group_treasury_manager
+msgid "Treasury Manager"
+msgstr "Administrador de Tesorería"
+
+#. module: msp_petty_cash
+#: model:res.groups,comment:msp_petty_cash.group_treasury_supervisor
+#: model:res.groups,name:msp_petty_cash.group_treasury_supervisor
+msgid "Treasury Supervisor"
+msgstr "Supervisor de Tesorería"
+
+#. module: msp_petty_cash
+#: model:res.groups,comment:msp_petty_cash.group_treasury_user
+#: model:res.groups,name:msp_petty_cash.group_treasury_user
+msgid "Treasury User"
+msgstr "Usuario de Tesorería"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_definition__activity_exception_decoration
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet__payment_state__unpaid
+msgid "Unpaid"
+msgstr "No Pagado"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_account_move_line__internal_note
+msgid "Used to reconcile payments"
+msgstr "Usado para conciliar pagos"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_search
+msgid "Valid"
+msgstr "Válido"
+
+#. module: msp_petty_cash
+#: model_terms:ir.ui.view,arch_db:msp_petty_cash.petty_cash_sheet_form
+msgid "Validate"
+msgstr "Validar"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields.selection,name:msp_petty_cash.selection__petty_cash_sheet__state__valid
+msgid "Validated"
+msgstr "Validado"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_definition__website_message_ids
+#: model:ir.model.fields,field_description:msp_petty_cash.field_petty_cash_sheet__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: msp_petty_cash
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_definition__website_message_ids
+#: model:ir.model.fields,help:msp_petty_cash.field_petty_cash_sheet__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: msp_petty_cash
+#. odoo-python
+#: code:addons/msp_petty_cash/models/petty_cash_sheet.py:0
+msgid "You Cannot Delete Records That Are Not in Draft"
+msgstr "No Puedes Eliminar Registros Que No Están en Borrador"

@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="treasury_app_module_category" model="ir.module.category">
+            <field name="name">Treasury</field>
+        </record>
+        <record id="treasury_module_category" model="ir.module.category">
+            <field name="name">Treasury</field>
+            <field name="parent_id" ref="msp_petty_cash.treasury_app_module_category"/>
+        </record>
+    </data>
+</odoo>
