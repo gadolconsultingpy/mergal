@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+
+        <!--RES BRANCH DISPATCH POINT-->
+        <record id="access_res_branch_dispatch_point_admin" model="ir.model.access">
+            <field name="name">Res Branch Dispatch Point Admin</field>
+            <field name="model_id" ref="model_res_branch_dispatch_point"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_res_branch_dispatch_point_user" model="ir.model.access">
+            <field name="name">Res Branch User</field>
+            <field name="model_id" ref="model_res_branch_dispatch_point"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+    </data>
+</odoo>

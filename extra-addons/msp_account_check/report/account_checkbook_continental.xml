@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="msp_account_check.account_checkbook_continental"
+                  name="Continental without Stub">
+            <t t-call="web.basic_layout">
+                <body>
+                    <t t-foreach="docs" t-as="check">
+                        <style>
+                            .fields-border {border: 1px solid white;}
+                        </style>
+                        <div name="check_container" class="fields-border"
+                             style='margin-top:10px;
+                                    position:relative;
+                                    width:100%;
+                                    height:325.35433px; '>
+                            <div name="amount" class="fields-border"
+                                 style="position:absolute;
+                                         top:0.1cm;
+                                         left:15.5cm;
+                                         font-size: 18px;
+                                         font-weight:bold;
+                                         width:100px;
+                                            ">
+                                <span t-esc="report.format_value(check.amount)"/>.-
+                            </div>
+                            <!--
+                            <div name="date_left" class="fields-border"
+                                 style="position:absolute;
+                                         top:2cm;
+                                         left:1.1cm;
+                                         font-size: 10px;
+                                         width:70px;
+                                            ">
+                                <span t-esc="check.issue_date.strftime('%d/%m/%Y')"/>
+                            </div>
+
+                            <div name="payee_left" class="fields-border"
+                                 style="position:absolute;
+                                         top:2.6cm;
+                                         left:1.1cm;
+                                         white-space: pre-wrap;
+                                         font-size: 8px;
+                                         width:130px;
+                                            ">
+                                <span t-esc="check.payee"/>
+                            </div>
+                            -->
+                            <!-- conceptos -->
+                            <!--
+                            <div name="concept_left" class="fields-border"
+                                 style="position:absolute;
+                                         top:3.2cm;
+                                         left:1.1cm;
+                                         font-size: 10px;
+                                         white-space: pre-wrap;
+                                         width:130px;
+                                            ">
+                                <span t-esc="check.reference"/>
+                            </div>
+
+                            <div name="amount_left" class="fields-border"
+                                 style="position:absolute;
+                                         top:6.5cm;
+                                         left:1.1cm;
+                                         font-size: 9px;
+                                         width:100px;
+                                            ">
+                                <span t-esc="report.format_value(check.amount)"/>.-
+                            </div>
+                            -->
+
+                            <div name="date_day" class="fields-border"
+                                 style="position:absolute;
+                                         top:1.8cm;
+                                         left:9.7cm;
+                                         font-size: 18px;
+                                         font-weight:bold;
+                                         width:30px;
+                                            ">
+                                <span t-esc="check.issue_date.strftime('%d')"/>
+                            </div>
+                            <div name="date_month" class="fields-border"
+                                 style="position:absolute;
+                                         top:1.8cm;
+                                         left:11.0cm;
+                                         font-size: 18px;
+                                         font-weight:bold;
+                                         width:30px;
+                                            ">
+                                <span t-esc="check.issue_date.strftime('%m')"/>
+                            </div>
+                            <div name="date_year" class="fields-border"
+                                 style="position:absolute;
+                                         top:1.8cm;
+                                         left:13.2cm;
+                                         font-size: 18px;
+                                         font-weight:bold;
+                                         width:30px;
+                                            ">
+                                <span t-esc="check.issue_date.strftime('%y')"/>
+                                <!--                                <span t-esc="check.check_type"/>-->
+                            </div>
+
+                            <!--         secccion de fecha diferida                   -->
+                            <t t-if="check.check_type == 'post-dated' ">
+                                <div name="date_accreditation_day" class="fields-border"
+                                     style="position:absolute;
+                                         top:1.8cm;
+                                         left:16.8cm;
+                                         font-size: 18px;
+                                         font-weight:bold;
+                                         width:30px;
+                                            ">
+                                    <span t-esc="check.accreditation_date.day"/>
+                                </div>
+                                <div name="date_accreditation_month" class="fields-border"
+                                     style="position:absolute;
+                                         top:1.8cm;
+                                         left:18.2cm;
+                                         font-size: 18px;
+                                         font-weight:bold;
+                                         width:30px;
+                                            ">
+                                    <span t-esc="check.accreditation_date.month"/>
+                                </div>
+                                <div name="date_accreditation_year" class="fields-border"
+                                     style="position:absolute;
+                                         top:1.8cm;
+                                         left:20.4cm;
+                                         font-size: 18px;
+                                         font-weight:bold;
+                                         width:30px;
+                                            ">
+                                    <span t-esc="str(check.accreditation_date.year)[-2:]"/>
+                                </div>
+                            </t>
+
+                            <!-- hasta aqui -->
+
+                            <div name="payee" class="fields-border"
+                                 style="position:absolute;
+                                         top:3.2cm;
+                                         left:0.7cm;
+                                         text-indent:2.0cm;
+                                         font-size: 16px;
+                                         font-weight:bold;
+                                         width:17.5cm;
+                                            ">
+                                <span t-esc="check.payee"/>
+                            </div>
+                            <div name="num2words" class="fields-border"
+                                 style="position:absolute;
+                                         top:4.0cm;
+                                         left:0.7cm;
+                                         line-height: 2em;
+                                         text-indent:2.0cm;
+                                         font-size: 16px;
+                                         font-weight:bold;
+                                         width:17.5cm;
+                                            ">
+                                <span t-esc="report.num_to_words_es(check.amount).upper()"/>.-
+                            </div>
+
+                        </div>
+                    </t>
+                </body>
+            </t>
+        </template>
+
+    </data>
+</odoo>

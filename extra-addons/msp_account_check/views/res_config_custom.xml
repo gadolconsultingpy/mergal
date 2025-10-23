@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_custom_form" model="ir.ui.view">
+            <field name="name">>res.config.custom.form</field>
+            <field name="model">res.config.custom</field>
+            <field name="inherit_id" ref="l10n_py_base.res_config_custom_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="checks_page" string="Checks">
+                        <group>
+                            <field name="in_portfolio_journal_id"/>
+                            <field name="rejected_journal_id"/>
+                            <field name="cash_account_id"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

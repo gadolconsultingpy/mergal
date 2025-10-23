@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="assign_checkbook" model="ir.ui.view">
+            <field name="name">assign.checkbook.form</field>
+            <field name="model">assign.checkbook</field>
+            <field name="arch" type="xml">
+                <form string="Assign Checkbook">
+                    <sheet>
+                        <group>
+                            <field name="bank_id" readonly="1" force_save="1"
+                                   options="{'no_open':True}"
+                            />
+                            <field name="bank_account_id" readonly="1" force_save="1"
+                                   options="{'no_open':True}"
+                            />
+                        </group>
+                        <group>
+                            <field name="check_ids">
+                                <list>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="payee"/>
+                                    <field name="currency_id"/>
+                                    <field name="amount"/>
+                                </list>
+                            </field>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="process" type="object" string="Process" class="btn-primary"/>
+                        <button special="cancel" type="object" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

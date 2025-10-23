@@ -1,0 +1,202 @@
+<odoo>
+    <data >
+        <record id='account_payment_form_1' model='account.payment.form' >
+            <field name='name'>Efectivo</field>
+            <field name='code'>1</field>
+            <field name='type'>cash</field>
+            <field name='edi_type_id' ref='account_payment_form_type_1'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_2' model='account.payment.form' >
+            <field name='name'>Cheque</field>
+            <field name='code'>2</field>
+            <field name='type'>check</field>
+            <field name='edi_type_id' ref='account_payment_form_type_2'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_3' model='account.payment.form' >
+            <field name='name'>Tarjeta de crédito</field>
+            <field name='code'>3</field>
+            <field name='type'>card</field>
+            <field name='edi_type_id' ref='account_payment_form_type_3'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref='card_process_form_1'/>
+        </record>
+
+        <record id='account_payment_form_4' model='account.payment.form' >
+            <field name='name'>Tarjeta de débito</field>
+            <field name='code'>4</field>
+            <field name='type'>card</field>
+            <field name='edi_type_id' ref='account_payment_form_type_4'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref='card_process_form_1'/>
+        </record>
+
+        <record id='account_payment_form_5' model='account.payment.form' >
+            <field name='name'>Transferencia</field>
+            <field name='code'>5</field>
+            <field name='type'>bank</field>
+            <field name='edi_type_id' ref='account_payment_form_type_5'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_6' model='account.payment.form' >
+            <field name='name'>Giro</field>
+            <field name='code'>6</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_6'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_7' model='account.payment.form' >
+            <field name='name'>Billetera electrónica</field>
+            <field name='code'>7</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_7'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_8' model='account.payment.form' >
+            <field name='name'>Tarjeta empresarial</field>
+            <field name='code'>8</field>
+            <field name='type'>card</field>
+            <field name='edi_type_id' ref='account_payment_form_type_8'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_9' model='account.payment.form' >
+            <field name='name'>Vale</field>
+            <field name='code'>9</field>
+            <field name='type'>voucher</field>
+            <field name='edi_type_id' ref='account_payment_form_type_9'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_10' model='account.payment.form' >
+            <field name='name'>Retención</field>
+            <field name='code'>10</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_10'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_11' model='account.payment.form' >
+            <field name='name'>Pago por anticipo</field>
+            <field name='code'>11</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_11'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_12' model='account.payment.form' >
+            <field name='name'>Valor fiscal</field>
+            <field name='code'>12</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_12'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_13' model='account.payment.form' >
+            <field name='name'>Valor comercial</field>
+            <field name='code'>13</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_13'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_14' model='account.payment.form' >
+            <field name='name'>Compensación</field>
+            <field name='code'>14</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_14'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_15' model='account.payment.form' >
+            <field name='name'>Permuta</field>
+            <field name='code'>15</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_15'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_16' model='account.payment.form' >
+            <field name='name'>Pago bancario</field>
+            <field name='code'>16</field>
+            <field name='type'>bank</field>
+            <field name='edi_type_id' ref='account_payment_form_type_16'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_17' model='account.payment.form' >
+            <field name='name'>Pago Móvil</field>
+            <field name='code'>17</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_17'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_18' model='account.payment.form' >
+            <field name='name'>Donación</field>
+            <field name='code'>18</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_18'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_19' model='account.payment.form' >
+            <field name='name'>Promoción</field>
+            <field name='code'>19</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_19'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_20' model='account.payment.form' >
+            <field name='name'>Consumo Interno</field>
+            <field name='code'>20</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_20'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_21' model='account.payment.form' >
+            <field name='name'>Pago Electrónico</field>
+            <field name='code'>21</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_21'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+        <record id='account_payment_form_99' model='account.payment.form' >
+            <field name='name'>Otro</field>
+            <field name='code'>99</field>
+            <field name='type'>other</field>
+            <field name='edi_type_id' ref='account_payment_form_type_99'/>
+            <field name='active' eval='True' />
+            <field name='process_form_id' ref=''/>
+        </record>
+
+    </data>
+</odoo>

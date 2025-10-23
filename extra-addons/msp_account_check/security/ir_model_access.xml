@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ACCOUNT CHECK -->
+        <record id="access_account_check_system" model="ir.model.access">
+            <field name="name">Account Check System</field>
+            <field name="model_id" ref="msp_account_check.model_account_check"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_account_check_user" model="ir.model.access">
+            <field name="name">Account Check User</field>
+            <field name="model_id" ref="msp_account_check.model_account_check"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+        <!-- ACCOUNT CHECKBOOK -->
+        <record id="access_account_checkbook_system" model="ir.model.access">
+            <field name="name">Checkbook System</field>
+            <field name="model_id" ref="msp_account_check.model_account_checkbook"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_account_checkbook_user" model="ir.model.access">
+            <field name="name">Account Check User</field>
+            <field name="model_id" ref="msp_account_check.model_account_checkbook"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- ACCOUNT CHECKBOOK TEMPLATE -->
+        <record id="access_account_checkbook_template_system" model="ir.model.access">
+            <field name="name">Checkbook Template System</field>
+            <field name="model_id" ref="msp_account_check.model_account_checkbook_template"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_account_checkbook_template_user" model="ir.model.access">
+            <field name="name">Checkbook Template User</field>
+            <field name="model_id" ref="msp_account_check.model_account_checkbook_template"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- ACCOUNT CHECKBOOK CHECK-->
+        <record id="access_account_checkbook_check_user" model="ir.model.access">
+            <field name="name">Account Checkbook Check User</field>
+            <field name="model_id" ref="msp_account_check.model_account_checkbook_check"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+
+        <!-- ASSIGN CHECKBOOK -->
+        <record id="access_assign_checkbook_user" model="ir.model.access">
+            <field name="name">Assign Checkbook User</field>
+            <field name="model_id" ref="msp_account_check.model_assign_checkbook"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- ASSIGN CHECKBOOK CHECK -->
+        <record id="access_assign_checkbook_check_user" model="ir.model.access">
+            <field name="name">Assign Checkbook Check User</field>
+            <field name="model_id" ref="msp_account_check.model_assign_checkbook_check"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- ASSIGN CHECKBOOK SET NR -->
+        <record id="access_account_checkbook_set_nr" model="ir.model.access">
+            <field name="name">Checkbook Set Next Number</field>
+            <field name="model_id" ref="msp_account_check.model_account_checkbook_set_nr"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+        <!-- ACCOUNT SECURITIES DEPOSIT -->
+        <record id="access_account_securities_deposit_system" model="ir.model.access">
+            <field name="name">Account Securities Deposit System</field>
+            <field name="model_id" ref="msp_account_check.model_account_securities_deposit"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_account_securities_deposit_user" model="ir.model.access">
+            <field name="name">Account Securities Deposit User</field>
+            <field name="model_id" ref="msp_account_check.model_account_securities_deposit"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- ACCOUNT SECURITIES DEPOSIT LINE -->
+        <record id="access_account_securities_deposit_line_system" model="ir.model.access">
+            <field name="name">Account Securities Deposit Line System</field>
+            <field name="model_id" ref="msp_account_check.model_account_securities_deposit_line"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_account_securities_deposit_line_user" model="ir.model.access">
+            <field name="name">Account Securities Deposit Line User</field>
+            <field name="model_id" ref="msp_account_check.model_account_securities_deposit_line"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+    </data>
+</odoo>

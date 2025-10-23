@@ -1,0 +1,1296 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_account_check
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e-20240826\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-03 19:11+0000\n"
+"PO-Revision-Date: 2025-03-03 16:11-0300\n"
+"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"Language-Team: \n"
+"Language: es_PY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: msp_account_check
+#: model:ir.actions.report,print_report_name:msp_account_check.msp_account_check_report_action
+msgid "'checkbook_%s' % (object.name)"
+msgstr "'chequera_%s' % (object.name)"
+
+#. module: msp_account_check
+#: model:ir.actions.report,print_report_name:msp_account_check.msp_account_check_continental_report_action
+msgid "'continental_%s' % (object.name)"
+msgstr ""
+
+#. module: msp_account_check
+#: model:ir.actions.report,print_report_name:msp_account_check.msp_account_check_continental_stub_report_action
+msgid "'continental_stub_%s' % (object.name)"
+msgstr "'talon_continental_%s' % (object.name)"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_negotiation_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_securities_deposit_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "<span class=\"o_stat_text\">Account Moves</span>"
+msgstr "<span class=\"o_stat_text\">Asientos</span>"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "<span class=\"o_stat_text\">Deposits</span>"
+msgstr "<span class=\"o_stat_text\">Depositos</span>"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_expense__account_id
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_check_negotiation
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_expense__parent_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__parent_id
+msgid "Account Check Negotiation"
+msgstr "Negociación de Cheque"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_check_negotiation_expense
+msgid "Account Check Negotiation Expense"
+msgstr "Gasto Negociación de Cheque"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_check_negotiation_line
+msgid "Account Check Negotiation Line"
+msgstr "Linea Negociación de Cheque"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_checkbook_check
+msgid "Account Checkbook Check"
+msgstr "Cheques En Cartera"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_report_msp_account_check_account_checkbook_check_report
+msgid "Account Checkbook Check Report"
+msgstr "Reporte Chequera"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__account_move_id
+msgid "Account Move"
+msgstr "Asiento Contable"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__account_move_qty
+msgid "Account Move Qty."
+msgstr "Cant. Asientos Contables"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#: code:addons/msp_account_check/models/account_securities_deposit.py:0
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__move_ids
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__account_move_qty
+#, python-format
+msgid "Account Moves"
+msgstr "Asientos"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__move_qty
+msgid "Account Moves Qty."
+msgstr "Cant. Asientos"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__check_exp_date
+msgid "Accr. Date"
+msgstr "Fecha Acred."
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__accreditation_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment__accreditation_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment_register__accreditation_date
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+msgid "Accreditation Date"
+msgstr "Fecha de Acred."
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/wizard/account_payment_register.py:0
+#, python-format
+msgid "Accreditation Date can not be prior than Issue Date"
+msgstr "La fecha de acreditación no puede ser anterior a la fecha de emisión"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__accreditation_status
+msgid "Accredited"
+msgstr "Acreditado"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__message_needaction
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__activity_ids
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__activity_exception_decoration
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de Actividad  de Excepción"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__activity_state
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__activity_type_icon
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícono de tipo de actvidad"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_res_config_custom
+msgid "Additional Parameters"
+msgstr "Parámetros Adicionales"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__amount
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_expense__amount
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__amount
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__amount
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__amount
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__amount
+msgid "Amount"
+msgstr "Monto"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_form
+msgid "Amount Total"
+msgstr "Monto Total"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_checkbook.py:0
+#: model:ir.model,name:msp_account_check.model_assign_checkbook
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__parent_id
+#: model_terms:ir.ui.view,arch_db:msp_account_check.assign_checkbook
+#, python-format
+msgid "Assign Checkbook"
+msgstr "Asignar Chequera"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_assign_checkbook_check
+msgid "Assign Checkbook Check"
+msgstr "Asignar Cheques de Chequera"
+
+#. module: msp_account_check
+#: model:ir.actions.act_window,name:msp_account_check.action_account_checkbook_set_nr
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_set_nr_form
+msgid "Assign Next Number"
+msgstr "Asignar Siguiente Número"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__message_attachment_count
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nº de archivos adjuntos"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__bank_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__bank_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment__payment_bank_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment_register__payment_bank_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__bank_id
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook__bank_id
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+msgid "Bank"
+msgstr "Banco"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__bank_account_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__bank_account_id
+msgid "Bank Account"
+msgstr "Cuenta Bancaria"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "Bank Info"
+msgstr "Información Bancaria"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__bank_journal_id
+msgid "Bank Journal"
+msgstr "Diario Bancario"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_securities_deposit.py:0
+#, python-format
+msgid "Bank Statement"
+msgstr "Extracto Bancario"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__bearer_check
+msgid "Bearer Check"
+msgstr "Cheque al Portador"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#, python-format
+msgid "Can Not Find Last Deposit"
+msgstr "No se puede encontrar el último depósito"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_set_nr_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.assign_checkbook
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__state__cancel
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_res_config_custom__cash_account_id
+msgid "Cash Account"
+msgstr "Cuenta Efectivo"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__cash_amount
+msgid "Cash Amount"
+msgstr "Monto Efectivo"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__check_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__check_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__check_ids
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__check_id
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__check_id
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__check_type__check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_checkbook__check_type__check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_payment_method_line__check_type__check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_move_form
+msgid "Check"
+msgstr "Cheque"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#, python-format
+msgid "Check Can Not Be Changed to Draft. State: {}"
+msgstr "El cheque no se puede cambiar a borrador. Estado: {}"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#, python-format
+msgid "Check Can Not Be Received in Portfolio. State: {}"
+msgstr "No se puede recibir el cheque en cartera. Estado: {}"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#, python-format
+msgid "Check Can Not Return to Portfolio. State: {}"
+msgstr "El cheque no se puede regresar a Cartera. Estado: {}"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_bank_statement_line__check_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_move__check_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment__check_id
+msgid "Check Id"
+msgstr "Id Cheque"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_payment_register_form
+msgid "Check Information"
+msgstr "Información Cheque"
+
+#. module: msp_account_check
+#: model:ir.actions.act_window,name:msp_account_check.account_check_negotiation_action
+#: model:ir.ui.menu,name:msp_account_check.account_check_negotiation_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_account_check.account_check_negotiation_action
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_negotiation_form
+msgid "Check Negotiation"
+msgstr "Negociación de Cheque"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment__check_number
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment_register__check_number
+msgid "Check Number"
+msgstr "Número de Cheque"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__check_type
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__check_type
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment_method_line__check_type
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+msgid "Check Type"
+msgstr "Tipo de Cheque"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#, python-format
+msgid "Check Was Not Deposited. State: {}"
+msgstr "El cheque no fue depositado. Estado: {}"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#, python-format
+msgid "Check Was Not Issued State. State: {}"
+msgstr "Estado en el que no se emitió el cheque. Estado: {}"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__name
+msgid "Check number"
+msgstr "Número de Cheque"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__checks_to_print_qty
+msgid "Check to Print"
+msgstr "Cheques para Imprimir"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_checkbook.py:0
+#: model:ir.actions.act_window,name:msp_account_check.account_checkbook_action
+#: model:ir.model,name:msp_account_check.model_account_checkbook
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__checkbook_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_set_nr__checkbook_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment__checkbook_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment_register__checkbook_id
+#: model:ir.ui.menu,name:msp_account_check.account_checkbock_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_account_check.account_checkbook_action
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_tree
+#, python-format
+msgid "Checkbook"
+msgstr "Chequera"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_report_msp_account_check_account_checkbook_continental
+#: model:ir.model,name:msp_account_check.model_report_msp_account_check_account_checkbook_continental_stub
+msgid "Checkbook Continental with Stub"
+msgstr "Chequera Continental con Talón"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_checkbook_set_nr
+msgid "Checkbook Next Nr"
+msgstr "Siguiente Nro."
+
+#. module: msp_account_check
+#: model:ir.actions.act_window,name:msp_account_check.account_checkbook_template_action
+#: model:ir.model,name:msp_account_check.model_account_checkbook_template
+#: model:ir.ui.menu,name:msp_account_check.account_checkbock_template_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_account_check.account_checkbook_template_action
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_checkbook_template_form
+msgid "Checkbook Template"
+msgstr "Plantilla de chequera"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_checkbook_template_tree
+msgid "Checkbook Templates"
+msgstr "Plantillas de chequera"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__check_ids
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook__check_ids
+#: model:ir.ui.menu,name:msp_account_check.menu_finance_payables_payments
+#: model:ir.ui.menu,name:msp_account_check.menu_finance_receivables_payments
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_negotiation_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_pivot
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_securities_deposit_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.res_config_custom_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_own_tree
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_third_tree
+msgid "Checks"
+msgstr "Cheques"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__check_ids
+msgid "Checks List"
+msgstr "Lista de Cheques"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__has_checks_to_print
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_form
+msgid "Checks to Print"
+msgstr "Cheques para Imprimir"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__comment
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__company_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__company_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__company_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__company_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__parent_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check_negotiation__state__confirm
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_negotiation_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_securities_deposit_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_form
+msgid "Confirm Numbers"
+msgstr "Confirmar Números"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_securities_deposit__state__confirm
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: msp_account_check
+#: model:ir.actions.report,name:msp_account_check.msp_account_check_continental_stub_report_action
+msgid "Continental with Stub"
+msgstr "Continental con talón"
+
+#. module: msp_account_check
+#: model:ir.actions.report,name:msp_account_check.msp_account_check_continental_report_action
+msgid "Continental without Stub"
+msgstr "Continental sin talón"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_expense__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_set_nr__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_template__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook__create_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_expense__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_set_nr__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_template__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook__create_date
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__state__credited
+msgid "Credited"
+msgstr "Acreditado"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__currency_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__currency_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_expense__currency_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__currency_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__currency_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__currency_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__currency_id
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: msp_account_check
+#: model:ir.actions.report,name:msp_account_check.msp_account_check_report_action
+msgid "Customized Account Check"
+msgstr "Cheque Personalizado"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__check_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__check_type__post-dated
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_checkbook__check_type__post-dated
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_payment_method_line__check_type__deferred-check
+msgid "Deferred Check"
+msgstr "Cheque Diferido"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__parent_id
+msgid "Deposit"
+msgstr "Depósito"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_bank_statement_line__deposit_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_move__deposit_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment__deposit_id
+msgid "Deposit Id"
+msgstr "Id Depósito"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__number
+msgid "Deposit Number"
+msgstr "Número Depósito"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__total_amount
+msgid "Deposit Total"
+msgstr "Total Depósito"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__state__deposited
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+msgid "Deposited"
+msgstr "Depositado"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__deposits_qty
+msgid "Deposits Qty."
+msgstr "Cant. Depósitos"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_expense__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_set_nr__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_template__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook__display_name
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_securities_deposit__state__done
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_securities_deposit_form
+msgid "Done"
+msgstr "Hecho"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__state__draft
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check_negotiation__state__draft
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_securities_deposit__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__endorsed
+msgid "Endorsed"
+msgstr "Endosado"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#, python-format
+msgid "Error Creating Account Move"
+msgstr "Error al crear Asiento Contable"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_payment.py:0
+#, python-format
+msgid "Error Creating Check"
+msgstr "Error Creando Cheque"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__expense_ids
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_negotiation_form
+msgid "Expenses"
+msgstr "Gastos"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__message_follower_ids
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__message_partner_ids
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__activity_type_icon
+#: model:ir.model.fields,help:msp_account_check.field_account_securities_deposit__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome ej. fa-tasks"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__from_number
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_set_nr__from_number
+msgid "From Number"
+msgstr "Desde Número"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__has_message
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__has_message
+msgid "Has Message"
+msgstr "Tiene Mensaje"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_expense__id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_set_nr__id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_template__id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__id
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook__id
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__id
+msgid "ID"
+msgstr ""
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__activity_exception_icon
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__activity_exception_icon
+#: model:ir.model.fields,help:msp_account_check.field_account_securities_deposit__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__message_needaction
+#: model:ir.model.fields,help:msp_account_check.field_account_securities_deposit__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__message_has_error
+#: model:ir.model.fields,help:msp_account_check.field_account_check__message_has_sms_error
+#: model:ir.model.fields,help:msp_account_check.field_account_securities_deposit__message_has_error
+#: model:ir.model.fields,help:msp_account_check.field_account_securities_deposit__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_res_config_custom__in_portfolio_journal_id
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__state__in-portfolio
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+msgid "In Portfolio"
+msgstr "En Cartera"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "Input to Portfolio"
+msgstr "Ingresar a Cartera"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__message_is_follower
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__issue_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__issue_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment__issue_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment_register__issue_date
+msgid "Issue Date"
+msgstr "Fecha Emisión"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__state__issued
+msgid "Issued"
+msgstr "Emitido"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__partner_id
+msgid "Issuer"
+msgstr "Emisor"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__bank_id
+msgid "Issuer Bank"
+msgstr "Banco Emisor"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__issuer_name
+msgid "Issuer Name"
+msgstr "Nombre Emisor"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__journal_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__journal_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__journal_id
+msgid "Journal in which check is first entered"
+msgstr "Diario en el cual el cheque ingresó por primera vez"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_expense__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_set_nr__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_template__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook__write_uid
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__write_uid
+msgid "Last Updated by"
+msgstr "Ultima actualización por"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_expense__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_set_nr__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_template__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook__write_date
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__message_has_error
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__message_ids
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__my_activity_date_deadline
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi Limite de Actividades"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_checkbook.py:0
+#, python-format
+msgid "N/A"
+msgstr "N/D"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_template__name
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__name
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__payee
+#: model:ir.model.fields,help:msp_account_check.field_account_checkbook_check__payee
+#: model:ir.model.fields,help:msp_account_check.field_assign_checkbook_check__payee
+msgid "Name written on the check"
+msgstr "Nombre escrito en el Cheque"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__state__negotiated
+msgid "Negotiated"
+msgstr "Negociado"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__activity_calendar_event_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Siguiente Evento "
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__activity_date_deadline
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__activity_summary
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__activity_type_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_set_nr__next_number
+msgid "Next Number"
+msgstr "Siguiente Número"
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_checkbook__number_next_actual
+msgid ""
+"Next number that will be used. This number can be incremented frequently so "
+"the displayed value might already be obsolete"
+msgstr ""
+"Próximo número que se utilizará. Este número puede incrementarse "
+"frecuentemente por lo que el valor mostrado puede estar ya obsoleto."
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check_negotiation.py:0
+#, python-format
+msgid "No sequence found for Check Negotiation"
+msgstr "No se encontró ninguna secuencia para Negociación de cheques"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__non_negotiable
+msgid "Non-Negotiable"
+msgstr "No-Negociable"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__number
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__number
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__number
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_securities_deposit_form
+msgid "Number"
+msgstr "Número"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__number_next_actual
+msgid "Number Next"
+msgstr "Siguiente Número"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__message_needaction_counter
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__message_has_error_counter
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero de errores"
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__message_needaction_counter
+#: model:ir.model.fields,help:msp_account_check.field_account_securities_deposit__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__message_has_error_counter
+#: model:ir.model.fields,help:msp_account_check.field_account_securities_deposit__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__has_numbers_to_confirm
+msgid "Numbers to Confirm"
+msgstr "Números a Confirmar"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_securities_deposit_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "Other Info"
+msgstr "Otra Información"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__type__own
+msgid "Own"
+msgstr "Propio"
+
+#. module: msp_account_check
+#: model:ir.actions.act_window,name:msp_account_check.account_check_own_action
+#: model:ir.ui.menu,name:msp_account_check.account_check_own_check_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_account_check.account_check_own_action
+msgid "Own Check"
+msgstr "Cheques Propios"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__parent_id
+msgid "Parent"
+msgstr "Principal"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__partner_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__partner_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit_line__partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook__bank_account_id
+msgid "Partner Bank"
+msgstr "Banco del Contacto"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__payee
+msgid "Pay to the Order of"
+msgstr "Páguese a la Orden de"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__payee
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__payee
+msgid "Payee"
+msgstr "A la Orden de"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__payment_method_id
+msgid "Payment Method"
+msgstr "Método de Pago"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment__payment_method_check_type
+#: model:ir.model.fields,field_description:msp_account_check.field_account_payment_register__payment_method_check_type
+msgid "Payment Method Check Type"
+msgstr "Tipo Método de Pago Cheque"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__payment_method_line_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__payment_method_line_id
+msgid "Payment Method Line"
+msgstr "Linea Método de Pago"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_payment_method_line
+msgid "Payment Methods"
+msgstr "Métodos de pago"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+msgid "Postdated Check"
+msgstr "Cheque Diferido"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_form
+msgid "Preview Checks"
+msgstr "Previsualizar Cheques"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__preview_number
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__preview_number
+msgid "Preview Number"
+msgstr "Previsualizar Número"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_form
+msgid "Print Checks"
+msgstr "Imprimir Cheques"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__printed
+msgid "Printed"
+msgstr "Impreso"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.assign_checkbook
+msgid "Process"
+msgstr "Procesar"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_payment_register
+msgid "Register Payment"
+msgstr "Registrar pago"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "Reject"
+msgstr "Rechazar"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_res_config_custom__rejected_journal_id
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__state__rejected
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__rejected_before
+msgid "Rejected Before"
+msgstr "Rechazado anteriormente"
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__state__replace
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+msgid "Replaced"
+msgstr "Reemplazado"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_template__report_id
+msgid "Report"
+msgstr "Reporte"
+
+#. module: msp_account_check
+#: model:ir.actions.server,name:msp_account_check.check_reprint_action
+msgid "Reprint Check"
+msgstr "Reimprimir Cheque"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_negotiation_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_securities_deposit_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "Reset to Draft"
+msgstr "Restablecer a Borrador"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__activity_user_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "Return to Portfolio"
+msgstr "Regresar a Cartera"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__message_has_sms_error
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega del SMS"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#: model:ir.actions.act_window,name:msp_account_check.account_securities_deposit_action
+#: model:ir.model,name:msp_account_check.model_account_securities_deposit
+#: model:ir.ui.menu,name:msp_account_check.account_securities_deposit_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_account_check.account_securities_deposit_action
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_securities_deposit_form
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_securities_deposit_tree
+#, python-format
+msgid "Securities Deposit"
+msgstr "Depósito de Valores"
+
+#. module: msp_account_check
+#: model:ir.model,name:msp_account_check.model_account_securities_deposit_line
+msgid "Securities Deposit Line"
+msgstr "Linea Depósito de Valores"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__sequence_id
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__sequence
+#: model:ir.model.fields,field_description:msp_account_check.field_assign_checkbook_check__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__sequence_error
+msgid "Sequence Error"
+msgstr "Error en Secuencia"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_securities_deposit.py:0
+#, python-format
+msgid "Sequence Not Found: %s"
+msgstr "No Se Encuentra Secuencia: %s"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#, python-format
+msgid "Sequence Not Found: {}"
+msgstr "Secuencia no encontrada: {}"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_set_nr_form
+msgid "Set Next Number"
+msgstr "Asignar Siguiente Número"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__state
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__state
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation_line__state
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_check__state
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__state
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_check_search
+msgid "State"
+msgstr "Estado"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__state_ro
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__state_ro
+msgid "State (ro)"
+msgstr "Estado (sl)"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__state_own_ro
+msgid "State Own (ro)"
+msgstr "Estado Prop. (sl)"
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__activity_state
+#: model:ir.model.fields,help:msp_account_check.field_account_securities_deposit__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__template_id
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: msp_account_check
+#. odoo-python
+#: code:addons/msp_account_check/models/account_check.py:0
+#, python-format
+msgid "The accreditation date cannot be prior to the issue"
+msgstr "La fecha de acreditación no puede ser anterior a la emisión."
+
+#. module: msp_account_check
+#: model:ir.model.fields.selection,name:msp_account_check.selection__account_check__type__third
+msgid "Third"
+msgstr "Terceros"
+
+#. module: msp_account_check
+#: model:ir.actions.act_window,name:msp_account_check.account_check_third_action
+#: model:ir.ui.menu,name:msp_account_check.account_check_third_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_account_check.account_check_third_action
+msgid "Third Party Check"
+msgstr "Cheques de Terceros"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_securities_deposit_form
+msgid ""
+"This Action Will Delete The Account Move and Bank Statement Associated. Are "
+"You Sure?"
+msgstr ""
+"Esta Acción Eliminará El Asiento Contable y El Extracto Asociado. ¿Está "
+"Seguro?"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook__to_number
+#: model:ir.model.fields,field_description:msp_account_check.field_account_checkbook_set_nr__to_number
+msgid "To Number"
+msgstr "Hasta Número"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__total_check
+msgid "Total Checks"
+msgstr "Total Cheques"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check_negotiation__total_expense
+msgid "Total Expenses"
+msgstr "Total Gastos"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__activity_exception_decoration
+#: model:ir.model.fields,help:msp_account_check.field_account_securities_deposit__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_res_config_custom__cash_account_id
+msgid "Used for Securities Deposit"
+msgstr "Utilizado para Deposito de Valores"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__value_date
+msgid "Value Date"
+msgstr "Fecha Valor"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__website_message_ids
+#: model:ir.model.fields,field_description:msp_account_check.field_account_securities_deposit__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: msp_account_check
+#: model:ir.model.fields,help:msp_account_check.field_account_check__website_message_ids
+#: model:ir.model.fields,help:msp_account_check.field_account_securities_deposit__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_kanban
+msgid "checks to print"
+msgstr "cheque(s) para imprimir"
+
+#. module: msp_account_check
+#: model:ir.model.fields,field_description:msp_account_check.field_account_check__accreditation_days
+msgid "days"
+msgstr "días"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.view_account_check_form
+msgid "days)"
+msgstr "días)"
+
+#. module: msp_account_check
+#: model_terms:ir.ui.view,arch_db:msp_account_check.account_checkbook_kanban
+msgid "to"
+msgstr "a"

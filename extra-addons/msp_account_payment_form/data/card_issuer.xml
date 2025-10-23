@@ -1,0 +1,39 @@
+<odoo>
+    <data noupdate='1'>
+        <record id='card_issuer_1' model='card.issuer'>
+            <field name='name'>Visa</field>
+            <field name='code'>1</field>
+        </record>
+
+        <record id='card_issuer_2' model='card.issuer'>
+            <field name='name'>Mastercard</field>
+            <field name='code'>2</field>
+        </record>
+
+        <record id='card_issuer_3' model='card.issuer'>
+            <field name='name'>American Express</field>
+            <field name='code'>3</field>
+        </record>
+
+        <record id='card_issuer_4' model='card.issuer'>
+            <field name='name'>Maestro</field>
+            <field name='code'>4</field>
+        </record>
+
+        <record id='card_issuer_5' model='card.issuer'>
+            <field name='name'>Panal</field>
+            <field name='code'>5</field>
+        </record>
+
+        <record id='card_issuer_6' model='card.issuer'>
+            <field name='name'>Cabal</field>
+            <field name='code'>6</field>
+        </record>
+
+        <record id='card_issuer_99' model='card.issuer'>
+            <field name='name'>Otro</field>
+            <field name='code'>99</field>
+        </record>
+
+    </data>
+</odoo>

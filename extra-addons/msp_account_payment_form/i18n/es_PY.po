@@ -1,0 +1,682 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_account_payment_form
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250520\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-25 11:23+0000\n"
+"PO-Revision-Date: 2025-08-25 08:23-0300\n"
+"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"Language-Team: \n"
+"Language: es_PY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+#. module: msp_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.res_config_custom_form
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__message_needaction
+msgid "Action Needed"
+msgstr "Acción Necesaria"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de la actividad de excepción"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono del tipo de actividad"
+
+#. module: msp_account_payment_form
+#: model:ir.model,name:msp_account_payment_form.model_res_config_custom
+msgid "Additional Parameters"
+msgstr "Parámetros Adicionales"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__amount
+msgid "Amount"
+msgstr "Monto"
+
+#. module: msp_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.view_move_form
+msgid "Applied to Invoice"
+msgstr "Aplicado a Factura"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__message_attachment_count
+msgid "Attachment Count"
+msgstr "Cantidad Adjuntos"
+
+#. module: msp_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.view_move_form
+msgid "Authomatic Payment"
+msgstr "Pago Automático"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__bank_id
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment__payment_bank_id
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__bank_id
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_register__payment_bank_id
+#: model:ir.model.fields.selection,name:msp_account_payment_form.selection__account_payment_form__type__bank
+msgid "Bank"
+msgstr "Banco"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form_type__code
+msgid ""
+"CODIGOS PREDEFINIDOS:\n"
+"[cash] - Efectivo\n"
+"[check] -Cheque día\n"
+"[card] - Tarjeta\n"
+"[deferred-check] - Cheque Adelantado\n"
+"[voucher] - Vale\n"
+"[bank] - Banco\n"
+"[other] - Otro"
+msgstr ""
+"CODIGOS PREDEFINIDOS:\n"
+"[cash] - Efectivo\n"
+"[check] -Cheque día\n"
+"[card] - Tarjeta\n"
+"[deferred-check] - Cheque Adelantado\n"
+"[voucher] - Vale\n"
+"[bank] - Banco\n"
+"[other] - Otro"
+
+#. module: msp_account_payment_form
+#. odoo-python
+#: code:addons/msp_account_payment_form/models/account_move.py:0
+msgid "Can Not Delete Invoice Cash Payment"
+msgstr "No Se Puede Eliminar Pagos"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields.selection,name:msp_account_payment_form.selection__account_payment_form__type__card
+msgid "Card"
+msgstr "Tarjeta"
+
+#. module: msp_account_payment_form
+#: model:ir.actions.act_window,name:msp_account_payment_form.card_issuer_action
+#: model:ir.model,name:msp_account_payment_form.model_card_issuer
+#: model:ir.ui.menu,name:msp_account_payment_form.card_issuer_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_account_payment_form.card_issuer_action
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.card_issuer_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.card_issuer_list
+msgid "Card Issuer"
+msgstr "Emisor de Tarjeta"
+
+#. module: msp_account_payment_form
+#: model:ir.actions.act_window,name:msp_account_payment_form.card_process_form_action
+#: model:ir.model,name:msp_account_payment_form.model_card_process_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__process_form_id
+#: model:ir.ui.menu,name:msp_account_payment_form.card_process_form_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_account_payment_form.card_process_form_action
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.card_process_form_list
+msgid "Card Process Form"
+msgstr "Forma de Procesamiento Tarjeta"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields.selection,name:msp_account_payment_form.selection__account_payment_form__type__cash
+msgid "Cash"
+msgstr "Efectivo"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_res_config_custom__cash_payment_form_id
+msgid "Cash Payment Form"
+msgstr "Forma de Pago Contado"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields.selection,name:msp_account_payment_form.selection__account_payment_form__type__check
+msgid "Check"
+msgstr "Cheque"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__code
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form_type__code
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_issuer__code
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_process_form__code
+msgid "Code"
+msgstr "Código"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: msp_account_payment_form
+#. odoo-python
+#: code:addons/msp_account_payment_form/models/account_payment.py:0
+msgid "Configuration Error"
+msgstr "Error de Configuración"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__create_uid
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__create_uid
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form_type__create_uid
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_issuer__create_uid
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_process_form__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__create_date
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__create_date
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form_type__create_date
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_issuer__create_date
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_process_form__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__company_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields.selection,name:msp_account_payment_form.selection__account_payment_form__type__deferred-check
+msgid "Deferred Check"
+msgstr "Cheque Diferido"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__display_name
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form_type__display_name
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_issuer__display_name
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_process_form__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: msp_account_payment_form
+#: model:ir.model,name:msp_account_payment_form.model_account_payment_form_type
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__edi_type_id
+msgid "EDI Payment Type"
+msgstr "Tipo Forma de Pago"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__code
+msgid "Especifique el código 99 para Formas de Pagos Adicionales"
+msgstr "Especifique el código 99 para Formas de Pagos Adicionales"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Ícono de Font Awesome, por ejemplo, fa-tasks"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_bank_statement_line__require_cash_payment
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_move__require_cash_payment
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_term__require_payment_form
+msgid "For Immediate Payment"
+msgstr "Para Contado"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__has_message
+msgid "Has Message"
+msgstr "Tiene Mensaje"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__id
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__id
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form_type__id
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_issuer__id
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_process_form__id
+msgid "ID"
+msgstr "ID"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__activity_exception_icon
+msgid "Icon"
+msgstr "Ícono"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcada, hay nuevos mensajes que requieren su atención."
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__message_has_error
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcada, algunos mensajes tienen error de envío."
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__payment_method_inbound_id
+msgid "Incoming Payment Method"
+msgstr "Método de Pago Entrante"
+
+#. module: msp_account_payment_form
+#: model:ir.model,name:msp_account_payment_form.model_account_move_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment__move_payment_form_id
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_register__move_payment_form_id
+msgid "Invoice Payment Form"
+msgstr "Forma de Pago Factura"
+
+#. module: msp_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.view_move_form
+msgid "Invoice Total"
+msgstr "Total Factura"
+
+#. module: msp_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.view_account_payment_form
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__message_is_follower
+msgid "Is Follower"
+msgstr "Es Seguidor"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__issuer_id
+msgid "Issuer"
+msgstr "Emisor"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: msp_account_payment_form
+#: model:ir.model,name:msp_account_payment_form.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__write_uid
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__write_uid
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form_type__write_uid
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_issuer__write_uid
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_process_form__write_uid
+msgid "Last Updated by"
+msgstr "Modificado por"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__write_date
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__write_date
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form_type__write_date
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_issuer__write_date
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_process_form__write_date
+msgid "Last Updated on"
+msgstr "Modificado el"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de envío de mensaje"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: msp_account_payment_form
+#. odoo-python
+#: code:addons/msp_account_payment_form/models/account_payment.py:0
+msgid "Missing Bank in Payment Form!"
+msgstr "Banco Faltante en Forma de Pago!"
+
+#. module: msp_account_payment_form
+#. odoo-python
+#: code:addons/msp_account_payment_form/models/account_payment.py:0
+msgid "Missing Journal in Payment Form!"
+msgstr "Diario Faltante en Forma de Pago!"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__move_id
+msgid "Move"
+msgstr "Asiento"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Mi Limite de Actividades"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__display_name
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__name
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form_type__name
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_issuer__name
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_process_form__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "Siguiente Evento "
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente fecha límite de la actividad"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__activity_type_id
+msgid "Next Activity Type"
+msgstr "Tipo de la siguiente actividad"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__number
+msgid "Number"
+msgstr "Número"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Acciones"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de Errores"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields.selection,name:msp_account_payment_form.selection__account_payment_form__type__other
+msgid "Other"
+msgstr "Otro"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__payment_method_outbound_id
+msgid "Outgoing Payment Method"
+msgstr "Método de Pago Saliente"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields.selection,name:msp_account_payment_form.selection__account_payment_form__voucher_partner__partner
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: msp_account_payment_form
+#: model:ir.model,name:msp_account_payment_form.model_account_payment_register
+msgid "Pay"
+msgstr "Pagar"
+
+#. module: msp_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.view_move_form
+msgid "Payment"
+msgstr "Pago"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__payment_amount
+msgid "Payment Amount"
+msgstr "Monto del Pago"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__payment_currency_id
+msgid "Payment Currency"
+msgstr "Moneda del Pago"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__payment_currency_rate
+msgid "Payment Currency Rate"
+msgstr "TC del Pago"
+
+#. module: msp_account_payment_form
+#: model:ir.actions.act_window,name:msp_account_payment_form.account_payment_form_action
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__payment_form_id
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment__payment_form_id
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_register__payment_form_id
+#: model:ir.ui.menu,name:msp_account_payment_form.account_payment_form_account_menu_entry
+#: model:ir.ui.menu,name:msp_account_payment_form.account_payment_form_menu_entry
+#: model:ir.ui.menu,name:msp_account_payment_form.menu_account_payment_form
+#: model_terms:ir.actions.act_window,help:msp_account_payment_form.account_payment_form_action
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.account_payment_form_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.account_payment_form_list
+msgid "Payment Form"
+msgstr "Forma de Pago"
+
+#. module: msp_account_payment_form
+#: model:ir.actions.act_window,name:msp_account_payment_form.account_payment_form_type_action
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment__payment_form_type
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_register__payment_form_type
+#: model:ir.ui.menu,name:msp_account_payment_form.account_payment_form_type_menu_entry
+#: model_terms:ir.actions.act_window,help:msp_account_payment_form.account_payment_form_type_action
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.account_payment_form_type_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.account_payment_form_type_list
+msgid "Payment Form Type"
+msgstr "Tipo Forma de Pago"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_bank_statement_line__payment_form_ids
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move__payment_form_ids
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.view_move_form
+msgid "Payment Forms"
+msgstr "Formas de Pago"
+
+#. module: msp_account_payment_form
+#. odoo-python
+#: code:addons/msp_account_payment_form/models/account_move.py:0
+msgid "Payment Forms Required for Term: %s"
+msgstr "Forma de Pago Requerido para Término: %s"
+
+#. module: msp_account_payment_form
+#: model:ir.model,name:msp_account_payment_form.model_account_payment_form
+msgid "Payment Forms for Invoice Cancellations"
+msgstr "Formas de Pago para Cancelación de Facturas"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment__payment_number
+msgid "Payment Number"
+msgstr "Número de Pago"
+
+#. module: msp_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.view_account_invoice_filter
+msgid "Payment Term"
+msgstr "Término de Pago"
+
+#. module: msp_account_payment_form
+#: model:ir.model,name:msp_account_payment_form.model_account_payment_term
+msgid "Payment Terms"
+msgstr "Términos de pago"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_bank_statement_line__payment_total
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move__payment_total
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.view_move_form
+msgid "Payment Total"
+msgstr "Total Pago"
+
+#. module: msp_account_payment_form
+#. odoo-python
+#: code:addons/msp_account_payment_form/models/account_move.py:0
+msgid "Payment Total Does Not Match Invoice Total"
+msgstr "El total de pagos no coincide con el total de la factura"
+
+#. module: msp_account_payment_form
+#: model:ir.model,name:msp_account_payment_form.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__postdated_date
+msgid "Postdated Date"
+msgstr "Fecha Adelantada"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_card_issuer__partner_id
+msgid "Processor Partner"
+msgstr "Contacto Procesadora"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__rating_ids
+msgid "Ratings"
+msgstr "Calificaciones"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__require_bank
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__require_bank
+msgid "Require Bank"
+msgstr "Solicitar Banco"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_bank_statement_line__require_cash_payment
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move__require_cash_payment
+msgid "Require Cash Payment"
+msgstr "Solicitar Pago Contado"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__require_date
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__require_date
+msgid "Require Date"
+msgstr "Solicitar Fecha"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__require_issuer
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__require_issuer
+msgid "Require Issuer"
+msgstr "Solicitar Emisor"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__require_number
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment__require_number
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__require_number
+msgid "Require Number"
+msgstr "Solicitar Número"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_term__require_payment_form
+msgid "Require Payment Form"
+msgstr "Solicitar Forma de Pago"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__require_postdated_date
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__require_postdated_date
+msgid "Require Postdated Date"
+msgstr "Solicitar Fecha Adelantada"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error en el envío del SMS"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_res_config_custom__skip_cash_payment_create
+msgid "Skip Cash Payment Creation"
+msgstr "Omitir Creación de Pagos Contado"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado según las actividades\n"
+"Vencida: ya pasó la fecha límite\n"
+"Hoy: hoy es la fecha de la actividad\n"
+"Planeada: futuras actividades.\""
+
+#. module: msp_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.view_account_payment_form
+#: model_terms:ir.ui.view,arch_db:msp_account_payment_form.view_account_payment_register_form
+msgid "Transfer Information"
+msgstr "Información Transferencia"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment__transfer_number
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_register__transfer_number
+msgid "Transfer Number"
+msgstr "Número de Transferencia"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_move_payment_form__payment_form_type
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción en el registro."
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__use_customer
+msgid "Use for Customer"
+msgstr "Usar para Cliente"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__use_supplier
+msgid "Use for Supplier"
+msgstr "Usar para Proveedor"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields.selection,name:msp_account_payment_form.selection__account_payment_form__type__voucher
+msgid "Voucher"
+msgstr "Comprobante"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__voucher_partner
+msgid "Voucher Partner"
+msgstr "Contacto del Voucher"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,field_description:msp_account_payment_form.field_account_payment_form__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes Sitio web"
+
+#. module: msp_account_payment_form
+#: model:ir.model.fields,help:msp_account_payment_form.field_account_payment_form__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"

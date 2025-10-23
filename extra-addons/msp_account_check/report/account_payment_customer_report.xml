@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="msp_account_check.account_payment_customer_report_copy"
+              inherit_id="msp_account_check.account_payment_customer_report_copy">
+        <xpath expr="//td[@id='data_bank']" position="replace">
+            <td class="center_data row_data" id="data_bank">
+                <span t-field="o.payment_bank_id.name"/>
+            </td>
+        </xpath>
+        <xpath expr="//td[@id='data_number']" position="replace">
+            <t t-if="o.payment_method_line_id.check_type in ['check','deferred-check'] ">
+                <td class="center_data row_data" id="data_number">
+                    <span t-field="o.check_number"/>
+                </td>
+            </t>
+            <t t-else="">
+                <td></td>
+            </t>
+        </xpath>
+        <xpath expr="//td[@id='data_date_due']" position="replace">
+            <t t-if="o.payment_method_line_id.check_type in ['check','deferred-check'] ">
+                <td class="center_data row_data" id="data_date_due">
+                    <span t-field="o.accreditation_date"/>
+                </td>
+            </t>
+            <t t-else="">
+                <td></td>
+            </t>
+        </xpath>
+    </template>
+</odoo>

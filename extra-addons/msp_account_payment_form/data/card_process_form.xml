@@ -1,0 +1,19 @@
+<odoo>
+    <data noupdate='1' >
+        <record id='card_process_form_1' model='card.process.form' >
+            <field name='name'>POS</field>
+            <field name='code'>1</field>
+        </record>
+
+        <record id='card_process_form_2' model='card.process.form' >
+            <field name='name'>Pago Electrónico</field>
+            <field name='code'>2</field>
+        </record>
+
+        <record id='card_process_form_9' model='card.process.form' >
+            <field name='name'>Otro</field>
+            <field name='code'>9</field>
+        </record>
+
+    </data>
+</odoo>

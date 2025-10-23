@@ -1,0 +1,39 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_account_payment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250115\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 15:09+0000\n"
+"PO-Revision-Date: 2025-02-06 12:10-0300\n"
+"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"Language-Team: \n"
+"Language: es_PY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: msp_account_payment
+#: model_terms:ir.ui.view,arch_db:msp_account_payment.view_account_payment_form
+msgid "General"
+msgstr "General"
+
+#. module: msp_account_payment
+#: model:ir.model.fields.selection,name:msp_account_payment.selection__account_payment__payment_origin__manual
+msgid "Manual"
+msgstr "Manual"
+
+#. module: msp_account_payment
+#: model:ir.model.fields,field_description:msp_account_payment.field_account_payment__payment_origin
+#: model_terms:ir.ui.view,arch_db:msp_account_payment.view_account_payment_search
+msgid "Payment Origin"
+msgstr "Origen del Pago"
+
+#. module: msp_account_payment
+#: model:ir.model,name:msp_account_payment.model_account_payment
+msgid "Payments"
+msgstr "Pagos"

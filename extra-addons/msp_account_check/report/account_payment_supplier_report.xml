@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="msp_account_check.account_payment_supplier_report"
+               inherit_id="msp_account_check.account_payment_supplier_report">
+        <xpath expr="//td[@id='header_method']" position="after">
+            <t t-if="o.payment_method_line_id.check_type in ['check','deferred-check'] ">
+                <td class="title table_head" id="header_bank">Bank</td>
+                <td class="title table_head" id="header_issue_date">Issue Date</td>
+                <td class="title table_head" id="header_check_number">Number</td>
+            </t>
+        </xpath>
+        <xpath expr="//td[@id='data_method']" position="after">
+            <t t-if="o.payment_method_line_id.check_type in ['check','deferred-check'] ">
+                <td class="center_data row_data" id="data_bank"><span t-field="o.payment_bank_id.name"/></td>
+                <td class="center_data row_data" id="data_issue_date"><span t-field="o.issue_date"/></td>
+                <td class="center_data row_data" id="data_check_number">
+                <t t-if="o.check_id.number"><span t-field="o.check_id.number"/></t>
+                <t t-else="">Pendiente</t>
+                </td>
+            </t>
+        </xpath>
+    </template>
+</odoo>

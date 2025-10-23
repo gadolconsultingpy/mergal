@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_securities_deposit_tree" model="ir.ui.view">
+            <field name="name">account.securities.deposit.tree</field>
+            <field name="model">account.securities.deposit</field>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list string="Securities Deposit" sample="1">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="bank_journal_id"/>
+                    <field name="bank_id"/>
+                    <field name="company_id" optional="hide" groups="base.group_multi_company"/>
+                    <field name="number"/>
+                    <field name="total_amount"/>
+                    <field name="state" widget="badge"
+                           decoration-success="state == 'done'"
+                           decoration-primary="state == 'confirm'"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="account_securities_deposit_form" model="ir.ui.view">
+            <field name="name">account.securities.deposit.form</field>
+            <field name="model">account.securities.deposit</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Securities Deposit">
+                    <header>
+                        <field name="state" invisible="1"/>
+                        <button name="action_confirm"
+                                string="Confirm"
+                                type="object"
+                                class="btn-primary"
+                                invisible="state != 'draft'"/>
+
+                        <button name="action_validate"
+                                string="Done"
+                                type="object"
+                                class="btn-primary"
+                                invisible="state != 'confirm'"/>
+
+                        <button name="action_reset_to_draft"
+                                string="Reset to Draft"
+                                type="object"
+                                class="btn-primary"
+                                invisible="state != 'done'"
+                                groups="base.group_no_one"
+                                confirm="This Action Will Delete The Account Move and Bank Statement Associated. Are You Sure?"/>
+
+                        <field name="state_ro" widget="statusbar"/>
+                    </header>
+                    <sheet>
+
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button"
+                                    name="open_account_move"
+                                    icon="fa-book"
+                                    type="object"
+                                    invisible="account_move_qty == False">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="account_move_qty"
+                                               widget="statinfo"
+                                               nolabel="1" class="mr4"/>
+                                    </span>
+                                    <span class="o_stat_text">Account Moves</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Number" readonly="1" force_save="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="date" readonly="state_ro == 'done'"/>
+                                <field name="bank_journal_id" domain="[('type','=','bank')]" readonly="state_ro == 'done'" required="True"/>
+                                <field name="payment_method_line_id" domain="[('journal_id','=',bank_journal_id),('payment_type','=','inbound')]"/>
+                                <field name="number" readonly="state_ro == 'done'"/>
+                            </group>
+                            <group>
+                                <field name="value_date" readonly="state_ro == 'done'"/>
+                                <field name="cash_amount" readonly="state_ro == 'done'"/>
+                                <field name="total_amount"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="check_page" string="Checks">
+                                <field name="check_ids" readonly="state_ro == 'done'">
+                                    <list editable="bottom">
+                                        <field name="parent_company_id" invisible="1"/>
+                                        <field name="check_id"
+                                               domain="[('state', '=', 'in-portfolio'),('type','=','third'),('company_id','=',parent_company_id)]"
+                                               options="{'no_create':True, 'no_create_edit':True}"/>
+                                        <field name="number"
+                                               options="{'no_create':True, 'no_create_edit':True}"/>
+                                        <field name="partner_id"
+                                               options="{'no_create':True, 'no_create_edit':True}"/>
+                                        <field name="check_date"/>
+                                        <field name="check_exp_date"/>
+                                        <field name="amount"/>
+                                        <field name="currency_id" optional="hide"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page name="other_info" string="Other Info">
+                                <group>
+                                    <field name="bank_id" readonly="state_ro == 'done'"/>
+                                    <field name="currency_id" readonly="state_ro == 'done'"/>
+                                    <field name="state" groups="base.group_no_one"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter reload_on_attachment="True"/>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

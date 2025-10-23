@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="account_checkbook_kanban" model="ir.ui.view">
+            <field name="name">account.checkbook.kanban</field>
+            <field name="model">account.checkbook</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="bank_id"/>
+                    <field name="bank_account_id"/>
+                    <field name="from_number"/>
+                    <field name="to_number"/>
+                    <field name="checks_to_print_qty"/>
+                    <templates>
+                        <t t-name="card">
+                            <div t-attf-class="oe_kanban_global_click" style="width:400px; ">
+                                <div>
+                                    <div>
+                                        <div>
+                                            <h3><field name="bank_id"/></h3>
+                                        </div>
+                                        <div>
+                                            <h4><field name="bank_account_id"/></h4>
+                                        </div>
+                                    </div>
+                                    <div class="container o_kanban_card_content">
+                                        <div class="row">
+                                            <div class="col-6 o_kanban_primary_left">
+                                                <field name="check_type"/>
+                                            </div>
+                                            <div class="col-6 o_kanban_primary_left">
+                                                <field name="from_number"/> to <field name="to_number"/>
+                                            </div>
+                                            <div class="col-6 o_kanban_primary_right text-right">
+                                                <field name="checks_to_print_qty"/> checks to print
+                                                <!--<button name="assign_checkbook" type="object" string="Assign Checkbook" class="btn btn-primary">-->
+                                                <!--<span>Assign Checkbook</span>-->
+                                                <!--</button>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="account_checkbook_tree" model="ir.ui.view">
+            <field name="name">account.checkbook.tree</field>
+            <field name="model">account.checkbook</field>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list string="Checkbook" sample="1">
+                    <field name="journal_id"/>
+                    <field name="check_type"/>
+                    <field name="bank_account_id"/>
+                    <field name="from_number"/>
+                    <field name="to_number"/>
+                    <field name="company_id" optional="hide" groups="base.group_multi_company"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="account_checkbook_form" model="ir.ui.view">
+            <field name="name">account.checkbook.form</field>
+            <field name="model">account.checkbook</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Checkbook">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Name" readonly="1" force_save="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="journal_id" required="1"/>
+                                <field name="bank_id"/>
+                                <field name="bank_account_id"
+                                       domain="[('partner_id','=',partner_id)]"/>
+                                <field name="template_id"/>
+                            </group>
+                            <group>
+                                <field name="check_type"/>
+                                <field name="from_number"/>
+                                <field name="to_number"/>
+                                <field name="number_next_actual"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="checks_page" string="Checks to Print">
+                                <field name="has_checks_to_print" invisible="1"/>
+                                <field name="has_numbers_to_confirm" invisible="1"/>
+                                <group>
+                                    <group>
+                                        <button name="preview_checks" type="object" string="Preview Checks" class="btn-primary"/>
+                                        <button name="confirm_numbers"
+                                                type="object"
+                                                string="Confirm Numbers"
+                                                invisible="has_numbers_to_confirm == False"
+                                                class="btn-secondary"/>
+                                    </group>
+                                    <group>
+                                        <button name="print_checks"
+                                                type="object"
+                                                string="Print Checks"
+                                                invisible="has_checks_to_print == False"
+                                                class="btn-primary"/>
+                                    </group>
+                                </group>
+                                <field name="has_numbers_to_confirm" invisible="1"/>
+                                <field name="check_ids" nolabel="1">
+                                    <list editable="bottom"
+                                          decoration-danger="sequence_error == True "
+                                          create="0">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="preview_number" column_invisible="parent.has_numbers_to_confirm == False"/>
+                                        <field name="number"/>
+                                        <field name="payee"/>
+                                        <field name="amount" sum="Amount Total"/>
+                                        <field name="state" widget="badge"
+                                               decoration-info="state == 'in-portfolio' "
+                                               decoration-primary="state == 'issued' "
+                                        />
+                                        <field name="sequence_error" invisible="1"/>
+                                        <field name="currency_id"/>
+                                        <field name="printed" widget="boolean_toggle"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page name="other_info" string="Other Info">
+                                <group>
+                                    <field name="sequence_id"/>
+                                    <field name="company_id" readonly="1" force_save="1"/>
+                                    <field name="partner_id" invisible="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

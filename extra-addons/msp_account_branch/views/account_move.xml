@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_move_form" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="l10n_py.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='py_page']//group[@name='group_left']" position="inside">
+                    <field name="branch_id"
+                           options="{'no_create':True, 'no_create_edit':True, 'no_open':True}"
+                           readonly="state != 'draft' "/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_invoice_filter" model="ir.ui.view">
+            <field name="name">account.move.search</field>
+            <field name="model">account.move</field>
+            <field name="type">search</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='duedate']" position="after">
+                    <filter string="Branch" name="branch" context="{'group_by': 'branch_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

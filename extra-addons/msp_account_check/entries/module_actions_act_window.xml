@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <!-- ACCOUNT CHECK THIRD -->
+        <record id="account_check_third_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{'default_type': 'third', 'search_default_filter_portfolio': '1'}</field>
+            <field name="domain">[('type', '=', 'third')]</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Third Party Check]]></field>
+            <field name="name">Third Party Check</field>
+            <field name="res_model">account.check</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_id" ref="view_account_check_third_tree"/>
+            <field name="view_mode">list,form,pivot,graph</field>
+        </record>
+        <!-- ACCOUNT CHECK OWN -->
+        <record id="account_check_own_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{'default_type': 'own', 'search_default_filter_portfolio': '1'}</field>
+            <field name="domain">[('type', '=', 'own')]</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Own Check]]></field>
+            <field name="name">Own Check</field>
+            <field name="res_model">account.check</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_id" ref="view_account_check_own_tree"/>
+            <field name="view_mode">list,form,pivot,graph</field>
+        </record>
+
+        <!-- ACCOUNT SECURITIES DEPOSIT -->
+        <record id="account_securities_deposit_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Securities Deposit]]></field>
+            <field name="name">Securities Deposit</field>
+            <field name="res_model">account.securities.deposit</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- ACCOUNT CHECKBOOK -->
+        <record id="account_checkbook_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Checkbook]]></field>
+            <field name="name">Checkbook</field>
+            <field name="res_model">account.checkbook</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+        <!-- ACCOUNT CHECKBOOK TEMPLATE -->
+        <record id="account_checkbook_template_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Checkbook Template]]></field>
+            <field name="name">Checkbook Template</field>
+            <field name="res_model">account.checkbook.template</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- ACCOUNT CHECKBOOK SET NR -->
+        <record id="action_account_checkbook_set_nr" model="ir.actions.act_window">
+            <field name="name">Assign Next Number</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.checkbook.set.nr</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="msp_account_check.account_checkbook_set_nr_form"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+            <field name="help"></field>
+            <field name="binding_model_id" ref="msp_account_check.model_account_checkbook"/>
+            <field name="binding_view_types">form</field>
+        </record>
+
+    </data>
+</odoo>
