@@ -1,6 +1,6 @@
 {
     'name'        : 'MSP Base',
-    'version'     : '0.1',
+    'version'     : '0.1.1',
     'summary'     : 'Customizations to Base',
     'description' : "Custom Configurations for MSP Applications",
     'author'      : "Gadol Consulting",
@@ -8,6 +8,7 @@
     'depends'     : [
         'base',
         'l10n_py_base',
+        'mail'
     ],
     'category'    : 'Customizations',
     'sequence'    : 10,
@@ -18,6 +19,7 @@
         'security/ir_model_access.xml',
 
         'views/res_config_custom.xml',
+        'views/ir_sequence.xml',
 
         'wizard/generic_message_box.xml',
 
