@@ -1,7 +1,7 @@
 # noinspection PyStatementEffect
 {
     'name'          : "Localization for Paraguay",
-    'version'       : '0.2.2',
+    'version'       : '0.2.3',
     'summary'       : 'Localization for Paraguay',
     'description'   : """Estructura básica necesaria para cualquier empresa de Paraguay, utilice o no Facturación Electrónica.
 Conceptos Implementados
@@ -39,6 +39,7 @@ Adaptaciones
 
         'data/l10n_latam_identification_type.xml',
         'data/ir.ui.menu.csv',
+        'data/ir_actions_server.xml',
 
         'data/res_country_state.xml',
         'data/res_district.xml',
@@ -71,6 +72,10 @@ Adaptaciones
         'views/res_currency_rate.xml',
 
         'wizard/tax_payer_process.xml',
+
+        'security/ir_module_category.xml',
+        'security/res_groups.xml',
+        'security/ir_model_access.xml',
 
         'entries/module_actions_act_window.xml',
         'entries/module_menu.xml',

@@ -32,8 +32,12 @@ class ResCurrency(models.Model):
         self, to_currency = self or to_currency, to_currency or self
         assert self, "convert amount from unknown currency"
         assert to_currency, "convert amount to unknown currency"
+        assert company, "convert amount from unknown company"
+        assert date, "convert amount from unknown date"
         # apply conversion rate
-        if from_amount:
+        if self == to_currency:
+            to_amount = from_amount
+        elif from_amount:
             crate = self._get_conversion_rate(self, to_currency, company, date)
             ##### Taking in account the Commercial Currency Rate from Invoices
             if self.env.context.get("commercial_currency_rate", False):
@@ -53,6 +57,9 @@ class ResCurrency(models.Model):
             _logger.info("Performing Currency Rate Update from DNIT")
             req = requests.get('https://www.dnit.gov.py/web/portal-institucional/cotizaciones')
             content = req.content.decode()
+            tempfile = open('/tmp/dnit_currency_rate.html', 'w')
+            tempfile.write(content)
+            tempfile.close()
         except BaseException as errstr:
             _logger.info("Error: %s" % (errstr))
             return False
@@ -94,10 +101,12 @@ class ResCurrency(models.Model):
                 sections = grand_class_item.find_all('section', class_="component-table")
                 for section in sections:
                     title = section.find('h4', class_="section__midtitle")
-                    # print(title.text)
+                    if not title:
+                        continue
+                    text = title.text.strip()
                     try:
-                        pattern = "Tipos de cambios del mes de (?P<month_name>.*) (?P<year>.*)"
-                        res = re.match(pattern, title.text)
+                        pattern = r"Tipos de cambios del mes de\s+(?P<month_name>[A-Za-z]+)\s+(?P<year>\d{4})"
+                        res = re.search(pattern, text, re.IGNORECASE | re.MULTILINE)
                         # print(res.groupdict())
                         month_nr = meses.get(res.groupdict().get('month_name', 0))
                         year_nr = int(res.groupdict().get('year', 0))
@@ -108,36 +117,30 @@ class ResCurrency(models.Model):
                                 tr_list = tbody.find_all('tr')
                                 for tr in tr_list:
                                     td_list = tr.find_all('td')
+                                    if not len(td_list):
+                                        continue
                                     day = int(td_list[0].text)
                                     rate_date = datetime.date(year_nr, month_nr, int(day))
                                     # date_today = fields.Date.context_today(self.env.company)
                                     if rate_date < date_rate_from or rate_date > date_rate_to:
                                         continue
-                                    else:
-                                        print(rate_date)
                                     for cur in enabled_currencies:
                                         cur_idx = available_currencies.index(cur.name)
                                         cur_purc_idx = (cur_idx * 2) + 1
                                         cur_sale_idx = (cur_idx * 2) + 2
-                                        print(cur.name, cur_purc_idx, cur_sale_idx)
                                         cur_purc = float(td_list[cur_purc_idx].text.replace(".", "").replace(",", "."))
                                         cur_sale = float(td_list[cur_sale_idx].text.replace(".", "").replace(",", "."))
-                                        # print(day)
-                                        print(rate_date, cur_purc, cur_sale)
                                         if cur.name not in rates:
                                             rates[cur.name] = {}
                                         rates[cur.name][rate_date] = (cur_purc, cur_sale)
                     except BaseException as errstr:
                         _logger.info("Error Parsing Data: %s - %s" % (title, errstr))
-                        print(errstr)
-        print(rates)
         Currency = self.env['res.currency']
         CurrencyRate = self.env['res.currency.rate']
         for name in rates.keys():
             currency_object = Currency.search([('name', '=', name)])
             cur_date = date_rate_from
             while cur_date <= date_rate_to:
-                print("buscando fecha: ", cur_date)
                 if cur_date in rates[name]:
                     already_existing_rate = CurrencyRate.search(
                             [
