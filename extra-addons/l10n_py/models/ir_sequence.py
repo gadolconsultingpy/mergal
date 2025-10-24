@@ -15,7 +15,7 @@ class IrSequence(models.Model):
     from_number = fields.Integer("Stamped From Number")
     to_number = fields.Integer("Stamped To Number")
     establishment = fields.Char("Establishment")
-    dispatch_point = fields.Char("Dispatch Point")
+    issuance_point = fields.Char("Issuance Point")
     stamped_required = fields.Boolean('Stamped Required', compute="_compute_stamped_required")
     journal_id = fields.Many2one('account.journal', string="Journal")
 
