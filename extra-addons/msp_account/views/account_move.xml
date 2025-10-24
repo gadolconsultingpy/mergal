@@ -8,11 +8,6 @@
                 <xpath expr="//field[@name='invoice_line_ids']/list/field[@name='price_subtotal']" position="after">
                     <field name="price_total" string="Total"/>
                 </xpath>
-                <xpath expr="//field[@name='invoice_user_id']" position="after">
-                    <!--
-                    <field name="salesman_id" />
-                    -->
-                </xpath>
             </field>
         </record>
     </data>
