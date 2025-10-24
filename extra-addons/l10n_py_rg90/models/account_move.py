@@ -5,30 +5,32 @@ from odoo.exceptions import UserError
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    document_type_id = fields.Many2one('account.document.type', string='Document Type', ondelete='restrict')
-    sale_document_type_id = fields.Many2one(related='document_type_id', string='Sale Document Type',
-                                            domain=[('sales', '=', True)],
-                                            store=True)
-    purchase_document_type_id = fields.Many2one(related='document_type_id', string='Purchase Document Type',
+    document_type_id = fields.Many2one('account.document.type',
+                                       string='Document Type',
+                                       compute="_compute_document_type_id",
+                                       store=True)
+    sale_document_type_id = fields.Many2one('account.document.type',
+                                            string='Sale Document Type',
+                                            domain=[('sales', '=', True)], )
+    purchase_document_type_id = fields.Many2one('account.document.type',
+                                                string='Purchase Document Type',
                                                 domain=[('purchases', '=', True)],
-                                                store=True)
+                                                )
     stamped_id = fields.Many2one('res.partner.stamped', string="Stamped Number")
     stamped_control = fields.Boolean(related='document_type_id.stamped_control', string="Stamped Control")
+
+    @api.onchange('journal_id')
+    def _onchange_journal_id_document_type(self):
+        if self.journal_id and self.journal_id.document_type_id:
+            if self.journal_id.type == 'sale':
+                self.sale_document_type_id = self.journal_id.document_type_id.id
+            elif self.journal_id.type == 'purchase':
+                self.purchase_document_type_id = self.journal_id.document_type_id.id
+
 
     def default_get(self, fields_list):
         vals = super(AccountMove, self).default_get(fields_list)
         ctx = self.env.context.copy()
-        main_company = self.env.ref('base.main_company')
-        config = self.env['res.config.custom'].get_company_custom_config(company_id=main_company.id)
-        if config:
-            if ctx.get('default_move_type') == 'out_invoice':
-                vals['document_type_id'] = config.out_invoice_doc_type_id.id
-            elif ctx.get('default_move_type') == 'out_refund':
-                vals['document_type_id'] = config.out_refund_doc_type_id.id
-            elif ctx.get('default_move_type') == 'in_invoice':
-                vals['document_type_id'] = config.in_invoice_doc_type_id.id
-            elif ctx.get('default_move_type') == 'in_refund':
-                vals['document_type_id'] = config.in_refund_doc_type_id.id
         if ctx.get('default_move_type') in ('out_invoice', 'out_refund'):
             stamped = self.env['res.partner.stamped'].search(
                     [
@@ -40,15 +42,15 @@ class AccountMove(models.Model):
                 self.stamped_id = stamped.id
         return vals
 
-    @api.onchange('sale_document_type_id')
-    def _onchange_sale_document_type_id(self):
-        if self.sale_document_type_id:
-            self.document_type_id = self.sale_document_type_id.id
-
-    @api.onchange('purchase_document_type_id')
-    def _onchange_purchase_document_type_id(self):
-        if self.purchase_document_type_id:
-            self.document_type_id = self.purchase_document_type_id.id
+    @api.depends('sale_document_type_id', 'purchase_document_type_id')
+    def _compute_document_type_id(self):
+        for rec in self:
+            if rec.move_type in ('out_invoice', 'out_refund'):
+                rec.document_type_id = rec.sale_document_type_id
+            elif rec.move_type in ('in_invoice', 'in_refund'):
+                rec.document_type_id = rec.purchase_document_type_id
+            else:
+                rec.document_type_id = False
 
     @api.onchange('partner_id')
     def _onchange_partner_id_stamped(self):
@@ -65,7 +67,7 @@ class AccountMove(models.Model):
                 else:
                     self.stamped_id = False
 
-    def action_post(self):  #Ok
+    def action_post(self):  # Ok
         self.check_stamped_control()
         return super(AccountMove, self).action_post()
 

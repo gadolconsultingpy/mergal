@@ -23,8 +23,9 @@
         'data/account_document_type.xml',
 
         'views/account_document_type.xml',
-        'views/res_partner_stamped.xml',
+        'views/account_journal.xml',
         'views/account_move.xml',
+        'views/res_partner_stamped.xml',
         'views/res_config_custom.xml',
 
         # 'wizard/tax_payer_process.xml',
