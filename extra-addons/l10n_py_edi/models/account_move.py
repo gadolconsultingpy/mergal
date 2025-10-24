@@ -293,18 +293,6 @@ class AccountMove(models.Model):
         return "%s %s" % (
             self.currency_id.plural_name.upper(), num2words(self.amount_total, lang=self.env.user.lang[:2]).upper())
 
-    @api.depends('restrict_mode_hash_table', 'state', 'inalterable_hash')
-    def _compute_show_reset_to_draft_button(self):
-        for move in self:
-            if move.sifen_state in ['approved', 'queue', 'sent', 'cancel', 'invalid']:
-                move.show_reset_to_draft_button = False
-                continue
-            move.show_reset_to_draft_button = (
-                    not self._is_move_restricted(move) \
-                    and not move.inalterable_hash
-                    and (move.state == 'cancel' or (move.state == 'posted' and not move.need_cancel_request))
-            )
-
 
 class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'

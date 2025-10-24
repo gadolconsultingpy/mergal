@@ -34,6 +34,18 @@ class AccountMove(models.Model):
     cancellation_event_qty = fields.Integer('Cancelation Events Qty', compute='_compute_cancellation_event_qty')
     nomination_event_qty = fields.Integer('Nomination Events Qty', compute='_compute_nomination_event_qty')
 
+    @api.depends('restrict_mode_hash_table', 'state', 'inalterable_hash')
+    def _compute_show_reset_to_draft_button(self):
+        for move in self:
+            if move.sifen_state in ['approved', 'queue', 'sent', 'cancel', 'invalid']:
+                move.show_reset_to_draft_button = False
+                continue
+            move.show_reset_to_draft_button = (
+                    not self._is_move_restricted(move) \
+                    and not move.inalterable_hash
+                    and (move.state == 'cancel' or (move.state == 'posted' and not move.need_cancel_request))
+            )
+
     def open_edi_events(self):
         event_ids = self.env['edi.event'].search(
                 [
@@ -311,3 +323,4 @@ class AccountMove(models.Model):
 
     def sifen_notify(self, vals):
         pass
+
