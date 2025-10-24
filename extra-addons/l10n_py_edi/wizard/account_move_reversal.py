@@ -10,16 +10,22 @@ class AccountMoveReversal(models.TransientModel):
     @api.model
     def default_get(self, fields):
         vals = super(AccountMoveReversal, self).default_get(fields)
-        reversal_journal = self.env['account.journal'].search(
-                [
-                    ('invoice_type_id.code', '=', '5')
-                ], order="sequence", limit=1)
         move_ids = self.env['account.move'].browse(self.env.context['active_ids']) if self.env.context.get(
                 'active_model') == 'account.move' else self.env['account.move']
         payment_term_id = [x.invoice_payment_term_id.id for x in move_ids][0]
-        vals['journal_id'] = reversal_journal.id if reversal_journal else False
-        vals['invoice_payment_term_id'] = payment_term_id if payment_term_id else self.env[
-            'account.payment.term'].search([], order="sequence", limit=1)
+        reversal_journal_id = [x.journal_id.reversal_journal_id.id for x in move_ids][0]
+        if payment_term_id:
+            vals['invoice_payment_term_id'] = payment_term_id if payment_term_id else self.env[
+                'account.payment.term'].search([], order="sequence", limit=1)
+        if reversal_journal_id:
+            vals['journal_id'] = reversal_journal_id
+        else:
+            reversal_journal = self.env['account.journal'].search(
+                    [
+                        ('invoice_type_id.code', '=', '5')
+                    ], order="sequence", limit=1)
+            vals['journal_id'] = reversal_journal.id
+
         return vals
 
     def _prepare_default_reversal(self, move):
