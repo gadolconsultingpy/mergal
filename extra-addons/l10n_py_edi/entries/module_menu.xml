@@ -24,18 +24,6 @@
               parent="l10n_py.menu_py_transactions"
               sequence="20">
 
-        <menuitem id="menu_account_move_cancel"
-                  name="Document Cancellation (Legacy)"
-                  groups="l10n_py_edi.group_l10n_py_edi_manager"
-                  sequence="1"
-                  action="account_move_cancel_action"/>
-
-        <menuitem id="menu_account_move_invalid"
-                  name="Document Invalidation  (Legacy)"
-                  sequence="2"
-                  groups="l10n_py_edi.group_l10n_py_edi_manager"
-                  action="account_move_invalid_action"/>
-
         <menuitem id="menu_edi_document_cancel"
                   name="EDI Document Cancellation"
                   groups="l10n_py_edi.group_l10n_py_edi_user"
@@ -62,11 +50,6 @@
               name="Additional Parameters"
               parent="l10n_py.menu_py_configuration_group"
               action="l10n_py_base.res_config_custom_action"/>
-
-    <menuitem id="menu_py_establishment"
-              name="Establishment"
-              parent="l10n_py.menu_py_configuration_group"
-              action="edi_establishment_action"/>
 
     <menuitem id="edi_certificate_menu_entry"
               name="EDI Certificate"
