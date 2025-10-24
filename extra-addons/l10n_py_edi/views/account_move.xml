@@ -91,6 +91,8 @@
                 <field name="edi_document_datetime" readonly="0" force_save="1"/>
                 <field name="transaction_type_id"/>
                 <field name="tax_type_id"/>
+                <field name="establishment" />
+                <field name="issuance_point" />
                 <field name="document_serial" readonly="1"/>
                 <field name="document_number" readonly="1"/>
             </xpath>

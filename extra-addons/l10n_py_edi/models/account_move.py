@@ -18,6 +18,11 @@ _logger = logging.getLogger(__name__)
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
+    _sql_constraints = [
+        ('unique_security_code', 'unique(company_id,security_code)', 'The Security Code Must Be Unique'),
+        ('unique_sequence_name', 'unique(company_id,move_type,sequence_id,name)', 'The Sequence Name Must Be Unique'),
+    ]
+
     issue_type = fields.Selection(
             [
                 ('1', 'Normal'),
@@ -47,36 +52,31 @@ class AccountMove(models.Model):
     qr_link = fields.Char("QR Link")
     qr_image = fields.Image("QR Image", compute="_compute_qr_image")
     comment = fields.Text('Comment')
-    edi_invoice_datetime = fields.Datetime("EDI Invoice Datetime", compute="_compute_edi_document_datetime",
-                                           store=True, copy=False)
     edi_document_datetime = fields.Datetime("EDI Document Datetime", compute="_compute_edi_document_datetime",
                                             store=True, copy=False)
     sifen_environment = fields.Selection(related='company_id.sifen_environment', string="SIFEN Environment", )
 
+    sequence_id = fields.Many2one('ir.sequence', string="Invoice Sequence")
+    establishment = fields.Char("Establishment", related='sequence_id.establishment', store=True)
+    issuance_point = fields.Char("Issuance Point")
+
     @api.depends('invoice_date', 'create_date')
     def _compute_edi_document_datetime(self):
-        for record in self:
-            rec = record.sudo()
+        for rec in self:
             rec.edi_document_datetime = rec._get_edi_document_datetime()
-            rec.edi_invoice_datetime = rec.edi_document_datetime
 
     def _get_edi_document_datetime(self):
         if self.invoice_date and self.create_date:
-            if self.create_date.date() > self.invoice_date:
-                _logger.info("Case 1: create_date > invoice_date")
-                return datetime.datetime.combine(self.invoice_date, datetime.time(23, 59, 59))
-            elif self.create_date.date() < self.invoice_date:
-                _logger.info("Case 2: create_date < invoice_date")
+            if self.create_date.date() > self.invoice_date or self.create_date.date() < self.invoice_date:
+                _logger.info("Case 1: create_date <> invoice_date")
                 return datetime.datetime.combine(self.invoice_date, datetime.time(12, 0, 0))
             else:
-                _logger.info("Case 3: create_date == invoice_date")
+                _logger.info("Case 2: create_date == invoice_date")
                 return datetime.datetime.combine(self.invoice_date, self.create_date.time())
-        else:
-            _logger.info("Case 4: No invoice_date or create_date")
-            return fields.Datetime.now()
+        return fields.Datetime.now()
 
-    def default_get(self, fields):
-        vals = super(AccountMove, self).default_get(fields)
+    def default_get(self, field_list):
+        vals = super(AccountMove, self).default_get(field_list)
         main_company = self.env.ref('base.main_company')
         config = self.env['res.config.custom'].get_company_custom_config(company_id=main_company.id)
         if config:
@@ -84,6 +84,7 @@ class AccountMove(models.Model):
             vals['transaction_type_id'] = config.default_edi_transaction_type.id
             vals['tax_type_id'] = config.default_edi_tax_type.id
             vals['presence_id'] = config.default_edi_presence_id.id
+        vals['invoice_date'] = fields.Date.context_today(self)
         return vals
 
     @api.depends('qr_link')
@@ -105,23 +106,6 @@ class AccountMove(models.Model):
         for rec in self:
             rec.discount_total = sum([item.discount_amount for item in rec.invoice_line_ids])
 
-    _sql_constraints = [
-        ('unique_security_code', 'unique(company_id,security_code)', 'The Security Code Must Be Unique'),
-        ('unique_sequence_name', 'unique(company_id,move_type,sequence_id,name)', 'The Sequence Name Must Be Unique'),
-    ]
-
-    # @api.depends('currency_id', 'company_id')
-    # def _compute_is_local_currency(self):
-    #     for rec in self:
-    #         rec.is_local_currency = rec.currency_id.id == rec.company_id.currency_id.id
-
-    def invoice_date_text(self):
-        month_names = ["", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
-                       "Octubre", "Noviembre", "Diciembre"]
-        return "Asunción, %s de %s del %s " % (self.invoice_date.day,
-                                               month_names[self.invoice_date.month],
-                                               self.invoice_date.year)
-
     @api.depends('name')
     def _compute_document_number(self):
         for rec in self:
@@ -135,6 +119,16 @@ class AccountMove(models.Model):
                 rec.document_serial = ""
                 rec.document_number = "0".rjust(7, "0")
 
+    def invoice_date_text(self):
+        month_names = ["", "Enero", "Febrero", "Marzo",
+                       "Abril", "Mayo", "Junio",
+                       "Julio", "Agosto", "Septiembre",
+                       "Octubre", "Noviembre", "Diciembre"]
+        return "%s, %s de %s del %s " % (self.company_id.city or "Ciudad",
+                                         self.invoice_date.day,
+                                         month_names[self.invoice_date.month],
+                                         self.invoice_date.year)
+
     def get_code_of_control(self):
         if self.sifen_environment == 'X':
             return ""
@@ -144,7 +138,7 @@ class AccountMove(models.Model):
         parts.append(company_vat.split("-")[0].rjust(8, "0"))
         parts.append(company_vat.split("-")[1])
         parts.append(self.sequence_id.establishment.rjust(3, "0"))
-        parts.append(self.sequence_id.dispatch_point.rjust(3, "0"))
+        parts.append(self.sequence_id.issuance_point.rjust(3, "0"))
         parts.append(str(self.sequence_number).rjust(7, "0"))
         parts.append(self.company_id.tax_payer_type)
         parts.append(self.invoice_date.strftime("%Y%m%d"))
@@ -218,15 +212,6 @@ class AccountMove(models.Model):
                     char += " "
             rec.control_code_graph = char
 
-    def action_post(self):  # OK
-        for rec in self:
-            if rec.sifen_environment != 'X':
-                rec._validate_journal_for_move_type()
-                rec._validate_payment_term()
-                # _logger.info("Invoice Date %s" % (rec.invoice_date))
-                rec.edi_document_check()
-        return super(AccountMove, self).action_post()
-
     def _validate_journal_for_move_type(self):
         if self.move_type == 'out_invoice' and self.journal_id.invoice_type_id.code not in ['1', 'X']:
             _logger.error("Invalid Journal for Out Invoice: %s" % (self.journal_id.name))
@@ -236,22 +221,13 @@ class AccountMove(models.Model):
             raise UserError(_("Invalid Journal for Out Refund"))
 
     def _validate_payment_term(self):
-        if self.move_type in ['out_invoice', 'out_refund']:
-            if not self.invoice_payment_term_id:
-                _logger.error("Missing Payment Term: %s" % (self.invoice_payment_term_id))
-                raise UserError(_("Missing Payment Term"))
+        if not self.invoice_payment_term_id:
+            _logger.error("Missing Payment Term: %s" % (self.invoice_payment_term_id))
+            raise UserError(_("Missing Payment Term"))
 
     def _generate_codes(self):
         self.generate_security_code()
         self.generate_code_of_control()
-
-    def _post(self, soft=False):
-        posted = super(AccountMove, self)._post(soft=soft)
-        for rec in posted:
-            if rec.move_type in ['out_refund', 'out_invoice']:
-                rec.generate_security_code()
-                rec.generate_code_of_control()
-        return posted
 
     def edi_document_check(self):
         self.ensure_one()
@@ -292,6 +268,57 @@ class AccountMove(models.Model):
     def get_amount_total_text(self):
         return "%s %s" % (
             self.currency_id.plural_name.upper(), num2words(self.amount_total, lang=self.env.user.lang[:2]).upper())
+
+    def _set_sequence_id(self):
+        if self.journal_id:
+            if self.journal_id.issuance_point_ids:
+                iss_point = self.journal_id.issuance_point_ids[0]
+                self.establishment = self.journal_id.establishment
+                self.issuance_point = iss_point.issuance_point
+                self.sequence_id = iss_point.sequence_id.id
+
+    def _set_next_sequence(self):
+        if self.sequence_id:
+            if not self.name or self.name == _('Draft') or self.name == '/':
+                self.name = self.sequence_id.next_by_id(sequence_date=self.invoice_date)
+                print("_set_next_sequence.1", self.name, self.sequence_id.id, self.invoice_date)
+        else:
+            print("_set_next_sequence.2", self.name, self.sequence_id.id, self.invoice_date)
+            super(AccountMove, self)._set_next_sequence()
+
+    @api.onchange('journal_id')
+    def _onchange_journal_branch_for_sequence(self):
+        self._set_sequence_id()
+
+    def action_post(self):  # OK
+        for rec in self:
+            if rec.is_sale_document(include_receipts=True):
+                if rec.sifen_environment != 'X':
+                    rec._validate_journal_for_move_type()
+                    rec._validate_payment_term()
+                    rec.edi_document_check()
+                if not rec.sequence_id:
+                    msg = _("Missing Sequence Number")
+                    raise UserError(msg)
+                rec.sequence_id.check_stamped_number(rec.invoice_date)
+        return super(AccountMove, self).action_post()
+
+    def _post(self, soft=True):
+        to_post = super(AccountMove, self)._post(soft=soft)
+        for rec in to_post:
+            rec._check_account_move()
+            if rec.move_type in ['out_refund', 'out_invoice']:
+                rec.generate_security_code()
+                rec.generate_code_of_control()
+        return to_post
+
+    def _check_account_move(self):
+        if self.is_sale_document(include_receipts=True):
+            if not self.sequence_id:
+                msg = _("Missing Sequence Number")
+                msg += " - %s" % (self.name or self.id)
+                raise UserError(msg)
+            self.sequence_id.check_stamped_number(self.invoice_date)
 
 
 class AccountMoveLine(models.Model):
