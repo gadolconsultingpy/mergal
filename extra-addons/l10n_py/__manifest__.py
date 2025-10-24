@@ -35,6 +35,8 @@ Adaptaciones
 
     ],
     'data'          : [
+        'security/ir_module_category.xml',
+        'security/res_groups.xml',
         'security/ir_model_access.xml',
 
         'data/l10n_latam_identification_type.xml',
