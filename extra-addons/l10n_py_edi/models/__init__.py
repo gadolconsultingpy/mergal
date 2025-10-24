@@ -35,3 +35,4 @@ from . import signxml
 from . import edi_transport_type
 from . import edi_transport_mode
 from . import fleet_vehicle
+from . import edi_establishment

@@ -63,6 +63,11 @@
               parent="l10n_py.menu_py_configuration_group"
               action="l10n_py_base.res_config_custom_action"/>
 
+    <menuitem id="menu_py_establishment"
+              name="Establishment"
+              parent="l10n_py.menu_py_configuration_group"
+              action="edi_establishment_action"/>
+
     <menuitem id="edi_certificate_menu_entry"
               name="EDI Certificate"
               parent="l10n_py.menu_py_configuration_group"
