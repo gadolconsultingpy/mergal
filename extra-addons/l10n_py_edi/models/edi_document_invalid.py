@@ -15,7 +15,7 @@ class EDIDocumentInvalid(models.Model):
     sequence_id = fields.Many2one('ir.sequence', string="Sequence")
     stamped_number = fields.Char("Stamped Number", related='sequence_id.stamped_number')
     establishment = fields.Char("Establishment", related='sequence_id.establishment')
-    dispatch_point = fields.Char("Dispatch Point", related='sequence_id.dispatch_point')
+    dispatch_point = fields.Char("Dispatch Point", related='sequence_id.issuance_point')
     from_number = fields.Integer("From")
     to_number = fields.Integer("To")
     journal_id = fields.Many2one('account.journal', string="Journal")

@@ -166,7 +166,7 @@ class StockPicking(models.Model):
         parts.append(company_vat.split("-")[0].rjust(8, "0"))
         parts.append(company_vat.split("-")[1])
         parts.append(self.sequence_id.establishment.rjust(3, "0"))
-        parts.append(self.sequence_id.dispatch_point.rjust(3, "0"))
+        parts.append(self.sequence_id.issuance_point.rjust(3, "0"))
         parts.append(str(self.sequence_number).rjust(7, "0"))
         parts.append(self.company_id.tax_payer_type)
         if self.edi_document_datetime:
