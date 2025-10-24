@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+
+        <menuitem id="menuitem_l10n_py"
+                  name="Paraguay"
+                  parent="account.menu_finance_configuration">
+
+        </menuitem>
+
+
         <menuitem id="menu_py_localization_app"
                   name="Paraguay"
                   sequence="400"
@@ -46,17 +54,17 @@
 
             </menuitem>
 
-                <!-- Processes -->
+            <!-- Processes -->
             <menuitem id="menu_l10n_py_process"
-                          name="Processes"
+                      name="Processes"
                       groups="l10n_py.group_l10n_py_supervisor"
                       sequence="50">
 
-                    <menuitem id="menu_tax_payer_process"
-                              name="Tax Payer Process"
-                              groups="base.group_no_one"
-                              sequence="20"
-                              action="tax_payer_process_action"/>
+                <menuitem id="menu_tax_payer_process"
+                          name="Tax Payer Process"
+                          groups="base.group_no_one"
+                          sequence="20"
+                          action="tax_payer_process_action"/>
 
             </menuitem>
 
@@ -74,20 +82,22 @@
                           name="Configuration"
                           groups="l10n_py.group_l10n_py_manager"
                           sequence="10">
+
                     <menuitem id="res_company_menu_entry"
                               name="Company"
                               action="base.action_res_company_form"/>
-            </menuitem>
+                </menuitem>
 
                 <menuitem id="menu_l10n_py_tables_group"
                           name="Support Tables"
                           groups="l10n_py.group_l10n_py_supervisor"
                           sequence="20">
+
                     <menuitem id="menu_res_company_activity"
                               name="Company Activity"
                               sequence="20"
                               action="res_company_activity_action"/>
-        </menuitem>
+                </menuitem>
 
             </menuitem>
 
