@@ -33,8 +33,6 @@
         'security/ir_model_access.xml',
 
         'views/account_move.xml',
-        'views/account_move_invalid.xml',
-        'views/account_move_cancel.xml',
         'views/res_partner.xml',
         'views/edi_event.xml',
         'views/edi_procedure.xml',

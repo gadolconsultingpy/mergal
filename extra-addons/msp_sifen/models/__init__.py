@@ -4,10 +4,8 @@ from . import service_log
 from . import res_config_custom
 from . import edi_batch
 from . import account_move
-from . import account_move_invalid
 from . import edi_template
 from . import res_partner
-from . import account_move_cancel
 from . import stock_picking
 from . import product_product
 from . import edi_dashboard
