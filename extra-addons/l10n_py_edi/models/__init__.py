@@ -25,8 +25,6 @@ from . import stock_picking_type
 # from . import edi_batch
 from . import l10n_latam_identification_type
 from . import edi_reversion_document_type
-from . import account_move_cancel
-from . import account_move_invalid
 from . import edi_document_cancel
 from . import edi_document_invalid
 from . import edi_document_nomination
@@ -35,4 +33,3 @@ from . import signxml
 from . import edi_transport_type
 from . import edi_transport_mode
 from . import fleet_vehicle
-from . import edi_establishment

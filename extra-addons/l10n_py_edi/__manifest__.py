@@ -66,8 +66,6 @@ Ajustes
         'views/account_fiscal_position.xml',
         'views/account_journal.xml',
         'views/account_move.xml',
-        'views/account_move_cancel.xml',
-        'views/account_move_invalid.xml',
         'views/account_payment_term.xml',
         'views/account_tax.xml',
         'views/account_tax_application_type.xml',
