@@ -40,10 +40,10 @@ class ResCurrency(models.Model):
         elif from_amount:
             crate = self._get_conversion_rate(self, to_currency, company, date)
             ##### Taking in account the Commercial Currency Rate from Invoices
-            if self.env.context.get("commercial_currency_rate", False):
-                _logger.debug("Converting Using Commercial Currency Rate: %s" % (
-                    self.env.context.get("commercial_currency_rate")))
-            crate = self.env.context.get('commercial_currency_rate', crate)
+            if self.env.context.get("custom_currency_rate", False):
+                _logger.debug("Converting Using Custom Currency Rate: %s" % (
+                    self.env.context.get("custom_currency_rate")))
+            crate = self.env.context.get('custom_currency_rate', crate)
             to_amount = from_amount * crate
         else:
             return 0.0

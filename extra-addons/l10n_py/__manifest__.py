@@ -26,6 +26,7 @@ Adaptaciones
                        'account',
                        'sale',
                        'stock',
+                       'purchase',
                        'l10n_latam_base',
                        ],
     'category'      : 'Accounting/Localizations/Account Charts',
@@ -68,6 +69,7 @@ Adaptaciones
         'views/tax_payer.xml',
         'views/res_currency.xml',
         'views/res_currency_rate.xml',
+        'views/purchase_order.xml',
 
         'wizard/tax_payer_process.xml',
 

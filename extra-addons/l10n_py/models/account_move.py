@@ -81,7 +81,7 @@ class AccountMove(models.Model):
     #         super(AccountMove, self)._set_next_sequence()
 
     def convert_to_local(self, amount, currency=None):
-        return self.currency_id.with_context({'commercial_currency_rate': self.inverse_rate})._convert(
+        return self.currency_id.with_context({'custom_currency_rate': self.inverse_rate})._convert(
                 amount,
                 to_currency=self.company_id.currency_id,
                 company=self.company_id,
@@ -92,7 +92,7 @@ class AccountMove(models.Model):
         if self.is_local_currency:
             res = value
         ctx = dict(self.env.context)
-        ctx["commercial_currency_rate"] = self.inverse_rate
+        ctx["custom_currency_rate"] = self.inverse_rate
         res = self.currency_id.with_context(ctx)._convert(from_amount=value,
                                                           to_currency=self.company_id.currency_id,
                                                           company=self.company_id,

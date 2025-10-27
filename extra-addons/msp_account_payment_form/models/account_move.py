@@ -143,7 +143,7 @@ class AccountMovePaymentForm(models.Model):
     def _onchange_amount(self):
         if self.payment_currency_id.id != self.company_currency_id.id:
             ctx = self.env.context.copy()
-            ctx['commercial_currency_rate'] = self.payment_currency_rate or 1
+            ctx['custom_currency_rate'] = self.payment_currency_rate or 1
             self.amount = self.payment_currency_id.with_context(ctx)._convert(from_amount=self.payment_amount,
                                                                               to_currency=self.company_currency_id,
                                                                               company=self.move_id.company_id,

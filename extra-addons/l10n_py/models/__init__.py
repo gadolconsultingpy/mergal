@@ -18,3 +18,4 @@ from . import res_location
 from . import res_neighborhood
 from . import tax_payer
 from . import stock_picking
+from . import purchase_order
