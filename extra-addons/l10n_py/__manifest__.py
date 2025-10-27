@@ -1,7 +1,7 @@
 # noinspection PyStatementEffect
 {
     'name'          : "Localization for Paraguay",
-    'version'       : '0.2.3',
+    'version'       : '0.2.4',
     'summary'       : 'Localization for Paraguay',
     'description'   : """Estructura básica necesaria para cualquier empresa de Paraguay, utilice o no Facturación Electrónica.
 Conceptos Implementados
