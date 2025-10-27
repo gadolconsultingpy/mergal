@@ -4,18 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0+e-20250520\n"
+"Project-Id-Version: Odoo Server 18.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-27 21:53+0000\n"
-"PO-Revision-Date: 2025-08-27 18:55-0300\n"
-"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"POT-Creation-Date: 2025-10-27 20:21+0000\n"
+"PO-Revision-Date: 2025-10-27 17:22-0300\n"
+"Last-Translator: Martin Salcedo <martinsalcedo.apps@gmail.com>\n"
 "Language-Team: \n"
 "Language: es_PY\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #. module: l10n_py
 #: model_terms:ir.ui.view,arch_db:l10n_py.view_tax_form
@@ -218,11 +218,6 @@ msgid "Digit"
 msgstr "Dígito"
 
 #. module: l10n_py
-#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__dispatch_point
-msgid "Dispatch Point"
-msgstr "Punto de Emisión"
-
-#. module: l10n_py
 #: model:ir.model.fields,field_description:l10n_py.field_res_company_activity__display_name
 #: model:ir.model.fields,field_description:l10n_py.field_res_district__display_name
 #: model:ir.model.fields,field_description:l10n_py.field_res_location__display_name
@@ -266,12 +261,6 @@ msgstr "Nro. Puerta"
 #: model:ir.model.fields,field_description:l10n_py.field_res_company__street_number2
 msgid "Door Number"
 msgstr "Nro. Puerta"
-
-#. module: l10n_py
-#. odoo-python
-#: code:addons/l10n_py/models/account_move.py:0
-msgid "Draft"
-msgstr "Borrador"
 
 #. module: l10n_py
 #: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__establishment
@@ -402,10 +391,9 @@ msgid "International Standard Organization ISO 3166-3 "
 msgstr "Organización Estándar Internacional ISO 3166-3"
 
 #. module: l10n_py
-#: model:ir.model.fields,field_description:l10n_py.field_account_bank_statement_line__inverse_rate
-#: model:ir.model.fields,field_description:l10n_py.field_account_move__inverse_rate
-msgid "Inverse Rate"
-msgstr "Tipo de Cambio"
+#: model:ir.model.fields,field_description:l10n_py.field_purchase_order__invoice_currency_rate
+msgid "Invoice Currency Rate"
+msgstr "Tasa Técnica"
 
 #. module: l10n_py
 #: model:ir.model.fields,field_description:l10n_py.field_account_bank_statement_line__sequence_id
@@ -418,6 +406,11 @@ msgstr "Secuencia Facturas"
 #: model:ir.model.fields,field_description:l10n_py.field_account_move__is_local_currency
 msgid "Is Local Currency"
 msgstr "Es Moneda Local"
+
+#. module: l10n_py
+#: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__issuance_point
+msgid "Issuance Point"
+msgstr ""
 
 #. module: l10n_py
 #: model:ir.model.fields,field_description:l10n_py.field_ir_sequence__journal_id
@@ -572,9 +565,8 @@ msgid "Otro"
 msgstr ""
 
 #. module: l10n_py
-#: model:ir.ui.menu,name:l10n_py.account_paraguay
-#: model:ir.ui.menu,name:l10n_py.menu_l10n_py
 #: model:ir.ui.menu,name:l10n_py.menu_py_localization_app
+#: model:ir.ui.menu,name:l10n_py.menuitem_l10n_py
 #: model_terms:ir.ui.view,arch_db:l10n_py.res_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:l10n_py.sequence_view
 #: model_terms:ir.ui.view,arch_db:l10n_py.view_company_form
@@ -637,6 +629,11 @@ msgstr "Procesar"
 #: model:ir.ui.menu,name:l10n_py.menu_l10n_py_process
 msgid "Processes"
 msgstr "Procesos"
+
+#. module: l10n_py
+#: model:ir.model,name:l10n_py.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de compra"
 
 #. module: l10n_py
 #: model:ir.model.fields,field_description:l10n_py.field_res_partner__district_id
@@ -731,7 +728,7 @@ msgstr "Calle..."
 #. module: l10n_py
 #: model:res.groups,name:l10n_py.group_l10n_py_supervisor
 msgid "Supervisor"
-msgstr "Supervisor"
+msgstr ""
 
 #. module: l10n_py
 #: model:res.groups,comment:l10n_py.group_l10n_py_supervisor
@@ -842,7 +839,7 @@ msgstr "Transacciones"
 #. module: l10n_py
 #: model:ir.model,name:l10n_py.model_stock_picking
 msgid "Transfer"
-msgstr "Transferir "
+msgstr "Trasladar"
 
 #. module: l10n_py
 #: model:res.groups,name:l10n_py.group_l10n_py_user
@@ -859,6 +856,7 @@ msgstr "TC Moneda"
 #: model:ir.model.fields,field_description:l10n_py.field_account_bank_statement_line__inverse_rate
 #: model:ir.model.fields,field_description:l10n_py.field_account_move__inverse_rate
 #: model:ir.model.fields,field_description:l10n_py.field_account_move_line__inverse_rate
+#: model:ir.model.fields,field_description:l10n_py.field_purchase_order__inverse_rate
 msgid "User Inverse Rate"
 msgstr "Tipo de Cambio"
 
