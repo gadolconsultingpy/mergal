@@ -1,0 +1,75 @@
+<odoo>
+    <data>
+        <record id="account_payment_form_list" model="ir.ui.view">
+            <field name="name">account.payment.form.list</field>
+            <field name="model">account.payment.form</field>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list string="Payment Form" sample="1" decoration-it="use_supplier == False and use_customer == False">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="type"/>
+                    <field name="edi_type_id"/>
+                    <field name="journal_id"/>
+                    <field name="voucher_partner"/>
+                    <field name="use_customer" widget="boolean_toggle" optional="hide"/>
+                    <field name="use_supplier" widget="boolean_toggle" optional="hide"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="active" invisible="1"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="account_payment_form_form" model="ir.ui.view">
+            <field eval="True" name="active"/>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="mode">primary</field>
+            <field name="name">Account Payment Form</field>
+            <field name="model">account.payment.form</field>
+            <field name="priority">16</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Payment Form">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group name="left_group">
+                                <field name="active" invisible="1"/>
+                                <field name="code"/>
+                                <field name="type"/>
+                                <field name="edi_type_id"/>
+                                <field name="voucher_partner"
+                                       invisible="type != 'voucher' "/>
+                                <field name="journal_id"/>
+                                <field name="use_customer" widget="boolean_toggle"/>
+                                <field name="use_supplier" widget="boolean_toggle"/>
+                                <field name="payment_method_inbound_id"
+                                       invisible="use_customer != True"
+                                       domain="[('journal_id','=',journal_id),('payment_type','=','inbound')]"/>
+                                <field name="payment_method_outbound_id"
+                                       invisible="use_supplier != True"
+                                       domain="[('journal_id','=',journal_id),('payment_type','=','outbound')]"/>
+                                <field name="bank_id" invisible="type != 'bank'"/>
+                                <field name="process_form_id"/>
+                            </group>
+                            <group name="right_group">
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="require_number"/>
+                                <field name="require_bank"/>
+                                <field name="require_issuer"/>
+                                <field name="require_date"/>
+                                <field name="require_postdated_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

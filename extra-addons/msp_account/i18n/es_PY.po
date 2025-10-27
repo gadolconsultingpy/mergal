@@ -1,0 +1,123 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250115\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-12 05:48+0000\n"
+"PO-Revision-Date: 2025-03-12 02:50-0300\n"
+"Last-Translator: Martin Salcedo <msalcedo@gadolconsulting.com>\n"
+"Language-Team: \n"
+"Language: es_PY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: msp_account
+#: model:ir.actions.report,print_report_name:msp_account.account_payment_custom_report_action
+msgid "'payment_%s' % (object.name)"
+msgstr "'pago_%s' % (object.name)"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid ""
+"-\n"
+"                    VAT:"
+msgstr ""
+"-\n"
+"                    RUC:"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid "- Bank"
+msgstr "- Banco"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid "<span style=\"font-weight:bold; font-size:16px;\"/> Authorized Collector"
+msgstr "<span style=\"font-weight:bold; font-size:16px;\"/> Cobrador Autorizado"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid ""
+"<span>, for the cancellation/amortization of invoices according to the "
+"following list:</span>"
+msgstr ""
+"<span>, por la cancelación/amortización de facturas según el siguiente "
+"detalle:</span>"
+
+#. module: msp_account
+#: model:ir.model,name:msp_account.model_report_msp_account_account_payment_report
+msgid "Account Payment Report"
+msgstr "Reporte de Pagos"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid "Amount"
+msgstr "Importe"
+
+#. module: msp_account
+#: model:ir.actions.report,name:msp_account.account_payment_custom_report_action
+msgid "Custom Payment Report"
+msgstr "Recibo de Pago"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid "Date"
+msgstr "Fecha"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: msp_account
+#: model:ir.model,name:msp_account.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: msp_account
+#: model:ir.model,name:msp_account.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_form
+msgid "Print"
+msgstr "Imprimir"
+
+#. module: msp_account
+#: model:ir.model.fields,field_description:msp_account.field_account_bank_statement_line__salesman_id
+#: model:ir.model.fields,field_description:msp_account.field_account_move__salesman_id
+msgid "Salesman"
+msgstr "Vendedor"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+#: model_terms:ir.ui.view,arch_db:msp_account.view_move_form
+msgid "Total"
+msgstr "Total"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid "We received from"
+msgstr "Recibimos de"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid "____________________________________"
+msgstr "____________________________________"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid "for the following values in"
+msgstr "por los siguientes valores en"
+
+#. module: msp_account
+#: model_terms:ir.ui.view,arch_db:msp_account.account_payment_report_page
+msgid "the sum of"
+msgstr "la cantidad de "

@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <!-- ACCOUNT MOVE (EDI FIELDS)  -->
+        <record id="action_edi_account_move" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{'default_move_type': 'out_invoice'}</field>
+            <field name="domain">[('move_type', 'in', ['out_invoice', 'out_refund']),
+                                  ('state', '=', 'posted')]</field>
+            <field name="groups_id" eval="[(6, 0, [])]"/>
+            <field name="help"><![CDATA[Electronic Documents]]></field>
+            <field name="name">Electronic Documents</field>
+            <field name="res_model">account.move</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="edi_account_move_list"></field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,pivot,graph,form</field>
+        </record>
+        <!-- STOCK PICKING (EDI FIELDS)  -->
+        <record id="action_edi_stock_picking" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field name="domain">[('journal_id.invoice_type_id.code', '=', '7'),
+                                  ('sequence_id', '!=', False),
+                                  ('state', '=', 'done')]</field>
+            <field name="groups_id" eval="[(6, 0, [])]"/>
+            <field name="help"><![CDATA[Electronic Documents]]></field>
+            <field name="name">Electronic Documents</field>
+            <field name="res_model">stock.picking</field>
+            <field name="target">current</field>
+            <field name="view_id" ref="edi_stock_picking_list"></field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- ACCOUNT TAX APPLICATION TYPE -->
+        <record id="account_tax_application_type_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Tax Application Type]]></field>
+            <field name="name">Tax Application Type</field>
+            <field name="res_model">account.tax.application.type</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- ACCOUNT TAX TYPE -->
+        <record id="account_tax_type_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Tax Type]]></field>
+            <field name="name">Tax Type</field>
+            <field name="res_model">account.tax.type</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- ACCOUNT TAX EXCISE CATEGORY -->
+        <record id="account_tax_excise_category_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Tax Excise Category]]></field>
+            <field name="name">Tax Excise Category</field>
+            <field name="res_model">account.tax.excise.category</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI DOCUMENT TYPE -->
+        <record id="edi_document_type_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Document Type]]></field>
+            <field name="name">Document Type</field>
+            <field name="res_model">edi.document.type</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI REVERSION DOCUMENT TYPE -->
+        <record id="edi_reversion_document_type_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Reversion Document Type]]></field>
+            <field name="name">Reversion Document Type</field>
+            <field name="res_model">edi.reversion.document.type</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI TRANSACTION TYPE -->
+        <record id="edi_transaction_type_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Transaction Type]]></field>
+            <field name="name">Transaction Type</field>
+            <field name="res_model">edi.transaction.type</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI PRESENCE -->
+        <record id="edi_presence_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Presence Indicator]]></field>
+            <field name="name">Presence Indicator</field>
+            <field name="res_model">edi.presence</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI ISSUE REASON -->
+        <record id="edi_issue_reason_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Issue Reason]]></field>
+            <field name="name">Issue Reason</field>
+            <field name="res_model">edi.issue.reason</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI ISSUE REASON PICKING -->
+        <record id="edi_issue_reason_picking_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Picking Issue Reason]]></field>
+            <field name="name">Picking Issue Reason</field>
+            <field name="res_model">edi.issue.reason.picking</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI ISSUE RESPONSIBLE -->
+        <record id="edi_issue_responsible_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Picking Issue Responsible]]></field>
+            <field name="name">Picking Issue Responsible</field>
+            <field name="res_model">edi.issue.responsible</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI CERTIFICATE -->
+        <record id="edi_certificate_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[EDI Certificate]]></field>
+            <field name="name">EDI Certificate</field>
+            <field name="res_model">edi.certificate</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- ACCOUNT MOVE CANCEL WIZARD -->
+        <record id="account_move_cancel_wizard_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Invoice Cancellation Reason]]></field>
+            <field name="name">Invoice Cancellation Reason</field>
+            <field name="res_model">account.move.cancel.wizard</field>
+            <field name="target">new</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI DOCUMENT CANCEL -->
+        <record id="action_edi_document_cancel" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Document Cancellation]]></field>
+            <field name="name">Document Cancellation</field>
+            <field name="res_model">edi.document.cancel</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI DOCUMENT INVALID -->
+        <record id="action_edi_document_invalid" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Document Invalidation]]></field>
+            <field name="name">Document Invalidation</field>
+            <field name="res_model">edi.document.invalid</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- COMPANY -->
+        <record id="res_company_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Company]]></field>
+            <field name="name">Company</field>
+            <field name="res_model">res.company</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI TRANSPORT TYPE -->
+        <record id="edi_transport_type_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Transport Type]]></field>
+            <field name="name">Transport Type</field>
+            <field name="res_model">edi.transport.type</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI TRANSPORT MODE -->
+        <record id="edi_transport_mode_action" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Transport Mode]]></field>
+            <field name="name">Transport Mode</field>
+            <field name="res_model">edi.transport.mode</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- EDI DOCUMENT NOMINATION -->
+        <record id="action_edi_document_nomination" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Document Nomination]]></field>
+            <field name="name">Document Nomination</field>
+            <field name="res_model">edi.document.nomination</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+    </data>
+</odoo>

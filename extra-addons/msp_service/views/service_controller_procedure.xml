@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="service_controller_procedure_form" model="ir.ui.view">
+            <field name="name">service.controller.procedure.form</field>
+            <field name="model">service.controller.procedure</field>
+            <field name="arch" type="xml">
+                <form string="Service Controller Procedure">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="route" placeholder="http://route"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <field name="procedure" widget="ace" options="{'mode':'python'}" nolabel="1"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="service_controller_procedure_list" model="ir.ui.view">
+            <field name="name">service.controller.procedure.list</field>
+            <field name="model">service.controller.procedure</field>
+            <field name="arch" type="xml">
+                <list string="Service Controller Procedure">
+                    <field name="name"/>
+                    <field name="route"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="search_controller_procedure" model="ir.ui.view">
+            <field name="name">service.controller.procedure.search</field>
+            <field name="model">service.controller.procedure</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="name"/>
+                    <field name="procedure"/>
+                    <field name="route"/>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

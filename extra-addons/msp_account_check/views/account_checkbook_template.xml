@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_checkbook_template_tree" model="ir.ui.view">
+            <field name="name">account.checkbook.template.tree</field>
+            <field name="model">account.checkbook.template</field>
+            <field name="type">list</field>
+            <field name="arch" type="xml">
+                <list string="Checkbook Templates">
+                    <field name="name"/>
+                    <field name="report_id"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_account_checkbook_template_form" model="ir.ui.view">
+            <field name="name">account.checkbook.template.form</field>
+            <field name="model">account.checkbook.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Checkbook Template">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="report_id" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

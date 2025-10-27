@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id='sifen_service_siconsruc' model='ir.sequence'>
+            <field name="name">SiConsRUC Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="code">SiConsRUC</field>
+            <field name="prefix"></field>
+            <field name="padding">0</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id='sifen_service_sirecepde' model='ir.sequence'>
+            <field name="name">SiRecepDE Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="code">SiRecepDE</field>
+            <field name="prefix"></field>
+            <field name="padding">0</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id='sifen_service_renviconslotede' model='ir.sequence'>
+            <field name="name">rEnviConsLote Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="code">rEnviConsLoteDe</field>
+            <field name="prefix"></field>
+            <field name="padding">0</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id='sifen_service_renviconsderequest' model='ir.sequence'>
+            <field name="name">rEnviConsDeRequest Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="code">rEnviConsDeRequest</field>
+            <field name="prefix"></field>
+            <field name="padding">0</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id='sifen_service_envelope_sequence' model='ir.sequence'>
+            <field name="name">Envelope Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="code">SoapEnvelope</field>
+            <field name="prefix"></field>
+            <field name="padding">0</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id='sifen_edi_batch_sequence' model='ir.sequence'>
+            <field name="name">EDI Batch Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="code">EDIBatch</field>
+            <field name="prefix"></field>
+            <field name="padding">0</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id='sequence_edi_document_cancel' model='ir.sequence'>
+            <field name="name">EDI Document Cancel Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="code">edi.document.cancel</field>
+            <field name="prefix"></field>
+            <field name="padding">7</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id='sequence_edi_document_invalid' model='ir.sequence'>
+            <field name="name">EDI Document Invalid Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="code">edi.document.invalid</field>
+            <field name="prefix"></field>
+            <field name="padding">7</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id='account_move_invalid_sequence' model='ir.sequence'>
+            <field name="name">Account Move Invalid Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="code">account.move.invalid</field>
+            <field name="prefix"></field>
+            <field name="padding">7</field>
+            <field name="number_increment">1</field>
+        </record>
+        <record id='sequence_edi_document_nomination' model='ir.sequence'>
+            <field name="name">EDI Document Nomination Sequence</field>
+            <field name="implementation">standard</field>
+            <field name="code">edi.document.nomination</field>
+            <field name="prefix"></field>
+            <field name="padding">7</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>

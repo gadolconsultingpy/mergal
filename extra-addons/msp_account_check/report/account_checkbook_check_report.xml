@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="msp_account_check.account_checkbook_check_report"
+                  name="Continental con Talón" >
+            <t t-call="web.basic_layout">
+                <body>
+                    <t t-foreach="docs" t-as="check">
+                        <style>
+                            .fields-border {border: 1px solid white;}
+                        </style>
+                        <div name="check_container" class="fields-border"
+                             style='margin-top:10px;
+                                    position:relative;
+                                    width:100%;
+                                    height:325.35433px; '>
+                            <div name="amount" class="fields-border"
+                                 style="position:absolute;
+                                         top:0.6cm;
+                                         left:18cm;
+                                         font-size: 14px;
+                                         width:100px;
+                                            ">
+                                <span t-esc="report.format_value(check.amount)"/>.-
+                            </div>
+
+<!--                            <div name="date_left" class="fields-border"-->
+<!--                                 style="position:absolute;-->
+<!--                                         top:2cm;-->
+<!--                                         left:1.1cm;-->
+<!--                                         font-size: 10px;-->
+<!--                                         width:70px;-->
+<!--                                            ">-->
+<!--                                <span t-esc="check.issue_date.strftime('%d/%m/%Y')"/>-->
+<!--                            </div>-->
+
+<!--                            <div name="payee_left" class="fields-border"-->
+<!--                                 style="position:absolute;-->
+<!--                                         top:2.6cm;-->
+<!--                                         left:1.1cm;-->
+<!--                                         white-space: pre-wrap;-->
+<!--                                         font-size: 8px;-->
+<!--                                         width:130px;-->
+<!--                                            ">-->
+<!--                                <span t-esc="check.payee"/>-->
+<!--                            </div>-->
+                         <!-- conceptos -->
+<!--                              <div name="concept_left" class="fields-border"-->
+<!--                                 style="position:absolute;-->
+<!--                                         top:3.2cm;-->
+<!--                                         left:1.1cm;-->
+<!--                                         font-size: 10px;-->
+<!--                                         white-space: pre-wrap;-->
+<!--                                         width:130px;-->
+<!--                                            ">-->
+<!--                                <span t-esc="check.reference"/>-->
+<!--                            </div>-->
+
+<!--                            <div name="amount_left" class="fields-border"-->
+<!--                                 style="position:absolute;-->
+<!--                                         top:6.5cm;-->
+<!--                                         left:1.1cm;-->
+<!--                                         font-size: 9px;-->
+<!--                                         width:100px;-->
+<!--                                            ">-->
+<!--                                <span t-esc="report.format_value(check.amount)"/>.- -->
+<!--                            </div>-->
+
+
+                            <div name="date_day" class="fields-border"
+                                 style="position:absolute;
+                                         top:2.2cm;
+                                         left:10.6cm;
+                                         font-size: 14px;
+                                         width:30px;
+                                            ">
+                                <span t-esc="check.issue_date.strftime('%d')"/>
+                            </div>
+                            <div name="date_month" class="fields-border"
+                                 style="position:absolute;
+                                         top:2.2cm;
+                                         left:12.2cm;
+                                         font-size: 14px;
+                                         width:30px;
+                                            ">
+                                <span t-esc="check.issue_date.strftime('%m')"/>
+                            </div>
+                            <div name="date_year" class="fields-border"
+                                 style="position:absolute;
+                                         top:2.2cm;
+                                         left:14.6cm;
+                                         font-size: 14px;
+                                         width:30px;
+                                            ">
+                                <span t-esc="check.issue_date.strftime('%y')"/>
+                            </div>
+
+                            <!--         secccion de fecha diferida                   -->
+                            <div name="date_acreditation" class="fields-border"
+                                 style="position:absolute;
+                                         top:2.2cm;
+                                         left:17.9cm;
+                                         font-size: 14px;
+                                         width:30px;
+                                            ">
+                                <span t-if="check.check_type=='post-dated'">
+                                            <t t-esc="check.accreditation_date.strftime('%d')"/>
+                                    </span>
+                            </div>
+                            <div name="date_month_acreditation" class="fields-border"
+                                 style="position:absolute;
+                                         top:2.2cm;
+                                         left:19.8cm;
+                                         font-size: 14px;
+                                         width:30px;
+                                            ">
+                                  <span t-if="check.check_type=='post-dated'">
+                                            <t t-esc="check.accreditation_date.strftime('%m')"/>
+                                    </span>
+                            </div>
+                            <div name="date_year_acreditation" class="fields-border"
+                                 style="position:absolute;
+                                         top:2.2cm;
+                                         left:22.3cm;
+                                         font-size: 14px;
+                                         width:30px;
+                                            ">
+                                <span t-if="check.check_type=='post-dated'">
+                                            <t t-esc="check.accreditation_date.strftime('%y')"/>
+                                    </span>
+                            </div>
+                            <!-- hasta aqui -->
+
+                            <div name="payee" class="fields-border"
+                                 style="position:absolute;
+                                         top:3.5cm;
+                                         left:0.5cm;
+                                         text-indent:3.5cm;
+                                         font-size: 13px;
+                                         width:17.5cm;
+                                            ">
+                                <span t-esc="check.payee.upper()"/>
+                            </div>
+                            <t t-if="check.check_type=='post-dated'">
+                                <div name="num2words" class="fields-border"
+                                     style="position:absolute;
+                                         top:4.1cm;
+                                         left:0.5cm;
+                                         line-height: 2em;
+                                         text-indent:3.5cm;
+                                         font-size: 15px;
+                                         width:21.5cm;
+                                            ">
+                                    <span t-esc="report.num_to_words_es(check.amount).upper()"/>.-
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div name="num2words" class="fields-border"
+                                     style="position:absolute;
+                                         top:4.2cm;
+                                         left:0.5cm;
+                                         line-height: 2em;
+                                         text-indent:3.5cm;
+                                         font-size: 14px;
+                                         width:21.5cm;
+                                            ">
+                                    <span t-esc="report.num_to_words_es(check.amount).upper()"/>.-
+                                </div>
+                            </t>
+
+                        </div>
+                    </t>
+                </body>
+            </t>
+        </template>
+
+    </data>
+</odoo>

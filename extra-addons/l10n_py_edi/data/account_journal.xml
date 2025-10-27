@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="py_credit_note" model="account.journal">
+            <field name="name">Notas de Crédito</field>
+            <field name="type">sale</field>
+            <field name="code">NCE</field>
+            <field name="invoice_type_id" ref="l10n_py_edi.edi_document_type_5"></field>
+        </record>
+        <record id="py_debit_note" model="account.journal">
+            <field name="name">Notas de Débito</field>
+            <field name="type">sale</field>
+            <field name="code">NDE</field>
+            <field name="invoice_type_id" ref="l10n_py_edi.edi_document_type_6"></field>
+        </record>
+    </data>
+</odoo>

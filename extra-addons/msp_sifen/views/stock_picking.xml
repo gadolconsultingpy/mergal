@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="stock_picking_form_inherit" model="ir.ui.view">
+            <field name="name">stock_picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="l10n_py_edi.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="sifen_page" string="SIFEN" invisible="sifen_environment == 'X' ">
+                        <group>
+                            <group>
+                                <field name="sifen_state"/>
+                                <field name="sifen_authorization"/>
+                                <field name="sifen_state_code"/>
+                                <field name="sifen_state_message"/>
+                                <field name="sifen_send_mode" invisible="1"/>
+                                <div colspan="2">
+                                    <button name="sifen_procedure" type="object" string="Send"
+                                            context="{'edi_procedure':'sifen.stock.picking.prepare'}"
+                                            invisible="sifen_send_mode != 'de' or sifen_state != 'pending' "
+                                            class="btn-primary mr-2"/>
+                                    <button name="sifen_procedure" type="object" string="Send Batch"
+                                            context="{'edi_procedure':'sifen.stock.picking.batch.prepare'}"
+                                            invisible="sifen_send_mode != 'batch' or sifen_state != 'pending' "
+                                            class="btn-primary mr-2"/>
+                                    <button name="sifen_procedure" type="object" string="Consult"
+                                            context="{'edi_procedure':'sifen.stock.picking.consult'}"
+                                            invisible="sifen_state != 'sent' "
+                                            class="btn-primary mr-2"/>
+                                    <!--
+                                    <button name="button_edi_cancel" type="object" string="Cancel"
+                                            class="btn-secondary mr-2"/>
+                                    -->
+                                </div>
+                            </group>
+                            <group>
+
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+    <!-- Inherit Form View to Modify it -->
+    <record id="view_picking_form" model="ir.ui.view">
+        <field name="name">stock.picking.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/div[@name='button_box']" position="inside">
+                <button class="oe_stat_button"
+                        name="open_edi_events"
+                        icon="fa-files-o"
+                        type="object"
+                        invisible="edi_event_qty == 0 ">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="edi_event_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                        </span>
+                        <span class="o_stat_text">Events</span>
+                    </div>
+                </button>
+                <button class="oe_stat_button"
+                        name="open_edi_batch"
+                        icon="fa-files-o"
+                        type="object"
+                        invisible="edi_batch_qty == 0">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="edi_batch_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                        </span>
+                        <span class="o_stat_text">Batch</span>
+                    </div>
+                </button>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="edi_stock_picking_list" model="ir.ui.view">
+        <field name="name">stock.picking.list.edi</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="l10n_py_edi.edi_stock_picking_list"/>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="sifen_state"
+                       decoration-primary="sifen_state == 'pending' "
+                       decoration-warning="sifen_state == 'rejected' "
+                       decoration-success="sifen_state == 'approved' "
+                       widget="badge"/>
+                <field name="sifen_authorization" optional="hide"/>
+                <field name="sifen_state_code" optional="hide"/>
+                <field name="sifen_state_message" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vpicktree" model="ir.ui.view">
+        <field name="name">stock.picking.list</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="contact_address" optional="hide"/>
+                <field name="edi_document_datetime" optional="hide"/>
+                <field name="sequence_id" optional="hide"/>
+                <field name="vehicle_id" optional="hide"/>
+                <field name="driver_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_picking_internal_search" model="ir.ui.view">
+        <field name="name"></field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='picking_type_id']" position="after">
+                <field name="control_code"/>
+            </xpath>
+            <xpath expr="//filter[@name='picking_type']" position="after">
+                <filter name="group_by_sifen_state" string="SIFEN State" context="{'group_by':'sifen_state'}"/>
+                <filter name="group_by_date_done" string="Date Done" context="{'group_by':'date_done'}"/>
+                <filter name="group_by_edi_date" string="EDI Date" context="{'group_by':'edi_document_datetime'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,109 @@
+<odoo>
+    <data noupdate="1">
+        <record id="account_move_reset_to_draft" model="ir.actions.server">
+            <field name="name">Reset to Draft</field>
+            <field name="model_id" ref="model_account_move"/>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="groups_id" eval="[(4,ref('base.group_no_one'))]"/>
+            <field name="state" >code</field>
+            <field name="code">
+for rec in records:
+    if rec.state == 'posted' and rec.sifen_state != 'approved':
+        rec.button_draft()
+            </field>
+        </record>
+        <record id="account_move_mark_as_pending" model="ir.actions.server">
+            <field name="name">SIFEN: Mark as Pending</field>
+            <field name="model_id" ref="model_account_move"/>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="groups_id" eval="[(4,ref('base.group_no_one'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+for rec in records:
+    if rec.state == 'posted' and rec.sifen_state != 'approved':
+        rec.write({'sifen_state':'pending'})
+            </field>
+        </record>
+        <record id="account_move_recalculate_control_code" model="ir.actions.server">
+            <field name="name">SIFEN: Regenerate CDC</field>
+            <field name="model_id" ref="model_account_move"/>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="groups_id" eval="[(4,ref('base.group_no_one'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+for rec in records:
+    if rec.state == 'posted' and rec.sifen_state != 'approved':
+        rec.write({'security_code': ''})
+        rec.generate_security_code()
+        rec.generate_code_of_control()
+            </field>
+        </record>
+        <record id="stock_picking_recalculate_control_code" model="ir.actions.server">
+            <field name="name">SIFEN: Regenerate CDC</field>
+            <field name="model_id" ref="model_stock_picking"/>
+            <field name="binding_model_id" ref="model_stock_picking"/>
+            <field name="groups_id" eval="[(4,ref('base.group_no_one'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+for rec in records:
+    if rec.state == 'done' and rec.sifen_state != 'approved':
+        rec.generate_security_code(force=True)
+        rec.generate_code_of_control(force=True)
+            </field>
+        </record>
+
+        <record id="account_move_send_as_batch" model="ir.actions.server">
+            <field name="name">SIFEN: Send in Batch</field>
+            <field name="model_id" ref="model_account_move"/>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="groups_id" eval="[(4,ref('base.group_no_one'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+for rec in records:
+    if rec.state == 'posted' and rec.sifen_state == 'pending':
+        rec.with_context({'edi_procedure':'sifen.account.move.batch.prepare'}).sifen_procedure()
+            </field>
+        </record>
+        <record id="account_move_send_edi_document" model="ir.actions.server">
+            <field name="name">SIFEN: Send by Mail</field>
+            <field name="model_id" ref="model_account_move"/>
+            <field name="binding_model_id" ref="model_account_move"/>
+            <field name="groups_id" eval="[(4,ref('base.group_no_one'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+for rec in records:
+    if rec.sifen_state == 'approved':
+        rec.send_edi_document()
+            </field>
+        </record>
+
+        <record id="stock_picking_mark_as_pending" model="ir.actions.server">
+            <field name="name">SIFEN: Mark as Pending</field>
+            <field name="model_id" ref="model_stock_picking"/>
+            <field name="binding_model_id" ref="model_stock_picking"/>
+            <field name="groups_id" eval="[(4,ref('base.group_no_one'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+for rec in records:
+    if rec.state == 'done' and rec.sifen_state != 'approved':
+        rec.write({'sifen_state': 'pending'})
+            </field>
+        </record>
+
+        <record id="edi_event_mark_as_finished" model="ir.actions.server">
+            <field name="name">SIFEN: Mark as Finished</field>
+            <field name="model_id" ref="model_edi_event"/>
+            <field name="binding_model_id" ref="model_edi_event"/>
+            <field name="groups_id" eval="[(4,ref('base.group_no_one'))]"/>
+            <field name="state">code</field>
+            <field name="code">
+for rec in records:
+    if rec.state == 'sent':
+        rec.write({'state': 'finished'})
+            </field>
+        </record>
+
+
+    </data>
+
+</odoo>

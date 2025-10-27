@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="petty_cash_sheet_list" model="ir.ui.view">
+            <field name="name">petty.cash.sheet.list</field>
+            <field name="model">petty.cash.sheet</field>
+            <field name="arch" type="xml">
+                <list string="Petty Cash Sheet" sample="1">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="petty_cash_id"/>
+                    <field name="owner_partner_id"/>
+                    <field name="expense_partner_id"/>
+                    <field name="amount_total" sum="Total Amount"/>
+                    <field name="currency_id"/>
+                    <field name="state" widget="badge"
+                           decoration-muted="state == 'draft' "
+                           decoration-warning="state == 'valid' "
+                           decoration-success="state == 'confirm' "
+                    />
+                    <field name="sheet_balance" sum="Balance"/>
+                    <field name="payment_state" widget="badge"
+                           decoration-muted="payment_state == 'unpaid' "
+                           decoration-success="payment_state == 'paid' "/>
+                    <field name="user_id" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="petty_cash_sheet_search" model="ir.ui.view">
+            <field name="name">petty.cash.sheet.search</field>
+            <field name="model">petty.cash.sheet</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Petty Cash Sheet">
+                    <field name="name"/>
+                    <field name="owner_partner_id"/>
+                    <field name="expense_partner_id"/>
+
+                    <filter name="mysheets" string="My Sheets" domain="[('user_id', '=', uid)]"/>
+                    <separator/>
+                    <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                    <filter name="valid" string="Valid" domain="[('state', '=', 'valid')]"/>
+                    <filter name="confirm" string="Confirmed" domain="[('state', '=', 'confirm')]"/>
+                    <filter name="unpaid" string="Not Paid" domain="[('payment_state', '=', 'unpaid')]"/>
+
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_date" string="Date" context="{'group_by': 'date'}"/>
+                        <filter name="group_by_state" string="State" context="{'group_by': 'state'}"/>
+                        <filter name="group_by_petty_cash" string="Petty Cash Definition" context="{'group_by': 'petty_cash_id'}"/>
+                        <filter name="group_by_payment_state" string="Payment State" context="{'group_by': 'payment_state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="petty_cash_sheet_pivot" model="ir.ui.view">
+            <field name="name">petty.cash.sheet.pivot</field>
+            <field name="model">petty.cash.sheet</field>
+            <field name="type">pivot</field>
+            <field name="arch" type="xml">
+                <pivot string="Petty Cash Sheet">
+                    <field name="date" type="column"/>
+                    <field name="state" type="row"/>
+                    <field name="petty_cash_id" type="row"/>
+                    <field name="amount_total" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+
+        <record id="petty_cash_sheet_form" model="ir.ui.view">
+            <field name="name">petty.cash.sheet.form</field>
+            <field name="model">petty.cash.sheet</field>
+            <field name="arch" type="xml">
+                <form string="Petty Cash Sheet">
+                    <header>
+                        <field name="state" widget="statusbar" clickable="0"/>
+                        <button name="action_print"
+                                type="object"
+                                string="Print"
+                                invisible="state != 'confirm'"
+                                class="btn-primary"/>
+
+                        <button name="action_valid"
+                                type="object"
+                                string="Validate"
+                                invisible="state != 'draft'"
+                                class="btn-primary"/>
+
+                        <button name="action_confirm"
+                                type="object"
+                                string="Confirm"
+                                invisible="state != 'valid'"
+                                class="btn-primary"/>
+
+                        <button name="action_draft"
+                                type="object"
+                                string="Revert to Draft"
+                                confirm="This Action Will Delete Related Account Moves. Are You Sure?"
+                                groups="msp_petty_cash.group_treasury_supervisor"
+                                invisible="state not in ['valid', 'confirm']"/>
+
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button"
+                                    name="open_invoices"
+                                    icon="fa-files-o"
+                                    type="object"
+                                    invisible="invoices_qty == False">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="invoices_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                                    </span>
+                                    <span class="o_stat_text">Invoices</span>
+                                </div>
+                            </button>
+
+                            <button class="oe_stat_button"
+                                    name="open_account_moves"
+                                    icon="fa-book"
+                                    type="object"
+                                    invisible="account_moves_qty == False">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="account_moves_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                                    </span>
+                                    <span class="o_stat_text">Account Moves</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div name="web_ribbon_paid">
+                            <field name="payment_state" invisible="1"/>
+                            <widget name="web_ribbon" title="Paid" bg_color="bg-success" invisible="payment_state != 'paid'"/>
+                        </div>
+
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Number" readonly="1" force_save="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group >
+                                <field name="date" readonly="state != 'draft' "/>
+                                <field name="petty_cash_id" required="1" readonly="state != 'draft' "/>
+                                <field name="expense_partner_id" readonly="state != 'draft' "/>
+                                <field name="sheet_against_advance" invisible="1"/>
+                                <field name="advance_payment_id"
+                                       options="{'no_create':True, 'no_create_edit':True}"
+                                       readonly="state != 'draft' "
+                                       invisible="petty_cash_type != 'reposition'"
+                                       required="sheet_against_advance == True"
+                                       domain="[('partner_id','=',expense_partner_id), ('petty_cash_id','=',petty_cash_id), ('petty_cash_sheet_id','=',False)]"/>
+                            </group>
+
+                            <group>
+                                <field name="petty_cash_type"/>
+                                <field name="currency_id" readonly="state != 'draft' "/>
+                                <field name="owner_partner_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="lines_page" string="Detail">
+                                <field name="line_ids" readonly="state != 'draft' ">
+                                    <list>
+                                        <field name="account_move_amount" column_invisible="1"/>
+
+                                        <field name="concept_id"/>
+                                        <field name="name"/>
+                                        <field name="date" optional="show"/>
+
+                                        <field name="account_move_id" optional="show"/>
+                                        <field name="invoice_total" optional="hide"/>
+                                        <field name="invoice_balance" optional="hide"/>
+                                        <field name="account_id" optional="hide"/>
+                                        <field name="analytic_account_id" optional="hide" groups="analytic.group_analytic_accounting"/>
+
+                                        <field name="quantity"/>
+                                        <field name="price_unit"/>
+                                        <field name="price_total" sum="Price Total"/>
+                                        <field name="currency_id" optional="hide"/>
+                                        <field name="require_invoice" optional="hide"/>
+                                    </list>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="concept_id"
+                                                       options="{'no_create':True, 'no_create_edit':True, 'no_open':True}"
+                                                       domain="[('require_invoice','=',False)]"/>
+                                                <field name="require_invoice" invisible="1"/>
+                                                <field name="name"/>
+                                            </group>
+                                            <group>
+                                                <field name="date"/>
+                                                <field name="account_id" invisible="require_invoice == True"/>
+                                                <field name="analytic_account_id" groups="analytic.group_analytic_accounting"
+                                                       invisible="require_invoice == True"/>
+                                                <field name="currency_id"/>
+                                            </group>
+
+                                        </group>
+                                        <group invisible="require_invoice == False">
+                                            <group>
+                                                <field name="account_move_id" required="require_invoice == True"/>
+                                                <field name="partner_id" readonly="1" force_save="1"/>
+                                            </group>
+                                            <group></group>
+                                        </group>
+                                        <group invisible="require_invoice == True">
+                                            <group>
+                                                <field name="quantity"/>
+                                                <field name="price_unit"/>
+                                            </group>
+                                            <group></group>
+                                        </group>
+                                        <group colspan="4">
+                                            <field name="price_total"/>
+                                        </group>
+                                    </form>
+                                </field>
+                                <button name="append_invoice"
+                                        type="object"
+                                        string="Append Invoice"
+                                        invisible="state != 'draft'"/>
+
+                            </page>
+                            <page name="other_page" string="Other Info">
+                                <group>
+                                    <group>
+                                        <field name="company_id"/>
+                                        <field name="user_id"/>
+                                        <!-- used on header -->
+                                        <!-- field name="advance_payment_id"/ -->
+                                        <field name="return_payment_id" readonly="state != 'draft' "/>
+                                        <field name="refund_payment_id" readonly="state != 'draft' "/>
+                                        <field name="payment_state" groups="base.group_no_one" readonly="1" force_save="1"/>
+                                    </group>
+                                    <group>
+                                        <button name="action_draft"
+                                                type="object"
+                                                string="Revert to Draft"
+                                                invisible="state not in ['valid', 'confirm']"
+                                                class="btn-primary"
+                                                groups="base.group_no_one"/>
+
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                        <group>
+                            <group>
+                                <field name="comment"/>
+                            </group>
+                            <group>
+                                <field name="advance_payment_amount"/>
+                                <field name="amount_total"/>
+                                <field name="return_payment_amount"/>
+                                <field name="refund_payment_amount" invisible="petty_cash_type == 'fixed'"/>
+                                <field name="refund_payment_amount" invisible="petty_cash_type != 'fixed'" string="Reposition Amount"/>
+
+                                <label for="sheet_balance"/>
+                                <div>
+                                    <field name="sheet_balance"/>
+                                    <div invisible="sheet_balance == 0">
+                                        <span invisible="sheet_balance &lt; 0"> (request return)</span>
+                                        <span invisible="sheet_balance &gt; 0"> (make refund)</span>
+                                    </div>
+                                </div>
+                            </group>
+                        </group>
+                    </sheet>
+                    <chatter reload_on_attachment="True"/>
+                </form>
+            </field>
+        </record>
+
+        <!--        <record id="ModelName_search_view" model="ir.ui.view">-->
+        <!--            <field name="name">ProjectName.ModelName.search</field>-->
+        <!--            <field name="model">ProjectName.ModelName</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <search string="ModelTitle">-->
+        <!--                    <group expand="1" string="Group By">-->
+        <!--                        <filter string="Example Field" name="example_field" domain="[]" context="{'group_by':'example_field'}"/>-->
+        <!--                    </group>-->
+        <!--                </search>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+    </data>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Vista list -->
+        <record id="view_edi_tag_list" model="ir.ui.view">
+            <field name="name">edi.tag.list</field>
+            <field name="model">edi.tag</field>
+            <field name="arch" type="xml">
+                <list string="EDI Tag">
+                    <field name="name"/>
+                    <field name="color" widget="color_picker"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Vista Form -->
+        <record id="view_edi_tag_form" model="ir.ui.view">
+            <field name="name">edi.tag.form</field>
+            <field name="model">edi.tag</field>
+            <field name="arch" type="xml">
+                <form string="EDI Tag">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="color" widget="color_picker"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

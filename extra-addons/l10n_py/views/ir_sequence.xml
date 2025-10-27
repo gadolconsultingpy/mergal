@@ -24,7 +24,7 @@
                             </group>
                             <group>
                                 <field name="establishment" required="stamped_required == True"/>
-                                <field name="dispatch_point" required="stamped_required == True"/>
+                                <field name="issuance_point" required="stamped_required == True"/>
                                 <field name="journal_id"/>
                             </group>
                         </group>

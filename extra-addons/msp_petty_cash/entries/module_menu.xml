@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <menuitem id="petty_cash_app" name="Petty Cash"
+              sequence="100"
+              web_icon="msp_petty_cash,static/src/img/icon.png">
+
+        <menuitem id="operations_group"
+                  name="Operations">
+            <menuitem id="session_administration_group"
+                      name="Administration"/>
+        </menuitem>
+
+        <menuitem id="main_data_group"
+                  name="Main Data">
+            <menuitem id="petty_cash_definition_user_menuitem"
+                      name="My Petty Cash"
+                      action="petty_cash_definition_user_action"
+                      groups="msp_petty_cash.group_treasury_user"
+                      sequence="10"
+            />
+            <menuitem id="petty_cash_sheet_menuitem"
+                      name="Petty Cash Sheet"
+                      action="petty_cash_sheet_action"
+                      sequence="90"
+            />
+        </menuitem>
+
+        <menuitem id="treasury_reports_group"
+                  name="Reports"/>
+
+        <menuitem id="configuration_group"
+                  name="Configuration">
+
+            <menuitem id="petty_cash_definition_manager_menuitem"
+                      name="Petty Cash Definition"
+                      action="petty_cash_definition_manager_action"
+                      groups="msp_petty_cash.group_treasury_manager"/>
+
+            <menuitem id="petty_cash_concept_meny_entry"
+                      name="Petty Cash Concept"
+                      action="petty_cash_concept_action"/>
+        </menuitem>
+    </menuitem>
+
+</odoo>

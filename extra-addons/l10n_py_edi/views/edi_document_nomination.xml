@@ -1,0 +1,87 @@
+<odoo>
+
+    <record id="edi_document_nomination_tree" model="ir.ui.view">
+        <field name="name">edi.document.nomination.list</field>
+        <field name="model">edi.document.nomination</field>
+        <field name="arch" type="xml">
+            <list sample="1">
+                <field name="name"/>
+                <field name="edi_document_type"/>
+                <field name="document_number"/>
+                <field name="control_code"/>
+                <field name="reason"/>
+                <field name="partner_id"/>
+                <field name="state" widget="badge" decoration-primary="state == 'draft' " decoration-info="state == 'confirm' "
+                       decoration-success="state == 'sent' "/>
+            </list>
+        </field>
+    </record>
+
+    <record id="edi_document_nomination_form" model="ir.ui.view">
+        <field name="name">edi.document.nomination.form</field>
+        <field name="model">edi.document.nomination</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" clickable="0"/>
+                    <button name="action_confirm" type="object" string="Confirm"
+                            groups="l10n_py_edi.group_l10n_py_edi_user"
+                            class="btn-primary"
+                            invisible="state != 'draft' "/>
+                    <button name="send" type="object" string="Send"
+                            groups="l10n_py_edi.group_l10n_py_edi_supervisor"
+                            class="btn-primary"
+                            invisible="state != 'confirm' "/>
+                    <button name="action_reset_to_confirm" string="Reset to Confirm"
+                            groups="l10n_py_edi.group_l10n_py_edi_manager"
+                            invisible="state != 'sent' "
+                            type="object" class="btn-secondary"/>
+                    <button name="action_draft" string="Reset to Draft"
+                            groups="l10n_py_edi.group_l10n_py_edi_supervisor"
+                            invisible="state != 'confirm' "
+                            type="object" class="btn-secondary"/>
+                </header>
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="00000123" readonly="1" force_save="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="group_left">
+                            <field name="edi_document_type_code" invisible="1" readonly="state != 'draft' "/>
+                            <field name="edi_document_type" readonly="state != 'draft' "/>
+                            <field name="invoice_id"
+                                   readonly="state != 'draft' "
+                                   domain="[('partner_id','=',unnamed_partner_id),
+                                            ('state','=','posted'),
+                                            ('move_type','in',['out_invoice','out_refund']),
+                                            ]"
+                                   invisible="edi_document_type_code not in ['1','5'] "/>
+                            <field name="picking_id"
+                                   readonly="state != 'draft' "
+                                   domain="[('partner_id','=',unnamed_partner_id),
+                                            ('state','=','done'),
+                                            ]"
+                                   invisible="edi_document_type_code not in ['7',] "/>
+                            <field name="control_code"/>
+                            <field name="partner_id" readonly="state != 'draft' "/>
+                            <field name="reason" readonly="state != 'draft' "/>
+                        </group>
+                        <group name="group_right">
+                            <field name="company_id" readonly="1" force_save="1"/>
+                            <field name="unnamed_partner_id" readonly="1" force_save="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                    </notebook>
+                </sheet>
+                <chatter reload_on_attachment="True"/>
+            </form>
+        </field>
+    </record>
+
+</odoo>

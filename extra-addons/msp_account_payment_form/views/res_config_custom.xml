@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_custom_form" model="ir.ui.view">
+        <field name="name">>res.config.custom.form</field>
+        <field name="model">res.config.custom</field>
+            <field name="inherit_id" ref="l10n_py_edi.res_config_custom_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                    <page name="account_page" string="Accounting">
+                    <group>
+                        <group>
+                                <field name="skip_cash_payment_create" widget="boolean_toggle"/>
+                                <field name="cash_payment_form_id" domain="[('type','in',['cash','bank'])]"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

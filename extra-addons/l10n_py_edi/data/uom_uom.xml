@@ -1,0 +1,180 @@
+<odoo>
+    <data noupdate='1'>
+        <record id='uom.product_uom_unit' model='uom.uom'>
+            <field name='code'>77</field>
+            <field name='symbol'>UNI</field>
+        </record>
+
+        <record id='uom.product_uom_day' model='uom.uom'>
+            <field name='code'>102</field>
+            <field name='symbol'>Di</field>
+        </record>
+
+        <record id='uom.product_uom_meter' model='uom.uom'>
+            <field name='code'>87</field>
+            <field name='symbol'>m</field>
+        </record>
+
+        <record id='uom.product_uom_millimeter' model='uom.uom'>
+            <field name='code'>95</field>
+            <field name='symbol'>MM</field>
+        </record>
+
+        <record id='uom.product_uom_km' model='uom.uom'>
+            <field name='code'>625</field>
+            <field name='symbol'>Km</field>
+        </record>
+
+        <record id='uom.product_uom_cm' model='uom.uom'>
+            <field name='code'>91</field>
+            <field name='symbol'>CM</field>
+        </record>
+
+        <record id='uom.uom_square_meter' model='uom.uom'>
+            <field name='code'>109</field>
+            <field name='symbol'>M2</field>
+        </record>
+
+        <record id='uom.product_uom_litre' model='uom.uom'>
+            <field name='code'>89</field>
+            <field name='symbol'>LT</field>
+        </record>
+
+        <record id='uom.product_uom_cubic_meter' model='uom.uom'>
+            <field name='code'>110</field>
+            <field name='symbol'>M3</field>
+        </record>
+
+        <record id='uom.product_uom_kgm' model='uom.uom'>
+            <field name='code'>83</field>
+            <field name='symbol'>kg</field>
+        </record>
+
+        <record id='uom.product_uom_gram' model='uom.uom'>
+            <field name='code'>86</field>
+            <field name='symbol'>g</field>
+        </record>
+
+        <record id='uom.product_uom_ton' model='uom.uom'>
+            <field name='code'>99</field>
+            <field name='symbol'>TN</field>
+        </record>
+
+        <record id='uom.product_uom_inch' model='uom.uom'>
+            <field name='code'>94</field>
+            <field name='symbol'>PUL</field>
+        </record>
+
+        <record id='uom.product_uom_yard' model='uom.uom'>
+            <field name='code'>103</field>
+            <field name='symbol'>Ya</field>
+        </record>
+
+        <record id='uom_uom_mg' model='uom.uom'>
+            <field name='name'>mg</field>
+            <field name='category_id' ref='uom.product_uom_categ_kgm'/>
+            <field name='factor'>1000000.0</field>
+            <field name='factor_inv'>1e-06</field>
+            <field name='rounding'>0.01</field>
+            <field name='active' eval='True'/>
+            <field name='uom_type'>smaller</field>
+            <field name='ratio'>1000000.0</field>
+            <field name='code'>90</field>
+            <field name='symbol'>MG</field>
+        </record>
+
+        <record id='uom_uom_cm2' model='uom.uom'>
+            <field name='name'>cm²</field>
+            <field name='category_id' ref='uom.uom_categ_surface'/>
+            <field name='factor'>10000.0</field>
+            <field name='factor_inv'>0.0001</field>
+            <field name='rounding'>0.01</field>
+            <field name='active' eval='True'/>
+            <field name='uom_type'>smaller</field>
+            <field name='ratio'>10000.0</field>
+            <field name='code'>92</field>
+            <field name='symbol'>CM2</field>
+        </record>
+
+        <record id='uom_uom_cm3' model='uom.uom'>
+            <field name='name'>cm³</field>
+            <field name='category_id' ref='uom.product_uom_categ_vol'/>
+            <field name='factor'>1000000.0</field>
+            <field name='factor_inv'>1e-06</field>
+            <field name='rounding'>0.01</field>
+            <field name='active' eval='True'/>
+            <field name='uom_type'>smaller</field>
+            <field name='ratio'>1000000.0</field>
+            <field name='code'>93</field>
+            <field name='symbol'>CM3</field>
+        </record>
+
+        <record id='uom_uom_mm2' model='uom.uom'>
+            <field name='name'>mm²</field>
+            <field name='category_id' ref='uom.uom_categ_surface'/>
+            <field name='factor'>1000000.0</field>
+            <field name='factor_inv'>1e-06</field>
+            <field name='rounding'>0.01</field>
+            <field name='active' eval='True'/>
+            <field name='uom_type'>smaller</field>
+            <field name='ratio'>1000000.0</field>
+            <field name='code'>96</field>
+            <field name='symbol'>MM2</field>
+        </record>
+
+        <record id='uom_uom_aa' model='uom.uom'>
+            <field name='name'>Año</field>
+            <field name='category_id' ref='uom.uom_categ_wtime'/>
+            <field name='factor'>0.0027397260273972603</field>
+            <field name='factor_inv'>365.0</field>
+            <field name='rounding'>0.01</field>
+            <field name='active' eval='True'/>
+            <field name='uom_type'>bigger</field>
+            <field name='ratio'>365.0</field>
+            <field name='code'>97</field>
+            <field name='symbol'>AA</field>
+        </record>
+
+        <record id='uom_uom_me' model='uom.uom'>
+            <field name='name'>Mes</field>
+            <field name='category_id' ref='uom.uom_categ_wtime'/>
+            <field name='factor'>0.03333333333333333</field>
+            <field name='factor_inv'>30.0</field>
+            <field name='rounding'>0.01</field>
+            <field name='active' eval='True'/>
+            <field name='uom_type'>bigger</field>
+            <field name='ratio'>30.0</field>
+            <field name='code'>98</field>
+            <field name='symbol'>ME</field>
+        </record>
+
+        <record id='uom_uom_mi' model='uom.uom'>
+            <field name='name'>Minuto</field>
+            <field name='category_id' ref='uom.uom_categ_wtime'/>
+            <field name='factor'>1440.0</field>
+            <field name='factor_inv'>0.0006944444444444445</field>
+            <field name='rounding'>0.01</field>
+            <field name='active' eval='True'/>
+            <field name='uom_type'>smaller</field>
+            <field name='ratio'>1440.0</field>
+            <field name='code'>101</field>
+            <field name='symbol'>Mi</field>
+        </record>
+
+    </data>
+    <data>
+        <record id='uom.product_uom_hour' model='uom.uom'>
+            <field name='name'>Horas</field>
+            <field name='category_id' ref='uom.uom_categ_wtime'/>
+            <field name='factor'>24.0</field>
+            <field name='factor_inv'>0.041666666666666664</field>
+            <field name='rounding'>0.01</field>
+            <field name='active' eval='True'/>
+            <field name='uom_type'>smaller</field>
+            <field name='ratio'>24.0</field>
+            <field name='code'>100</field>
+            <field name='symbol'>Hs</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,74 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Queue Pending Invoices -->
+        <record id="cron_queue_pending_invoices" model="ir.cron">
+            <field name="name">EDI Queue Pending Invoices</field>
+            <field name="model_id" ref="model_account_move"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_edi_send()</field>
+            <field name='interval_number'>5</field>
+            <field name='interval_type'>minutes</field>
+            <field name="active">False</field>
+        </record>
+        <!-- Queue Pending Stock Picking -->
+        <record id="cron_queue_pending_stock_picking" model="ir.cron">
+            <field name="name">EDI Queue Pending Stock Picking</field>
+            <field name="model_id" ref="model_stock_picking"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_edi_send()</field>
+            <field name='interval_number'>5</field>
+            <field name='interval_type'>minutes</field>
+            <field name="active">False</field>
+        </record>
+        <!-- Queue Pending EDI Document Cancellations -->
+        <record id="cron_queue_pending_edi_document_cancel" model="ir.cron">
+            <field name="name">EDI Queue Pending EDI Document Cancellations</field>
+            <field name="model_id" ref="model_edi_document_cancel"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_edi_send()</field>
+            <field name='interval_number'>5</field>
+            <field name='interval_type'>minutes</field>
+            <field name="active">False</field>
+        </record>
+        <!-- Queue Pending EDI Document Invalidations -->
+        <record id="cron_queue_pending_edi_document_invalid" model="ir.cron">
+            <field name="name">EDI Queue Pending EDI Document Invalidations</field>
+            <field name="model_id" ref="model_edi_document_invalid"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_edi_send()</field>
+            <field name='interval_number'>5</field>
+            <field name='interval_type'>minutes</field>
+            <field name="active">False</field>
+        </record>
+        <!-- Prepare and Send Batch -->
+        <record id="cron_edi_batch_check_for_prepare" model="ir.cron">
+            <field name="name">EDI Batch Check For Prepare</field>
+            <field name="model_id" ref="model_edi_batch"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_edi_prepare()</field>
+            <field name='interval_number'>5</field>
+            <field name='interval_type'>minutes</field>
+            <field name="active">False</field>
+        </record>
+        <!-- Pending EDI Event Process -->
+        <record id="cron_edi_event_pending_process" model="ir.cron">
+            <field name="name">EDI Events Pending Process</field>
+            <field name="model_id" ref="model_edi_event"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_process()</field>
+            <field name='interval_number'>5</field>
+            <field name='interval_type'>minutes</field>
+            <field name="active">False</field>
+        </record>
+        <!-- EDI Batch Consult -->
+        <record id="cron_edi_batch_consult" model="ir.cron">
+            <field name="name">EDI Batch Consult</field>
+            <field name="model_id" ref="model_edi_batch"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_edi_consult()</field>
+            <field name='interval_number'>5</field>
+            <field name='interval_type'>minutes</field>
+            <field name="active">False</field>
+        </record>
+    </data>
+</odoo>

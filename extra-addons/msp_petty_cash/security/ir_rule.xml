@@ -1,0 +1,38 @@
+<odoo>
+    <!-- PETTY CASH CONCEPT-->
+    <record id="petty_cash_concept_per_company" model="ir.rule">
+        <field name="name">Petty Cash Concept by Company</field>
+        <field name="model_id" ref="model_petty_cash_concept"/>
+        <field name="perm_create">1</field>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_unlink">1</field>
+        <field name="active">0</field>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="global">1</field>
+    </record>
+    <!-- PETTY CASH DEFINITION -->
+    <record id="petty_cash_definition_per_company" model="ir.rule">
+        <field name="name">Petty Cash Definition by Company</field>
+        <field name="model_id" ref="model_petty_cash_definition"/>
+        <field name="perm_create">1</field>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_unlink">1</field>
+        <field name="active">1</field>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="global">1</field>
+    </record>
+    <!-- PETTY CASH SHEET -->
+    <record id="petty_cash_sheet_per_company" model="ir.rule">
+        <field name="name">Petty Cash Sheet by Company</field>
+        <field name="model_id" ref="model_petty_cash_sheet"/>
+        <field name="perm_create">1</field>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_unlink">1</field>
+        <field name="active">1</field>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="global">1</field>
+    </record>
+</odoo>

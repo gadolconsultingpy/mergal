@@ -1,0 +1,35 @@
+<odoo>
+    <record id="account_check_per_company" model="ir.rule">
+        <field name="name">Account Check by Company</field>
+        <field name="model_id" ref="model_account_check"/>
+        <field name="perm_create">1</field>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_unlink">1</field>
+        <field name="active">1</field>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="global">1</field>
+    </record>
+    <record id="account_checkbook_per_company" model="ir.rule">
+        <field name="name">Account Checkbook by Company</field>
+        <field name="model_id" ref="model_account_checkbook"/>
+        <field name="perm_create">1</field>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_unlink">1</field>
+        <field name="active">1</field>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="global">1</field>
+    </record>
+    <record id="account_securities_deposit_per_company" model="ir.rule">
+        <field name="name">Account Securities Deposit by Company</field>
+        <field name="model_id" ref="model_account_securities_deposit"/>
+        <field name="perm_create">1</field>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_unlink">1</field>
+        <field name="active">1</field>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="global">1</field>
+    </record>
+</odoo>

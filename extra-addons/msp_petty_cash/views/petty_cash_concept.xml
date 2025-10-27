@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="petty_cash_concept_list" model="ir.ui.view">
+            <field name="name">petty.cash.concept.list</field>
+            <field name="model">petty.cash.concept</field>
+            <field name="arch" type="xml">
+                <list string="Petty Cash Concept" sample="1">
+                    <field name="name"/>
+                    <field name="account_id"/>
+                    <field name="analytic_account_id" groups="analytic.group_analytic_accounting"/>
+                    <field name="amount"/>
+                    <field name="require_invoice"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="petty_cash_concept_form" model="ir.ui.view">
+            <field name="name">petty.cash.concept.form</field>
+            <field name="model">petty.cash.concept</field>
+            <field name="arch" type="xml">
+                <form string="Petty Cash Concept">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Petty Cash Concept"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="account_id" domain="[('account_type', '=', 'expense')]"/>
+                                <field name="analytic_account_id" groups="analytic.group_analytic_accounting"/>
+                                <field name="require_invoice" widget="boolean_toggle"/>
+                            </group>
+                            <group>
+                                <field name="amount"/>
+                                <field name="deductible_amount"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -39,7 +39,8 @@ class ResPartner(models.Model):
 
     def default_get(self, default_fields):
         values = super(ResPartner, self).default_get(default_fields)
-        values['country_id'] = self.env.company.country_id.id
+        values['country_id'] = self.env.company.partner_id.country_id.id
+        values['lang'] = self.env.company.partner_id.lang
         return values
 
     @api.onchange('street_name')

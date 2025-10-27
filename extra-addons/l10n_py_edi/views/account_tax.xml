@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="view_tax_tree" model="ir.ui.view">
+            <field name="name">account.tax.list</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="l10n_py.view_tax_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='taxable_percent']" position="after">
+                    <field name="code" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_tax_form" model="ir.ui.view">
+            <field name="name">account.tax.form</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="l10n_py.view_tax_form" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group_left']" position="inside">
+                    <field name="code" />
+                    <field name="tax_application_type_id" />
+                    <field name="tax_type_id" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

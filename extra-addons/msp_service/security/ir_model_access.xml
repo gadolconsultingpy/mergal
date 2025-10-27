@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+
+        <!-- SERVICE CONTROLLER PROCEDURE -->
+        <record id="access_system_service_controller_procedure" model="ir.model.access">
+            <field name="name">Service Controller Procedure Admin</field>
+            <field name="model_id" ref="msp_service.model_service_controller_procedure"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_user_service_controller_procedure" model="ir.model.access">
+            <field name="name">Service Controller Procedure User</field>
+            <field name="model_id" ref="msp_service.model_service_controller_procedure"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+        <!-- SERVICE LOG -->
+        <record id="access_system_service_log" model="ir.model.access">
+            <field name="name">Service Log Admin</field>
+            <field name="model_id" ref="msp_service.model_service_log"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="access_user_service_log" model="ir.model.access">
+            <field name="name">Service Log User</field>
+            <field name="model_id" ref="msp_service.model_service_log"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- SERVICE LOG RESPONSE -->
+        <record id="access_user_service_log_response" model="ir.model.access">
+            <field name="name">Service Log Response User</field>
+            <field name="model_id" ref="msp_service.model_service_log_response"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+    </data>
+</odoo>

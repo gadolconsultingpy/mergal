@@ -1,0 +1,120 @@
+<odoo>
+    <!-- NEW EDI TABLES -->
+
+
+    <menuitem id="menu_edi_documents"
+              name="Documents"
+              parent="l10n_py.menu_py_transactions"
+              sequence="10">
+
+        <menuitem id="menu_edi_invoice"
+                  name="Invoice"
+                  action="action_edi_account_move"
+                  sequence="10"/>
+
+        <menuitem id="menu_edi_transference"
+                  name="Transference"
+                  action="action_edi_stock_picking"
+                  sequence="20"/>
+    </menuitem>
+
+    <menuitem id="menu_transactions_events"
+              name="Events"
+              groups="l10n_py_edi.group_l10n_py_edi_user"
+              parent="l10n_py.menu_py_transactions"
+              sequence="20">
+
+        <menuitem id="menu_edi_document_cancel"
+                  name="EDI Document Cancellation"
+                  groups="l10n_py_edi.group_l10n_py_edi_user"
+                  sequence="10"
+                  action="action_edi_document_cancel"/>
+
+        <menuitem id="menu_edi_document_invalid"
+                  name="EDI Document Invalidation "
+                  groups="l10n_py_edi.group_l10n_py_edi_user"
+                  sequence="20"
+                  action="action_edi_document_invalid"/>
+
+        <menuitem id="menu_edi_document_nomination"
+                  name="EDI Document Nomination "
+                  groups="l10n_py_edi.group_l10n_py_edi_user"
+                  sequence="30"
+                  action="action_edi_document_nomination"/>
+
+    </menuitem>
+
+    <!-- PARAGUAY / CONFIGURATION -->
+
+    <menuitem id="menu_py_res_config_custom"
+              name="Additional Parameters"
+              parent="l10n_py.menu_py_configuration_group"
+              action="l10n_py_base.res_config_custom_action"/>
+
+    <menuitem id="edi_certificate_menu_entry"
+              name="EDI Certificate"
+              parent="l10n_py.menu_py_configuration_group"
+              action="edi_certificate_action"/>
+
+    <!-- SUPPORT TABLES -->
+    <menuitem id="account_tax_application_type_menu_entry"
+              name="Tax Application Type"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="account_tax_application_type_action"/>
+
+    <menuitem id="account_tax_type_menu_entry"
+              name="Tax Type"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="account_tax_type_action"/>
+
+    <menuitem id="account_tax_excise_category_menu_entry"
+              name="Tax Excise Category"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="account_tax_excise_category_action"/>
+
+    <menuitem id="edi_document_type_menu_entry"
+              name="Document Type"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="edi_document_type_action"/>
+
+    <menuitem id="edi_reversion_document_type_menu_entry"
+              name="Reversion Document Type"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="edi_reversion_document_type_action"/>
+
+    <menuitem id="edi_transaction_type_menu_entry"
+              name="Transaction Type"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="edi_transaction_type_action"/>
+
+    <menuitem id="edi_presence_menu_entry"
+              name="Presence Indicator"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="edi_presence_action"/>
+
+    <menuitem id="edi_issue_reason_menu_entry"
+              name="Issue Reason"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="edi_issue_reason_action"/>
+
+    <menuitem id="edi_issue_reason_picking_menu_entry"
+              name="Picking Issue Reason"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="edi_issue_reason_picking_action"/>
+
+    <menuitem id="edi_issue_responsible_menu_entry"
+              name="Picking Issue Responsible"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="edi_issue_responsible_action"/>
+
+    <menuitem id="edi_transport_type_menu_entry"
+              name="Transport Type"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="edi_transport_type_action"/>
+
+    <menuitem id="edi_transport_mode_menu_entry"
+              name="Transport Mode"
+              parent="l10n_py.menu_l10n_py_tables_group"
+              action="edi_transport_mode_action"/>
+
+</odoo>

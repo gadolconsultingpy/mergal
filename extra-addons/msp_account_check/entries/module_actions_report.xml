@@ -1,0 +1,36 @@
+<odoo>
+    <record id="msp_account_check_report_action" model="ir.actions.report">
+        <field name="name">Customized Account Check</field>
+        <field name="model">account.checkbook</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">msp_account_check.account_checkbook_check_report</field>
+        <field name="report_file">msp_account_check.account_checkbook_check_report</field>
+        <field name="binding_model_id" ref="msp_account_check.model_account_checkbook"/>
+        <field name="paperformat_id" ref="msp_account_check.paperformat_checkbook_check"/>
+        <field name="print_report_name">'checkbook_%s' % (object.name)</field>
+    </record>
+
+    <record id="msp_account_check_continental_report_action" model="ir.actions.report">
+        <field name="name">Continental without Stub</field>
+        <field name="model">account.checkbook</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">msp_account_check.account_checkbook_continental</field>
+        <field name="report_file">msp_account_check.account_checkbook_continental</field>
+        <field name="binding_model_id" ref="msp_account_check.model_account_checkbook"/>
+        <field name="paperformat_id" ref="msp_account_check.paperformat_checkbook_check"/>
+        <field name="print_report_name">'continental_%s' % (object.name)</field>
+    </record>
+
+    <record id="msp_account_check_continental_stub_report_action" model="ir.actions.report">
+        <field name="name">Continental with Stub</field>
+        <field name="model">account.checkbook</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">msp_account_check.account_checkbook_continental_stub</field>
+        <field name="report_file">msp_account_check.account_checkbook_continental_stub</field>
+        <field name="binding_model_id" ref="msp_account_check.model_account_checkbook"/>
+        <field name="paperformat_id" ref="msp_account_check.paperformat_checkbook_check"/>
+        <field name="print_report_name">'continental_stub_%s' % (object.name)</field>
+    </record>
+
+
+</odoo>

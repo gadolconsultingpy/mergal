@@ -1,7 +1,7 @@
 # noinspection PyStatementEffect
 {
     'name'        : "Localization for Paraguay - RG 90/2021",
-    'version'     : '0.1',
+    'version'     : '0.1.1',
     'summary'     : 'Localization for Paraguay - RG 90/2021',
     'description' : """Electronic Registry of Sales and Purchases (RG 90/2021)""",
     'author'      : "Gadol Consulting",
@@ -23,8 +23,9 @@
         'data/account_document_type.xml',
 
         'views/account_document_type.xml',
-        'views/res_partner_stamped.xml',
+        'views/account_journal.xml',
         'views/account_move.xml',
+        'views/res_partner_stamped.xml',
         'views/res_config_custom.xml',
 
         # 'wizard/tax_payer_process.xml',

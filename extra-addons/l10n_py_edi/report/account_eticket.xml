@@ -1,0 +1,271 @@
+<odoo>
+
+    <template id="account_eticket_header">
+        <div class="header">
+            <style>
+                .text_c {text-align:center; }
+                .amount {text-align:right; padding-right:2px; }
+                .text_14 {font-size:14px; }
+                .text_12 {font-size:12px; }
+            </style>
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td style="text-align:center; padding-left:5px; padding-right:5px; width:300px; ">
+                            <img t-if="invoice.company_id.logo" width="300px"
+                                 t-att-src="image_data_uri(invoice.company_id.logo)"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_c text_14 ">
+                            <strong>RUC: <span t-field="invoice.company_id.vat"/></strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_c text_12">
+                            <strong>Actividad 1<br/>Actividad 2</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_c text_12">
+                            <strong>Casa Matriz: </strong> Dirección, Ciudad - Teléfonos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_c text_12">
+                            <strong>Sucursal 1: </strong> Dirección, Ciudad - Teléfonos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_c text_12">
+                            <strong>Sucursal 2: </strong> Dirección, Ciudad - Teléfonos <br/>Dirección, Ciudad - Teléfonos
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text_c text_12">
+                            IVA INCLUIDO
+                        </td>
+                    </tr>
+                </thead>
+            </table>
+            <table width="100%" style="font-size:12px;">
+                <tr>
+                    <td>
+                        <strong>Timbrado:</strong>
+                    </td>
+                    <td>
+                        <span t-field="invoice.sequence_id.stamped_number"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Fecha Inicio:</strong>
+                    </td>
+                    <td>
+                        <span t-field="invoice.sequence_id.from_date"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Factura Nro.:</strong>
+                    </td>
+                    <td>
+                        <span t-field="invoice.name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Fecha/Hora Emisión:</strong>
+                    </td>
+                    <td>
+                        <span t-esc="invoice.invoice_date.strftime('%d/%m/%Y - %H:%M:%S')"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Vendedor:</strong>
+                    </td>
+                    <td>
+                        <span t-field="invoice.invoice_user_id"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+    <template id="account_eticket_page">
+        <div class="page">
+            <style>
+                .header_top {border-top:1px solid black; font-weight:bold; }
+                .header_bot {border-bottom:1px solid black; font-weight:bold; }
+                .total {border-top:1px solid black; border-bottom:2px solid black; }
+                .amount {text-align:right; padding-right:2px; paddign-left:2px; }
+                .text_b {font-weight:bold; }
+                .text_c {text-align:center; }
+            </style>
+            <table width="100%" style="font-size:12px; " cellspacing="0" cellpadding="2">
+                <tr>
+                    <td class="header_top">Code</td>
+                    <td class="header_top text_c" colspan="3">Description</td>
+                </tr>
+                <tr>
+                    <td class="header_bot amount">Qty.</td>
+                    <td class="header_bot amount">Price</td>
+                    <td class="header_bot amount">Disc.</td>
+                    <td class="header_bot amount">Total</td>
+                </tr>
+                <t t-foreach="invoice.invoice_line_ids" t-as="line">
+                    <tr>
+                        <td class="text_b" style="padding-bottom:0px; ">
+                            <span t-field="line.product_id.default_code"/>
+                        </td>
+                        <td class="text_b" colspan="3" style="padding-bottom:0px; padding-left:5px; ">
+                            <span t-field="line.product_id.name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="amount" style="padding-left:10px;">
+                            <span t-field="line.quantity"/>
+                        </td>
+                        <td class="amount">
+                            <span t-field="line.price_total"/>
+                        </td>
+                        <td class="amount">
+                            <span t-field="line.discount"/>
+                        </td>
+                        <td class="amount" style="padding-bottom:5px;">
+                            <span t-field="line.price_total"/>
+                        </td>
+                    </tr>
+                    <t t-if="producto == 0">
+                        <span t-esc="line.product_id.name"/>
+                    </t>
+
+                </t>
+                <tr>
+                    <td class="text_b total amount " colspan="3">
+                        <strong>TOTAL:</strong>
+                    </td>
+                    <td class="amount total">
+                        <strong><span t-field="invoice.amount_total"/></strong>
+                    </td>
+                </tr>
+            </table>
+            <t t-if="len(invoice.payment_form_ids) > 0 ">
+                <h5 style="margin-top:32px; border-bottom:1px solid black;">Detalle de Pagos</h5>
+                <table width="100%" style="font-size:12px">
+                    <t t-foreach="invoice.payment_form_ids" t-as="payment">
+                        <tr>
+                            <td><span t-field="payment.payment_form_id.name"/></td>
+                            <td class="amount"><span t-field="payment.amount"/></td>
+                        </tr>
+                    </t>
+                    <tr>
+                        <td style="border-top:1px solid black;"><strong>Total Pagos</strong></td>
+                        <td class="amount" style="border-top:1px solid black;"><strong><span t-field="invoice.payment_total"/></strong></td>
+                    </tr>
+                </table>
+            </t>
+            <h5 style="margin-top:16px">Detalle Totales (Base imponible)</h5>
+            <table width="100%" style="font-size:12px">
+                <tr>
+                    <td>GRAVADAS 5%</td>
+                    <td class="amount"><span t-field="invoice.amount_tax_5_py"/></td>
+                </tr>
+                <tr>
+                    <td>GRAVADAS 10%</td>
+                    <td class="amount"><span t-field="invoice.amount_tax_10_py"/></td>
+                </tr>
+                <tr>
+                    <td>EXENTAS</td>
+                    <td class="amount"><span t-field="invoice.amount_tax_free_py"/></td>
+                </tr>
+            </table>
+            <h5 style="margin-top:16px">Detalle del Impuesto</h5>
+            <table width="100%" style="font-size:12px">
+                <tr>
+                    <td>IVA 5%</td>
+                    <td class="amount"><span t-field="invoice.tax_5"/></td>
+                </tr>
+                <tr>
+                    <td>IVA 10%</td>
+                    <td class="amount"><span t-field="invoice.tax_10"/></td>
+                </tr>
+                <tr>
+                    <td>Liquidación total del IVA</td>
+                    <td class="amount"><span t-field="invoice.amount_tax"/></td>
+                </tr>
+            </table>
+            <table width="100%" style="font-size:13px; margin-top:16px; ">
+                <tr>
+                    <td style="border-top:1px solid black;">
+                        <strong>CLIENTE:</strong>
+                    </td>
+                    <td style="border-top:1px solid black;">
+                        <span t-field="invoice.partner_id.name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>RUC:</strong>
+                    </td>
+                    <td>
+                        <span t-field="invoice.partner_id.vat"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:1px solid black;">
+                        <strong>Condición de Venta:</strong>
+                    </td>
+                    <td style="border-bottom:1px solid black;">
+                        <span t-field="invoice.invoice_payment_term_id.name"/>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td style="text-align:center; ">
+                        <img t-if="invoice.qr_image" width="300px"
+                             t-att-src="image_data_uri(invoice.qr_image)"/>
+                    </td>
+                </tr>
+            </table>
+            <table width="100%" style="font-size:13px; margin-top:16px; ">
+                <tr>
+                    <td style="text-align:center; ">Consulta la validez de esta Factura Electrónica con el número de CDC impreso abajo en:</td>
+                </tr>
+                <tr>
+                    <td style="color:blue; text-align:center; ">https://ekuatia.set.gov.py/consultas/</td>
+                </tr>
+                <tr>
+                    <td style="text-align:center; "><strong><span t-field="invoice.control_code_graph"/></strong></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center; ">ESTE DOCUMENTO ES UNA REPRESENTACIÓN GRÁFICA DE UN DOCUMENTO ELECTRÓNICO (XML)</td>
+                </tr>
+            </table>
+        </div>
+    </template>
+
+    <template id="account_eticket_footer">
+        <div class="footer">
+
+        </div>
+    </template>
+
+    <template id="account_eticket">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <!-- <t t-call="report.external_layout"> -->
+                <t t-foreach="docs" t-as="invoice">
+                    <t t-call="l10n_py_edi.account_eticket_header"/>
+                    <t t-call="l10n_py_edi.account_eticket_page"/>
+                    <t t-call="l10n_py_edi.account_eticket_footer"/>
+                </t>
+
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

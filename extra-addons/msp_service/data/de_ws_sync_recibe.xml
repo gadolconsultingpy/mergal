@@ -1,0 +1,85 @@
+<odoo>
+    <data>
+        <record id="de_ws_sync_recibe_procedure" model="service.controller.procedure">
+            <field name="name">Facturas</field>
+            <field name="route">/de/ws/sync/recibe</field>
+            <field name="procedure">
+def process_post(self, json_data):
+  invoice_data = json_data.get("invoice", {})
+  invoice_header = invoice_data.get("header", {})
+  invoice_detail = invoice_data.get("detail", [])
+
+  number = invoice_header.get("number")
+
+  invoice = self.env['account.move'].search([('name','=',number),('move_type','=','out_invoice')])
+  if invoice:
+    response = {"error":{"code":"10000", "message":"Invoice Already Exists: id %s" %(invoice.id)}}
+    return response
+
+  hvals = {}
+
+  partner = self.env['res.partner'].search([('vat','=',invoice_header.get("partner_vat")),('parent_id','=',False)],limit=1,order="id")
+  if not partner:
+    response = {"error":{"code":"10001", "message":"Partner Not Found: %s" %(invoice_header.get("partner_vat"))}}
+    return response
+  hvals['partner_id'] = partner.id
+
+  currency = self.env['res.currency'].search([('name','=',invoice_header.get("currency_code"))],limit=1,order="id")
+  if not currency:
+    response = {"error":{"code":"10002", "message":"Currency Not Found: %s" %(invoice_header.get("currency_code"))}}
+    return response
+  hvals['currency_id'] = currency.id
+
+  branch = self.env['res.branch'].search([('code','=',invoice_header.get("branch_code"))],limit=1,order="id")
+  if not branch:
+    response = {"error":{"code":"10003", "message":"Branch Not Found: %s" %(invoice_header.get("branch_code"))}}
+    return response
+  hvals['branch_id'] = branch.id
+
+  hvals['name'] = invoice_header.get("number")
+  sequence = branch.get_prefix_sequence(prefix=invoice_header.get("number_prefix"))
+  if not sequence:
+    response = {"error":{"code":"10004", "message":"Sequence Not Found: %s" %(invoice_header.get("number_prefix"))}}
+    return response
+  hvals['sequence_id'] = sequence.id
+
+  hvals['move_type'] = "out_invoice"
+  hvals['invoice_date'] = invoice_header.get("invoice_date")
+
+  hvals['invoice_line_ids'] = []
+  for item in invoice_detail:
+    code = item.get('product_code')
+    if not code:
+      response = {"error":{"code":"10005", "message":"Product Code Missing"}}
+      return response
+    product = self.env['product.product'].search([('default_code','=',code)])
+    if not product:
+      response = {"error":{"code":"10006", "message":"Product Not Found: %s" %(item.get("default_code"))}}
+      return response
+    ivals = {}
+    ivals['product_id'] = product.id
+    ivals['name'] = product.name
+    ivals['quantity'] = item.get("quantity")
+    ivals['price_unit'] = item.get("price_unit")
+    hvals['invoice_line_ids'].append((0,0,ivals))
+
+  invoice = self.env['account.move'].create(hvals)
+  if invoice.amount_total != invoice_header.get('total'):
+      response = {"error":{"code":"10007", "message":"Invoice Total are different %s &lt;&gt; %s " %(invoice.amount_total,
+                invoice_header.get("total")) }}
+      invoice.unlink()
+      return response
+
+
+  response = {"invoice_id":invoice.id}
+
+  return response
+
+json_data = request.get_json_data()
+
+if request.httprequest.method == "POST":
+  response = process_post(self, json_data)
+            </field>
+        </record>
+    </data>
+</odoo>

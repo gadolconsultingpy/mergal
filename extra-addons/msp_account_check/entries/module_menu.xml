@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+
+    <!-- Clientes / Pagos -->
+    <menuitem id="menu_finance_receivables_payments"
+              name="Checks"
+              sequence="300"
+              parent="account.menu_finance_receivables">
+
+        <menuitem id="account_check_third_menu_entry"
+                  name="Third Party Check"
+                  sequence="20"
+                  action="account_check_third_action"/>
+
+        <menuitem id="account_securities_deposit_menu_entry"
+                  name="Securities Deposit"
+                  sequence="30"
+                  action="account_securities_deposit_action"/>
+
+    </menuitem>
+
+    <!-- Proveedores / Pagos -->
+    <menuitem id="menu_finance_payables_payments"
+              name="Checks"
+              parent="account.menu_finance_payables"
+              sequence="300">
+
+        <menuitem id="account_check_own_check_menu_entry"
+                  name="Own Check"
+                  sequence="20"
+                  action="account_check_own_action"/>
+
+        <menuitem id="account_checkbock_menu_entry"
+                  name="Checkbook"
+                  sequence="30"
+                  action="account_checkbook_action"/>
+
+    </menuitem>
+
+    <menuitem id="account_checkbock_template_menu_entry"
+              name="Checkbook Template"
+              parent="account.account_banks_menu"
+              sequence="30"
+              action="account_checkbook_template_action"/>
+
+
+</odoo>

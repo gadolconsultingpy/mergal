@@ -1,0 +1,183 @@
+<odoo>
+    <data>
+        <!-- PETTY CASH DEFINITION -->
+        <record id="petty_cash_definition_system" model="ir.model.access">
+            <field name="name">Petty Cash Definition System</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_definition"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="petty_cash_definition_user" model="ir.model.access">
+            <field name="name">Petty Cash Definition User</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_definition"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="petty_cash_definition_supervisor" model="ir.model.access">
+            <field name="name">Petty Cash Definition Supervisor</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_definition"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_supervisor"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="petty_cash_definition_manager" model="ir.model.access">
+            <field name="name">Petty Cash Definition Manager</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_definition"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_manager"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- PETTY CASH CONCEPT -->
+        <record id="petty_cash_concept_system" model="ir.model.access">
+            <field name="name">Petty Cash Concept System</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_concept"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="petty_cash_concept_user" model="ir.model.access">
+            <field name="name">Petty Cash Concept User</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_concept"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="petty_cash_concept_supervisor" model="ir.model.access">
+            <field name="name">Petty Cash Concept Supervisor</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_concept"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_supervisor"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="petty_cash_concept_manager" model="ir.model.access">
+            <field name="name">Petty Cash Concept Manager</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_concept"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_manager"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- PETTY CASH SHEET -->
+        <record id="petty_cash_sheet_system" model="ir.model.access">
+            <field name="name">Petty Cash Sheet System</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_sheet"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="petty_cash_sheet_user" model="ir.model.access">
+            <field name="name">Petty Cash Sheet User</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_sheet"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="petty_cash_sheet_supervisor" model="ir.model.access">
+            <field name="name">Petty Cash Sheet Supervisor</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_sheet"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_supervisor"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="petty_cash_sheet_manager" model="ir.model.access">
+            <field name="name">Petty Cash Sheet Manager</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_sheet"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_manager"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- PETTY CASH SHEET LINE -->
+        <record id="petty_cash_sheet_line_system" model="ir.model.access">
+            <field name="name">Petty Cash Sheet Line System</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_sheet_line"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="petty_cash_sheet_line_user" model="ir.model.access">
+            <field name="name">Petty Cash Sheet Line User</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_sheet_line"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="petty_cash_sheet_line_supervisor" model="ir.model.access">
+            <field name="name">Petty Cash Sheet Line Supervisor</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_sheet_line"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_supervisor"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="petty_cash_sheet_line_manager" model="ir.model.access">
+            <field name="name">Petty Cash Sheet Line Manager</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_sheet_line"/>
+            <field name="group_id" ref="msp_petty_cash.group_treasury_manager"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- PETTY CASH SHEET CREATE INVOICE -->
+        <record id="petty_cash_sheet_create_invoice_user" model="ir.model.access">
+            <field name="name">Petty Cash Sheet Create Invoice User</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_sheet_create_invoice"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- PETTY CASH SHEET CREATE INVOICE  TAX-->
+        <record id="petty_cash_sheet_create_invoice_tax_user" model="ir.model.access">
+            <field name="name">Petty Cash Sheet Create Invoice Tax User</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_sheet_create_invoice_tax"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- PETTY CASH CREATE PAYMENT -->
+        <record id="petty_cash_create_payment_user" model="ir.model.access">
+            <field name="name">Petty Cash Create Payment User</field>
+            <field name="model_id" ref="msp_petty_cash.model_petty_cash_create_payment"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+
+    </data>
+</odoo>

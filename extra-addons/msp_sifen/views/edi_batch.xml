@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="edi_batch_list_view" model="ir.ui.view">
+            <field name="name">edi_batch.list</field>
+            <field name="model">edi.batch</field>
+            <field name="arch" type="xml">
+                <list string="EDI Batch" create="0" sample="1">
+                    <field name="name"/>
+                    <field name="create_date"/>
+                    <field name="move_type"/>
+                    <field name="expired" string="Exp." optional="hide"/>
+                    <field name="lines_qty"/>
+                    <field name="state"
+                           widget="badge"
+                           decoration-primary="state == 'open' "
+                           decoration-info="state == 'prepared' "
+                           decoration-success="state == 'sent' "/>
+                    <field name="sifen_state" string="SIFEN"
+                           widget="badge"
+                           decoration-muted="sifen_state == 'skip' "
+                           decoration-primary="sifen_state == 'pending' "
+                           decoration-warning="sifen_state == 'received' "
+                           decoration-success="sifen_state == 'finish' "
+                           decoration-danger="sifen_state == 'rejected' "/>
+                    <field name="sifen_batch_nr"/>
+                    <field name="sifen_state_code" string="Code" optional="hide"/>
+                    <field name="sifen_state_message" optional="hide"/>
+                    <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="edi_batch_form_view" model="ir.ui.view">
+            <field name="name">edi_batch.form</field>
+            <field name="model">edi.batch</field>
+            <field name="arch" type="xml">
+                <form string="EDI Batch">
+                    <header>
+                        <field name="state" invisible="1"/>
+                        <button name="action_prepared" type="object" string="Mark as Prepared" class="btn-primary"
+                                invisible="state != 'open' "
+                        />
+                        <button name="send" type="object" string="Send" class="btn-primary"
+                                invisible="sifen_state != 'pending' "/>
+                        <button name="consult" type="object" string="Consult" class="btn-primary"
+                                invisible="sifen_state != 'received'  or state != 'sent' "
+                        />
+                        <field name="state" widget="statusbar" clickable="0"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button"
+                                    name="open_edi_events"
+                                    icon="fa-files-o"
+                                    invisible="edi_event_qty == 0 "
+                                    type="object">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">
+                                        <field name="edi_event_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                                    </span>
+                                    <span class="o_stat_text">Events</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" placeholder="Batch Number"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="create_date"/>
+                                <field name="move_type"/>
+                                <field name="expired"/>
+                            </group>
+                            <group>
+                                <field name="company_id"/>
+                                <field name="sifen_batch_nr"/>
+                                <field name="lines_qty"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="invoice_page" string="Invoices"
+                                  invisible="move_type not in ['out_invoice','out_refund'] ">
+                                <field name="invoice_ids">
+                                    <list>
+                                        <field name="move_type"/>
+                                        <field name="name"/>
+                                        <field name="invoice_date"/>
+                                        <field name="partner_id"/>
+                                        <field name="amount_total"/>
+                                        <field name="sifen_state"
+                                               decoration-primary="sifen_state == 'pending' "
+                                               decoration-warning="sifen_state == 'rejected' "
+                                               decoration-success="sifen_state == 'approved' "
+                                               widget="badge"/>
+                                        <field name="sifen_state_code" optional="hide"/>
+                                        <field name="sifen_state_message" optional="hide"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page name="picking_page" string="Stock Pickings"
+                                  invisible="move_type != 'stock_picking' ">
+                                <field name="picking_ids">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="scheduled_date"/>
+                                        <field name="partner_id"/>
+                                        <field name="vehicle_id"/>
+                                        <field name="driver_id"/>
+                                        <field name="sifen_state"
+                                               decoration-primary="sifen_state == 'pending' "
+                                               decoration-warning="sifen_state == 'rejected' "
+                                               decoration-success="sifen_state == 'approved' "
+                                               string="SIFEN"
+                                               widget="badge"/>
+                                        <field name="sifen_state_code" optional="hide"/>
+                                        <field name="sifen_state_message" optional="hide"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page name="event_page" string="Events">
+                                <field name="edi_event_ids" nolabel="1">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="create_date"/>
+                                        <field name="type"/>
+                                        <field name="log_ids"/>
+                                        <field name="state" widget="badge"
+                                               decoration-primary="state == 'pending' "
+                                               decoration-warning="state == 'sent' "
+                                               decoration-success="state == 'finished' "
+                                        />
+                                        <button name="process" string="Process"
+                                                type="object" class="btn-primary"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page name="error_page" string="Error">
+                                <group>
+                                    <field name="last_process_error"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        <group>
+                            <group>
+                                <field name="sifen_state"/>
+                                <field name="sifen_state_code"/>
+                                <field name="sifen_state_message"/>
+                            </group>
+                            <group></group>
+                        </group>
+                    </sheet>
+                    <chatter reload_on_attachment="True"/>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="edi_batch_search" model="ir.ui.view">
+            <field name="name">edi.batch.search</field>
+            <field name="model">edi.batch</field>
+            <field name="arch" type="xml">
+                <search string="EDI Batch">
+                    <field name="name" string="Name"/>
+                    <field name="sifen_batch_nr" string="SIFEN Batch Nr."/>
+                    <field name="sifen_state_code" string="SIFEN State Code"/>
+                    <field name="sifen_state_message" string="SIFEN State Message"/>
+                    <group expand="1" string="Group By">
+                        <filter name="group_state" string="State" context="{'group_by':'state'}"/>
+                        <filter name="group_sifen_state" string="SIFEN State" context="{'group_by':'sifen_state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
+

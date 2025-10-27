@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="account_tax_application_type_form_view" model="ir.ui.view">
+            <field name="name">account.tax.type.form</field>
+            <field name="model">account.tax.application.type</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Tax Application Type">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" />
+                            <h1>
+                                <field name="name" placeholder="Name" />
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="code" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_tax_application_type_tree_view" model="ir.ui.view">
+            <field name="name">account.tax.type.list</field>
+            <field name="model">account.tax.application.type</field>
+            <field name="arch" type="xml">
+                <list string="Tax Application Type">
+                    <field name="name" />
+                    <field name="code" />
+                </list>
+            </field>
+        </record>
+
+    </data>
+</odoo>

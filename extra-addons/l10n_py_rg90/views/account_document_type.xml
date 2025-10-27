@@ -10,12 +10,12 @@
                 <list string="Account Document Type" sample="1" multi_edit="1" editable="bottom">
                     <field name="name"/>
                     <field name="code"/>
-                    <field name="purchases" widget="boolean_toggle" optional="hide"/>
-                    <field name="sales" widget="boolean_toggle" optional="hide"/>
+                    <field name="purchases" widget="boolean_toggle" optional="show"/>
+                    <field name="sales" widget="boolean_toggle" optional="show"/>
                     <field name="income" widget="boolean_toggle" optional="hide"/>
                     <field name="expenses" widget="boolean_toggle" optional="hide"/>
-                    <field name="tax_report" widget="boolean_toggle" optional="hide"/>
-                    <field name="stamped_control" widget="boolean_toggle" optional="hide"/>
+                    <field name="tax_report" widget="boolean_toggle" optional="show"/>
+                    <field name="stamped_control" widget="boolean_toggle" optional="show"/>
                 </list>
             </field>
         </record>

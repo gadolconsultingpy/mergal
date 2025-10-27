@@ -1,0 +1,278 @@
+<odoo>
+    <record id="view_account_check_third_tree" model="ir.ui.view">
+        <field name="name">account.check.third.tree</field>
+        <field name="model">account.check</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list string="Checks" sample="1"
+                  decoration-danger="accreditation_status == True and state == 'in-portfolio' "
+                  decoration-muted="state == 'replace' ">
+                <field name="name"/>
+                <field name="issue_date"/>
+                <field name="partner_id" optional="hide"/>
+                <field name="issuer_name"/>
+                <field name="type" optional="hide"/>
+                <field name="check_type" optional="hide"/>
+                <field name="number"/>
+                <field name="reference" optional="hide"/>
+                <field name="accreditation_date"/>
+                <field name="bank_id"/>
+                <field name="bank_account_id" optional="hide"/>
+                <field name="payment_method_line_id" optional="hide"/>
+                <field name="amount"/>
+                <field name="currency_id" optional="hide"/>
+                <field name="journal_id" optional="hide"/>
+                <field name="company_id" optional="hide" groups="base.group_multi_company"/>
+                <field name="accreditation_status" invisible="1"/>
+                <field name="accreditation_days" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'in-portfolio' "
+                       decoration-success="state == 'deposited' "
+                       decoration-primary="state == 'issued' "
+                       decoration-danger="state == 'rejected' "
+                />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_account_check_own_tree" model="ir.ui.view">
+        <field name="name">account.check.own.tree</field>
+        <field name="model">account.check</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list string="Checks" sample="1"
+                  decoration-danger="accreditation_status == True and state == 'in-portfolio' "
+                  decoration-muted="state == 'replace' ">
+                <field name="name"/>
+                <field name="issue_date"/>
+                <field name="partner_id" optional="hide"/>
+                <field name="payee"/>
+                <field name="type" optional="hide"/>
+                <field name="check_type" optional="hide"/>
+                <field name="number"/>
+                <field name="reference" optional="hide"/>
+                <field name="accreditation_date"/>
+                <field name="checkbook_id"/>
+                <field name="bank_id" optional="hide"/>
+                <field name="bank_account_id" optional="hide"/>
+                <field name="payment_method_line_id" optional="hide"/>
+                <field name="amount"/>
+                <field name="currency_id" optional="hide"/>
+                <field name="journal_id" optional="hide"/>
+                <field name="accreditation_status" invisible="1"/>
+                <field name="accreditation_days" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'in-portfolio' "
+                       decoration-success="state == 'deposited' "
+                       decoration-primary="state == 'issued' "
+                       decoration-danger="state == 'rejected' "
+                />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_account_check_form" model="ir.ui.view">
+        <field name="name">Account Check</field>
+        <field name="model">account.check</field>
+        <field name="priority">16</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Checks">
+                <header>
+                    <field name="state" invisible="1"/>
+                    <button name="action_draft"
+                            string="Reset to Draft"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state != 'in-portfolio'"/>
+
+                    <button name="action_portfolio"
+                            string="Input to Portfolio"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state != 'draft'"/>
+
+                    <button name="action_reject"
+                            string="Reject"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state != 'deposited'"/>
+
+                    <button name="action_return_to_portfolio"
+                            string="Return to Portfolio"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state != 'rejected'"/>
+
+                    <field name="state_own_ro"
+                           widget="statusbar"
+                           statusbar_visible="draft,in-portfolio,issued,credited,rejected"
+                           invisible="type == 'third'"/>
+                    <field name="state_ro"
+                           widget="statusbar"
+                           statusbar_visible="draft,in-portfolio,deposited,rejected"
+                           invisible="type == 'own'"/>
+
+                    <!-- button name="set_number"
+                            type="object"
+                            string="Set Number"
+                            groups="base.group_no_one"
+                            class="btn-primary"/-->
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button"
+                                name="open_deposits"
+                                icon="fa-bars"
+                                type="object">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="deposits_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                                </span>
+                                <span class="o_stat_text">Deposits</span>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button"
+                                name="open_account_moves"
+                                icon="fa-book"
+                                type="object">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="move_qty" widget="statinfo" nolabel="1" class="mr4"/>
+                                </span>
+                                <span class="o_stat_text">Account Moves</span>
+                            </div>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon"
+                            title="Cancelled"
+                            bg_color="bg-danger"
+                            invisible="state != 'cancel'"/>
+                    <widget name="web_ribbon"
+                            title="Rejected"
+                            bg_color="bg-warning"
+                            invisible="state != 'rejected'"/>
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1" force_save="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="issue_date"/>
+                            <label for="accreditation_date"/>
+                            <div class="o_row">
+                                <field name="accreditation_date"/>
+                                (
+                                <field name="accreditation_days"/>
+                                days)
+                            </div>
+                            <field name="number"/>
+                        </group>
+                        <group>
+                            <field name="type"/>
+                            <field name="check_type"/>
+                            <field name="endorsed"/>
+                            <field name="non_negotiable"/>
+                            <field name="bearer_check"
+                                   widget="boolean_toggle"
+                                   invisible="type != 'own'"/>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="bank_page" string="Bank Info">
+                            <group>
+                                <group>
+                                    <field name="partner_id"
+                                           readonly="type == 'own'"
+                                           force_save="1"/>
+
+                                    <field name="issuer_name"
+                                           readonly="type == 'own'"
+                                           force_save="1"/>
+
+                                    <field name="payee"
+                                           force_save="1"
+                                           required="type == 'own' and not bearer_check"/>
+
+                                    <label for="amount"/>
+                                    <div class="o_row">
+                                        <field name="amount"/>
+                                        <field name="currency_id"/>
+                                    </div>
+                                </group>
+                                <group>
+                                    <field name="checkbook_id" invisible="type != 'own'"/>
+                                    <field name="bank_id" readonly="type == 'own'" force_save="1"/>
+                                    <field name="bank_account_id" readonly="type == 'own'" force_save="1"/>
+                                    <field name="journal_id" readonly="state != 'draft'" required="1"/>
+                                    <field name="payment_method_line_id" readonly="state != 'draft'"/>
+                                    <field name="reference"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="other_info" string="Other Info">
+                            <group>
+                                <field name="company_id" readonly="1" force_save="1"/>
+                                <field name="rejected_before" readonly="1" force_save="1"/>
+                                <field name="state" groups="base.group_no_one"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter reload_on_attachment="True"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_check_search" model="ir.ui.view">
+        <field name="name">account.check.search</field>
+        <field name="model">account.check</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="number"/>
+                <field name="partner_id"/>
+                <field name="amount"/>
+                <field name="accreditation_date"/>
+                <separator/>
+                <filter name="filter_accreditation_date" string="Accreditation Date" date="accreditation_date"/>
+                <separator/>
+                <filter name="filter_portfolio" string="In Portfolio" domain="[('state','=','in-portfolio')]"/>
+                <filter name="filter_deposited" string="Deposited" domain="[('state','=','deposited')]"/>
+                <filter name="filter_rejected" string="Rejected" domain="[('state','=','rejected')]"/>
+                <filter name="filter_replaced" string="Replaced" domain="[('state','=','replace')]"/>
+                <separator/>
+                <filter name="filter_check" string="Check" domain="[('check_type','=','check')]"/>
+                <filter name="filter_posdated_check" string="Postdated Check"
+                        domain="[('check_type','=','post-dated')]"/>
+
+                <group>
+                    <filter name="group_accreditation_date" string="Accreditation Date" context="{'group_by':'accreditation_date'}"/>
+                    <filter name="group_state" string="State" context="{'group_by':'state'}"/>
+                    <filter name="group_bank" string="Bank" context="{'group_by':'bank_id'}"/>
+                    <!--                    <filter name="group_branch" string="Branch" context="{'group_by':'branch_id'}"/>-->
+                    <filter name="group_check_type" string="Check Type" context="{'group_by':'check_type'}"/>
+                    <filter name="group_checkbook" string="Checkbook" context="{'group_by':'checkbook_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="account_check_pivot" model="ir.ui.view">
+        <field name="name">account.check.pivot</field>
+        <field name="model">account.check</field>
+        <field name="type">pivot</field>
+        <field name="arch" type="xml">
+            <pivot string="Checks">
+                <field name="state" type="row"/>
+                <!--                <field name="branch_id" type="row"/>-->
+                <field name="accreditation_date" interval="month" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="edi_dashboard"
+                  name="Dashboard"
+                  parent="l10n_py.menu_py_localization_app"
+                  groups="l10n_py_edi.group_l10n_py_edi_user"
+                  action="action_edi_dashboard"
+                  sequence="1"/>
+
+        <menuitem id="menu_edi_batch_and_event"
+                  name="Batch and Event"
+                  parent="l10n_py.menu_py_transactions"
+                  sequence="20">
+
+            <menuitem id="menu_edi_event"
+                      name="EDI Event"
+                      groups="l10n_py_edi.group_l10n_py_edi_supervisor"
+                      action="msp_sifen.action_edi_event"
+                      sequence="20"/>
+
+            <menuitem id="menu_edi_batch"
+                      name="EDI Batch"
+                      groups="l10n_py_edi.group_l10n_py_edi_user"
+                      action="action_edi_batch"
+                      sequence="30"/>
+
+        </menuitem>
+
+        <menuitem id="menu_edi_batch_and_event"
+                  name="Batch and Event"
+                  parent="l10n_py.menu_py_transactions"
+                  sequence="10">
+
+            <menuitem id="menu_edi_event"
+                      name="EDI Event"
+                      action="msp_sifen.action_edi_event"
+                      sequence="20"/>
+
+            <menuitem id="menu_edi_batch"
+                      name="EDI Batch"
+                      action="action_edi_batch"
+                      sequence="30"/>
+
+        </menuitem>
+
+        <menuitem id="menu_sifen"
+                  name="SIFEN"
+                  groups="l10n_py_edi.group_l10n_py_edi_manager"
+                  sequence="50"
+                  parent="msp_service.menu_msp_service">
+
+            <menuitem id="menu_edi_procedure"
+                      name="EDI Procedure"
+                      action="msp_sifen.action_edi_procedure"
+                      sequence="10"/>
+
+            <menuitem id="menu_edi_tag"
+                      name="EDI Tag"
+                      action="msp_sifen.action_edi_tag"
+                      sequence="15"/>
+
+            <menuitem id="menu_edi_template"
+                      name="EDI Template"
+                      action="action_edi_template"
+                      sequence="40"/>
+
+            <menuitem id="menu_edi_scheduled_actions"
+                      name="EDI Scheduled Actions"
+                      action="action_scheduled_actions"
+                      sequence="50"/>
+
+            <menuitem id="menu_edi_test"
+                      name="EDI Test"
+                      action="action_edi_test"
+                      sequence="10"/>
+
+        </menuitem>
+
+        <menuitem id="menu_ir_sequence"
+                  name="Sequences"
+                  parent="l10n_py.menu_py_configuration_group"
+                  action="base.ir_sequence_form"/>
+
+        <menuitem id="menu_msp_res_branch"
+                  name="Establishment"
+                  parent="l10n_py.menu_l10n_py_tables_group"
+                  action="msp_branch.res_branch_action"/>
+
+
+
+
+    </data>
+</odoo>

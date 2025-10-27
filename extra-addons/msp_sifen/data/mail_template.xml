@@ -1,0 +1,22 @@
+<odoo>
+    <data noupdate="1">
+        <record id="edi_mail_template" model="mail.template">
+            <field name="name">Electronic Document</field>
+            <field name="subject">Comprobante Electrónico {{ object.name }}</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="body_html">
+                <![CDATA[<p style="margin:0px 0 12px 0;box-sizing:border-box;">
+<strong style="box-sizing:border-box;font-weight:500;">Hola {{ object.partner_id.name }}</strong>
+</p>
+<p style="margin:0px 0 12px 0;box-sizing:border-box;">
+Adjuntamos el PDF de su Comprobante Electrónico {{ object.name }} de fecha {{ object.invoice_date.strftime('%d/%m/%Y') }}</p>
+<p style="margin:0px 0 12px 0;box-sizing:border-box;">
+Le recordamos que para cualquier cambio de mercadería debe hacer referencia o presentar la misma.
+</p>
+<p style="margin:0px 0 12px 0;box-sizing:border-box;">
+Lo esperamos pronto,
+</p>]]>
+            </field>
+        </record>
+    </data>
+</odoo>

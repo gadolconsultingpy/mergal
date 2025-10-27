@@ -1,0 +1,49 @@
+<odoo>
+    <data >
+        <record id='l10n_py_edi.edi_document_type_1' model='edi.document.type' >
+            <field name='code'>1</field>
+            <field name='name'>Factura electrónica</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_document_type_2' model='edi.document.type' >
+            <field name='code'>2</field>
+            <field name='name'>Factura electrónica de Exportación</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_document_type_3' model='edi.document.type' >
+            <field name='code'>3</field>
+            <field name='name'>Factura electrónica de Importación</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_document_type_4' model='edi.document.type' >
+            <field name='code'>4</field>
+            <field name='name'>Autofactura Electrónica</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_document_type_5' model='edi.document.type' >
+            <field name='code'>5</field>
+            <field name='name'>Nota de crédito electrónica</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_document_type_6' model='edi.document.type' >
+            <field name='code'>6</field>
+            <field name='name'>Nota de débito electrónica</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_document_type_7' model='edi.document.type' >
+            <field name='code'>7</field>
+            <field name='name'>Nota de remisión electrónica</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_document_type_8' model='edi.document.type'>
+            <field name='code'>8</field>
+            <field name='name'>Comprobante de retención electrónico</field>
+        </record>
+
+        <record id='l10n_py_edi.edi_document_type_x' model='edi.document.type'>
+            <field name='code'>X</field>
+            <field name='name'>Otros</field>
+        </record>
+
+    </data>
+</odoo>

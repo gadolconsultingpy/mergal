@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record id="db_ws_sync_partner" model="service.controller.procedure">
+            <field name="name">Contactos</field>
+            <field name="route">/db/ws/sync/partner</field>
+            <field name="procedure">response = {}
+response = {}
+response = {}
+response["partner"] = []
+
+request_json = request.get_json_data()
+partner_list = request_json.get("partner",[])
+
+for partner_data in partner_list:
+    vat = partner_data.get('vat')
+    partner = self.env['res.partner'].search([('vat', '=', vat), ('parent_id', '=', False)], limit=1)
+    if not partner:
+        pvals = {}
+        pvals['name'] = partner_data.get('name')
+        pvals['vat'] = partner_data.get('vat')
+        pvals['ref'] = partner_data.get('code', "")
+        pvals['phone'] = partner_data.get('phone', "")
+        pvals['email'] = partner_data.get('email', "")
+        pvals['street_name'] = partner_data.get('address_street')
+        pvals['street_number'] = partner_data.get('address_number')
+        partner = self.env['res.partner'].create(pvals)
+        if request.httprequest.method == "POST":
+          vals = {}
+          vals['code'] = partner.ref
+          vals['vat'] = partner.vat
+          vals['id'] = partner.id
+          vals['status'] = "new"
+        elif request.httprequest.method == "GET":
+          vals = {}
+          vals['code'] = ""
+          vals['vat'] = vat
+          vals['id'] = ""
+          vals['status'] = "not found"
+        response["partner"].append(vals)
+    else:
+        vals = {}
+        vals['code'] = partner.ref or ""
+        vals['name'] = partner.name
+        vals['street_name'] = partner.street_name
+        vals['street_number'] = partner.street_number
+        vals['phone'] = partner.phone
+        vals['email'] = partner.email
+        vals['vat'] = partner.vat
+        vals['id'] = partner.id
+        vals['status'] = "exists"
+        response["partner"].append(vals)
+            </field>
+        </record>
+    </data>
+</odoo>

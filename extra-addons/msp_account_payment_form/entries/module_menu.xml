@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_account_payment_form"
+                  name="Payment Form"
+                  parent="l10n_py.menu_py_configuration">
+
+            <menuitem id="account_payment_form_type_menu_entry"
+                      name="Payment Form Type"
+                      sequence="60"
+                      action="account_payment_form_type_action"/>
+
+            <menuitem id="account_payment_form_menu_entry"
+                      name="Payment Form"
+                      sequence="8"
+                      action="account_payment_form_action"/>
+
+            <menuitem id="card_issuer_menu_entry"
+                      name="Card Issuer"
+                      sequence="9"
+                      action="card_issuer_action"/>
+
+            <menuitem id="card_process_form_menu_entry"
+                      name="Card Process Form"
+                      sequence="10"
+                      action="card_process_form_action"/>
+        </menuitem>
+
+        <menuitem id="account_payment_form_account_menu_entry"
+                  name="Payment Form"
+                  sequence="8"
+                  parent="account.account_account_menu"
+                  action="account_payment_form_action"/>
+
+
+    </data>
+</odoo>

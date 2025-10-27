@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- VISTA TREE PARA edi.transport.type -->
+    <record id="view_edi_transport_type_tree" model="ir.ui.view">
+        <field name="name">edi.transport.type.tree</field>
+        <field name="model">edi.transport.type</field>
+        <field name="arch" type="xml">
+            <list string="Transport Types">
+                <field name="name"/>
+                <field name="code"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- VISTA FORM PARA edi.transport.type -->
+    <record id="view_edi_transport_type_form" model="ir.ui.view">
+        <field name="name">edi.transport.type.form</field>
+        <field name="model">edi.transport.type</field>
+        <field name="arch" type="xml">
+            <form string="Transport Type">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="code"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,100 @@
+<odoo>
+    <data>
+        <!-- ACCOUNT PAYMENT FORM TYPE -->
+        <record id="account_payment_form_type_admin" model="ir.model.access">
+            <field name="name">Payment Form Type Admin</field>
+            <field name="model_id" ref="msp_account_payment_form.model_account_payment_form_type"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="account_payment_form_type_user" model="ir.model.access">
+            <field name="name">Payment Form Type User</field>
+            <field name="model_id" ref="msp_account_payment_form.model_account_payment_form_type"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- ACCOUNT PAYMENT FORM -->
+        <record id="account_payment_form_admin" model="ir.model.access">
+            <field name="name">Payment Form Admin</field>
+            <field name="model_id" ref="msp_account_payment_form.model_account_payment_form"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="account_payment_form_user" model="ir.model.access">
+            <field name="name">Payment Form User</field>
+            <field name="model_id" ref="msp_account_payment_form.model_account_payment_form"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- ACCOUNT MOVE PAYMENT FORM -->
+        <record id="account_move_payment_form_admin" model="ir.model.access">
+            <field name="name">Move Payment Form Admin</field>
+            <field name="model_id" ref="msp_account_payment_form.model_account_move_payment_form"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="account_move_payment_form_user" model="ir.model.access">
+            <field name="name">Move Payment Form User</field>
+            <field name="model_id" ref="msp_account_payment_form.model_account_move_payment_form"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- CARD ISSUER -->
+        <record id="card_issuer_admin" model="ir.model.access">
+            <field name="name">Card Issuer Admin</field>
+            <field name="model_id" ref="msp_account_payment_form.model_card_issuer"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="card_issuer_user" model="ir.model.access">
+            <field name="name">Card Issuer User</field>
+            <field name="model_id" ref="msp_account_payment_form.model_card_issuer"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- CARD PROCESS FORM -->
+        <record id="card_process_form_admin" model="ir.model.access">
+            <field name="name">Card Process Form Admin</field>
+            <field name="model_id" ref="msp_account_payment_form.model_card_process_form"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="card_issuer_form_user" model="ir.model.access">
+            <field name="name">Card Issuer Form User</field>
+            <field name="model_id" ref="msp_account_payment_form.model_card_process_form"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,340 @@
+<odoo>
+    <data>
+        <!-- ACCOUNT TAX APPLICATION TYPE -->
+        <record id="account_tax_application_type_admin" model="ir.model.access">
+            <field name="name">Tax Application Type Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_tax_application_type"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <record id="account_tax_application_type_user" model="ir.model.access">
+            <field name="name">Tax Application Type User</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_tax_application_type"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- ACCOUNT TAX TYPE -->
+        <record id="account_tax_type_admin" model="ir.model.access">
+            <field name="name">Tax Type Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_tax_type"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="account_tax_type_user" model="ir.model.access">
+            <field name="name">Tax Type User</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_tax_type"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- ACCOUNT TAX EXCISE CATEGORY -->
+        <record id="account_tax_excise_category_admin" model="ir.model.access">
+            <field name="name">Account Tax Excise Category Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_tax_excise_category"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="account_tax_excise_category_user" model="ir.model.access">
+            <field name="name">Account Tax Excise Category User</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_tax_excise_category"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI DOCUMENT TYPE -->
+        <record id="edi_document_type_admin" model="ir.model.access">
+            <field name="name">Electronic Document Type Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_document_type"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_document_type_user" model="ir.model.access">
+            <field name="name">Electronic Document Type User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_document_type"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI TRANSACTION TYPE -->
+        <record id="edi_transaction_type_admin" model="ir.model.access">
+            <field name="name">Electronic Transaction Type Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_transaction_type"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_transaction_type_user" model="ir.model.access">
+            <field name="name">Electronic Document Type User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_transaction_type"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI REVERSION DOCUMENT TYPE -->
+        <record id="edi_reversion_document_type_admin" model="ir.model.access">
+            <field name="name">Reversion Document Type Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_reversion_document_type"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_reversion_document_type_user" model="ir.model.access">
+            <field name="name">Reversion Document Type User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_reversion_document_type"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI PRESENCE -->
+        <record id="edi_presence_admin" model="ir.model.access">
+            <field name="name">Presence Indicator Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_presence"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_presence_user" model="ir.model.access">
+            <field name="name">Presence Indicator User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_presence"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI ISSUE REASON -->
+        <record id="edi_issue_reason_admin" model="ir.model.access">
+            <field name="name">Issue Reason Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_issue_reason"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_issue_reason_user" model="ir.model.access">
+            <field name="name">Issue Reason User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_issue_reason"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI ISSUE REASON PICKING -->
+        <record id="edi_issue_reason_picking_admin" model="ir.model.access">
+            <field name="name">Picking Issue Reason Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_issue_reason_picking"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_issue_reason_picking_user" model="ir.model.access">
+            <field name="name">Picking Issue Reason User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_issue_reason_picking"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI PICKING ISSUE RESPONSIBLE -->
+        <record id="edi_issue_responsible_admin" model="ir.model.access">
+            <field name="name">Picking Issue Responsible Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_issue_responsible"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_issue_responsible_user" model="ir.model.access">
+            <field name="name">Picking Issue Responsible User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_issue_responsible"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI CERTIFICATE -->
+        <record id="edi_certificate_admin" model="ir.model.access">
+            <field name="name">Certificate Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_certificate"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_certificate_user" model="ir.model.access">
+            <field name="name">Certificate User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_certificate"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- ACCOUNT MOVE CANCEL WIZARD -->
+        <record id="account_move_cancel_wizard_user" model="ir.model.access">
+            <field name="name">Invoice Cancellation Wizard User</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_move_cancel_wizard"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <!-- EDI DOCUMENT CANCEL -->
+        <record id="edi_document_cancel_system" model="ir.model.access">
+            <field name="name">EDI Document Cancellation System</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_document_cancel"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_document_cancel_user" model="ir.model.access">
+            <field name="name">EDI Document Cancellation User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_document_cancel"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI DOCUMENT INVALID -->
+        <record id="edi_document_invalid_system" model="ir.model.access">
+            <field name="name">EDI Document Invalid System</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_document_invalid"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_document_invalid_user" model="ir.model.access">
+            <field name="name">EDI Document Invalid User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_document_invalid"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI DOCUMENT NOMINATION -->
+        <record id="edi_document_nomination_system" model="ir.model.access">
+            <field name="name">EDI Document Nomination System</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_document_nomination"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="edi_document_nomination_user" model="ir.model.access">
+            <field name="name">EDI Document Nomination User</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_document_nomination"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- ACCOUNT MOVE REVERTED -->
+        <record id="account_move_reverted_system" model="ir.model.access">
+            <field name="name">Account Move Reverted User</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_move_reverted"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="account_move_reverted_user" model="ir.model.access">
+            <field name="name">Account Move Reverted User</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_move_reverted"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI TRANSPORT TYPE -->
+        <record id="edi_transport_type_admin" model="ir.model.access">
+            <field name="name">Transport Type Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_transport_type"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI TRANSPORT MODE -->
+        <record id="edi_transport_mode_admin" model="ir.model.access">
+            <field name="name">Transport Mode Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_edi_transport_mode"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+        <!-- EDI ISSUANCE POINT -->
+        <record id="account_journal_issue_point_admin" model="ir.model.access">
+            <field name="name">Account Journal Issuance Point Admin</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_journal_issue_point"/>
+            <field name="group_id" ref="base.group_system"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+        <record id="account_journal_issue_point_user" model="ir.model.access">
+            <field name="name">Account Journal Issuance Point User</field>
+            <field name="model_id" ref="l10n_py_edi.model_account_journal_issue_point"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">0</field>
+            <field name="perm_create">0</field>
+            <field name="perm_unlink">0</field>
+        </record>
+
+
+    </data>
+</odoo>

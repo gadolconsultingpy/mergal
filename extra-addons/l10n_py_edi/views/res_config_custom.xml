@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_custom_form" model="ir.ui.view">
+            <field name="name">>res.config.custom.form</field>
+            <field name="model">res.config.custom</field>
+            <field name="inherit_id" ref="l10n_py_base.res_config_custom_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="edi_page" string="Paraguay EDI">
+                        <group>
+                            <group name="default_group" string="Default Values">
+                                <field name="default_edi_transaction_type"/>
+                                <field name="default_edi_tax_type"/>
+                                <field name="default_edi_presence_id"/>
+                            </group>
+                            <group name="invalid_document_group" string="Invalid Document">
+                                <field name="invalid_document_partner_id"/>
+                                <field name="invalid_document_payment_term_id"/>
+                                <field name="unnamed_partner_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group name="group_left" string="Header and Text" colspan="4">
+                                <field name="invoice_logo_text"/>
+                            </group>
+                            <group colspan="4">
+                                <field name="invoice_header"/>
+                            </group>
+                            <group colspan="4">
+                                <field name="invoice_footer"/>
+                            </group>
+                            <group colspan="4">
+                                <field name="invoice_footer_edi_text"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page name="edi_email_page" string="Email">
+                        <group colspan="4">
+                            <field name="edi_email_template_id"/>
+                            <field name="edi_email_sender"/>
+                            <field name="edi_report_action" domain="[('model_id.model','=','account.move')]"/>
+                            <field name="edi_start_date"/>
+                            <field name="edi_email_to_partner" widget="boolean_toggle"/>
+                        </group>
+                    </page>
+                    <page name="edi_taxes_page" string="Taxes">
+                        <group name="group_right" string="Sales Taxes">
+                            <field name="tax1_id" domain="[('type_tax_use','=','sale')]"/>
+                            <field name="tax2_id" domain="[('type_tax_use','=','sale')]"/>
+                            <field name="tax3_id" domain="[('type_tax_use','=','sale')]"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

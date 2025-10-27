@@ -1,0 +1,1421 @@
+"id","sequence","name","comment","company_id/id","procedure"
+"__export__.edi_procedure_73_9dd74f4e","0","sifen.stock.picking.check","Validaciones al Confirmar Stock Picking","base.main_company","
+from odoo.exceptions import UserError
+
+if record.sequence_id:
+  _logger.info(""Checking: %s"" %(record.name))
+  # Contacto Entrega
+  if not record.partner_id.state_id:
+    raise UserError(""Falta Departamento en Contacto de Entrega: %s"" %(record.name))
+  if not record.partner_id.location_id:
+    raise UserError(""Falta Ciudad en Contacto de Entrega: %s"" %(record.name))
+  # Vehiculo
+  if not record.vehicle_id:
+    raise UserError(""Falta Datos del Vehiculo: %s"" %(record.name))
+  # Chofer
+  if not record.driver_id:
+    raise UserError(""Falta Datos del Chofer: %s"" %(record.name))
+  if not record.driver_id.state_id:
+    raise UserError(""Falta Departamento en Dirección del Chofer: %s"" %(record.name))
+"
+"__export__.edi_procedure_74_2b3dc2c0","0","sifen.account.move.check","Validaciones al Confirmar o Enviar Facturas","base.main_company","
+from odoo.exceptions import UserError
+
+if record.move_type in ['out_refund','out_invoice']:
+  if not record.partner_id.street_number:
+    raise UserError(""Falta Nro. de Casa en la Dirección del Cliente"")
+  if record.partner_id.nature == ""1"" and not record.partner_id.l10n_latam_identification_type_id.is_vat:
+    raise UserError(""Para Contribuyentes el Tipo de documento debe ser RUC"")
+  if record.partner_id.nature == ""2"" and record.partner_id.l10n_latam_identification_type_id.is_vat:
+    raise UserError(""Para No Contribuyentes el Tipo de documento no puede ser RUC"")
+"
+"__export__.edi_procedure_35_9c358646","0","sifen.stock.picking.prepare","OK. Crea un edi.event y preparando el contenido del DE Stock Picking","base.main_company","import hashlib
+from odoo import fields
+from lxml import etree
+import re
+import zipfile
+import base64
+import datetime
+import requests
+import xmltodict
+import json
+from collections import OrderedDict
+
+certificate = self.env['edi.certificate'].search([], limit=1)
+
+vals = {}
+vals['move'] = record
+vals['signature_datetime'] = fields.Datetime.context_timestamp(record, datetime.datetime.now()).strftime(""%Y-%m-%dT%H:%M:%S"")
+
+invoice_time = datetime.time(hour=record.create_date.hour, minute=record.create_date.minute, second=record.create_date.second )
+invoice_datetime = datetime.datetime.combine(record.invoice_date, invoice_time)
+
+move_invoice_date = invoice_datetime.strftime(""%Y-%m-%dT%H:%M:%S"")
+vals['move_invoice_date'] = move_invoice_date
+
+rde = self.env['edi.template']._render('rDE', **vals)
+
+rde_signed = certificate.sign_content(rde, reference_uri=record.control_code, id_attribute=""Id"")
+
+pattern = r'<DigestValue>(.*?)</DigestValue>'
+digest_value = re.findall(pattern, rde_signed)[0]
+digest_value = ''.join([hex(ord(c))[2:] for c in digest_value])
+
+move_invoice_date_hex = ''.join([hex(ord(c))[2:] for c in move_invoice_date])
+
+qr_data = ""nVersion=%s"" %(150)
+qr_data += ""&Id=%s"" %(record.control_code)
+qr_data += ""&dFeEmiDE=%s"" %(move_invoice_date_hex)
+if record.partner_id.l10n_latam_identification_type_id.is_vat :
+  qr_data += ""&dRucRec=%s"" %(record.partner_id.vat.split(""-"")[0])
+else:
+  if record.partner_id.l10n_latam_identification_type_id.edi_code == '5':
+    qr_data += ""&dNumIDRec=0"" 
+  else:
+    qr_data += ""&dNumIDRec=%s"" %(record.partner_id.vat)
+qr_data += ""&dTotGralOpe=%.8f"" %(0)
+qr_data += ""&dTotIVA=%.8f"" %(0)
+qr_data += ""&cItems=%s"" %(len(record.move_line_ids_without_package))
+qr_data += ""&DigestValue=%s"" %(digest_value)
+qr_data += ""&IdCSC=%s"" %(""0001"")
+qr_data_secret = qr_data + ""%s"" %(record.company_id.security_code_1) 
+qr_hash = hashlib.sha256(qr_data_secret.encode())
+qr_data += ""&cHashQR=%s"" %(qr_hash.hexdigest()) 
+qr_data = qr_data.replace(""&"",""&amp;"")
+if self.company_id.sifen_environment == ""0"":
+  qr_link = ""https://ekuatia.set.gov.py/consultas-test/qr?%s"" %(qr_data)
+else:
+  qr_link = ""https://ekuatia.set.gov.py/consultas/qr?%s"" %(qr_data)
+
+vals[""qr_link""] = qr_link
+record.write({'qr_link':qr_link.replace('&amp;','&')})
+
+gcamfufd = self.env['edi.template']._render(""gCamFuFD"", **vals)
+
+rde_signed = rde_signed.replace(""</rDE>"", ""%s</rDE>"" %(gcamfufd))
+
+envelope_content = rde_signed
+sequence = self.env['ir.sequence'].search([('code', '=', 'SoapEnvelope')])
+vals = {}
+vals[""envelope_sequence""] = int(sequence.next_by_id())
+vals[""envelope_content""] = envelope_content
+
+if self.company_id.sifen_environment == ""0"":
+  url = ""https://sifen-test.set.gov.py/de/ws/sync/recibe.wsdl""
+else:
+  url = ""https://sifen.set.gov.py/de/ws/sync/recibe.wsdl""
+soap_method = '""#%s""' %(""SiRecepDE"")
+
+envelope = self.env['edi.template']._render(""Envelope_rEnviDe"", **vals)
+
+headers = {}
+headers['Content-Type'] = ""application/soap+xml""
+headers['SOAPAction'] = soap_method
+
+log_data = {}
+log_data[""method""] = soap_method
+log_data[""path""] = url
+log_data[""request""] = envelope
+log_data[""type""] = 'outbound'
+log_data[""tag""] = self.name
+log_data[""record""] = record
+
+cert_path = self.env['edi.certificate'].prepare_cert_file(record.company_id.id)
+
+evals = {}
+evals['url'] = url
+evals['method'] = ""POST""
+evals['headers'] = json.dumps(headers, indent=4)
+evals['soap_method'] = soap_method
+evals[""type""] = 'de'
+evals[""company_id""] = record.company_id.id
+evals[""procedure_id""] = self.id
+evals[""res_model""] = record._name
+evals[""res_id""] = record.id
+evals[""res_name""] = record.name
+# evals[""request""] = envelope
+evals[""request_content""] = base64.b64encode(envelope.encode())
+evals[""request_filename""] = ""%s.xml"" %(record.control_code)
+
+edi_event = self.env['edi.event'].create(evals)
+record.write({'sifen_state':'queue'})
+"
+"__export__.edi_procedure_17_b623723a","0","sifen.account.move.prepare","OK. Crea un edi.event y preparando el contenido del DE","base.main_company","import hashlib
+from odoo import fields
+from lxml import etree
+import re
+import zipfile
+import base64
+import datetime
+import requests
+import xmltodict
+import json
+from collections import OrderedDict
+
+certificate = self.env['edi.certificate'].search([], limit=1)
+
+vals = {}
+vals['move'] = record
+vals['signature_datetime'] = fields.Datetime.context_timestamp(record, datetime.datetime.now()).strftime(""%Y-%m-%dT%H:%M:%S"")
+
+invoice_time = datetime.time(hour=record.create_date.hour, minute=record.create_date.minute, second=record.create_date.second )
+invoice_datetime = datetime.datetime.combine(record.invoice_date, invoice_time)
+invoice_datetime = fields.Datetime.context_timestamp(record, invoice_datetime)
+
+move_invoice_date = invoice_datetime.strftime(""%Y-%m-%dT%H:%M:%S"")
+vals['move_invoice_date'] = move_invoice_date
+
+rde = self.env['edi.template']._render('rDE', **vals)
+
+rde_signed = certificate.sign_content(rde, reference_uri=record.control_code, id_attribute=""Id"")
+
+pattern = r'<DigestValue>(.*?)</DigestValue>'
+digest_value = re.findall(pattern, rde_signed)[0]
+digest_value = ''.join([hex(ord(c))[2:] for c in digest_value])
+
+move_invoice_date_hex = ''.join([hex(ord(c))[2:] for c in move_invoice_date])
+
+qr_data = ""nVersion=%s"" %(150)
+qr_data += ""&Id=%s"" %(record.control_code)
+qr_data += ""&dFeEmiDE=%s"" %(move_invoice_date_hex)
+if record.partner_id.l10n_latam_identification_type_id.is_vat :
+  qr_data += ""&dRucRec=%s"" %(record.partner_id.vat.split(""-"")[0])
+else:
+  if record.partner_id.l10n_latam_identification_type_id.edi_code == '5':
+    qr_data += ""&dNumIDRec=0"" 
+  else:
+    qr_data += ""&dNumIDRec=%s"" %(record.partner_id.vat)
+qr_data += ""&dTotGralOpe=%.8f"" %(record.amount_total)
+qr_data += ""&dTotIVA=%.8f"" %(record.amount_tax)
+qr_data += ""&cItems=%s"" %(len(record.invoice_line_ids))
+qr_data += ""&DigestValue=%s"" %(digest_value)
+qr_data += ""&IdCSC=%s"" %(""0001"")
+qr_data_secret = qr_data + ""%s"" %(record.company_id.security_code_1) 
+qr_hash = hashlib.sha256(qr_data_secret.encode())
+qr_data += ""&cHashQR=%s"" %(qr_hash.hexdigest()) 
+qr_data = qr_data.replace(""&"",""&amp;"")
+if self.company_id.sifen_environment == ""0"":
+  qr_link = ""https://ekuatia.set.gov.py/consultas-test/qr?%s"" %(qr_data)
+else:
+  qr_link = ""https://ekuatia.set.gov.py/consultas/qr?%s"" %(qr_data)
+
+vals[""qr_link""] = qr_link
+record.write({'qr_link':qr_link.replace('&amp;','&')})
+
+gcamfufd = self.env['edi.template']._render(""gCamFuFD"", **vals)
+
+rde_signed = rde_signed.replace(""</rDE>"", ""%s</rDE>"" %(gcamfufd))
+
+envelope_content = rde_signed
+sequence = self.env['ir.sequence'].search([('code', '=', 'SoapEnvelope')])
+vals = {}
+vals[""envelope_sequence""] = int(sequence.next_by_id())
+vals[""envelope_content""] = envelope_content
+# vals[""xml_version""] = '<?xml version=""1.0"" encoding=""UTF-8""?>'
+
+if self.company_id.sifen_environment == ""0"":
+  url = ""https://sifen-test.set.gov.py/de/ws/sync/recibe.wsdl""
+else:
+  url = ""https://sifen.set.gov.py/de/ws/sync/recibe.wsdl""
+soap_method = '""#%s""' %(""SiRecepDE"")
+
+envelope = self.env['edi.template']._render(""Envelope_rEnviDe"", **vals)
+
+headers = {}
+headers['Content-Type'] = ""application/soap+xml""
+headers['SOAPAction'] = soap_method
+
+log_data = {}
+log_data[""method""] = soap_method
+log_data[""path""] = url
+log_data[""request""] = envelope
+log_data[""type""] = 'outbound'
+log_data[""tag""] = self.name
+log_data[""record""] = record
+# try:
+# if True:
+cert_path = self.env['edi.certificate'].prepare_cert_file(record.company_id.id)
+# cert_path = ""/mnt/input/F1T_15401.pem"" 
+
+evals = {}
+evals['url'] = url
+evals['method'] = ""POST""
+evals['headers'] = json.dumps(headers, indent=4)
+evals['soap_method'] = soap_method
+evals[""type""] = 'de'
+evals[""company_id""] = record.company_id.id
+evals[""procedure_id""] = self.id
+evals[""res_model""] = record._name
+evals[""res_id""] = record.id
+evals[""res_name""] = record.name
+# evals[""request""] = envelope
+evals[""request_content""] = base64.b64encode(envelope.encode())
+evals[""request_filename""] = ""%s.xml"" %(record.control_code)
+
+edi_event = self.env['edi.event'].create(evals)
+record.write({'sifen_state':'queue'})
+"
+"__export__.edi_procedure_15_d7c123dc","1","sifen.edi.event.de","OK. Procesa el edi.event enviando el contenido del DE a la SIFEN. ","base.main_company","# record = edi.event
+import requests
+import json
+import base64
+from lxml import etree
+
+# print(""Record in edi.event: %s"" %(record._name))
+
+headers = json.loads(record.headers)
+cert_path = self.env['edi.certificate'].prepare_cert_file(company_id=record.company_id.id, recreate=True)
+
+invoice = self.env[record.res_model].search([('id', '=', record.res_id)])
+
+request_content = base64.b64decode(record.request_content)
+
+log_data = {}
+log_data[""method""] = record.soap_method
+log_data[""path""] = record.url
+log_data[""request""] = request_content.decode()
+log_data[""type""] = 'outbound'
+log_data[""tag""] = record.procedure_id.name
+log_data[""record""] = invoice
+log_data[""edi_event_id""] = record.id
+
+try:
+    response = requests.request(url=record.url, method=record.method,
+                                headers=headers, data=request_content,
+                                cert=cert_path)
+    record.write({'state':'sent'})
+    log_data[""status_code""] = response.status_code
+    log_data[""reason""] = response.reason
+    try:
+        log_response = etree.tostring(etree.fromstring(response.content), pretty_print=True)
+        log_data[""response""] = log_response
+        log_record = self.env['service.log'].register(**log_data)
+        
+        log_dict = log_record.get_response_dict()
+        uvals = {}
+        if log_dict.get(""dEstRes"", """") == ""Aprobado"":
+           uvals['sifen_state'] = 'approved'
+           uvals['sifen_authorization'] = log_dict.get('dProtAut', """")
+        elif log_dict.get(""dEstRes"", """") == ""Rechazado"":
+           uvals['sifen_state'] = 'rejected'
+        uvals['sifen_state_code'] = log_dict.get('dCodRes', """")
+        uvals['sifen_state_message'] = log_dict.get('dMsgRes', """")
+        invoice.write(uvals)
+        record.finish()
+    except BaseException as errstr:
+        log_response = response.content.decode()
+        log_data[""response""] = log_response
+        log_record = self.env['service.log'].register(**log_data)
+        
+        _logger.error(""Error parsing Response: %s"" % (errstr))
+        _logger.error(log_response)
+except BaseException as errstr:
+    _logger.error(""Error on Request: %s"" % (errstr))
+    
+    log_data[""response""] = errstr
+    log_record = self.env['service.log'].register(**log_data)
+    "
+"__export__.edi_procedure_3_1baff9fd","2","sifen.account.move.consult","OK. Crea un edi.event que procesa la consulta del CDC","base.main_company","import requests
+import xmltodict
+import re
+import json
+import base64
+from lxml import etree
+
+# record = account.move
+sequence = self.env['ir.sequence'].search([('code', '=', 'rEnviConsDeRequest')])
+
+vals = {}
+vals['consult_sequence'] = int(sequence.next_by_id())
+vals['cdc'] = record.control_code
+
+if self.company_id.sifen_environment == ""0"":
+  url = ""https://sifen-test.set.gov.py/de/ws/consultas/consulta.wsdl""
+else:
+  url = ""https://sifen.set.gov.py/de/ws/consultas/consulta.wsdl""
+soap_method = '""#SiConsDE""'
+
+headers = {}
+headers['Content-Type'] = ""application/soap+xml""
+headers['SOAPAction'] = soap_method
+
+envelope = self.env['edi.template']._render(""Envelope_rEnviConsDeRequest"", **vals)
+
+evals = {}
+evals['url'] = url
+evals['method'] = ""POST""
+evals['headers'] = json.dumps(headers, indent=4)
+evals['soap_method'] = soap_method
+evals[""type""] = 'de_consult'
+evals[""company_id""] = record.company_id.id
+evals[""procedure_id""] = self.id
+evals[""res_model""] = record._name
+evals[""res_id""] = record.id
+evals[""res_name""] = record.name
+evals[""request_content""] = base64.b64encode(envelope.encode())
+evals[""request_filename""] = ""%s.xml"" %(record.control_code)
+
+edi_event = self.env['edi.event'].create(evals)
+"
+"__export__.edi_procedure_25_11cf3c9e","3","sifen.edi.event.de_consult","OK. Envia a la SIFEN la consulta de CDC","base.main_company","# record = edi.event
+import requests
+import json
+import base64
+import re
+from lxml import etree
+import html
+
+# print(""Record in edi.event: %s"" %(record._name))
+
+headers = json.loads(record.headers)
+cert_path = self.env['edi.certificate'].prepare_cert_file(company_id=record.company_id.id, recreate=True)
+
+invoice = self.env[record.res_model].search([('id', '=', record.res_id)])
+
+request_content = base64.b64decode(record.request_content)
+
+log_data = {}
+log_data[""method""] = record.soap_method
+log_data[""path""] = record.url
+log_data[""request""] = request_content.decode()
+log_data[""type""] = 'outbound'
+log_data[""tag""] = record.procedure_id.name
+log_data[""record""] = invoice
+log_data[""edi_event_id""] = record.id
+
+try:
+  response = requests.request(url=record.url, method=record.method,
+                              headers=headers, data=request_content,
+                              cert=cert_path)
+  record.write({'state':'sent'})
+  log_data[""status_code""] = response.status_code
+  log_data[""reason""] = response.reason
+  try:
+    log_response = etree.tostring(etree.fromstring(response.content), pretty_print=True)
+    log_data[""response""] = log_response.decode()
+    log_record = self.env['service.log'].register(**log_data)
+    
+    log_dict = log_record.get_response_dict()
+    dMsgRes = log_dict.get(""dMsgRes"","""")
+    dCodRes = log_dict.get(""dCodRes"","""")
+    if dMsgRes == 'CDC encontrado':
+      ivals = {}
+      ivals[""sifen_state""] = ""approved""
+      ivals[""sifen_state_code""] = dCodRes
+      ivals[""sifen_state_message""] = dMsgRes
+      pattern = r'<ns2:xContenDE>(.*?)</ns2:xContenDE>'
+      elements = re.search(pattern,log_response.decode(),re.DOTALL)
+      if elements:
+        de_xml = html.unescape(elements.group(1))
+        pattern = r""<dProtAut>(.*?)</dProtAut>""
+        elements = re.search(pattern, de_xml,re.DOTALL)
+        if elements:
+          dProtAut = elements.group(1)
+          ivals[""sifen_authorization""] = dProtAut
+      invoice.write(ivals)
+      record.finish()
+  except BaseException as errstr:
+    log_response = response.content.decode()
+    log_data[""response""] = log_response
+    log_record = self.env['service.log'].register(**log_data)
+    
+    _logger.error(""Error parsing Response: %s..."" % (errstr))
+    # _logger.error(log_response)
+except BaseException as errstr:
+    _logger.error(""Error on Request: %s..."" % (errstr))
+    
+    log_data[""response""] = errstr
+    log_record = self.env['service.log'].register(**log_data)
+"
+"__export__.edi_procedure_2_21ed8e88","4","sifen.account.move.batch.prepare","OK. Busca un edi.batch abierto y encola el comprobante.
+Si no existe el Lote lo crea y si se llega al limite por lineas o tiempo, lo deja en Preparado.","base.main_company","import hashlib
+from odoo import fields
+from lxml import etree
+import re
+import zipfile
+import base64
+import datetime
+import requests
+import xmltodict
+
+try:
+    invoice = record
+except:
+    pass
+
+filters = []
+filters.append(('state','=','open'))
+filters.append(('move_type','=',invoice.move_type))
+filters.append(('company_id','=',invoice.company_id.id))
+
+# Busca los registros edi.batch que contienen el account.move en el campo invoice_ids
+edi_batches_containing_move = self.env['edi.batch'].search([('invoice_ids', 'in', [invoice.id])])
+
+if edi_batches_containing_move:
+    _logger.info(""El account.move está agregado a los siguientes edi.batch:"")
+    for edi_batch in edi_batches_containing_move:
+      _logger.info(""EDI Batch ID: %s"" %(edi_batch.id))
+else:
+    _logger.info(""El account.move no está agregado a ningún edi.batch."")
+
+edi_batch = self.env['edi.batch'].search(filters)
+if not edi_batch:
+  evals = {}
+  evals['move_type'] = invoice.move_type
+  evals['company_id'] = invoice.company_id.id
+  edi_batch = self.env['edi.batch'].create(evals)
+  invoice.write({'sifen_state':'queue'})
+if edi_batch:
+  edi_batch.write({'invoice_ids':[(4,invoice.id)]})
+  edi_batch.check_for_prepared()
+  invoice.write({'sifen_state':'queue'})"
+"__export__.edi_procedure_36_077e25af","4","sifen.stock.picking.batch.prepare","OK. Busca un edi.batch abierto y encola el comprobante.
+Si no existe el Lote lo crea y si se llega al limite por lineas o tiempo, lo deja en Preparado.","base.main_company","import hashlib
+from odoo import fields
+from lxml import etree
+import re
+import zipfile
+import base64
+import datetime
+import requests
+import xmltodict
+
+try:
+    invoice = record
+except:
+    pass
+
+filters = []
+filters.append(('state','=','open'))
+filters.append(('move_type','=','stock_picking'))
+filters.append(('company_id','=',invoice.company_id.id))
+
+# Busca los registros edi.batch que contienen el account.move en el campo invoice_ids
+edi_batches_containing_move = self.env['edi.batch'].search([('invoice_ids', 'in', [invoice.id])])
+
+if edi_batches_containing_move:
+    _logger.info(""El account.move está agregado a los siguientes edi.batch:"")
+    for edi_batch in edi_batches_containing_move:
+      _logger.info(""EDI Batch ID: %s"" %(edi_batch.id))
+else:
+    _logger.info(""El account.move no está agregado a ningún edi.batch."")
+
+edi_batch = self.env['edi.batch'].search(filters)
+if not edi_batch:
+  evals = {}
+  evals['move_type'] = ""stock_picking""
+  evals['company_id'] = invoice.company_id.id
+  edi_batch = self.env['edi.batch'].create(evals)
+  invoice.write({'sifen_state':'queue'})
+if edi_batch:
+  edi_batch.write({'picking_ids':[(4,invoice.id)]})
+  edi_batch.check_for_prepared()
+  invoice.write({'sifen_state':'queue'})"
+"__export__.edi_procedure_14_1cbb95ca","5","sifen.edi.batch.send","OK. Genera un edi.event con la información del lote a enviar","base.main_company","import hashlib
+from odoo import fields
+from lxml import etree
+import re
+import zipfile
+import base64
+import datetime
+import requests
+import json
+import xmltodict
+
+sequence = self.env['ir.sequence'].search([('code', '=', 'SoapEnvelope')])
+sequence_next = int(sequence.next_by_id())
+
+certificate = self.env['edi.certificate'].search([], limit=1)
+documents = []
+
+if record.invoice_ids:
+  rows_ids = record.invoice_ids
+if record.picking_ids:
+  rows_ids = record.picking_ids
+  
+for invoice in rows_ids:
+    _logger.info(""Procesando: %s"" %(invoice.name))
+    vals = {}
+    vals['move'] = invoice
+    vals['signature_datetime'] = fields.Datetime.context_timestamp(invoice, datetime.datetime.now()).strftime(""%Y-%m-%dT%H:%M:%S"")
+    
+    invoice_time = datetime.time(hour=invoice.create_date.hour, minute=invoice.create_date.minute, second=invoice.create_date.second )
+    invoice_datetime = datetime.datetime.combine(invoice.invoice_date, invoice_time)
+    invoice_datetime = fields.Datetime.context_timestamp(invoice, invoice_datetime)
+
+    move_invoice_date = invoice_datetime.strftime(""%Y-%m-%dT%H:%M:%S"")
+    vals['move_invoice_date'] = move_invoice_date
+
+    rde = self.env['edi.template']._render('rDE', **vals)
+
+    rde_signed = certificate.sign_content(rde, reference_uri=invoice.control_code, id_attribute=""Id"")
+
+    pattern = r'<DigestValue>(.*?)</DigestValue>'
+    digest_value = re.findall(pattern, rde_signed)[0]
+    digest_value = ''.join([hex(ord(c))[2:] for c in digest_value])
+
+    move_invoice_date_hex = ''.join([hex(ord(c))[2:] for c in move_invoice_date])
+
+    qr_data = ""nVersion=%s"" % (150)
+    qr_data += ""&Id=%s"" % (invoice.control_code)
+    qr_data += ""&dFeEmiDE=%s"" % (move_invoice_date_hex)
+    if invoice.partner_id.l10n_latam_identification_type_id.is_vat:
+        qr_data += ""&dRucRec=%s"" % (invoice.partner_id.vat.split(""-"")[0])
+    else:
+        if invoice.partner_id.l10n_latam_identification_type_id.edi_code == '5':
+          qr_data += ""&dNumIDRec=0"" 
+        else:
+          qr_data += ""&dNumIDRec=%s"" %(invoice.partner_id.vat)
+    if record.move_type == 'stock_picking':
+      qr_data += ""&dTotGralOpe=%.8f"" % (0)
+      qr_data += ""&dTotIVA=%.8f"" % (0)
+      qr_data += ""&cItems=%s"" % (len(invoice.move_line_ids_without_package))
+    elif record.move_type != 'stock_picking':
+      qr_data += ""&dTotGralOpe=%.8f"" % (invoice.amount_total)
+      qr_data += ""&dTotIVA=%.8f"" % (invoice.amount_tax)
+      qr_data += ""&cItems=%s"" % (len(invoice.invoice_line_ids))
+    qr_data += ""&DigestValue=%s"" % (digest_value)
+    qr_data += ""&IdCSC=%s"" % (""0001"")
+    qr_data_secret = qr_data + ""%s"" %(invoice.company_id.security_code_1) 
+    qr_hash = hashlib.sha256(qr_data_secret.encode())
+    qr_data += ""&cHashQR=%s"" % (qr_hash.hexdigest())
+    qr_data = qr_data.replace(""&"", ""&amp;"")
+    if self.company_id.sifen_environment == ""0"":
+      qr_link = ""https://ekuatia.set.gov.py/consultas-test/qr?%s"" % (qr_data)
+    else:
+      qr_link = ""https://ekuatia.set.gov.py/consultas/qr?%s"" % (qr_data)
+
+    vals[""qr_link""] = qr_link
+    invoice.write({'qr_link':qr_link.replace('&amp;','&')})
+
+    gcamfufd = self.env['edi.template']._render(""gCamFuFD"", **vals)
+
+    rde_signed = rde_signed.replace(""</rDE>"", ""%s</rDE>"" %(gcamfufd))
+
+    documents.append(rde_signed)
+    
+    invoice.env['ir.attachment'].create({
+                'name': ""%s.xml"" % invoice.control_code,
+                'datas': base64.b64encode(rde_signed.encode()),
+                'type': 'binary',
+                'res_model': invoice._name,
+                'res_id': invoice.id,
+            })
+    
+
+envelope_content = rde_signed
+sequence = self.env['ir.sequence'].search([('code', '=', 'SoapEnvelope')])
+
+vals = {}
+vals['documents'] = documents
+rlotede = self.env['edi.template']._render('rLoteDE', **vals)
+
+base_file_name = f""{sequence_next}""
+xml_file_name = f""/mnt/input/{base_file_name}.xml""
+
+xml_file = open(xml_file_name, ""wb"")
+xml_file.write(rlotede.encode())
+xml_file.close()
+
+zip_file_name = f""{base_file_name}.zip""
+zip_path_name = f""/mnt/input/{base_file_name}.zip""
+with zipfile.ZipFile(zip_path_name, ""w"") as zipf:
+    zipf.write(xml_file_name, arcname=f""{base_file_name}.xml"")
+
+zipf = open(zip_path_name, ""rb"")
+batch_content = base64.b64encode(zipf.read())
+zipf.close()
+
+vals = {}
+vals[""envelope_sequence""] = sequence_next
+vals[""batch_content""] = batch_content.decode()
+
+envelope = self.env['edi.template']._render(""Envelope_rEnvioLote"", **vals)
+
+
+if self.company_id.sifen_environment == ""0"":
+  url = ""https://sifen-test.set.gov.py/de/ws/async/recibe-lote.wsdl""
+else:
+  url = ""https://sifen.set.gov.py/de/ws/async/recibe-lote.wsdl""
+soap_method = '""#%s""' % (""SiRecepLoteDE"")
+
+headers = {}
+headers['Content-Type'] = ""application/soap+xml""
+headers['SOAPAction'] = soap_method
+
+evals = {}
+evals['url'] = url
+evals['method'] = ""POST""
+evals['headers'] = json.dumps(headers, indent=4)
+evals['soap_method'] = soap_method
+evals['type'] = 'de_batch'
+evals[""company_id""] = record.company_id.id
+evals[""procedure_id""] = self.id
+evals[""res_model""] = record._name
+evals[""res_id""] = record.id
+evals[""res_name""] = record.name
+evals[""request_content""] = base64.b64encode(envelope.encode())
+evals[""request_filename""] = ""%s_batch_envelope.xml"" % (sequence_next)
+
+edi_event = self.env['edi.event'].create(evals)
+record.in_queue()
+"
+"__export__.edi_procedure_16_840fe495","6","sifen.edi.event.de_batch","OK. Envia a la SIFEN el Lote Preparado.","base.main_company","# record = edi.event
+import requests
+import json
+import base64
+from lxml import etree
+
+# print(""Record in edi.event: %s"" %(record._name))
+
+headers = json.loads(record.headers)
+cert_path = self.env['edi.certificate'].prepare_cert_file(company_id=record.company_id.id, recreate=True)
+
+edi_batch = self.env[record.res_model].search([('id', '=', record.res_id)])
+
+request_content = base64.b64decode(record.request_content)
+
+log_data = {}
+log_data[""method""] = record.soap_method
+log_data[""path""] = record.url
+log_data[""request""] = request_content.decode()
+log_data[""type""] = 'outbound'
+log_data[""tag""] = record.procedure_id.name
+log_data[""record""] = edi_batch
+log_data[""edi_event_id""] = record.id
+
+try:
+  response = requests.request(url=record.url, method=record.method,
+                              headers=headers, data=request_content,
+                              cert=cert_path)
+  record.write({'state':'sent'})
+  log_data[""status_code""] = response.status_code
+  log_data[""reason""] = response.reason
+  try:
+    log_response = etree.tostring(etree.fromstring(response.content), pretty_print=True)
+    log_data[""response""] = log_response
+    log_record = self.env['service.log'].register(**log_data)
+    
+    log_dict = log_record.get_response_dict()
+    uvals = {}
+    message = log_dict.get(""dMsgRes"", """")
+    if message == ""Lote recibido con éxito"":
+      uvals['state'] = 'sent'
+      uvals['sifen_state'] = 'received'
+      uvals['sifen_state_code'] = log_dict.get(""dCodRes"", """")
+      uvals['sifen_state_message'] = message
+      uvals['sifen_batch_nr'] = log_dict.get('dProtConsLote', """")
+      edi_batch.write(uvals)
+      record.finish()
+  except BaseException as errstr:
+      log_response = response.content.decode()
+      log_data[""response""] = log_response
+      log_record = self.env['service.log'].register(**log_data)
+      
+      _logger.error(""Error parsing Response: %s"" % (errstr))
+      _logger.error(log_response)
+  record.finish()
+except BaseException as errstr:
+    _logger.error(""Error on Request: %s"" % (errstr))
+    
+    log_data[""response""] = errstr
+    log_record = self.env['service.log'].register(**log_data)
+"
+"__export__.edi_procedure_19_e2891558","7","sifen.edi.batch.consult","OK. Crea un edi.event para consultar el estado de Procedimiento de un Lote.","base.main_company","import json
+import base64
+from lxml import etree
+
+#record = edi.batch
+
+sequence = self.env['ir.sequence'].search([('code', '=', 'rEnviConsLoteDe')])
+
+if self.company_id.sifen_environment == ""0"":
+  url = ""https://sifen-test.set.gov.py/de/ws/consultas/consulta-lote.wsdl""
+else:
+  url = ""https://sifen.set.gov.py/de/ws/consultas/consulta-lote.wsdl""
+soap_method = '""#SiResultLoteDE""'
+headers = {}
+headers['Content-Type'] = ""application/soap+xml""
+headers['SOAPAction'] = soap_method
+
+vals = {}
+vals['batch_consult_sequence'] = int(sequence.next_by_id())
+vals['batch_number'] = record.sifen_batch_nr
+
+envelope = self.env['edi.template']._render(""Envelope_rEnviConsLoteDe"", **vals)
+
+evals = {}
+evals['url'] = url
+evals['method'] = ""POST""
+evals['headers'] = json.dumps(headers, indent=4)
+evals['soap_method'] = soap_method
+evals[""type""] = 'de_batch_consult'
+evals[""company_id""] = record.company_id.id
+evals[""procedure_id""] = self.id
+evals[""res_model""] = record._name
+evals[""res_id""] = record.id
+evals[""res_name""] = record.name
+evals[""request_content""] = base64.b64encode(envelope.encode())
+evals[""request_filename""] = ""Lote%s.xml"" %(record.name)
+
+edi_event = self.env['edi.event'].create(evals)
+record.in_queue()"
+"__export__.edi_procedure_18_1446f5b4","8","sifen.edi.event.de_batch_consult","OK. Envia a la SIFEN la consulta del Lote","base.main_company","# record = edi.event
+import requests
+import json
+import base64
+import collections
+import re
+import xmltodict
+from lxml import etree
+
+# print(""Record in edi.event: %s"" %(record._name))
+
+headers = json.loads(record.headers)
+cert_path = self.env['edi.certificate'].prepare_cert_file(company_id=record.company_id.id, recreate=True)
+
+edi_batch = self.env[record.res_model].search([('id', '=', record.res_id)])
+
+request_content = base64.b64decode(record.request_content)
+
+log_data = {}
+log_data[""method""] = record.soap_method
+log_data[""path""] = record.url
+log_data[""request""] = request_content.decode()
+log_data[""type""] = 'outbound'
+log_data[""tag""] = record.procedure_id.name
+log_data[""record""] = edi_batch
+log_data[""edi_event_id""] = record.id
+
+try:
+  response = requests.request(url=record.url, method=record.method,
+                              headers=headers, data=request_content,
+                              cert=cert_path)
+  record.write({'state':'sent'})
+  log_data[""status_code""] = response.status_code
+  log_data[""reason""] = response.reason
+  try:
+    log_response = etree.tostring(etree.fromstring(response.content), pretty_print=True)
+    log_data[""response""] = log_response
+    log_record = self.env['service.log'].register(**log_data)
+  
+    namespaces = {'ns2':None, 'env':None} 
+    dd = xmltodict.parse(log_response, namespaces=namespaces)
+    envelope = dict(dd.get(""Envelope""))
+    body = dict(envelope.get(""Body""))
+    batch = dict(body.get('rResEnviConsLoteDe'))
+    
+    dCodResLot = batch.get('dCodResLot')
+    dMsgResLot = batch.get('dMsgResLot')
+
+    pattern = ""Procesamiento de lote {\d+} concluido""
+    match = re.match(pattern, dMsgResLot)
+    if match:
+      uvals = {}
+      uvals['sifen_state'] = 'finish'
+      uvals['sifen_state_code'] = dCodResLot
+      uvals['sifen_state_message'] = dMsgResLot
+      edi_batch.write(uvals)
+    if dCodResLot == ""0364"":
+      uvals = {}
+      uvals['sifen_state'] = 'expire'
+      uvals['sifen_state_code'] = dCodResLot
+      uvals['sifen_state_message'] = dMsgResLot
+      edi_batch.write(uvals)
+      
+    batch_response = batch.get('gResProcLote')
+    if isinstance(batch_response, collections.OrderedDict):
+      # print(""D"", type(batch_response), len(batch_response))
+      response_list = [dict(batch_response)]
+    elif isinstance(batch_response, dict):
+      _logger.info([""D"", type(batch_response), len(batch_response)])
+      response_list = [dict(batch_response)]
+    else:
+      response_list = batch_response
+      # print(""L"", type(batch_response), len(batch_response))
+    for response in response_list: 
+      # response = dict(batch.get('gResProcLote'))
+      cdc = response.get('id')
+      dEstRes = response.get('dEstRes')
+      dProtAut = response.get('dProtAut')
+      if dEstRes in ['Aprobado','Rechazado']:
+        message = dict(response.get('gResProc'))
+        dCodRes = message.get('dCodRes')
+        dMsgRes = message.get('dMsgRes')
+        batch_record = None
+        if edi_batch.move_type in ['out_invoice','out_refund']:
+          batch_record = self.env['account.move'].search([('control_code','=',cdc)])
+        elif edi_batch.move_type == 'stock_picking':
+          batch_record = self.env['stock.picking'].search([('control_code','=',cdc)])  
+        if batch_record:
+          ivals = {}
+          if dEstRes == 'Aprobado':
+            ivals[""sifen_state""] = 'approved'
+          elif dEstRes == 'Rechazado':
+            ivals[""sifen_state""] = 'rejected'
+          ivals[""sifen_authorization""] = dProtAut
+          ivals[""sifen_state_code""] = dCodRes
+          ivals[""sifen_state_message""] = dMsgRes
+          _logger.info(""Updating Invoice: %s"" %(ivals))
+          batch_record.write(ivals)
+    record.finish()
+  except BaseException as errstr:
+    log_data[""response""] = errstr
+    log_record = self.env['service.log'].register(**log_data)
+    
+    _logger.error(""Error parsing Response: %s"" % (errstr))
+    _logger.error(log_response)
+except BaseException as errstr:
+    _logger.error(""Error on Request: %s"" % (errstr))
+    
+    log_data[""response""] = errstr
+    log_record = self.env['service.log'].register(**log_data)
+"
+"__export__.edi_procedure_6_07a01f91","9","sifen.account.move.cancel","OK. Crea un edi.event para enviar una cancelación de documento a la SIFEN.","base.main_company","import hashlib
+from odoo import fields
+from lxml import etree
+import re
+import zipfile
+import base64
+import datetime
+import requests
+import xmltodict
+import json
+from collections import OrderedDict
+
+certificate = self.env['edi.certificate'].search([], limit=1)
+
+signature_datetime = fields.Datetime.context_timestamp(record, fields.Datetime.now()).strftime(""%Y-%m-%dT%H:%M:%S"")
+sequence = self.env['ir.sequence'].search([('code', '=', 'SoapEnvelope')])
+event_sequence = self.env['ir.sequence'].search([('code', '=', 'edi.event')])
+event_sequence = event_sequence.next_by_id()
+event_id = int(event_sequence)
+
+vals = {}
+vals['event_id'] = event_id
+vals['record'] = record
+vals['signature_datetime'] = signature_datetime
+# vals['cancel_reason'] = ""Cancelación de Documento""
+
+rgesevecancel = self.env['edi.template']._render(""rGesEve_cancel"",**vals)
+rgesevecancel_signed = certificate.sign_content(rgesevecancel, reference_uri=str(event_id), id_attribute=""Id"")
+
+vals = {}
+vals[""envelope_sequence""] = int(sequence.next_by_id())
+vals[""event_content""] = rgesevecancel_signed
+envelope_renvieventode = self.env['edi.template']._render(""Envelope_rEnviEventoDe"",**vals)
+
+if self.company_id.sifen_environment == ""0"":
+  url = ""https://sifen-test.set.gov.py/de/ws/eventos/evento.wsdl""
+else:
+  url = ""https://sifen.set.gov.py/de/ws/eventos/evento.wsdl""
+
+soap_method = '""#SiRecepEvento""'
+headers = {}
+headers['Content-Type'] = ""application/soap+xml""
+headers['SOAPAction'] = soap_method
+
+evals = {}
+evals['name'] = event_sequence
+evals['url'] = url
+evals['method'] = ""POST""
+evals['headers'] = json.dumps(headers, indent=4)
+evals['soap_method'] = soap_method
+evals[""type""] = 'de_cancel'
+evals[""company_id""] = record.company_id.id
+evals[""procedure_id""] = self.id
+evals[""res_model""] = record._name
+evals[""res_id""] = record.id
+evals[""res_name""] = record.name
+evals[""request_content""] = base64.b64encode(envelope_renvieventode.encode())
+evals[""request_filename""] = ""%s.xml"" %(record.control_code)
+
+edi_event = self.env['edi.event'].create(evals)
+"
+"__export__.edi_procedure_20_8d067ed5","10","sifen.edi.event.de_cancel","OK. Envia la solicitud de cancelación de un documento","base.main_company","# record = edi.event
+import requests
+import json
+import base64
+from lxml import etree
+
+# print(""Record in edi.event: %s"" %(record._name))
+
+headers = json.loads(record.headers)
+cert_path = self.env['edi.certificate'].prepare_cert_file(company_id=record.company_id.id, recreate=True)
+
+cancellation = self.env[record.res_model].search([('id', '=', record.res_id)])
+
+request_content = base64.b64decode(record.request_content)
+
+log_data = {}
+log_data[""method""] = record.soap_method
+log_data[""path""] = record.url
+log_data[""request""] = request_content.decode()
+log_data[""type""] = 'outbound'
+log_data[""tag""] = record.procedure_id.name
+log_data[""record""] = cancellation
+log_data[""edi_event_id""] = record.id
+
+try:
+    response = requests.request(url=record.url, method=record.method,
+                                headers=headers, data=request_content,
+                                cert=cert_path)
+    record.write({'state':'sent'})
+    log_data[""status_code""] = response.status_code
+    log_data[""reason""] = response.reason
+    try:
+        log_response = etree.tostring(etree.fromstring(response.content), pretty_print=True)
+        log_data[""response""] = log_response
+        log_record = self.env['service.log'].register(**log_data)
+        
+        log_dict = log_record.get_response_dict()
+        dEstRes  = log_dict.get(""dEstRes"", """")
+        dProtAut = log_dict.get(""dProtAut"", """")
+        dCodRes  = log_dict.get(""dCodRes"", """")
+        dMsgRes  = log_dict.get(""dMsgRes"", """")
+        if dEstRes == ""Aprobado"":
+          uvals = {}
+          uvals['sifen_state'] = 'approved'
+          uvals['sifen_state_code'] = dCodRes
+          uvals['sifen_state_message'] = dMsgRes
+          uvals['sifen_authorization'] = dProtAut
+          record.finish()
+          cancellation.write(uvals)
+          cancellation.update_origin()
+    except BaseException as errstr:
+        log_response = response.content.decode()
+        log_data[""response""] = log_response
+        log_record = self.env['service.log'].register(**log_data)
+        
+        _logger.error(""Error parsing Response: %s"" % (errstr))
+        # _logger.error(log_response)
+    
+except BaseException as errstr:
+    _logger.error(""Error on Request: %s"" % (errstr))
+    
+    log_data[""response""] = errstr
+    log_record = self.env['service.log'].register(**log_data)
+"
+"__export__.edi_procedure_21_4037c078","11","sifen.account.move.invalid","OK. Crea un edi.event para invalidar documentos","base.main_company","import hashlib
+from odoo import fields
+from lxml import etree
+import re
+import zipfile
+import base64
+import datetime
+import requests
+import xmltodict
+import json
+from collections import OrderedDict
+
+certificate = self.env['edi.certificate'].search([], limit=1)
+
+signature_datetime = fields.Datetime.context_timestamp(record, fields.Datetime.now()).strftime(""%Y-%m-%dT%H:%M:%S"")
+sequence = self.env['ir.sequence'].search([('code', '=', 'SoapEnvelope')])
+event_sequence = self.env['ir.sequence'].search([('code', '=', 'edi.event')])
+event_sequence = event_sequence.next_by_id()
+event_id = int(event_sequence)
+
+vals = {}
+vals['event_id'] = event_id
+vals['record'] = record
+vals['signature_datetime'] = signature_datetime
+
+rgeseveinvalid = self.env['edi.template']._render(""rGesEve_invalid"",**vals)
+rgeseveinvalid_signed = certificate.sign_content(rgeseveinvalid, reference_uri=str(event_id), id_attribute=""Id"")
+
+vals = {}
+vals[""envelope_sequence""] = int(sequence.next_by_id())
+vals[""event_content""] = rgeseveinvalid_signed
+envelope_renvieventode = self.env['edi.template']._render(""Envelope_rEnviEventoDe"",**vals)
+
+if self.company_id.sifen_environment == ""0"":
+  url = ""https://sifen-test.set.gov.py/de/ws/eventos/evento.wsdl""
+else:
+  url = ""https://sifen.set.gov.py/de/ws/eventos/evento.wsdl""
+
+soap_method = '""#SiRecepEvento""'
+headers = {}
+headers['Content-Type'] = ""application/soap+xml""
+headers['SOAPAction'] = soap_method
+
+record.write({'state':'sent'})
+
+evals = {}
+evals['name'] = event_sequence
+evals['url'] = url
+evals['method'] = ""POST""
+evals['headers'] = json.dumps(headers, indent=4)
+evals['soap_method'] = soap_method
+evals[""type""] = 'de_invalid'
+evals[""company_id""] = record.company_id.id
+evals[""procedure_id""] = self.id
+evals[""res_model""] = record._name
+evals[""res_id""] = record.id
+evals[""res_name""] = record.name
+evals[""request_content""] = base64.b64encode(envelope_renvieventode.encode())
+evals[""request_filename""] = ""%s.xml"" %(record.name)
+
+edi_event = self.env['edi.event'].create(evals)
+"
+"__export__.edi_procedure_23_b8985ce7","12","sifen.edi.event.de_invalid","OK. Envia la solicitud de cancelación de un documento","base.main_company","# record = edi.event
+import requests
+import json
+import base64
+from lxml import etree
+
+# print(""Record in edi.event: %s"" %(record._name))
+
+headers = json.loads(record.headers)
+cert_path = self.env['edi.certificate'].prepare_cert_file(company_id=record.company_id.id, recreate=True)
+
+invalid_invoices = self.env[record.res_model].search([('id', '=', record.res_id)])
+
+request_content = base64.b64decode(record.request_content)
+
+log_data = {}
+log_data[""method""] = record.soap_method
+log_data[""path""] = record.url
+log_data[""request""] = request_content.decode()
+log_data[""type""] = 'outbound'
+log_data[""tag""] = record.procedure_id.name
+log_data[""record""] = invalid_invoices
+log_data[""edi_event_id""] = record.id
+
+try:
+    response = requests.request(url=record.url, method=record.method,
+                                headers=headers, data=request_content,
+                                cert=cert_path)
+    record.write({'state':'sent'})
+    log_data[""status_code""] = response.status_code
+    log_data[""reason""] = response.reason
+    try:
+        log_response = etree.tostring(etree.fromstring(response.content), pretty_print=True)
+        log_data[""response""] = log_response
+        log_record = self.env['service.log'].register(**log_data)
+        
+        log_dict = log_record.get_response_dict()
+        dEstRes  = log_dict.get(""dEstRes"", """")
+        dProtAut = log_dict.get(""dProtAut"", """")
+        dCodRes  = log_dict.get(""dCodRes"", """")
+        dMsgRes  = log_dict.get(""dMsgRes"", """")
+        if dEstRes in (""Aprobado"",""Rechazado""):
+          uvals = {}
+          if dEstRes == ""Aprobado"":
+            uvals['sifen_state'] = 'approved'
+          elif dEstRes == ""Rechazado"":
+            uvals['sifen_state'] = 'rejected'
+          uvals['sifen_state_code'] = dCodRes
+          uvals['sifen_state_message'] = dMsgRes
+          uvals['sifen_authorization'] = dProtAut
+          invalid_invoices.write(uvals)
+          if dEstRes == ""Aprobado"":
+            for invoice in invalid_invoices.invoice_ids:
+              ivals = {}
+              ivals['sifen_state'] = 'invalid'
+              ivals['sifen_state_code'] = dCodRes
+              ivals['sifen_state_message'] = dMsgRes
+              ivals['sifen_authorization'] = dProtAut
+              invoice.write(ivals)
+          record.finish()
+    except BaseException as errstr:
+        log_response = response.content.decode()
+        log_data[""response""] = log_response
+        log_record = self.env['service.log'].register(**log_data)
+        
+        _logger.error(""Error parsing Response: %s"" % (errstr))
+        _logger.error(log_response)
+except BaseException as errstr:
+    _logger.error(""Error on Request: %s"" % (errstr))
+    
+    log_data[""response""] = errstr
+    log_record = self.env['service.log'].register(**log_data)
+"
+"__export__.edi_procedure_24_1e513a94","13","sifen.edi.event.vat_consult","OK. Envia la solicitud de consulta de RUC","base.main_company","# record = edi.event
+import requests
+import json
+import base64
+from lxml import etree
+
+# print(""Record in edi.event: %s"" %(record._name))
+
+headers = json.loads(record.headers)
+cert_path = self.env['edi.certificate'].prepare_cert_file(company_id=record.company_id.id, recreate=True)
+
+partner = self.env[record.res_model].search([('id', '=', record.res_id)])
+
+request_content = base64.b64decode(record.request_content)
+
+log_data = {}
+log_data[""method""] = record.soap_method
+log_data[""path""] = record.url
+log_data[""request""] = request_content.decode()
+log_data[""type""] = 'outbound'
+log_data[""tag""] = record.procedure_id.name
+log_data[""record""] = partner
+log_data[""edi_event_id""] = record.id
+
+try:
+    response = requests.request(url=record.url, method=record.method,
+                                headers=headers, data=request_content,
+                                cert=cert_path)
+    record.write({'state':'sent'})
+    log_data[""status_code""] = response.status_code
+    log_data[""reason""] = response.reason
+    try:
+        log_response = etree.tostring(etree.fromstring(response.content), pretty_print=True)
+        log_data[""response""] = log_response
+        log_record = self.env['service.log'].register(**log_data)
+        record.finish()
+    except BaseException as errstr:
+        log_response = response.content.decode()
+        log_data[""response""] = log_response
+        log_record = self.env['service.log'].register(**log_data)
+        
+        _logger.error(""Error parsing Response: %s"" % (errstr))
+        _logger.error(log_response)
+except BaseException as errstr:
+    _logger.error(""Error on Request: %s"" % (errstr))
+    
+    log_data[""response""] = errstr
+    log_record = self.env['service.log'].register(**log_data)
+"
+"__export__.edi_procedure_5_75687f42","14","sifen.account.move.batch.consult","","base.main_company","import requests
+import xmltodict
+from lxml import etree
+
+sequence = self.env['ir.sequence'].search([('code', '=', 'rEnviConsLoteDe')])
+
+# print(""record"", record._name)
+if record._name == 'sefal.procedure':
+  batch_control = self.env['lote.control'].search([(""lote_num_sifen"","">"",0)],order=""fecha, id"")
+else:
+  batch_control = record
+
+# print(""batch_control"", batch_control)
+for bc in batch_control:
+  vals = {}
+  vals['batch_consult_sequence'] = int(sequence.next_by_id())
+  vals['batch_number'] = bc.lote_num_sifen_char
+  
+  rEnviConsLoteDe = self.env['ir.qweb']._render(""l10n_py_edi_templates.rEnviConsLoteDe"", vals)
+  
+  if self.company_id.sifen_environment == ""0"":
+    url = ""https://sifen-test.set.gov.py/de/ws/consultas/consulta-lote.wsdl""
+  else:
+    url = ""https://sifen.set.gov.py/de/ws/consultas/consulta-lote.wsdl""
+  headers = {}
+  headers['Content-Type'] = ""application/soap+xml""
+  headers['SOAPAction'] = '""#%s""' %(""SiConsLoteDE"")
+  
+  response = requests.post(url=url, headers=headers, data=rEnviConsLoteDe, cert=""/mnt/input/F1T_15401.pem"")
+  
+  xmltree = xmltodict.parse(response.content)
+  
+  rProtDe = dict(xmltree.get(""env:Envelope"",{}).get(""env:Body"",{}).get(""ns2:rResEnviConsLoteDe"",{}))"
+"__export__.edi_procedure_4_33b4c86b","16","sifen.res.partner.vat.consult","","base.main_company","import requests
+import json
+import base64
+from lxml import etree
+
+# SiConsRUC
+
+sequence = self.env['ir.sequence'].search([('code', '=', 'SiConsRUC')])
+
+vals = {}
+vals[""sequence_id""] = int(sequence.next_by_id())
+vals[""vat""] = ""80013853""
+if ""-"" in record.vat:
+  vals[""vat""] = record.vat.split(""-"")[0]
+else:
+  vals[""vat""] = record.vat
+
+if self.company_id.sifen_environment == '0':
+  url = ""https://sifen-test.set.gov.py/de/ws/consultas/consulta-ruc.wsdl""
+else:
+  url = ""https://sifen.set.gov.py/de/ws/consultas/consulta-ruc.wsdl""
+
+soap_method = '""#%s""' %(""SiConsRUC"")
+
+envelope_renviconsruc = self.env['edi.template']._render(""Envelope_rEnviConsRUC"",**vals)
+
+headers = {}
+headers['Content-Type'] = ""application/soap+xml""
+headers['SOAPAction'] = soap_method
+
+evals = {}
+evals['url'] = url
+evals['method'] = ""POST""
+evals['headers'] = json.dumps(headers, indent=4)
+evals['soap_method'] = soap_method
+evals[""type""] = 'vat_consult'
+evals[""company_id""] = record.company_id.id if record.company_id else self.env.company.id
+evals[""procedure_id""] = self.id
+evals[""res_model""] = record._name
+evals[""res_id""] = record.id
+evals[""res_name""] = record.name
+evals[""request_content""] = base64.b64encode(envelope_renviconsruc.encode())
+evals[""request_filename""] = ""%s.xml"" %(record.name)
+
+edi_event = self.env['edi.event'].create(evals)
+"
+"__export__.edi_procedure_1_cf78dd9c","17","sifen.account.move.send","DESACTIVADO","base.main_company","import hashlib
+from odoo import fields
+from lxml import etree
+import re
+import zipfile
+import base64
+import datetime
+import requests
+import xmltodict
+import json
+from collections import OrderedDict
+
+def clean_xml(de):
+  while ""  "" in de.decode():
+    de = de.decode().replace(""  "","" "").encode()
+  while ""\n "" in de.decode():
+    de = de.decode().replace(""\n "",""\n"").encode()
+  while ""\n\n"" in de.decode():
+    de = de.decode().replace(""\n\n"",""\n"").encode()
+  de = de.decode().strip().encode()
+  return de
+
+def create_file(invoice, content):
+  base_file_name = f""{invoice.control_code}""
+  xml_file_name = f""/mnt/input/{base_file_name}_odoo.xml""
+  
+  file_obj = open(xml_file_name,""w"")
+  if isinstance(content, bytes):
+    file_obj.write(content.decode())
+  else:
+    file_obj.write(content)
+  file_obj.close()
+
+# invoice = self.env['account.move'].search([('control_code','=','01800138538001001000009622023072717046103128')])
+
+# invoice = record
+# certificate = self.env['edi.certificate'].search([], limit=1)
+
+# vals = {}
+# vals['move'] = invoice
+# vals['signature_datetime'] = fields.Datetime.context_timestamp(invoice, datetime.datetime.now()).strftime(""%Y-%m-%dT%H:%M:%S"")
+# move_invoice_date = fields.Datetime.context_timestamp(invoice, invoice.create_date).strftime(""%Y-%m-%dT%H:%M:%S"")
+# vals['move_invoice_date'] = move_invoice_date
+
+# de = self.env['ir.qweb']._render(""l10n_py_edi_templates.de"", vals)
+
+# vals[""de_document""] = de
+# rde = self.env['ir.qweb']._render(""l10n_py_edi_templates.rde"", vals)
+
+# data_signed_str = certificate.sign_content(rde.decode(), reference_uri=invoice.control_code, id_attribute=""Id"")
+
+# pattern = r'<DigestValue>(.*?)</DigestValue>'
+# digest_value = re.findall(pattern, data_signed_str)[0]
+# digest_value = ''.join([hex(ord(c))[2:] for c in digest_value])
+
+# move_invoice_date_hex = ''.join([hex(ord(c))[2:] for c in move_invoice_date])
+
+# qr_data = ""nVersion=%s"" %(150)
+# qr_data += ""&Id=%s"" %(invoice.control_code)
+# qr_data += ""&dFeEmiDE=%s"" %(move_invoice_date_hex)
+# if invoice.partner_id.l10n_latam_identification_type_id.is_vat :
+#   qr_data += ""&dRucRec=%s"" %(invoice.partner_id.vat.split(""-"")[0])
+# else:
+#   qr_data += ""&dNumIDRec=%s"" %(invoice.partner_id.vat)
+# qr_data += ""&dTotGralOpe=%.8f"" %(invoice.amount_total)
+# qr_data += ""&dTotIVA=%.8f"" %(invoice.amount_tax)
+# qr_data += ""&cItems=%s"" %(len(invoice.invoice_line_ids))
+# qr_data += ""&DigestValue=%s"" %(digest_value)
+# qr_data += ""&IdCSC=%s"" %(""001"")
+# qr_data_secret = qr_data + ""%s"" %(invoice.company_id.security_code_1) 
+# qr_hash = hashlib.sha256(qr_data_secret.encode())
+# qr_data += ""&cHashQR=%s"" %(qr_hash.hexdigest()) 
+# qr_data = qr_data.replace(""&"",""&amp;"")
+# if self.company_id.sifen_environment == '0':
+#   qr_link = ""https://ekuatia.set.gov.py/consultas-test/qr?%s"" %(qr_data)
+# else:
+#   qr_link = ""https://ekuatia.set.gov.py/consultas/qr?%s"" %(qr_data)
+
+# vals[""qr_link""] = qr_link
+
+# gcamfufd = self.env['ir.qweb']._render(""l10n_py_edi_templates.gcamfufd"", vals)
+
+# data_signed_str = data_signed_str.replace(""</rDE>"", ""%s</rDE>"" %(gcamfufd.decode()))
+
+# envelope_content = data_signed_str
+# sequence = self.env['ir.sequence'].search([('code', '=', 'SoapEnvelope')])
+# vals = {}
+# vals[""envelope_sequence""] = int(sequence.next_by_id())
+# vals[""envelope_content""] = envelope_content
+# vals[""xml_version""] = '<?xml version=""1.0"" encoding=""UTF-8""?>'
+# if self.company_id.sifen_environment == '0':
+#   url = ""https://sifen-test.set.gov.py/de/ws/sync/recibe.wsdl""
+# else:
+#   url = ""https://sifen.set.gov.py/de/ws/sync/recibe.wsdl""
+# soap_method = '""#%s""' %(""SiRecepDE"")
+
+# envelope = self.env['ir.qweb']._render(""l10n_py_edi_templates.renvide_envelope"", vals)
+# envelope = envelope.decode().replace(""<env:Header></env:Header>"",""<env:Header/>"").strip().encode()
+# create_file(invoice, envelope)
+
+# headers = {}
+# headers['Content-Type'] = ""application/soap+xml""
+# headers['SOAPAction'] = soap_method
+
+# log_data = {}
+# log_data[""method""] = soap_method
+# log_data[""path""] = url
+# log_data[""request""] = envelope
+# log_data[""type""] = 'outbound'
+# log_data[""tag""] = self.name
+# log_data[""record""] = invoice
+# try:
+#   cert_path = self.env['edi.certificate'].prepare_cert_file(invoice.company_id.id)
+#   # cert_path = ""/mnt/input/F1T_15401.pem"" 
+  
+#   evals = {}
+#   evals['url'] = url
+#   evals['method'] = ""POST""
+#   evals['headers'] = json.dumps(headers, indent=4)
+#   evals['soap_method'] = soap_method
+#   evals[""type""] = 'de'
+#   evals[""company_id""] = invoice.company_id.id
+#   evals[""procedure_id""] = self.id
+#   evals[""res_model""] = invoice._name
+#   evals[""res_id""] = invoice.id
+#   evals[""res_name""] = invoice.name
+#   evals[""request""] = envelope
+#   evals[""request_content""] = base64.b64encode(envelope)
+#   evals[""request_filename""] = ""%s.xml"" %(invoice.control_code)
+  
+#   edi_event = self.env['edi.event'].create(evals)
+
+#   # response = requests.post(url=url, headers=headers, data=envelope, cert=cert_path)
+#   response = None
+# except BaseException as errstr:
+#   log_data[""response""] = errstr
+#   self.env['service.log'].register(**log_data)
+#   _logger.error(""Error on Request: %s"" %(errstr))
+#   log_data[""status_code""] = response.status_code
+#   log_data[""reason""] = response.reason
+# try:
+#   log_response = etree.tostring(etree.fromstring(response.content), pretty_print=True)
+#   log_data[""response""] = log_response 
+#   log_record = self.env['service.log'].register(**log_data)
+#   log_dict = log_record.get_response_dict()
+#   uvals = {}
+#   if log_dict.get(""dEstRes"","""") == ""Aprobado"":
+#     uvals['sifen_state'] = 'approved'
+#     uvals['sifen_authorization'] = log_dict.get('dProtAut',"""")
+#   elif log_dict.get(""dEstRes"","""") == ""Rechazado"":
+#     uvals['sifen_state'] = 'rejected'
+#   uvals['sifen_state_code'] = log_dict.get('dCodRes',"""")
+#   uvals['sifen_state_message'] = log_dict.get('dMsgRes',"""")
+#   invoice.write(uvals)
+  
+# except BaseException as errstr:
+#   # log_response = response.content.decode()
+#   _logger.error(""Error parsing Response: %s"" %(errstr))
+#   # _logger.error(log_response)
+"

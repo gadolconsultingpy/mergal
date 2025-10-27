@@ -1,0 +1,257 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* msp_service
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0-20230816\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-31 22:52+0000\n"
+"PO-Revision-Date: 2023-12-31 22:52+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: msp_service
+#: model:ir.ui.menu,name:msp_service.menu_msp_service_api
+msgid "API"
+msgstr ""
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_controller_procedure__create_uid
+#: model:ir.model.fields,field_description:msp_service.field_service_log__create_uid
+#: model:ir.model.fields,field_description:msp_service.field_service_log_response__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_controller_procedure__create_date
+#: model:ir.model.fields,field_description:msp_service.field_service_log__create_date
+#: model:ir.model.fields,field_description:msp_service.field_service_log_response__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: msp_service
+#: model_terms:ir.ui.view,arch_db:msp_service.servile_log_search
+msgid "Date"
+msgstr "Fecha"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_controller_procedure__display_name
+#: model:ir.model.fields,field_description:msp_service.field_service_log__display_name
+#: model:ir.model.fields,field_description:msp_service.field_service_log_response__display_name
+msgid "Display Name"
+msgstr "Nombre Mostrado"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__headers
+msgid "Headers"
+msgstr "Cabecera"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_controller_procedure__id
+#: model:ir.model.fields,field_description:msp_service.field_service_log__id
+#: model:ir.model.fields,field_description:msp_service.field_service_log_response__id
+msgid "ID"
+msgstr ""
+
+#. module: msp_service
+#: model:ir.model.fields.selection,name:msp_service.selection__service_log__type__inbound
+msgid "Inbound"
+msgstr "Entrante"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_ir_sequence__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log_response__key
+msgid "Key"
+msgstr "Clave"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_controller_procedure____last_update
+#: model:ir.model.fields,field_description:msp_service.field_service_log____last_update
+#: model:ir.model.fields,field_description:msp_service.field_service_log_response____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_controller_procedure__write_uid
+#: model:ir.model.fields,field_description:msp_service.field_service_log__write_uid
+#: model:ir.model.fields,field_description:msp_service.field_service_log_response__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_controller_procedure__write_date
+#: model:ir.model.fields,field_description:msp_service.field_service_log__write_date
+#: model:ir.model.fields,field_description:msp_service.field_service_log_response__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__datetime
+msgid "Log Datetime"
+msgstr "Hora Log"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__tag
+msgid "Log Tag"
+msgstr "Etiqueta Log"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__method
+#: model_terms:ir.ui.view,arch_db:msp_service.servile_log_search
+msgid "Method"
+msgstr "Método"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_controller_procedure__name
+#: model_terms:ir.ui.view,arch_db:msp_service.service_controller_procedure_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: msp_service
+#: model:ir.model.fields.selection,name:msp_service.selection__service_log__type__none
+msgid "None"
+msgstr "Ninguno"
+
+#. module: msp_service
+#: model:ir.model.fields.selection,name:msp_service.selection__service_log__type__outbound
+msgid "Outbound"
+msgstr "Saliente"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log_response__parent_id
+msgid "Parent"
+msgstr "Relación"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__path
+msgid "Path"
+msgstr "Ruta"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_controller_procedure__procedure
+msgid "Procedure"
+msgstr "Procedimiento"
+
+#. module: msp_service
+#: model_terms:ir.ui.view,arch_db:msp_service.service_log_form
+msgid "Process Response"
+msgstr "Procesar Respuesta"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__reason
+msgid "Reason"
+msgstr "Motivo"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__request
+#: model_terms:ir.ui.view,arch_db:msp_service.service_log_form
+msgid "Request"
+msgstr "Solicitud"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__res_id
+msgid "Resource Id"
+msgstr "Id Recurso"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__res_model
+msgid "Resource Model"
+msgstr "Modelo del Recurso"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__res_name
+msgid "Resource Name"
+msgstr "Nombre del Recurso"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__response
+#: model_terms:ir.ui.view,arch_db:msp_service.service_log_form
+msgid "Response"
+msgstr "Respuesta"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__response_ids
+#: model_terms:ir.ui.view,arch_db:msp_service.service_log_form
+msgid "Response Keys"
+msgstr "Claves Respuesta"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_controller_procedure__route
+msgid "Route"
+msgstr "Ruta"
+
+#. module: msp_service
+#: model:ir.model,name:msp_service.model_ir_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: msp_service
+#: model:ir.actions.act_window,name:msp_service.action_service_controller_procedure
+#: model:ir.model,name:msp_service.model_service_controller_procedure
+#: model:ir.ui.menu,name:msp_service.menu_service_controller_procedure
+#: model_terms:ir.actions.act_window,help:msp_service.action_service_controller_procedure
+#: model_terms:ir.ui.view,arch_db:msp_service.service_controller_procedure_form
+#: model_terms:ir.ui.view,arch_db:msp_service.service_controller_procedure_tree
+msgid "Service Controller Procedure"
+msgstr "Procedimiento Controlador de Servicio"
+
+#. module: msp_service
+#: model:ir.actions.act_window,name:msp_service.action_service_log
+#: model:ir.model,name:msp_service.model_service_log
+#: model:ir.ui.menu,name:msp_service.menu_service_log
+#: model_terms:ir.actions.act_window,help:msp_service.action_service_log
+#: model_terms:ir.ui.view,arch_db:msp_service.service_log_form
+#: model_terms:ir.ui.view,arch_db:msp_service.service_log_tree
+#: model_terms:ir.ui.view,arch_db:msp_service.servile_log_search
+msgid "Service Log"
+msgstr "Registro del Servicio"
+
+#. module: msp_service
+#: model:ir.model,name:msp_service.model_service_log_response
+msgid "Service Log Response"
+msgstr "Respuesta de Log"
+
+#. module: msp_service
+#: model:ir.ui.menu,name:msp_service.menu_msp_service
+msgid "Services"
+msgstr "Servicios"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__short_response
+msgid "Short Response"
+msgstr "Respuesta Corta"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__status_code
+msgid "Status Code"
+msgstr "Código Estado"
+
+#. module: msp_service
+#: model_terms:ir.ui.view,arch_db:msp_service.servile_log_search
+msgid "Tag"
+msgstr "Etiqueta"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log__type
+#: model_terms:ir.ui.view,arch_db:msp_service.servile_log_search
+msgid "Type"
+msgstr "Tipo"
+
+#. module: msp_service
+#: model:ir.model.fields,field_description:msp_service.field_service_log_response__value
+msgid "Value"
+msgstr "Valor"
+
+#. module: msp_service
+#: model_terms:ir.ui.view,arch_db:msp_service.service_controller_procedure_form
+msgid "http://route"
+msgstr "http://ruta"

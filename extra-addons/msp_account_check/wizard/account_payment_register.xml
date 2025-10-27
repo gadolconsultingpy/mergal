@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_account_payment_register_form" model="ir.ui.view">
+            <field name="name">account.payment.register.form</field>
+            <field name="model">account.payment.register</field>
+            <field name="inherit_id" ref="account.view_account_payment_register_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='group2']" position="after">
+                    <group name="check_group"
+                           invisible="payment_method_check_type not in ['check','deferred-check'] "
+                           string="Check Information">
+                        <field name="payment_method_check_type" invisible="1"/>
+                        <field name="payment_bank_id"
+                               required="payment_method_check_type in ['check','deferred-check'] "/>
+                        <field name="issue_date"
+                               required="payment_method_check_type in ['check','deferred-check'] "/>
+                        <field name="accreditation_date"
+                               required="payment_method_check_type == 'deferred-check' "
+                               invisible="payment_method_check_type != 'deferred-check' "/>
+                        <field name="checkbook_id"
+                               required="payment_method_check_type in ['check','deferred-check'] and payment_type == 'outbound'  "
+                               invisible="payment_type != 'outbound' "/>
+                        <field name="check_number"
+                               invisible="payment_type != 'inbound' "
+                               required="payment_method_check_type in ['check','deferred-check'] and payment_type == 'inbound' "/>
+                        <!--                            <field name="check_id" readonly="1" force_save="1"/>-->
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

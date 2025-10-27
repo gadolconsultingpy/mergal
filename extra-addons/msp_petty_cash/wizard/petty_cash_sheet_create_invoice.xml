@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="petty_cash_sheet_create_invoice_form" model="ir.ui.view">
+            <field name="name">petty.cash.sheet.create.invoice.form</field>
+            <field name="model">petty.cash.sheet.create.invoice</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="add_type"/>
+                            </group>
+                            <group></group>
+                        </group>
+                        <group>
+                            <group invisible="add_type != 'new'">
+                                <field name="concept_id" domain="[('require_invoice','=',1)]" required="1"/>
+                                <field name="partner_id"
+                                       options="{'no_create':True, 'no_create_edit':True, 'no_open':True}"
+                                       required="add_type == 'new'"/>
+                                <field name="amount" required="add_type == 'new'"/>
+                                <field name="deductible_amount" invisible="1"/>
+                                <field name="currency_id" readonly="1" force_save="1"/>
+                            </group>
+                            <group invisible="add_type != 'existing'">
+                                <field name="concept_id" domain="[('require_invoice','=',1)]" required="1"/>
+                                <field name="invoice_id" required="add_type == 'existing'"/>
+                                <field name="partner_id" readonly="1" force_save="1"/>
+                                <field name="amount" readonly="1" force_save="1"/>
+                                <field name="amount_to_pay" required="add_type == 'existing'"/>
+                            </group>
+                            <group>
+                                <field name="date" readonly="add_type == 'existing'" force_save="1" required="1"/>
+                                <field name="petty_cash_sheet_id" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <field name="tax_lines">
+                            <list editable="bottom">
+                                <field name="type_tax_use" column_invisible="1"/>
+                                <field name="currency_id" column_invisible="1"/>
+                                <field name="tax_id"
+                                       options="{'no_create':True, 'no_create_edit':True}"
+                                       domain="[('type_tax_use','=',type_tax_use)]"/>
+                                <field name="quantity"/>
+                                <field name="price_unit"/>
+                                <field name="price_tax" sum="Total Tax"/>
+                                <field name="price_subtotal" sum="SubTotal"/>
+                                <field name="price_total" sum="Total"/>
+                            </list>
+                        </field>
+
+                    </sheet>
+                    <footer>
+                        <button name="create_invoice"
+                                type="object"
+                                string="Create Invoice"
+                                invisible="add_type != 'new'"
+                                class="btn-primary"/>
+                        <button name="append_invoice"
+                                type="object"
+                                string="Append Invoice"
+                                invisible="add_type != 'existing'"
+                                class="btn-primary"/>
+                        <button string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

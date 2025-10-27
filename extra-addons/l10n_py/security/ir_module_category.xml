@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="l10n_py_app_module_category" model="ir.module.category">
+            <field name="name">Paraguay Locatization</field>
+        </record>
+        <record id="l10n_py_module_category" model="ir.module.category">
+            <field name="name">Configuration</field>
+            <field name="parent_id" ref="l10n_py.l10n_py_app_module_category"/>
+        </record>
+    </data>
+</odoo>

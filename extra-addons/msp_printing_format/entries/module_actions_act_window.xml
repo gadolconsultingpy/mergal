@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+    <data>
+        <!-- RES PRINTING FORMAT -->
+        <record id="action_res_printing_format" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Printing Format]]></field>
+            <field name="name">Printing Format</field>
+            <field name="res_model">res.printing.format</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <!-- RES SIGNATURE-->
+        <record id="action_res_signature" model="ir.actions.act_window">
+            <field name="binding_type">action</field>
+            <field name="context">{}</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help"><![CDATA[Signature]]></field>
+            <field name="name">Signature</field>
+            <field name="res_model">res.signature</field>
+            <field name="target">current</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+    </data>
+</odoo>

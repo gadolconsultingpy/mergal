@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_l10n_py_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="comment">User read all tables</field>
+            <field name="implied_ids" eval="[(4,ref('base.group_user'))]"/>
+            <field name="category_id" ref="l10n_py.l10n_py_module_category"/>
+        </record>
+        <record id="group_l10n_py_supervisor" model="res.groups">
+            <field name="name">Supervisor</field>
+            <field name="comment">Supervisor read all but not delete</field>
+            <field name="implied_ids" eval="[(4,ref('l10n_py.group_l10n_py_user'))]"/>
+            <field name="category_id" ref="l10n_py.l10n_py_module_category"/>
+        </record>
+        <record id="group_l10n_py_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="comment">Manage all</field>
+            <field name="implied_ids" eval="[(4,ref('l10n_py.group_l10n_py_supervisor'))]"/>
+            <field name="category_id" ref="l10n_py.l10n_py_module_category"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_printing_format_list" model="ir.ui.view">
+        <field name="name">res.printing.format.list</field>
+        <field name="model">res.printing.format</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="model_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_res_printing_format_form" model="ir.ui.view">
+        <field name="name">res.printing.format.form</field>
+        <field name="model">res.printing.format</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="model_id"/>
+                            <!--                                <field name="lang_option"/>-->
+                            <!--                                <field name="lang" invisible="lang_option != 'specific' "/>-->
+                        </group>
+                        <group>
+                            <field name="no_record" invisible="1"/>
+                            <label for="resource_ref" string="Test Record: "/>
+                            <field name="resource_ref"
+                                   nolabel="1"
+                                   options="{'hide_model': True, 'no_create': True, 'no_open': True}"
+                                   readonly="0"/>
+                            <b invisible="not no_record" class="text-warning">No record for this model</b>
+                            <button name="search_resource_ref" type="object" string="Search" class="btn-primary"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="header_page" string="Header">
+                            <group string="Preview" name="header_preview_group">
+                                <button name="preview_header" string="Sync Header"
+                                        type="object" class="btn-primary"/>
+                                <field name="header_preview" widget="html" readonly="1" force_save="1" nolabel="1"/>
+                            </group>
+                            <group string="Header" name="header_group">
+                                <button name="make_header" string="Make Header"
+                                        type="object" class="btn-primary"/>
+                                <field name="header" widget="html" nolabel="1"/>
+                            </group>
+                            <group string="Header Code" name="header_code_group">
+                                <button name="sync_header" string="Sync Header"
+                                        type="object" class="btn-primary"/>
+                                <field name="header_raw" widget="text" options="{'mode': 'code'}" nolabel="1"/>
+                            </group>
+                        </page>
+                        <page name="footer_page" string="Footer">
+                            <group string="Preview" name="footer_preview_group">
+                                <button name="preview_footer" string="Sync Footer"
+                                        type="object" class="btn-primary"/>
+                                <field name="footer_preview" widget="html" readonly="1" force_save="1" nolabel="1"/>
+                            </group>
+                            <group string="Footer" name="footer_group">
+                                <button name="make_footer" string="Make Footer"
+                                        type="object" class="btn-primary"/>
+                                <field name="footer" widget="html" nolabel="1"/>
+                            </group>
+                            <group string="Footer Code" name="footer_code_group">
+                                <button name="sync_footer" string="Sync Footer"
+                                        type="object" class="btn-primary"/>
+                                <field name="footer_raw" widget="text" options="{'mode': 'code'}" nolabel="1"/>
+                            </group>
+                        </page>
+                        <page name="label_page" string="Labels">
+                            <field name="label_ids">
+                                <list string="Labels" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="translation"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
