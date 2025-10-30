@@ -18,6 +18,13 @@ Enable the Unit Of Measure Menu Entry
     ],
     'data'        : [
         'entries/module_menu.xml',
+
+        'views/stock_move.xml',
+        'views/stock_picking_type.xml',
+
+        'wizard/stock_move_select_lots.xml',
+
+        'security/ir_model_access.xml',
     ],
     'installable' : True,
     'application' : False,
