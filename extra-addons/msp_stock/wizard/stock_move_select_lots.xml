@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="stock_move_select_lots_form" model="ir.ui.view">
+        <field name="name">stock.move.select.lots.form</field>
+        <field name="model">stock.move.select.lots</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="product_id"/>
+                        <field name="product_uom_qty"/>
+                        <field name="location_id"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="lot_names"/>
+                        </group>
+                        <group>
+                            <field name="lot_ids">
+                                <list>
+                                    <field name="lot_id"/>
+                                    <field name="quantity"/>
+                                </list>
+                            </field>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Confirm" type="object" name="action_confirm" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

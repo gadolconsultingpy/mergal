@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <!-- stock move select lots wizard -->
+        <record id="access_stock_move_select_lots_user" model="ir.model.access">
+            <field name="name">Stock Move Select Lots User</field>
+            <field name="model_id" ref="msp_stock.model_stock_move_select_lots"/>
+            <field name="group_id" ref="base.group_user"/>
+            <field name="perm_read">1</field>
+            <field name="perm_write">1</field>
+            <field name="perm_create">1</field>
+            <field name="perm_unlink">1</field>
+        </record>
+    </data>
+</odoo>
